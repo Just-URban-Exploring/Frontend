@@ -1,5 +1,7 @@
 import React from "react";
 import { useState } from "react";
+import { FaTrashAlt, FaPencilAlt } from "react-icons";
+import Audioguide from "../components/Audioguide.jsx";
 
 export function Profile() {
   // P A T C H  U S E R
@@ -56,7 +58,10 @@ export function Profile() {
           <h4>Aktuelles Abo</h4>
           <h2>Abo aus Datenbank</h2>
         </div>
-        <a href="#">Stift Angaben ändern</a>
+        <a href="#">
+          <FaPencilAlt />
+          Angaben ändern
+        </a>
       </div>
 
       {/* D A T E N  Ä N D E R N */}
@@ -142,12 +147,17 @@ export function Profile() {
 
       {/* A U D I O  G U I D E  A N / A U S */}
       <div className="Card">
-        <div>Audio-Auswahl</div>
+        <div>
+          <span>Audio Guide Einstellung</span>
+          <Audioguide />
+        </div>
       </div>
 
       {/* A C C O U N T  L Ö S C H E N */}
       <div className="Card">
-        <h3 className="delete">Account löschen Bin-Icon</h3>
+        <h3 className="delete">
+          Account löschen <FaTrashAlt />
+        </h3>
       </div>
     </div>
   );
