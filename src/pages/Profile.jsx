@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import styles from "../css/Profile.module.css";
 
 export function Profile() {
   // P A T C H  U S E R
@@ -147,7 +148,7 @@ export function Profile() {
 
       {/* A C C O U N T  L Ö S C H E N */}
       <div className="Card">
-        <h3 className="delete">Account löschen Bin-Icon</h3>
+        <h3 className={styles.delete}>Account löschen Bin-Icon</h3>
       </div>
     </div>
   );
