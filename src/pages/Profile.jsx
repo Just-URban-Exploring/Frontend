@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import styles from "../css/Profile.module.css";
 import { FaTrashAlt, FaPencilAlt } from "react-icons";
 import Audioguide from "../components/Audioguide.jsx";
 
@@ -155,7 +156,7 @@ export function Profile() {
 
       {/* A C C O U N T  L Ö S C H E N */}
       <div className="Card">
-        <h3 className="delete">
+        <h3 className={styles.delete}>
           Account löschen <FaTrashAlt />
         </h3>
       </div>
