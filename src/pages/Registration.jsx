@@ -113,14 +113,8 @@ export function Registration() {
         <div className="audio-guide-choice">
           <span>
             Möchtest du den Audioguide jetzt schon als Standarteinstellung
-            festlegen?
-            <span className="small-text">
-              {" "}
-              &#40;Du kannst diese Einstellung jederzeit in deinem Profil
-              ändern. Wenn du den Audioguide jetzt ausschaltest, hast du nachher
-              trotzdem die Möglichkeit dir einzelne Infotafeln vorlesen zu
-              lassen.&#41;{" "}
-            </span>
+            festlegen? Oder später selbst auswählen welche Texte du hören
+            möchtest?
           </span>
           <Audioguide />
         </div>
