@@ -86,11 +86,77 @@ export function Profile() {
       {dataUser.map((x) => {
         return (
           <div className="Card" key={x._id}>
+            <div>
+              <h4>Wähle ein anderes Profilbild aus:</h4>
+              <img
+                src={avatar1}
+                alt="avatar"
+                value={user.img}
+                className="avatar"
+                id="avatar1"
+                onChange={handleChange}
+              />
+              <img
+                src={avatar2}
+                alt="avatar"
+                value={user.img}
+                className="avatar"
+                id="avatar2"
+                onChange={handleChange}
+              />
+              <img
+                src={avatar3}
+                alt="avatar"
+                value={user.img}
+                className="avatar"
+                id="avatar3"
+                onChange={handleChange}
+              />
+              <img
+                src={avatar4}
+                alt="avatar"
+                value={user.img}
+                className="avatar"
+                id="avatar4"
+                onChange={handleChange}
+              />
+              <img
+                src={avatar5}
+                alt="avatar"
+                value={user.img}
+                className="avatar"
+                id="avatar5"
+                onChange={handleChange}
+              />
+              <img
+                src={avatar6}
+                alt="avatar"
+                value={user.img}
+                className="avatar"
+                id="avatar6"
+                onChange={handleChange}
+              />
+              <div className="icons-verweis">
+                {" "}
+                Icons erstellt von{" "}
+                <a
+                  href="https://www.flaticon.com/de/autoren/secret-studio"
+                  title="Secret Studio"
+                >
+                  {" "}
+                  Secret Studio{" "}
+                </a>{" "}
+                from{" "}
+                <a href="https://www.flaticon.com/de/" title="Flaticon">
+                  www.flaticon.com'
+                </a>
+              </div>
+            </div>
             <form action="" className="mt-4" onSubmit={handleSubmit}>
               {/* Profilname */}
               <div className="mb-3">
                 <label htmlFor="InputProfileName" className="form-label">
-                  Benutzername
+                  Profilname
                 </label>
                 <input
                   value={user.profilname}

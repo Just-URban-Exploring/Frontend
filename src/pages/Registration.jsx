@@ -1,6 +1,12 @@
 import React from "react";
 import { useState } from "react";
 import Audioguide from "../components/Audioguide.jsx";
+import { avatar1 } from "../img/avatar-blue-green.png";
+import { avatar2 } from "../img/avatar-blue-pink.png";
+import { avatar3 } from "../img/avatar-green-yellow.png";
+import { avatar4 } from "../img/avatar-pink-blue.png";
+import { avatar5 } from "../img/avatar-red-yellow.png";
+import { avatar6 } from "../img/avatar-yellow-pink.png";
 
 export function Registration() {
   // POST user -----
@@ -107,6 +113,74 @@ export function Registration() {
             aria-describedby="repeatPasswordHelp"
             onChange={handleChange}
           />
+        </div>
+
+        {/* A V A T A R */}
+        <div>
+          <h4>Wähle dein Profilbild aus:</h4>
+          <img
+            src={avatar1}
+            alt="avatar"
+            value={user.img}
+            className="avatar"
+            id="avatar1"
+            onChange={handleChange}
+          />
+          <img
+            src={avatar2}
+            alt="avatar"
+            value={user.img}
+            className="avatar"
+            id="avatar2"
+            onChange={handleChange}
+          />
+          <img
+            src={avatar3}
+            alt="avatar"
+            value={user.img}
+            className="avatar"
+            id="avatar3"
+            onChange={handleChange}
+          />
+          <img
+            src={avatar4}
+            alt="avatar"
+            value={user.img}
+            className="avatar"
+            id="avatar4"
+            onChange={handleChange}
+          />
+          <img
+            src={avatar5}
+            alt="avatar"
+            value={user.img}
+            className="avatar"
+            id="avatar5"
+            onChange={handleChange}
+          />
+          <img
+            src={avatar6}
+            alt="avatar"
+            value={user.img}
+            className="avatar"
+            id="avatar6"
+            onChange={handleChange}
+          />
+          <div className="icons-verweis">
+            {" "}
+            Icons erstellt von{" "}
+            <a
+              href="https://www.flaticon.com/de/autoren/secret-studio"
+              title="Secret Studio"
+            >
+              {" "}
+              Secret Studio{" "}
+            </a>{" "}
+            from{" "}
+            <a href="https://www.flaticon.com/de/" title="Flaticon">
+              www.flaticon.com'
+            </a>
+          </div>
         </div>
 
         {/* A U D I O G U I D E */}
