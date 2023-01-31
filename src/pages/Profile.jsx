@@ -1,8 +1,22 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "../css/Profile.module.css";
+import { FaTrashAlt, FaPencilAlt } from "react-icons";
+import Audioguide from "../components/Audioguide.jsx";
 
 export function Profile() {
+  // F E T C H  D A T A
+  const [dataUser, setDataUser] = useState([]);
+  useEffect(() => {
+    getData();
+  }, []);
+
+  const getData = async () => {
+    const api = await fetch("http://localhost:4011/user/");
+    const data = await api.json();
+    setDataUser(data);
+  };
+
   // P A T C H  U S E R
   const [user, setUser] = useState({
     profilname: "",
@@ -37,118 +51,207 @@ export function Profile() {
       <h1 className="mt-4">Profil-Header</h1>
 
       {/* P R O F I L K A R T E */}
-      <div className="Card">
-        <div>
-          <img src="" alt="avatar" />
-        </div>
-        <div>
-          <h4>Profilname</h4>
-          <h2>Name aus Datenbank</h2>
-        </div>
-        <div>
-          <h4>E-Mail-Adresse</h4>
-          <h2>E-Mail aus Datenbank</h2>
-        </div>
-        <div>
-          <h4>Passwort</h4>
-          <h2>Passwort zensiert</h2>
-        </div>
-        <div>
-          <h4>Aktuelles Abo</h4>
-          <h2>Abo aus Datenbank</h2>
-        </div>
-        <a href="#">Stift Angaben ändern</a>
-      </div>
+      {dataUser.map((x) => {
+        return (
+          <div className="Card" key={x._id}>
+            <div>
+              <img src="" alt="avatar" className="avatar" />
+              {id.img}
+            </div>
+            <div>
+              <h4>Profilname</h4>
+              <h2>{id.profilname}</h2>
+            </div>
+            <div>
+              <h4>E-Mail-Adresse</h4>
+              <h2>{x.email}</h2>
+            </div>
+            <div>
+              <h4>Passwort</h4>
+              <h2>******</h2>
+            </div>
+            <div>
+              <h4>Aktuelles Abo</h4>
+              <h2>{x.abo}</h2>
+            </div>
+            <a href="#">
+              <FaPencilAlt />
+              Angaben ändern
+            </a>
+          </div>
+        );
+      })}
 
       {/* D A T E N  Ä N D E R N */}
-      <div className="Card">
-        <form action="" className="mt-4" onSubmit={handleSubmit}>
-          {/* Profilname */}
-          <div className="mb-3">
-            <label htmlFor="InputProfileName" className="form-label">
-              Benutzername
-            </label>
-            <input
-              value={user.profilname}
-              type="text"
-              className="form-control"
-              id="InputProfileName"
-              aria-describedby="profileNameHelp"
-              onChange={handleChange}
-            />
+      {dataUser.map((x) => {
+        return (
+          <div className="Card" key={x._id}>
+            <div>
+              <h4>Wähle ein anderes Profilbild aus:</h4>
+              <img
+                src={avatar1}
+                alt="avatar"
+                value={user.img}
+                className="avatar"
+                id="avatar1"
+                onChange={handleChange}
+              />
+              <img
+                src={avatar2}
+                alt="avatar"
+                value={user.img}
+                className="avatar"
+                id="avatar2"
+                onChange={handleChange}
+              />
+              <img
+                src={avatar3}
+                alt="avatar"
+                value={user.img}
+                className="avatar"
+                id="avatar3"
+                onChange={handleChange}
+              />
+              <img
+                src={avatar4}
+                alt="avatar"
+                value={user.img}
+                className="avatar"
+                id="avatar4"
+                onChange={handleChange}
+              />
+              <img
+                src={avatar5}
+                alt="avatar"
+                value={user.img}
+                className="avatar"
+                id="avatar5"
+                onChange={handleChange}
+              />
+              <img
+                src={avatar6}
+                alt="avatar"
+                value={user.img}
+                className="avatar"
+                id="avatar6"
+                onChange={handleChange}
+              />
+              <div className="icons-verweis">
+                {" "}
+                Icons erstellt von{" "}
+                <a
+                  href="https://www.flaticon.com/de/autoren/secret-studio"
+                  title="Secret Studio"
+                >
+                  {" "}
+                  Secret Studio{" "}
+                </a>{" "}
+                from{" "}
+                <a href="https://www.flaticon.com/de/" title="Flaticon">
+                  www.flaticon.com'
+                </a>
+              </div>
+            </div>
+            <form action="" className="mt-4" onSubmit={handleSubmit}>
+              {/* Profilname */}
+              <div className="mb-3">
+                <label htmlFor="InputProfileName" className="form-label">
+                  Profilname
+                </label>
+                <input
+                  value={user.profilname}
+                  type="text"
+                  className="form-control"
+                  id="InputProfileName"
+                  aria-describedby="profileNameHelp"
+                  onChange={handleChange}
+                  placeholder={x.profilname}
+                />
+              </div>
+              {/* Stadt */}
+              <div className="mb-3">
+                <label htmlFor="Inputcity" className="form-label">
+                  Stadt
+                </label>
+                <input
+                  value={user.stadt}
+                  type="text"
+                  className="form-control"
+                  id="Inputcity"
+                  aria-describedby="cityHelp"
+                  onChange={handleChange}
+                  placeholder={x.stadt}
+                />
+              </div>
+              {/* E-Mail */}
+              <div className="mb-3">
+                <label htmlFor="Inputemail" className="form-label">
+                  E-Mail
+                </label>
+                <input
+                  value={user.email}
+                  type="email"
+                  className="form-control"
+                  id="Inputemail"
+                  aria-describedby="emailHelp"
+                  onChange={handleChange}
+                  placeholder={x.email}
+                />
+              </div>
+              {/* Passwort */}
+              <div className="mb-3">
+                <label htmlFor="Inputpassword" className="form-label">
+                  Passwort
+                </label>
+                <input
+                  value={user.passwort}
+                  type="password"
+                  className="form-control"
+                  id="Inputpassword"
+                  aria-describedby="passwordHelp"
+                  onChange={handleChange}
+                  placeholder="Neues Passwort eingeben"
+                />
+              </div>
+              {/* Passwort wiederholen */}
+              <div className="mb-3">
+                <label htmlFor="InputrepeatPassword" className="form-label">
+                  Passwort wiederholen
+                </label>
+                <input
+                  value={user.passwordWiederholen}
+                  type="password"
+                  className="form-control"
+                  id="InputrepeatPassword"
+                  aria-describedby="repeatPasswordHelp"
+                  onChange={handleChange}
+                  placeholder="Passwort erneut eingeben"
+                />
+              </div>
+              {/* Abo */}
+              <div>Ein anderes Abo auswählen:</div>
+
+              <button className="btn-primary" type="submit">
+                Speichern
+              </button>
+            </form>
           </div>
-          {/* Stadt */}
-          <div className="mb-3">
-            <label htmlFor="Inputcity" className="form-label">
-              Stadt
-            </label>
-            <input
-              value={user.stadt}
-              type="text"
-              className="form-control"
-              id="Inputcity"
-              aria-describedby="cityHelp"
-              onChange={handleChange}
-            />
-          </div>
-          {/* E-Mail */}
-          <div className="mb-3">
-            <label htmlFor="Inputemail" className="form-label">
-              E-Mail
-            </label>
-            <input
-              value={user.email}
-              type="email"
-              className="form-control"
-              id="Inputemail"
-              aria-describedby="emailHelp"
-              onChange={handleChange}
-            />
-          </div>
-          {/* Passwort */}
-          <div className="mb-3">
-            <label htmlFor="Inputpassword" className="form-label">
-              Passwort
-            </label>
-            <input
-              value={user.passwort}
-              type="password"
-              className="form-control"
-              id="Inputpassword"
-              aria-describedby="passwordHelp"
-              onChange={handleChange}
-            />
-          </div>
-          {/* Passwort wiederholen */}
-          <div className="mb-3">
-            <label htmlFor="InputrepeatPassword" className="form-label">
-              Passwort wiederholen
-            </label>
-            <input
-              value={user.passwordWiederholen}
-              type="password"
-              className="form-control"
-              id="InputrepeatPassword"
-              aria-describedby="repeatPasswordHelp"
-              onChange={handleChange}
-            />
-          </div>
-          {/* Abo */}
-          <div>Komponente für Abo-Auswahl</div>
-          <button className="mt-2" type="submit">
-            Speichern
-          </button>
-        </form>
-      </div>
+        );
+      })}
 
       {/* A U D I O  G U I D E  A N / A U S */}
       <div className="Card">
-        <div>Audio-Auswahl</div>
+        <div>
+          <span>Audio Guide Einstellung</span>
+          <Audioguide />
+        </div>
       </div>
 
       {/* A C C O U N T  L Ö S C H E N */}
       <div className="Card">
-        <h3 className={styles.delete}>Account löschen Bin-Icon</h3>
+        <h3 className={styles.delete}>
+          Account löschen <FaTrashAlt />
+        </h3>
       </div>
     </div>
   );

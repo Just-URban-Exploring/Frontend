@@ -1,0 +1,45 @@
+.circleBase {
+border-radius: 50%;
+}
+
+.circle1 {
+background-color: var(--amber-700);
+}
+
+.circle2 {
+background-color: var(--green-300);
+}
+
+.circle3 {
+background-color: var(--blau-600);
+}
+
+.circle4 {
+background-color: var(--coffee-300);
+}
+
+.circle5 {
+background-color: var(--gelb-300);
+}
+
+.circle6 {
+background-color: var(--pink-500);
+}
+.circle7 {
+background-color: var(--green-200);
+}
+.circle8 {
+background-color: var(--amber-600);
+}
+.circle9 {
+background-color: var(--fuchsia-400);
+}
+.circle10 {
+background-color: var(--blue-300);
+}
+.circle11 {
+background-color: var(--blue-400);
+}
+.circle12 {
+background-color: var(--gelb-500);
+}
