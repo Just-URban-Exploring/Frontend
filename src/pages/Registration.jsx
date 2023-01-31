@@ -106,7 +106,6 @@ export function Registration() {
             Passwort wiederholen
           </label>
           <input
-            value={user.passwordWiederholen}
             type="password"
             className="form-control"
             id="InputrepeatPassword"
@@ -121,50 +120,44 @@ export function Registration() {
           <img
             src={avatar1}
             alt="avatar"
-            value={user.img}
             className="avatar"
             id="avatar1"
-            onChange={handleChange}
+            onClick={handleChange}
           />
           <img
             src={avatar2}
             alt="avatar"
-            value={user.img}
             className="avatar"
             id="avatar2"
-            onChange={handleChange}
+            onClick={handleChange}
           />
           <img
             src={avatar3}
             alt="avatar"
-            value={user.img}
             className="avatar"
             id="avatar3"
-            onChange={handleChange}
+            onClick={handleChange}
           />
           <img
             src={avatar4}
             alt="avatar"
-            value={user.img}
             className="avatar"
             id="avatar4"
-            onChange={handleChange}
+            onClick={handleChange}
           />
           <img
             src={avatar5}
             alt="avatar"
-            value={user.img}
             className="avatar"
             id="avatar5"
-            onChange={handleChange}
+            onClick={handleChange}
           />
           <img
             src={avatar6}
             alt="avatar"
-            value={user.img}
             className="avatar"
             id="avatar6"
-            onChange={handleChange}
+            onClick={handleChange}
           />
           <div className="icons-verweis">
             {" "}

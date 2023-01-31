@@ -5,6 +5,7 @@ import { Profile } from "./pages/Profile.jsx";
 import { FavoritePlaces } from "./pages/FavoritePlaces.jsx";
 import { Einstellung } from "./pages/Einstellung.jsx";
 import { Standort } from "./pages/Standartort.jsx";
+import { Registration } from "./pages/Registration.jsx";
 
 export function App() {
   return (
@@ -23,6 +24,9 @@ export function App() {
           {" "}
         </Route>
         <Route path="/einstellung" element={<Einstellung />}>
+          {" "}
+        </Route>
+        <Route path="/registrierung" element={<Registration />}>
           {" "}
         </Route>
       </Routes>
