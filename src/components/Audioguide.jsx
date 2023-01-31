@@ -1,5 +1,5 @@
 import React from "react";
-import { MdHeadset, MdHeadsetOff } from "react-icons";
+import { MdHeadset, MdHeadsetOff } from "react-icons/md";
 
 const Audioguide = () => {
   return (

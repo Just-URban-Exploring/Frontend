@@ -1,12 +1,12 @@
 import React from "react";
 import { useState } from "react";
 import Audioguide from "../components/Audioguide.jsx";
-import { avatar1 } from "../img/avatar-blue-green.png";
-import { avatar2 } from "../img/avatar-blue-pink.png";
-import { avatar3 } from "../img/avatar-green-yellow.png";
-import { avatar4 } from "../img/avatar-pink-blue.png";
-import { avatar5 } from "../img/avatar-red-yellow.png";
-import { avatar6 } from "../img/avatar-yellow-pink.png";
+import avatar1 from "../img/avatar-blue-green.png";
+import avatar2 from "../img/avatar-blue-pink.png";
+import avatar3 from "../img/avatar-green-yellow.png";
+import avatar4 from "../img/avatar-pink-blue.png";
+import avatar5 from "../img/avatar-red-yellow.png";
+import avatar6 from "../img/avatar-yellow-pink.png";
 
 export function Registration() {
   // POST user -----
