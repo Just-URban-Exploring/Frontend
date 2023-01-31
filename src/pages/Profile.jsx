@@ -1,8 +1,14 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import styles from "../css/Profile.module.css";
-import { FaTrashAlt, FaPencilAlt } from "react-icons";
+import { FaTrashAlt, FaPencilAlt } from "react-icons/fa";
 import Audioguide from "../components/Audioguide.jsx";
+import avatar1 from "../img/avatar-blue-green.png";
+import avatar2 from "../img/avatar-blue-pink.png";
+import avatar3 from "../img/avatar-green-yellow.png";
+import avatar4 from "../img/avatar-pink-blue.png";
+import avatar5 from "../img/avatar-red-yellow.png";
+import avatar6 from "../img/avatar-yellow-pink.png";
 
 export function Profile() {
   // F E T C H  D A T A
@@ -46,21 +52,35 @@ export function Profile() {
     console.log(user);
   };
 
+  const handleSelectAvatar = (id) => {
+    setSelectedAvatar(id);
+  };
+
   return (
     <div>
       <h1 className="mt-4">Profil-Header</h1>
 
       {/* P R O F I L K A R T E */}
       {dataUser.map((x) => {
+        const [selectedAvatar, setSelectedAvatar] = useState(undefined);
+
+        const avatars = [
+          { id: "avatar1", src: { avatar1 } },
+          { id: "avatar2", src: { avatar2 } },
+          { id: "avatar3", src: { avatar3 } },
+          { id: "avatar4", src: { avatar4 } },
+          { id: "avatar5", src: { avatar5 } },
+          { id: "avatar6", src: { avatar6 } },
+        ];
+
         return (
           <div className="Card" key={x._id}>
             <div>
-              <img src="" alt="avatar" className="avatar" />
-              {id.img}
+              <img src="" alt="avatar" />;
             </div>
             <div>
               <h4>Profilname</h4>
-              <h2>{id.profilname}</h2>
+              <h2>{x.profilname}</h2>
             </div>
             <div>
               <h4>E-Mail-Adresse</h4>
@@ -89,53 +109,11 @@ export function Profile() {
             <div>
               <h4>Wähle ein anderes Profilbild aus:</h4>
               <img
-                src={avatar1}
+                src=""
+                // onClick={() => handleSelectAvatar(avatar.id)}
                 alt="avatar"
-                value={user.img}
-                className="avatar"
-                id="avatar1"
-                onChange={handleChange}
               />
-              <img
-                src={avatar2}
-                alt="avatar"
-                value={user.img}
-                className="avatar"
-                id="avatar2"
-                onChange={handleChange}
-              />
-              <img
-                src={avatar3}
-                alt="avatar"
-                value={user.img}
-                className="avatar"
-                id="avatar3"
-                onChange={handleChange}
-              />
-              <img
-                src={avatar4}
-                alt="avatar"
-                value={user.img}
-                className="avatar"
-                id="avatar4"
-                onChange={handleChange}
-              />
-              <img
-                src={avatar5}
-                alt="avatar"
-                value={user.img}
-                className="avatar"
-                id="avatar5"
-                onChange={handleChange}
-              />
-              <img
-                src={avatar6}
-                alt="avatar"
-                value={user.img}
-                className="avatar"
-                id="avatar6"
-                onChange={handleChange}
-              />
+              ;
               <div className="icons-verweis">
                 {" "}
                 Icons erstellt von{" "}
