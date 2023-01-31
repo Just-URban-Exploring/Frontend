@@ -7,6 +7,7 @@ import { FavoritePlaces } from "./pages/FavoritePlaces.jsx";
 import { Einstellung } from "./pages/Einstellung.jsx";
 import { Standort } from "./pages/Standartort.jsx";
 import { Registration } from "./pages/Registration.jsx";
+import MapComponents from "./pages/MapComponents.jsx";
 
 
 export function App() {
@@ -30,6 +31,8 @@ export function App() {
         </Route>
         <Route path="/registrierung" element={<Registration />}>
           {" "}
+        </Route>
+        <Route path="/map" element={<MapComponents/>}>
         </Route>
       </Routes>
     </BrowserRouter>
