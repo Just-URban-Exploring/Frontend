@@ -1,0 +1,110 @@
+body {
+  background: var(--gray-600);
+}
+
+/* .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1.25rem 5rem;
+  height: 75px;
+  color: var(--white);
+  border-bottom: 1px solid var(--gray-900);
+}
+
+.navlinks {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  width: 75%;
+}
+
+.profile,
+.favoriteplaces,
+.standort,
+.einstellung {
+  text-decoration: none;
+  margin: 0 10px;
+  color: var(--white);
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.menuiconapp {
+  display: none;
+} */
+
+@media screen and (max-width: 780px) {
+}
+
+.navbar {
+  border-bottom: 1px solid var(--gray-900);
+  padding: 1.25rem 5rem;
+  height: 75px;
+}
+.navlinks {
+  display: none;
+}
+
+.navlinksapp {
+  position: absolute;
+  list-style: none;
+  left: 25%;
+  top: 6.25rem;
+  border-radius: 10px;
+  padding-bottom: 9rem;
+  transition: all 0.5s ease-out;
+  width: 50%;
+  background: var(--gray-300-opacity-30);
+  cursor: pointer;
+}
+
+ul li {
+  margin-top: 4rem;
+  padding-bottom: 2rem;
+}
+
+.profile,
+.favoriteplaces,
+.standort,
+.einstellung,
+.ausloggen {
+  color: var(--white);
+  font-size: 1.5rem;
+  text-align: left;
+  text-decoration: none;
+  width: 100%;
+  transition: all 0.5s ease-out;
+}
+.ausloggenposition {
+  position: absolute;
+  right: 0;
+  padding-right: 1rem;
+}
+
+.ausloggen {
+  color: var(--red-500);
+}
+
+.menuiconapp {
+  display: block;
+  position: absolute;
+  background: none;
+  font-size: 30px;
+  color: var(--white);
+  outline: none;
+  top: 15px;
+  right: 25px;
+}
+.menuiconfatimes,
+.menuiconfabars {
+  background: none;
+}
+
+.iconsmenu {
+  display: flex;
+}
+
+.iconsmenu > div {
+  padding-left: 2rem;
+}
