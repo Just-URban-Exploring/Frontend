@@ -1,27 +1,42 @@
 import React from "react";
+import "../css/login.css";
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
 
 export function Login() {
   return (
     <div>
       <h1>Login</h1>
       <div>Logo</div>
-      <form>
-        <div className="mb-3">
-          <label htmlFor="InputEmail1" className="form-label">
-            E-Mail:
-          </label>
-          <input
+      <Box
+        component="form"
+        sx={{
+          "& .MuiTextField-root": { m: 1, width: "25ch" },
+        }}
+        noValidate
+        autoComplete="off"
+      >
+        <div>
+          <TextField
+            htmlFor="email"
+            className="form-label"
+            required
             type="email"
-            className="form-control"
-            id="InputEmail1"
-            aria-describedby="emailHelp"
-          />
-        </div>
-        <div className="mb-3">
-          <label htmlFor="InputPassword1" className="form-label">
-            Passwort:
-          </label>
-          <input type="password" className="form-control" id="InputPassword1" />
+            id="oulined-email-input"
+            label="E-Mail"
+            InputProps={{
+              readOnly: true,
+            }}
+            fullWidth
+          ></TextField>
+          <TextField
+            htmlFor="passwort"
+            id="outlined-password-input"
+            label="Passwort"
+            type="password"
+            autoComplete="current-password"
+            fullWidth
+          ></TextField>
         </div>
         <button type="submit" className="btn-primary">
           Anmelden
@@ -32,7 +47,7 @@ export function Login() {
         <button type="submit" className="btn-google">
           Mit Google anmelden
         </button>
-      </form>
+      </Box>
     </div>
   );
 }
