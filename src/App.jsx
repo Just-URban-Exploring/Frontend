@@ -10,6 +10,7 @@ import { IconsInfoPage } from "./pages/IconsInfosPage.jsx";
 import { Icons } from "./components/Icons.jsx";
 
 /* import MapComponents from "./pages/MapComponents.jsx"; */
+import Map from "./components/Map.jsx";
 
 export function App() {
   return (
@@ -42,6 +43,7 @@ export function App() {
         </Route>
 
         {/*  <Route path="/map" element={<MapComponents />}></Route> */}
+        <Route path="/map" element={<Map />}></Route>
       </Routes>
     </BrowserRouter>
   );
