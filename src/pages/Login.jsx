@@ -9,9 +9,10 @@ export function Login() {
       <h1>Login</h1>
       <div>Logo</div>
       <Box
+        className="card"
         component="form"
         sx={{
-          "& .MuiTextField-root": { m: 1, width: "25ch" },
+          "& .MuiTextField-root": { mt: 2 },
         }}
         noValidate
         autoComplete="off"
@@ -19,15 +20,11 @@ export function Login() {
         <div>
           <TextField
             htmlFor="email"
-            className="form-label"
-            required
             type="email"
             id="oulined-email-input"
             label="E-Mail"
-            InputProps={{
-              readOnly: true,
-            }}
             fullWidth
+            className="form-input"
           ></TextField>
           <TextField
             htmlFor="passwort"
@@ -36,6 +33,7 @@ export function Login() {
             type="password"
             autoComplete="current-password"
             fullWidth
+            className="form-input"
           ></TextField>
         </div>
         <button type="submit" className="btn-primary">
