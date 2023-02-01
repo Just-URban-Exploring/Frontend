@@ -10,7 +10,8 @@ import Audioguide from "../components/Audioguide.jsx";
 
 export function Registration() {
   // POST user -----
-  const [user, setUser] = useState({
+  const INITIAL = 
+  {
     profilname: "",
     stadt: "",
     email: "",
@@ -19,7 +20,9 @@ export function Registration() {
     audio: false,
     abo: "",
     isAdmin: false,
-  });
+  };
+
+const [user, setUser] = useState(INITIAL);
 
   const handleChange = (e) => {
     setUser({ ...user, [e.target.id]: e.target.value });
@@ -27,15 +30,16 @@ export function Registration() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("http://localhost:4009/user", {
+    fetch("http://localhost:5555/registration", {
       method: "POST",
       body: JSON.stringify(user),
       headers: {
         "Content-type": "application/json; charset=UTF-8",
       },
     }).then((response) => response.json());
-    setUser(user);
-    console.log(user);
+      setUser(user);
+      console.log(user);
+      setUser(INITIAL);
   };
 
   return (
@@ -44,64 +48,69 @@ export function Registration() {
       <form action="" className="mt-4" onSubmit={handleSubmit}>
         {/* Profilname */}
         <div className="mb-3">
-          <label htmlFor="InputProfileName" className="form-label">
+          <label htmlFor="profilname" className="form-label">
             Profilname
           </label>
           <input
             value={user.profilname}
             type="text"
+            name="profilname"
             className="form-control"
-            id="InputProfileName"
+            id="profilname"
             aria-describedby="profileNameHelp"
+            placeholder="profilname"
             onChange={handleChange}
           />
         </div>
 
         {/* Stadt */}
-        <div className="mb-3">
-          <label htmlFor="Inputcity" className="form-label">
+       <div className="mb-3">
+          <label htmlFor="stadt" className="form-label">
             Stadt
           </label>
           <input
             value={user.stadt}
             type="text"
             className="form-control"
-            id="Inputcity"
+            id="stadt"
             aria-describedby="cityHelp"
+            placeholder="stadt"
             onChange={handleChange}
           />
-        </div>
+         </div>
         {/* E-Mail */}
         <div className="mb-3">
-          <label htmlFor="Inputemail" className="form-label">
+          <label htmlFor="email" className="form-label">
             E-Mail-Adresse
           </label>
           <input
             value={user.email}
             type="email"
             className="form-control"
-            id="Inputemail"
+            id="email"
             aria-describedby="emailHelp"
+            placeholder="email"
             onChange={handleChange}
           />
         </div>
 
         {/* Passwort */}
         <div className="mb-3">
-          <label htmlFor="Inputpassword" className="form-label">
+          <label htmlFor="passwort" className="form-label">
             Passwort
           </label>
           <input
             value={user.passwort}
             type="password"
             className="form-control"
-            id="Inputpassword"
+            id="passwort"
             aria-describedby="passwordHelp"
+            placeholder="passwort"
             onChange={handleChange}
           />
         </div>
         {/* Passwort wiederholen */}
-        <div className="mb-3">
+{/*        <div className="mb-3">
           <label htmlFor="InputrepeatPassword" className="form-label">
             Passwort wiederholen
           </label>
@@ -113,7 +122,7 @@ export function Registration() {
             onChange={handleChange}
           />
         </div>
-
+*/}
         {/* A V A T A R */}
         {/* <div>
           <h4>Wähle dein Profilbild aus:</h4>
