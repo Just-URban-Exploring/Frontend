@@ -1,4 +1,3 @@
-
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import "./css/global.css";
 import { Navbar } from "./components/Navbar.jsx";
@@ -7,8 +6,7 @@ import { FavoritePlaces } from "./pages/FavoritePlaces.jsx";
 import { Einstellung } from "./pages/Einstellung.jsx";
 import { Standort } from "./pages/Standartort.jsx";
 import { Registration } from "./pages/Registration.jsx";
-import MapComponents from "./pages/MapComponents.jsx";
-
+import Map from "./components/Map.jsx";
 
 export function App() {
   return (
@@ -32,8 +30,7 @@ export function App() {
         <Route path="/registrierung" element={<Registration />}>
           {" "}
         </Route>
-        <Route path="/map" element={<MapComponents/>}>
-        </Route>
+        <Route path="/map" element={<Map />}></Route>
       </Routes>
     </BrowserRouter>
   );
