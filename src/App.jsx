@@ -8,9 +8,8 @@ import { Standort } from "./pages/Standartort.jsx";
 import { Registration } from "./pages/Registration.jsx";
 import { IconsInfoPage } from "./pages/IconsInfosPage.jsx";
 import { Icons } from "./components/Icons.jsx";
-
-/* import MapComponents from "./pages/MapComponents.jsx"; */
 import Map from "./components/Map.jsx";
+import { Login } from "./pages/Login.jsx";
 
 export function App() {
   return (
@@ -34,15 +33,15 @@ export function App() {
         <Route path="/registrierung" element={<Registration />}>
           {" "}
         </Route>
-
+        <Route path="/login" element={<Login />}>
+          {" "}
+        </Route>
         <Route path="/iconsinfosPage" element={<IconsInfoPage />}>
           {" "}
         </Route>
         <Route path="/icons" element={<Icons />}>
           {" "}
         </Route>
-
-        {/*  <Route path="/map" element={<MapComponents />}></Route> */}
         <Route path="/map" element={<Map />}></Route>
       </Routes>
     </BrowserRouter>
