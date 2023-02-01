@@ -62,7 +62,7 @@ export function Navbar() {
             </Link>
           </div>
         </ul>
-        <button
+        <div
           className={styles.menuiconapp}
           onClick={() => setIsAppActive(!isAppActive)}
         >
@@ -71,7 +71,7 @@ export function Navbar() {
           ) : (
             <FaBars className={styles.menuiconfabars} />
           )}
-        </button>
+        </div>
       </nav>
     </>
   );

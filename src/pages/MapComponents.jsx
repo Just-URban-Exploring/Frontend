@@ -1,4 +1,4 @@
-import React from 'react'
+/* import React from 'react'
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 
 const MapComponents = () => {
@@ -17,3 +17,4 @@ const MapComponents = () => {
 }
 
 export default MapComponents
+ */

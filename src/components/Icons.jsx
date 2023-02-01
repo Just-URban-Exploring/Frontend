@@ -1,62 +1,176 @@
 import React from "react";
+import styles from "../css/Icons.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { GiParkBench, HiShoppingBag } from "react-icons";
-import styles from "../css/Icons.css";
+import { GiParkBench } from "react-icons/gi";
+import { IconContext } from "react-icons";
+import {
+  faBagShopping,
+  faBuildingColumns,
+  faBus,
+  faCamera,
+  faLeaf,
+  faMugHot,
+  faMusic,
+  faStar,
+  faToilet,
+  faTree,
+  faUserSecret,
+  faUtensils,
+} from "@fortawesome/free-solid-svg-icons";
+import { setConfiguration, Container, Row, Col } from "react-grid-system";
 
-const Icons = () => {
+setConfiguration({ maxScreenClass: "xl" });
+
+export function Icons() {
   return (
     <div>
-      <div className="museum">
-        <div className="circleBase circle1"></div>
-        <FontAwesomeIcon icon="fa-solid fa-building-columns" inverse />
-      </div>
-      <div className="seight-seeing">
-        <div className="circleBase circle2"></div>
-        <FontAwesomeIcon icon="fa-solid fa-star" inverse />
-      </div>
-      <div className="best-view">
-        <div className="circleBase circle3"></div>
-        <FontAwesomeIcon icon="fa-solid fa-camera" inverse />
-      </div>
-      <div className="cafe">
-        <div className="circleBase circle4"></div>
-        <FontAwesomeIcon icon="fa-solid fa-mug-hot" inverse />
-      </div>
-      <div className="food">
-        <div className="circleBase circle5"></div>
-        <FontAwesomeIcon icon="fa-solid fa-utensils" inverse />
-      </div>
-      <div className="toilet">
-        <div className="circleBase circle6"></div>
-        <FontAwesomeIcon icon="fa-solid fa-toilet" inverse />
-      </div>
-      <div className="park">
-        <div className="circleBase circle7"></div>
-        <GiParkBench />
-      </div>
-      <div className="transportation">
-        <div className="circleBase circle8"></div>
-        <FontAwesomeIcon icon="fa-solid fa-bus" inverse />
-      </div>
-      <div className="art">
-        <div className="circleBase circle9"></div>
-        <FontAwesomeIcon icon="fa-solid fa-palette" inverse />
-        <FontAwesomeIcon icon="fa-solid fa-music" inverse />
-      </div>
-      <div className="shop">
-        <div className="circleBase circle10"></div>
-        <HiShoppingBag />
-      </div>
-      <div className="nature">
-        <div className="circleBase circle11"></div>
-        <FontAwesomeIcon icon="fa-brands fa-pagelines" inverse />
-      </div>
-      <div className="secret">
-        <div className="circleBase circle12"></div>
-        <FontAwesomeIcon icon="fa-solid fa-user-secret" />
-      </div>
+      <Container fluid className="iconsInfo">
+        <Row debug>
+          <Col debug>
+            <div className={styles.card}>
+              <div className={styles.circle1}>
+                <div className={styles.iconPosition}>
+                  <FontAwesomeIcon
+                    icon={faBuildingColumns}
+                    size="3x"
+                    inverse
+                    className="svg-inline--fa"
+                  />
+                </div>
+              </div>
+            </div>
+          </Col>
+          <Col debug>
+            <div className={styles.card}>
+              <div className={styles.circle2}>
+                <div className={styles.iconPosition}>
+                  <FontAwesomeIcon icon={faStar} size="3x" inverse />
+                </div>
+              </div>
+            </div>
+          </Col>
+          <Col debug>
+            <div className={styles.card}>
+              <div className={styles.circle3}>
+                <div className={styles.iconPosition}>
+                  <FontAwesomeIcon icon={faCamera} size="3x" inverse />
+                </div>
+              </div>
+            </div>
+          </Col>
+        </Row>
+        <Row>
+          <Col debug>
+            <div className={styles.card}>
+              <div className={styles.circle4}>
+                <div className={styles.iconPosition}>
+                  <FontAwesomeIcon icon={faMugHot} size="3x" inverse />
+                </div>
+              </div>
+            </div>
+          </Col>
+          <Col debug>
+            <div className={styles.card}>
+              <div className={styles.circle5}>
+                <div className={styles.iconPosition}>
+                  <FontAwesomeIcon icon={faUtensils} size="3x" inverse />
+                </div>
+              </div>
+            </div>
+          </Col>
+          <Col debug>
+            <div className={styles.card}>
+              <div className={styles.circle6}>
+                <div className={styles.iconPosition}>
+                  <FontAwesomeIcon icon={faToilet} size="3x" inverse />
+                </div>
+              </div>
+            </div>
+          </Col>
+        </Row>
+        <Row>
+          <Col debug>
+            <div className={styles.card}>
+              <div className={styles.circle7}>
+                <div className={styles.iconPosition}>
+                  <IconContext.Provider
+                    value={{
+                      color: "white",
+                      size: "4em",
+                    }}
+                  >
+                    <GiParkBench value={{ color: "white" }} />
+                  </IconContext.Provider>
+                </div>
+              </div>
+            </div>
+          </Col>
+          <Col debug>
+            <div className={styles.card}>
+              <div className={styles.circle8}>
+                <div className={styles.iconPosition}>
+                  <FontAwesomeIcon icon={faBus} size="3x" inverse />
+                </div>
+              </div>
+            </div>
+          </Col>
+          <Col debug>
+            <div className={styles.card}>
+              <div className={styles.circle9}>
+                <div className={styles.iconPosition}>
+                  <FontAwesomeIcon icon={faMusic} size="3x" inverse />
+                </div>
+              </div>
+            </div>
+          </Col>
+        </Row>
+        <Row>
+          <Col debug>
+            <div className={styles.card}>
+              <div className={styles.circle10}>
+                <div className={styles.iconPosition}>
+                  <FontAwesomeIcon icon={faBagShopping} size="3x" inverse />
+                </div>
+              </div>
+            </div>
+          </Col>
+          <Col debug>
+            <div className={styles.card}>
+              <div className={styles.circle11}>
+                <div className={styles.iconPosition}>
+                  <FontAwesomeIcon icon={faLeaf} size="3x" inverse />
+                </div>
+              </div>
+            </div>
+          </Col>
+          <Col debug>
+            <div className={styles.card}>
+              <div className={styles.circle12}>
+                <div className={styles.iconPositionSecret}>
+                  <FontAwesomeIcon icon={faUserSecret} size="3x" inverse />
+                </div>
+              </div>
+            </div>
+          </Col>
+        </Row>
+        <Row>
+          <Col debug>
+            <div className={styles.card}>
+              <div className={styles.circle13}></div>
+            </div>
+          </Col>
+          <Col debug>
+            <div className={styles.card}>
+              <div className={styles.circle14}></div>
+            </div>
+          </Col>
+        </Row>
+        <Row>
+          <Col debug>
+            <button className={styles.btgbutton}>Ok</button>
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
-};
-
-export default Icons;
+}

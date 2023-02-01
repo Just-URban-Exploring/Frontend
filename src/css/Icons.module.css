@@ -1,0 +1,77 @@
+.card {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 6rem;
+  background: var(--gray-500-opacity-90);
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.circle1,
+.circle2,
+.circle3,
+.circle4,
+.circle5,
+.circle6,
+.circle7,
+.circle8,
+.circle9,
+.circle10,
+.circle11,
+.circle12 {
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  margin-top: 1rem;
+}
+
+.iconPosition,
+.iconPositionSecret {
+  margin: 1.7rem 0.5rem auto;
+}
+
+.circle1 {
+  background: var(--amber-700);
+}
+
+.circle2 {
+  background-color: var(--green-300);
+}
+
+.circle3 {
+  background-color: var(--blue-600);
+}
+
+.circle4 {
+  background-color: var(--coffee-300);
+}
+
+.circle5 {
+  background-color: var(--gelb-300);
+}
+
+.circle6 {
+  background-color: var(--pink-500);
+}
+.circle7 {
+  background-color: var(--green-200);
+}
+.circle8 {
+  background-color: var(--amber-600);
+}
+.circle9 {
+  background-color: var(--fuchsia-400);
+}
+.circle10 {
+  background-color: var(--blue-300);
+}
+.circle11 {
+  background-color: var(--blue-400);
+}
+.circle12 {
+  background-color: var(--gelb-500);
+}
+
+.btgbutton {
+  background: var(--blue-600);
+}
