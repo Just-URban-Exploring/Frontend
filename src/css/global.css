@@ -15,7 +15,7 @@
 
   --fuchsia-400: #892599;
   --pink-500: #eb12e2;
-  --red-500: #f2483a;
+  --red-500: #b4180a;
 
   --blue-300: #70859e;
   --blue-400: #12deeb;
@@ -33,4 +33,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+h1 {
+  height: 50px;
+  display: flex;
+  margin: 2rem;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
 }

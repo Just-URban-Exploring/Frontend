@@ -25,11 +25,19 @@
   margin-top: 1rem;
 }
 
-.iconPosition,
-.iconPositionSecret {
-  margin: 1.7rem 0.5rem auto;
+.provider {
+  background: blue;
 }
 
+.iconPosition {
+  margin: 1.7rem 0.5rem auto;
+}
+.iconsTitle {
+  font-size: 1.2rem;
+  color: var(--white);
+  bottom: 2rem;
+  position: absolute;
+}
 .circle1 {
   background: var(--amber-700);
 }
@@ -74,4 +82,15 @@
 
 .btgbutton {
   background: var(--blue-600);
+  border-radius: 8px;
+  height: 50px;
+  font-weight: bold;
+  display: block;
+  text-decoration: none;
+  width: 40%;
+  margin: 2rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
 }
