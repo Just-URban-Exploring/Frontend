@@ -1,6 +1,10 @@
 import React from "react";
 import { useState } from "react";
 import Audioguide from "../components/Audioguide.jsx";
+import '../css/registration.css';
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
+
 // import avatar1 from "../img/avatar-blue-green.png";
 // import avatar2 from "../img/avatar-blue-pink.png";
 // import avatar3 from "../img/avatar-green-yellow.png";
@@ -9,6 +13,10 @@ import Audioguide from "../components/Audioguide.jsx";
 // import avatar6 from "../img/avatar-yellow-pink.png";
 
 export function Registration() {
+
+
+  const [matchPwd, setMatchPwd] = useState("");
+
   // POST user -----
   const INITIAL = 
   {
@@ -45,185 +53,259 @@ const [user, setUser] = useState(INITIAL);
   return (
     <div>
       <h1 className="register">Registrierung</h1>
-      <form action="" className="mt-4" onSubmit={handleSubmit}>
-        {/* Profilname */}
-        <div className="mb-3">
-          <label htmlFor="profilname" className="form-label">
-            Profilname
-          </label>
-          <input
-            value={user.profilname}
+      <Box
+        className="card"
+        component="form"
+        sx={{
+          "& .MuiTextField-root": { mt: 2 },
+        }}
+        noValidate
+        autoComplete="off"
+        onSubmit={handleSubmit}
+      >
+        {/* <form action="" className="mt-4" > */}
+          {/* Profilname */}
+          <div className="mb-3">
+          <TextField
+            htmlFor="profilname"
             type="text"
-            name="profilname"
-            className="form-control"
             id="profilname"
-            aria-describedby="profileNameHelp"
-            placeholder="profilname"
+            label="Profilname"
+            fullWidth
+            className="form-input"
+            value={user.profilname}
             onChange={handleChange}
-          />
-        </div>
+          ></TextField>
 
-        {/* Stadt */}
-       <div className="mb-3">
-          <label htmlFor="stadt" className="form-label">
-            Stadt
-          </label>
-          <input
-            value={user.stadt}
+            {/* <label htmlFor="profilname" className="form-label">
+              Profilname
+            </label>
+            <input
+              value={user.profilname}
+              type="text"
+              name="profilname"
+              className="form-control"
+              id="profilname"
+              aria-describedby="profileNameHelp"
+              placeholder="profilname"
+              onChange={handleChange}
+            /> */}
+          </div>
+
+          {/* Stadt */}
+          <div className="mb-3">
+          <TextField
+            htmlFor="stadt"
             type="text"
-            className="form-control"
             id="stadt"
-            aria-describedby="cityHelp"
-            placeholder="stadt"
+            label="Stadt"
+            fullWidth
+            className="form-input"
+            value={user.stadt}
             onChange={handleChange}
-          />
-         </div>
-        {/* E-Mail */}
-        <div className="mb-3">
-          <label htmlFor="email" className="form-label">
-            E-Mail-Adresse
-          </label>
-          <input
-            value={user.email}
+          ></TextField>
+            {/* <label htmlFor="stadt" className="form-label">
+              Stadt
+            </label>
+            <input
+              value={user.stadt}
+              type="text"
+              className="form-control"
+              id="stadt"
+              aria-describedby="cityHelp"
+              placeholder="stadt"
+              onChange={handleChange}
+            /> */}
+            </div>
+          {/* E-Mail */}
+          <div className="mb-3">
+          <TextField
+            htmlFor="email"
             type="email"
-            className="form-control"
             id="email"
-            aria-describedby="emailHelp"
-            placeholder="email"
+            label="Email"
+            fullWidth
+            className="form-input"
+            value={user.email}
             onChange={handleChange}
-          />
-        </div>
+          ></TextField>
+            {/* <label htmlFor="email" className="form-label">
+              E-Mail-Adresse
+            </label>
+            <input
+              value={user.email}
+              type="email"
+              className="form-control"
+              id="email"
+              aria-describedby="emailHelp"
+              placeholder="email"
+              onChange={handleChange}
+            /> */}
+          </div>
 
-        {/* Passwort */}
-        <div className="mb-3">
-          <label htmlFor="passwort" className="form-label">
-            Passwort
-          </label>
-          <input
-            value={user.passwort}
-            type="password"
-            className="form-control"
+    {/*-----Passwort Start----------------------------------------------------------------*/}
+            <div>
+            <TextField
+            htmlFor="passwort"
+            type="text"
             id="passwort"
-            aria-describedby="passwordHelp"
-            placeholder="passwort"
+            label="Passwort"
+            fullWidth
+            className="form-input"
+            value={user.passwort}
             onChange={handleChange}
-          />
-        </div>
-        {/* Passwort wiederholen */}
-{/*        <div className="mb-3">
-          <label htmlFor="InputrepeatPassword" className="form-label">
-            Passwort wiederholen
-          </label>
-          <input
-            type="password"
-            className="form-control"
-            id="InputrepeatPassword"
-            aria-describedby="repeatPasswordHelp"
-            onChange={handleChange}
-          />
-        </div>
-*/}
-        {/* A V A T A R */}
-        {/* <div>
-          <h4>Wähle dein Profilbild aus:</h4>
-          <img
-            src={avatar1}
-            alt="avatar"
-            className="avatar"
-            id="avatar1"
-            onClick={handleChange}
-          />
-          <img
-            src={avatar2}
-            alt="avatar"
-            className="avatar"
-            id="avatar2"
-            onClick={handleChange}
-          />
-          <img
-            src={avatar3}
-            alt="avatar"
-            className="avatar"
-            id="avatar3"
-            onClick={handleChange}
-          />
-          <img
-            src={avatar4}
-            alt="avatar"
-            className="avatar"
-            id="avatar4"
-            onClick={handleChange}
-          />
-          <img
-            src={avatar5}
-            alt="avatar"
-            className="avatar"
-            id="avatar5"
-            onClick={handleChange}
-          />
-          <img
-            src={avatar6}
-            alt="avatar"
-            className="avatar"
-            id="avatar6"
-            onClick={handleChange}
-          />
-          <div className="icons-verweis">
-            {" "}
-            Icons erstellt von{" "}
-            <a
-              href="https://www.flaticon.com/de/autoren/secret-studio"
-              title="Secret Studio"
-            >
+          ></TextField>
+              {/* <label htmlFor="passwort">
+                Passwort:
+              
+              </label>
+              <input
+                type="text"
+                id="passwort"
+                onChange={handleChange}
+                value={user.passwort}
+                aria-describedby="pwdnote"
+                placeholder="Passwort"
+              /> */}
+            </div>
+            <div>
+            <TextField
+            htmlFor="passwortwiederholen"
+            type="text"
+            id="passwortwiederholen"
+            label="Passwort wiederholen"
+            fullWidth
+            className="form-input"
+            value={matchPwd}
+            onChange= {(e) => setMatchPwd(e.target.value)}
+            
+          ></TextField>
+              {/* <label htmlFor="confirm_pwd">
+                Passwort wiederholen:
+              
+              </label>
+              <input
+                type="text"
+                id="confirm_pwd"
+                onChange={(e) => setMatchPwd(e.target.value)}
+                value={matchPwd}
+                aria-describedby="confirmnote"
+                placeholder="Passwortwiederholung"
+              /> */}
+            </div>
+            
+    {/*-----Passwort Ende----------------------------------------------------------------*/}
+
+          {/* A V A T A R */}
+          {/* <div>
+            <h4>Wähle dein Profilbild aus:</h4>
+            <img
+              src={avatar1}
+              alt="avatar"
+              className="avatar"
+              id="avatar1"
+              onClick={handleChange}
+            />
+            <img
+              src={avatar2}
+              alt="avatar"
+              className="avatar"
+              id="avatar2"
+              onClick={handleChange}
+            />
+            <img
+              src={avatar3}
+              alt="avatar"
+              className="avatar"
+              id="avatar3"
+              onClick={handleChange}
+            />
+            <img
+              src={avatar4}
+              alt="avatar"
+              className="avatar"
+              id="avatar4"
+              onClick={handleChange}
+            />
+            <img
+              src={avatar5}
+              alt="avatar"
+              className="avatar"
+              id="avatar5"
+              onClick={handleChange}
+            />
+            <img
+              src={avatar6}
+              alt="avatar"
+              className="avatar"
+              id="avatar6"
+              onClick={handleChange}
+            />
+            <div className="icons-verweis">
               {" "}
-              Secret Studio{" "}
-            </a>{" "}
-            from{" "}
-            <a href="https://www.flaticon.com/de/" title="Flaticon">
-              www.flaticon.com'
-            </a>
-          </div>
-        </div> */}
+              Icons erstellt von{" "}
+              <a
+                href="https://www.flaticon.com/de/autoren/secret-studio"
+                title="Secret Studio"
+              >
+                {" "}
+                Secret Studio{" "}
+              </a>{" "}
+              from{" "}
+              <a href="https://www.flaticon.com/de/" title="Flaticon">
+                www.flaticon.com'
+              </a>
+            </div>
+          </div> */}
 
-        {/* A U D I O G U I D E */}
-        <div className="audio-guide-choice">
+          {/* A U D I O G U I D E */}
+          <div className="audio-guide-choice">
+            <span>
+              Möchtest du den Audioguide einschalten? Voreingestellt ist dieser auf "Aus"!
+            </span>
+            <Audioguide />
+          </div>
+
+          {/* A B O N N E M E N T  A U S W Ä H L E N */}
+          <div className="abo-cards-main">
+            <div className="abo-card">
+              <h3>3 €</h3>
+              <h5>1 Tag</h5>
+            </div>
+            <div className="abo-card">
+              <h3>5 €</h3>
+              <h5>1 Monat</h5>
+            </div>
+            <div className="abo-card">
+              <h3>20 €</h3>
+              <h5>1 Jahr</h5>
+            </div>
+          </div>
+
+          {/* P A Y P A L */}
+          <div className="paypal">
+            <button>Paypal</button>
+          </div>
+
+          {/* "R E G I S T R I E R E N" - B U T T O N  */}
           <span>
-            Möchtest du den Audioguide einschalten? Voreingestellt ist dieser auf "Aus"!
+            Mit dem Klick auf den “Jetzt registrieren!” Button erlaube ich dieser
+            App den Zugriff auf meinen Standort. Ich stimme den{" "}
+            <a href="#">AGB</a> und <a href="#">Datenschutzlinien</a> zu.
           </span>
-          <Audioguide />
-        </div>
-
-        {/* A B O N N E M E N T  A U S W Ä H L E N */}
-        <div className="abo-cards-main">
-          <div className="abo-card">
-            <h3>3 €</h3>
-            <h5>1 Tag</h5>
-          </div>
-          <div className="abo-card">
-            <h3>5 €</h3>
-            <h5>1 Monat</h5>
-          </div>
-          <div className="abo-card">
-            <h3>20 €</h3>
-            <h5>1 Jahr</h5>
-          </div>
-        </div>
-
-        {/* P A Y P A L */}
-        <div className="paypal">
-          <button>Paypal</button>
-        </div>
-
-        {/* "R E G I S T R I E R E N" - B U T T O N  */}
-        <span>
-          Mit dem Klick auf den “Jetzt registrieren!” Button erlaube ich dieser
-          App den Zugriff auf meinen Standort. Ich stimme den{" "}
-          <a href="#">AGB</a> und <a href="#">Datenschutzlinien</a> zu.
-        </span>
-        <button className="btn-primary" type="submit">
-          Jetzt Registrieren!
-        </button>
-      </form>
+          <button 
+            className="btn-primary regButton" 
+            type="submit"
+            disabled={
+              user.passwort !== matchPwd
+                ? true
+                : false
+            }
+            >
+            Jetzt Registrieren!
+          </button>
+        {/* </form> */}
+      </Box>
     </div>
   );
 }
