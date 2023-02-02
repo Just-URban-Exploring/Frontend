@@ -188,9 +188,7 @@ const [user, setUser] = useState(INITIAL);
         {/* A U D I O G U I D E */}
         <div className="audio-guide-choice">
           <span>
-            Möchtest du den Audioguide jetzt schon als Standarteinstellung
-            festlegen? Oder später selbst auswählen welche Texte du hören
-            möchtest?
+            Möchtest du den Audioguide einschalten? Voreingestellt ist dieser auf "Aus"!
           </span>
           <Audioguide />
         </div>

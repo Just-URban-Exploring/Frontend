@@ -1,0 +1,7 @@
+.inactive {
+  background-color: rgb(230, 85, 85);
+}
+
+.active {
+  background-color: rgb(161, 236, 106);
+}
