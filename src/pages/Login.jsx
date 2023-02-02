@@ -42,9 +42,10 @@ export function Login() {
         <div className="forgot-pw">
           <a href="/forgot-pw">Passwort vergessen?</a>
         </div>
-        <button type="submit" className={styles.btngoogle}>
+        {/*  <button type="submit" className={styles.btngoogle}>
+        <button type="submit" className="btn-google">
           Mit Google anmelden
-        </button>
+        </button> */}
       </Box>
     </div>
   );
