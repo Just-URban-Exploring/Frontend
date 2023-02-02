@@ -1,0 +1,22 @@
+.iconPosition {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  color: var(--white);
+}
+
+.titlePosition,
+.titlePositionPlaces {
+  position: absolute;
+  top: 1.3rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100px;
+  height: 100px;
+  color: var(--white);
+}
+
+.titlePositionPlaces {
+  width: 200px;
+}

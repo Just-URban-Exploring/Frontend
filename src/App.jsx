@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-import "./css/global.css";
-import { Navbar } from "./components/Navbar.jsx";
+import "./css/Global.css";
+import { Navbar } from "./components/Navbar/Navbar.jsx";
 import { Profile } from "./pages/Profile.jsx";
 import { FavoritePlaces } from "./pages/FavoritePlaces.jsx";
 import { Einstellung } from "./pages/Einstellung.jsx";

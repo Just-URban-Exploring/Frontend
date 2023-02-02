@@ -1,3 +1,5 @@
+import { NavbarEinstellung } from "../components/Navbar/NavbarPages.jsx";
+
 export function Einstellung() {
-  return <h1>Einstellung</h1>;
+  return <NavbarEinstellung />;
 }

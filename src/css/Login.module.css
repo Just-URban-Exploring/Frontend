@@ -1,0 +1,44 @@
+.card {
+  padding: 2rem;
+  margin: 10px;
+  color: white;
+  background-color: var(--gray-200);
+  border-radius: 10px;
+}
+
+.styleinput {
+  margin: 0.5rem;
+  padding: 0.5rem;
+}
+
+.forminput {
+  background-color: white;
+  border-radius: 10px;
+  color: white;
+  width: 75vw;
+}
+
+.forgotpw {
+  margin: 5px 0px 10px 0px;
+  text-align: center;
+  color: var(--blue-600);
+  font-size: 0.8rem;
+}
+
+a:visited {
+  /* color: var(--blue-600); */
+  background-color: transparent;
+  text-decoration: none;
+}
+.btnprimary {
+  background-color: var(--blue-600);
+  color: white;
+  border-radius: 5px;
+  width: 75vw;
+  padding: 8px;
+  margin: 20px 0px 20px 0px;
+  font-size: 0.9rem;
+  font-weight: 400;
+  border: none;
+  box-shadow: 2px 2px #acacac;
+}

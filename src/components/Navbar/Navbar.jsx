@@ -1,9 +1,10 @@
-import styles from "../css/Navbar.module.css";
+import styles from "../../css/Navbar.module.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { FaBars, FaTimes, FaUser } from "react-icons/fa";
-import { MdFavorite, MdSettings, MdLogout } from "react-icons/md";
-import { HiLocationMarker } from "react-icons/hi";
+import { FaBars, FaTimes, FaRegUser } from "react-icons/fa";
+
+import { BsHeart } from "react-icons/bs";
+import { MdOutlinePlace, MdOutlineSettings, MdLogout } from "react-icons/md";
 
 export function Navbar() {
   const [isAppActive, setIsAppActive] = useState(false);
@@ -11,7 +12,7 @@ export function Navbar() {
   return (
     <>
       <nav className={styles.navbar}>
-        <h3 className="Logo">Logo</h3>
+        {/*  <h3 className="Logo">Logo</h3> */}
         <ul
           className={isAppActive ? styles.navlinksapp : styles.navlinks}
           onClick={() => setIsAppActive(false)}
@@ -20,7 +21,7 @@ export function Navbar() {
             <li className={styles.iconsmenu}>
               {" "}
               <div>
-                <FaUser />{" "}
+                <FaRegUser size={40} />{" "}
               </div>
               <div>Profil </div>
             </li>
@@ -29,7 +30,7 @@ export function Navbar() {
             <li className={styles.iconsmenu}>
               {" "}
               <div>
-                <MdFavorite className={styles.iconfavorite} />
+                <BsHeart size={35} className={styles.iconfavorite} />
               </div>
               <div>Favorite Places</div>
             </li>
@@ -38,7 +39,7 @@ export function Navbar() {
             <li className={styles.iconsmenu}>
               {" "}
               <div>
-                <HiLocationMarker />
+                <MdOutlinePlace size={40} />
               </div>
               <div>Standort</div>
             </li>
@@ -46,7 +47,10 @@ export function Navbar() {
           <Link to="/einstellung" className={styles.einstellung}>
             <li className={styles.iconsmenu}>
               <div>
-                <MdSettings className={styles.iconeinstellung} />
+                <MdOutlineSettings
+                  size={40}
+                  className={styles.iconeinstellung}
+                />
               </div>
               <div>Einstellung</div>
             </li>
@@ -55,9 +59,9 @@ export function Navbar() {
             <Link to="*" className={styles.ausloggen}>
               <li className={styles.iconsmenu}>
                 <div>
-                  <MdLogout className={styles.ausloggen} />
+                  <MdLogout size={40} className={styles.ausloggen} />
                 </div>
-                <div>Ausloggen</div>
+                <div className={styles.navbarAusloggen}>Ausloggen</div>
               </li>
             </Link>
           </div>
