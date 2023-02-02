@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/login.css";
+import styles from "../css/Login.module.css";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 
@@ -9,8 +9,8 @@ export function Login() {
       <h1>Login</h1>
       <div>Logo</div>
       <Box
-        className="card"
-        component="form"
+        className={styles.card}
+        component={styles.form}
         sx={{
           "& .MuiTextField-root": { mt: 2 },
         }}
@@ -24,7 +24,7 @@ export function Login() {
             id="oulined-email-input"
             label="E-Mail"
             fullWidth
-            className="form-input"
+            className={styles.forminput}
           ></TextField>
           <TextField
             htmlFor="passwort"
@@ -33,16 +33,16 @@ export function Login() {
             type="password"
             autoComplete="current-password"
             fullWidth
-            className="form-input"
+            className={styles.forminput}
           ></TextField>
         </div>
-        <button type="submit" className="btn-primary">
+        <button type="submit" className={styles.btnprimary}>
           Anmelden
         </button>
         <div className="forgot-pw">
           <a href="/forgot-pw">Passwort vergessen?</a>
         </div>
-        <button type="submit" className="btn-google">
+        <button type="submit" className={styles.btngoogle}>
           Mit Google anmelden
         </button>
       </Box>

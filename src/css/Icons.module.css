@@ -87,10 +87,10 @@
   font-weight: bold;
   display: block;
   text-decoration: none;
-  width: 40%;
+  width: 20%;
   margin: 2rem auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.65rem;
+  color: var(--white);
 }

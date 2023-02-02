@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
-import "../css/map.css";
+import "../css/Map.css";
 
 const Map = () => {
   const [userLocation, setUserLocation] = useState(null);
@@ -11,8 +11,8 @@ const Map = () => {
       return;
     }
 
-    navigator.geolocation.getCurrentPosition(
-      position => setUserLocation([position.coords.latitude, position.coords.longitude])
+    navigator.geolocation.getCurrentPosition((position) =>
+      setUserLocation([position.coords.latitude, position.coords.longitude])
     );
   }, []);
 
@@ -30,9 +30,7 @@ const Map = () => {
       />
       {userLocation && (
         <Marker position={userLocation}>
-          <Popup>
-            Deine aktuelle Position
-          </Popup>
+          <Popup>Deine aktuelle Position</Popup>
         </Marker>
       )}
     </MapContainer>
