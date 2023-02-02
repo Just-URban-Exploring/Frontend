@@ -12,9 +12,19 @@ const markers = [
     extendedInfo: "Berlin verdankt das Brandenburger Tor König Friedrich Wilhelm II., der hatte das große Sandsteintor in Auftrag gegeben um einen würdevollen Abschluss des Pracht- Boulevards Unter den Linden zu haben. Es entstand in den Jahren 1788 bis 1791 nach Entwürfen von Carl Gotthard Langhans d.Ä., der sich stark an den Propyläen der Athener Akropolis orientierte. Zwei Jahre nach Fertigstellung des Brandenburger Tors wurde die Quadriga, ein Wagen der von vier Pferden gezogen wird, auf das Dach des Tores gesetzt."
   },
   {
-    name: "Reichstagsgebäude",
-    location: [52.519171, 13.377780]
-  },
+    name: "Quadriga auf dem Brandenburger Tor",
+    location: [52.51629872917535, 13.37805398629472],
+    info: "Symbol der Einheit",
+    extendedInfo:
+    "Die Quadriga auf dem Brandenburger Tor ist eines der bekanntesten Wahrzeichen Berlins und Deutschlands. Die viergespannte Pferdekutsche mit der Siegesgöttin ist ein Symbol für den Sieg und die Einheit des Landes."
+    },
+    {
+    name: "Reichstag",
+    location: [52.519171, 13.377722],
+    info: "Sitz des Deutschen Bundestages",
+    extendedInfo:
+    "Der Reichstag ist ein historisches Gebäude in Berlin und seit 1999 Sitz des Deutschen Bundestages. Es war früher das Parlamentsgebäude des Deutschen Kaiserreichs und des Deutschen Reiches und ist heute ein wichtiger Touristenort."
+    },
   {
     name: "Tiegarten",
     location: [52.513083, 13.358056]
@@ -115,5 +125,21 @@ const Markers = () => {
   );
 };
 
-export default Markers;
+const MarkerStyled = () => {
+  return (
+    <div className="markers-container">
+      <Markers />
+      <style>
+        {`
+          .markers-container {
+            width: 100%;
+            height: 100%;
+          }
+        `}
+      </style>
+    </div>
+  );
+};
+
+export default MarkerStyled;
 
