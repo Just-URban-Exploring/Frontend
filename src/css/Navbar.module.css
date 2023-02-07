@@ -2,41 +2,6 @@ body {
   background: var(--gray-600);
 }
 
-/* .navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  padding: 1.25rem 5rem;
-  height: 75px;
-  color: var(--white);
-  border-bottom: 1px solid var(--gray-900);
-}
-
-.navlinks {
-  display: flex;
-  justify-content: flex-end;
-  list-style: none;
-  width: 75%;
-}
-
-.profile,
-.favoriteplaces,
-.standort,
-.einstellung {
-  text-decoration: none;
-  margin: 0 10px;
-  color: var(--white);
-  padding: 10px 20px;
-  cursor: pointer;
-}
-
-.menuiconapp {
-  display: none;
-} */
-
-@media screen and (max-width: 780px) {
-}
-
 .navbar {
   border-bottom: 1px solid var(--gray-900);
   padding: 1.25rem 5rem;
@@ -89,16 +54,11 @@ ul li {
 .menuiconapp {
   display: block;
   position: absolute;
-  background: none;
   font-size: 30px;
   color: var(--white);
   outline: none;
   top: 15px;
   right: 25px;
-}
-.menuiconfatimes,
-.menuiconfabars {
-  background: none;
 }
 
 .iconsmenu {
