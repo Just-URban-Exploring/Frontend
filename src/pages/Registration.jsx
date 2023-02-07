@@ -1,5 +1,5 @@
-import React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Audioguide from "../components/Audioguide.jsx";
 import "../css/registration.css";
 import Box from "@mui/material/Box";
@@ -288,7 +288,14 @@ export function Registration() {
         <span>
           Mit dem Klick auf den “Jetzt registrieren!” Button erlaube ich dieser
           App den Zugriff auf meinen Standort. Ich stimme den{" "}
-          <a href="#">AGB</a> und <a href="#">Datenschutzlinien</a> zu.
+          <Link to="/agb" target="_blank">
+            AGB
+          </Link>{" "}
+          und{" "}
+          <Link to="/datenschutz" target="_blank">
+            Datenschutzrichtlinien
+          </Link>{" "}
+          zu.
         </span>
         <button
           className="btn-primary regButton"
