@@ -7,10 +7,7 @@ import "../css/Map.css";
 const Map = () => {
   const [userLocation, setUserLocation] = useState(null);
   const [center, setCenter] = useState([52.51629872917535, 13.37805398629472]);
-  const [markers, setMarkers] = useState([
-    { id: 1, position: [51.5, -0.09], popupText: "Marker 1" },
-    { id: 2, position: [51.51, -0.08], popupText: "Marker 2" },
-  ]);
+  const [markers, setMarkers] = useState([]);
 
   useEffect(() => {
     if (!navigator.geolocation) {

@@ -155,41 +155,60 @@ const markers = [
   
 const Markers = () => {
   const [showInfo, setShowInfo] = useState(false);
-    const customIcon = L.icon({
+  const [liked, setLiked] = useState({}); // add this state to keep track of liked status of each marker
+
+  const customIcon = L.icon({
     iconUrl: markers[0].icon,
-    iconSize:     [38, 38], // size of the icon
-    iconAnchor:   [22, 38], // point of the icon which will correspond to marker's location
-    shadowAnchor: [4, 62],  // the same for the shadow
-    popupAnchor:  [-3, -38] // point from which the popup should open relative to the iconAnchor
-});
-  
-  return (
-  <>
-  {markers.map(marker => (
-  <Marker key={marker.name} position={marker.location} icon={customIcon}>
-  
-  <Popup>
- 
-  <p>{marker.name}</p>
-  {showInfo ? <p>{marker.extendedInfo}</p> : <p>{marker.info}</p>}
-  <button onClick={() => setShowInfo(!showInfo)}
-  style={{
-  backgroundColor: "lightblue",
-  border: "1px solid #333",
-  padding: "8px 16px",
-  fontSize: "14px",
-  borderRadius: "5px",
-  cursor: "pointer",
-  }}
-  >
-  Mehr Information
-  </button>
-  </Popup>
-  </Marker>
-  ))}
-  </>
-  );
+    iconSize:     [38, 38],
+    iconAnchor:   [22, 38],
+    shadowAnchor: [4, 62],
+    popupAnchor:  [-3, -38]
+  });
+
+  const handleLike = (markerName) => {
+    setLiked({ ...liked, [markerName]: !liked[markerName] });
+    // Das an's backend, glaube, oder nicht, keine Ahung, HELP!!!! 
   };
-  
-  export default Markers;
+
+  return (
+    <>
+      {markers.map(marker => (
+        <Marker key={marker.name} position={marker.location} icon={customIcon}>
+          <Popup>
+            <p>{marker.name}</p>
+            {showInfo ? <p>{marker.extendedInfo}</p> : <p>{marker.info}</p>}
+            <button
+              onClick={() => handleLike(marker.name)}
+              style={{
+                backgroundColor: liked[marker.name] ? 'red' : 'lightblue', // change color based on liked status
+                border: `2px solid ${liked[marker.name] ? 'red' : 'lightblue'}`,
+                padding: "8px 8px",
+                fontSize: "15px",
+                borderRadius: "25px",
+                cursor: "pointer",
+              }}
+            >
+              {liked[marker.name] ? 'Liked' : 'Like'}
+            </button>
+            <button onClick={() => setShowInfo(!showInfo)}
+              style={{
+                backgroundColor: "lightblue",
+                border: "2px solid lightblue",
+                padding: "8px 8px",
+                fontSize: "15px",
+                borderRadius: "25px",
+                cursor: "pointer",
+              }}
+            >
+              Mehr Information
+            </button>
+          </Popup>
+        </Marker>
+      ))}
+    </>
+  );
+};
+
+export default Markers;
+
 
