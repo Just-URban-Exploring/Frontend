@@ -10,12 +10,20 @@ import { IconsInfoPage } from "./pages/IconsInfosPage.jsx";
 import { Icons } from "./components/Icons.jsx";
 import Map from "./components/Map.jsx";
 import { Login } from "./pages/Login.jsx";
+import { Main } from "./pages/Main-Page.jsx";
+import { NextDestination } from "./components/NextDestination.jsx";
 
 export function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="*" element={<Navbar to="/" />}>
+          {" "}
+        </Route>
+        <Route path="/main" element={<Main />}>
+          {" "}
+        </Route>
+        <Route path="/iconsoptions" element={<NextDestination />}>
           {" "}
         </Route>
         <Route path="/profile" element={<Profile />}>

@@ -13,11 +13,23 @@ const Map = () => {
     if (!navigator.geolocation) {
       return;
     }
-
-    navigator.geolocation.getCurrentPosition(
+    const options = {
+      maximumAge: 10000,
+      enableHighAccuracy: false,
+      timeout: 15000,
+    };
+    //   navigator.geolocation.getCurrentPosition(
+    //     (position) =>
+    //       setUserLocation([position.coords.latitude, position.coords.longitude]),
+    //     (error) => console.error(error),
+    //     options
+    //   );
+    // }, []);
+    navigator.geolocation.watchPosition(
       (position) =>
         setUserLocation([position.coords.latitude, position.coords.longitude]),
-      (error) => console.error(error)
+      (error) => console.error(error),
+      options
     );
   }, []);
 
