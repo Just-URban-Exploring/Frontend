@@ -5,13 +5,15 @@ import L from "leaflet";
 
 
 
+
 const markers = [
   {
     name: "Brandenburger Tor",
     location: [52.516275, 13.377704], 
     info: "Berlin verdankt das Brandenburger Tor König Friedrich Wilhelm II.",
     extendedInfo: "Berlin verdankt das Brandenburger Tor König Friedrich Wilhelm II., der hatte das große Sandsteintor in Auftrag gegeben um einen würdevollen Abschluss des Pracht- Boulevards Unter den Linden zu haben. Es entstand in den Jahren 1788 bis 1791 nach Entwürfen von Carl Gotthard Langhans d.Ä., der sich stark an den Propyläen der Athener Akropolis orientierte. Zwei Jahre nach Fertigstellung des Brandenburger Tors wurde die Quadriga, ein Wagen der von vier Pferden gezogen wird, auf das Dach des Tores gesetzt.",
-    icon: "https://disdukcapil.lampungtengahkab.go.id/upload/strukturorganisasi.jpg"
+    icon: "#",
+    audioUrl: "https://dl.sndup.net/j59w/Berlin%20verdankt%20das%20Brandenburger%20Tor%20K%C3%B6%20(1).mp3"
   },
   {
     name: "Quadriga auf dem Brandenburger Tor",
@@ -151,11 +153,11 @@ const markers = [
   },
 ];
 
-
-  
 const Markers = () => {
   const [showInfo, setShowInfo] = useState(false);
-  const [liked, setLiked] = useState({}); // add this state to keep track of liked status of each marker
+  const [liked, setLiked] = useState({});
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [currentAudio, setCurrentAudio] = useState(null);
 
   const customIcon = L.icon({
     iconUrl: markers[0].icon,
@@ -167,7 +169,18 @@ const Markers = () => {
 
   const handleLike = (markerName) => {
     setLiked({ ...liked, [markerName]: !liked[markerName] });
-    // Das an's backend, glaube, oder nicht, keine Ahung, HELP!!!! 
+  };
+
+  const handlePlayPause = (audioUrl) => {
+    if (isPlaying) {
+      currentAudio.pause();
+      setIsPlaying(false);
+    } else {
+      const audio = new Audio(audioUrl);
+      audio.play();
+      setCurrentAudio(audio);
+      setIsPlaying(true);
+    }
   };
 
   return (
@@ -180,7 +193,7 @@ const Markers = () => {
             <button
               onClick={() => handleLike(marker.name)}
               style={{
-                backgroundColor: liked[marker.name] ? 'red' : 'lightblue', // change color based on liked status
+                backgroundColor: liked[marker.name] ? 'red' : 'lightblue',
                 border: `2px solid ${liked[marker.name] ? 'red' : 'lightblue'}`,
                 padding: "8px 8px",
                 fontSize: "15px",
@@ -202,6 +215,11 @@ const Markers = () => {
             >
               Mehr Information
             </button>
+            <br />
+            <br />
+            <button onClick={() => handlePlayPause(marker.audioUrl)}>
+              {isPlaying ? 'Pause' : 'Play'}
+            </button>
           </Popup>
         </Marker>
       ))}
@@ -209,6 +227,4 @@ const Markers = () => {
   );
 };
 
-export default Markers;
-
-
+export default Markers

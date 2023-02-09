@@ -3,433 +3,484 @@ import React from "react";
 const Datenschutz = () => {
   return (
     <div>
-      <h1>Privacy Policy</h1>
-      <p>Last updated: February 07, 2023</p>
+      <h1>Datenschutzerklärung</h1>
       <p>
-        This Privacy Policy describes Our policies and procedures on the
-        collection, use and disclosure of Your information when You use the
-        Service and tells You about Your privacy rights and how the law protects
-        You.
-      </p>
-      <p>
-        We use Your Personal data to provide and improve the Service. By using
-        the Service, You agree to the collection and use of information in
-        accordance with this Privacy Policy. This Privacy Policy has been
-        created with the help of the{" "}
+        Letzte Aktualisierung: 07.02.2023 Diese Datenschutzrichtlinie beschreibt
+        unsere Richtlinien und Verfahren für die Sammlung, Verwendung und
+        Offenlegung Ihrer Informationen, wenn Sie den Service nutzen, und
+        informiert Sie über Ihre Datenschutzrechte und wie das Gesetz Sie
+        schützt. Sie schützt. Wir verwenden Ihre persönlichen Daten zur
+        Bereitstellung und Verbesserung des Dienstes. Durch die Nutzung des
+        Dienstes stimmen Sie der Sammlung und Nutzung von Informationen in in
+        Übereinstimmung mit dieser Datenschutzrichtlinie. Diese
+        Datenschutzrichtlinie wurde mit Hilfe des{" "}
         <a
           href="https://www.privacypolicies.com/privacy-policy-generator/"
           target="_blank"
         >
           Privacy Policy Generator
-        </a>
-        .
+        </a>{" "}
+        erstellt .
       </p>
-      <h1>Interpretation and Definitions</h1>
+      <h1>Interpretation und Definitionen</h1>
       <h2>Interpretation</h2>
       <p>
-        The words of which the initial letter is capitalized have meanings
-        defined under the following conditions. The following definitions shall
-        have the same meaning regardless of whether they appear in singular or
-        in plural.
+        Die Wörter, deren Anfangsbuchstaben groß geschrieben sind, haben die
+        Bedeutung unter den folgenden Bedingungen definiert. Die folgenden
+        Definitionen haben haben die gleiche Bedeutung, unabhängig davon, ob sie
+        im Singular oder im Plural.
       </p>
-      <h2>Definitions</h2>
-      <p>For the purposes of this Privacy Policy:</p>
+      <h2>Definitionen</h2>
+      <p>Im Sinne dieser Datenschutzerklärung:</p>
       <ul>
         <li>
           <p>
-            <strong>Account</strong> means a unique account created for You to
-            access our Service or parts of our Service.
+            <strong>Profil</strong> bedeutet ein einzigartiges Konto, das für
+            Sie erstellt wurde, um Zugang zu unserem Dienst oder zu Teilen
+            unseres Dienstes.
           </p>
         </li>
         <li>
           <p>
-            <strong>Affiliate</strong> means an entity that controls, is
-            controlled by or is under common control with a party, where
-            &quot;control&quot; means ownership of 50% or more of the shares,
-            equity interest or other securities entitled to vote for election of
-            directors or other managing authority.
+            <strong>Affiliate</strong> bedeutet ein Unternehmen, das eine Partei
+            kontrolliert, von ihr kontrolliert wird oder mit ihr unter
+            gemeinsamer Kontrolle steht, wobei &quote;Kontrolle&quote; bedeutet
+            Besitz von 50 % oder mehr der Aktien, Aktien oder anderen
+            stimmberechtigten Wertpapieren für die Wahl von Direktoren oder
+            anderen leitenden Angestellten.
           </p>
         </li>
         <li>
           <p>
-            <strong>Application</strong> refers to Tour Guide App, the software
-            program provided by the Company.
+            <strong>Anwendung</strong> bezieht sich auf Tour Guide App, das
+            Softwareprogramm Programm, das von der Gesellschaft bereitgestellt
+            wird.
           </p>
         </li>
         <li>
           <p>
-            <strong>Company</strong> (referred to as either &quot;the
-            Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in
-            this Agreement) refers to JURE, Berlin.
+            <strong>Unternehmen</strong> (bezieht sich auf &quot;das
+            Unternehmen&quot;, &quot;Wir&quot; oder &quot;Uns&quot; in dieser
+            Erklärung) verweist auf JURE, Berlin.
           </p>
         </li>
         <li>
           <p>
-            <strong>Country</strong> refers to: Berlin, Germany
+            <strong>Land</strong> bezieht sich auf: Berlin, Germany
           </p>
         </li>
         <li>
           <p>
-            <strong>Device</strong> means any device that can access the Service
-            such as a computer, a cellphone or a digital tablet.
+            <strong>Gerät</strong> ist jedes Gerät, das auf den Dienst zugreifen
+            kann wie z. B. ein Computer, ein Mobiltelefon oder ein digitales
+            Tablet.
           </p>
         </li>
         <li>
           <p>
-            <strong>Personal Data</strong> is any information that relates to an
-            identified or identifiable individual.
+            <strong>Personenbezogene Daten</strong> sind alle Informationen, die
+            sich auf eine identifizierte oder identifizierbare Person beziehen.
           </p>
         </li>
         <li>
           <p>
-            <strong>Service</strong> refers to the Application.
+            <strong>Service</strong> bezieht sich auf die Anwendung.
           </p>
         </li>
         <li>
           <p>
-            <strong>Service Provider</strong> means any natural or legal person
-            who processes the data on behalf of the Company. It refers to
-            third-party companies or individuals employed by the Company to
-            facilitate the Service, to provide the Service on behalf of the
-            Company, to perform services related to the Service or to assist the
-            Company in analyzing how the Service is used.
+            <strong>Service Anbieter</strong> ist jede natürliche oder
+            juristische Person die die Daten im Auftrag des Unternehmens
+            verarbeitet. Dies bezieht sich auf Drittunternehmen oder
+            Einzelpersonen, die von der Gesellschaft beauftragt werden, um den
+            Dienst zu erleichtern, den Dienst im Namen des Unternehmens zu
+            erbringen den Dienst im Namen des Unternehmens bereitzustellen,
+            Dienstleistungen im Zusammenhang mit dem Dienst Unternehmen bei der
+            Analyse der Nutzung des Dienstes zu unterstützen.
           </p>
         </li>
         <li>
           <p>
-            <strong>Usage Data</strong> refers to data collected automatically,
-            either generated by the use of the Service or from the Service
-            infrastructure itself (for example, the duration of a page visit).
+            <strong>Nutzungsdaten</strong> beziehen sich auf automatisch
+            erfasste Daten, die entweder durch die Nutzung des Dienstes oder
+            durch die Infrastruktur des Dienstes Infrastruktur selbst (z. B. die
+            Dauer eines Seitenbesuchs).
           </p>
         </li>
         <li>
           <p>
-            <strong>You</strong> means the individual accessing or using the
-            Service, or the company, or other legal entity on behalf of which
-            such individual is accessing or using the Service, as applicable.
+            <strong>Sie</strong> bedeutet die Person, die auf den Service
+            zugreift oder ihn nutzt Dienstes oder das Unternehmen oder eine
+            andere juristische Person, in deren Namen die Person, die auf den
+            Dienst zugreift oder ihn nutzt, sofern zutreffend.
           </p>
         </li>
       </ul>
-      <h1>Collecting and Using Your Personal Data</h1>
-      <h2>Types of Data Collected</h2>
-      <h3>Personal Data</h3>
+      <h1>Erfassung und Verwendung Ihrer persönlichen Daten</h1>
+      <h2>Arten von gesammelten Daten</h2>
+      <h3>Personenbezogene Daten</h3>
       <p>
-        While using Our Service, We may ask You to provide Us with certain
-        personally identifiable information that can be used to contact or
-        identify You. Personally identifiable information may include, but is
-        not limited to:
+        Während der Nutzung unseres Dienstes können wir Sie bitten, uns
+        bestimmte Informationen zu geben, die dazu verwendet werden können, Sie
+        zu kontaktieren oder Sie zu identifizieren. Persönlich identifizierbare
+        Informationen können unter anderem sein nicht beschränkt auf:
       </p>
       <ul>
         <li>
-          <p>Email address</p>
+          <p>E-Mail-Adresse</p>
         </li>
         <li>
-          <p>Usage Data</p>
+          <p>Nutzungsdaten</p>
         </li>
       </ul>
-      <h3>Usage Data</h3>
-      <p>Usage Data is collected automatically when using the Service.</p>
+      <h3>Nutzungsdaten</h3>
       <p>
-        Usage Data may include information such as Your Device's Internet
-        Protocol address (e.g. IP address), browser type, browser version, the
-        pages of our Service that You visit, the time and date of Your visit,
-        the time spent on those pages, unique device identifiers and other
-        diagnostic data.
+        Nutzungsdaten werden bei der Nutzung des Dienstes automatisch erfasst.
       </p>
       <p>
-        When You access the Service by or through a mobile device, We may
-        collect certain information automatically, including, but not limited
-        to, the type of mobile device You use, Your mobile device unique ID, the
-        IP address of Your mobile device, Your mobile operating system, the type
-        of mobile Internet browser You use, unique device identifiers and other
-        diagnostic data.
+        Zu den Nutzungsdaten können Informationen wie die
+        Internetprotokolladresse Ihres Geräts Protokoll-Adresse (z.B.
+        IP-Adresse), Browser-Typ, Browser-Version, die Seiten unseres Dienstes,
+        die Sie besuchen, die Uhrzeit und das Datum Ihres Besuchs, die auf
+        diesen Seiten verbrachte Zeit, eindeutige Gerätekennungen und andere
+        Diagnosedaten.
       </p>
       <p>
-        We may also collect information that Your browser sends whenever You
-        visit our Service or when You access the Service by or through a mobile
-        device.
+        Wenn Sie über ein mobiles Gerät auf den Dienst zugreifen, können wir
+        bestimmte Informationen automatisch erfassen, einschließlich, aber nicht
+        beschränkt auf den Typ des von Ihnen verwendeten Mobilgeräts, die
+        eindeutige ID Ihres Mobilgeräts, die IP-Adresse Ihres mobilen Geräts,Ihr
+        mobiles Betriebssystem, die Art des Typ des von Ihnen verwendeten
+        mobilen Internetbrowsers, eindeutige Gerätekennungen und andere
+        Diagnosedaten.
       </p>
-      <h3>Information Collected while Using the Application</h3>
       <p>
-        While using Our Application, in order to provide features of Our
-        Application, We may collect, with Your prior permission:
+        Wir können auch Informationen sammeln, die Ihr Browser sendet, wenn Sie
+        unseren Dienst besuchen oder wenn Sie über ein Mobilgerät auf den Dienst
+        Gerät zugreifen.
+      </p>
+      <h3>Während der Nutzung der Anwendung gesammelte Informationen</h3>
+      <p>
+        Während der Nutzung Unserer Anwendung, um Funktionen Unserer Anwendung
+        zur Verfügung zu stellen, können wir mit Ihrer vorherigen Zustimmung
+        Folgendes erfassen
       </p>
       <ul>
         <li>
-          <p>Information regarding your location</p>
+          <p>Informationen zu Ihrem Standort</p>
         </li>
         <li>
           <p>
-            Pictures and other information from your Device's camera and photo
-            library
+            Bilder und andere Informationen von der Kamera und der
+            Fotobibliothek Ihres Geräts
           </p>
         </li>
       </ul>
       <p>
-        We use this information to provide features of Our Service, to improve
-        and customize Our Service. The information may be uploaded to the
-        Company's servers and/or a Service Provider's server or it may be simply
-        stored on Your device.
+        Wir verwenden diese Informationen, um Funktionen unseres Dienstes
+        bereitzustellen, um unseren Dienst zu verbessern und anzupassen. Die
+        Informationen können auf die Server des Unternehmens und/oder den Server
+        eines Dienstanbieters hochgeladen werden oder einfach sein auf Ihrem
+        Gerät gespeichert.
       </p>
       <p>
-        You can enable or disable access to this information at any time,
-        through Your Device settings.
+        Sie können den Zugriff auf diese Informationen jederzeit aktivieren oder
+        deaktivieren, über Ihre Geräteeinstellungen.
       </p>
-      <h2>Use of Your Personal Data</h2>
-      <p>The Company may use Personal Data for the following purposes:</p>
+      <h2>Verwendung Ihrer personenbezogenen Daten</h2>
+      <p>
+        Das Unternehmen kann personenbezogene Daten für die folgenden Zwecke
+        verwenden:
+      </p>
       <ul>
         <li>
           <p>
-            <strong>To provide and maintain our Service</strong>, including to
-            monitor the usage of our Service.
+            <strong>Zur Bereitstellung und Wartung unseres Dienstes</strong>,
+            einschließlich der Überwachung der Nutzung unseres Dienstes.
           </p>
         </li>
         <li>
           <p>
-            <strong>To manage Your Account:</strong> to manage Your registration
-            as a user of the Service. The Personal Data You provide can give You
-            access to different functionalities of the Service that are
-            available to You as a registered user.
+            <strong>Um Ihr Konto zu verwalten:</strong> um Ihre Registrierung
+            als Benutzer des Dienstes zu verwalten. Die von Ihnen
+            bereitgestellten personenbezogenen Daten können Ihnen Zugriff auf
+            verschiedene Funktionen des Dienstes geben, die Ihnen als
+            registrierter Benutzer zur Verfügung stehen.
           </p>
         </li>
         <li>
           <p>
-            <strong>For the performance of a contract:</strong> the development,
-            compliance and undertaking of the purchase contract for the
-            products, items or services You have purchased or of any other
-            contract with Us through the Service.
+            <strong>Zur Erfüllung eines Vertrages:</strong> die Entwicklung,
+            Erfüllung und Durchführung des Kaufvertrages für die Produkte,
+            Artikel oder Dienstleistungen, die Sie gekauft haben, oder andere
+            Vertrag mit uns über den Dienst.
           </p>
         </li>
         <li>
           <p>
-            <strong>To contact You:</strong> To contact You by email, telephone
-            calls, SMS, or other equivalent forms of electronic communication,
-            such as a mobile application's push notifications regarding updates
-            or informative communications related to the functionalities,
-            products or contracted services, including the security updates,
-            when necessary or reasonable for their implementation.
+            <strong>Dich zu kontaktieren:</strong> kontaktieren Sie per E-Mail,
+            Telefon Anrufe, SMS oder andere gleichwertige Formen der
+            elektronischen Kommunikation, B. die Push-Benachrichtigungen einer
+            mobilen Anwendung bezüglich Updates oder informative Mitteilungen in
+            Bezug auf die Funktionalitäten, Produkte oder vertraglich
+            vereinbarte Dienstleistungen, einschließlich der Sicherheitsupdates,
+            wenn dies für ihre Umsetzung erforderlich oder angemessen ist.
           </p>
         </li>
         <li>
           <p>
-            <strong>To provide You</strong> with news, special offers and
-            general information about other goods, services and events which we
-            offer that are similar to those that you have already purchased or
-            enquired about unless You have opted not to receive such
-            information.
+            <strong>Zur Verfügung stellen</strong>von Neuigkeiten,
+            Sonderangeboten und allgemeinen Informationen über andere Waren,
+            Dienstleistungen und Veranstaltungen, die wir anbieten und die denen
+            ähneln, die Sie bereits gekauft oder nach denen Sie sich erkundigt
+            haben, es sei denn, Sie haben sich entschieden, solche nicht zu
+            erhalten Information.
           </p>
         </li>
         <li>
           <p>
-            <strong>To manage Your requests:</strong> To attend and manage Your
-            requests to Us.
+            <strong>Ihre Anfragen zu verwalten:</strong> Zur Teilnahme und
+            Verwaltung Ihrer Anfragen an uns.
           </p>
         </li>
         <li>
           <p>
-            <strong>For business transfers:</strong> We may use Your information
-            to evaluate or conduct a merger, divestiture, restructuring,
-            reorganization, dissolution, or other sale or transfer of some or
-            all of Our assets, whether as a going concern or as part of
-            bankruptcy, liquidation, or similar proceeding, in which Personal
-            Data held by Us about our Service users is among the assets
-            transferred.
+            <strong>Für Geschäftszwecke:</strong> Wir können Ihre Informationen
+            verwenden, um eine Fusion, Veräußerung, Umstrukturierung,
+            Reorganisation, Auflösung oder einen anderen Verkauf oder eine
+            Übertragung einiger oder aller unserer Vermögenswerte zu bewerten
+            oder durchzuführen, sei es als Unternehmensfortführung oder als Teil
+            eines Konkurses, einer Liquidation oder eines ähnlichen Verfahrens,
+            in denen personenbezogene Daten, die wir über unsere Servicebenutzer
+            gespeichert haben, zu den übertragenen Vermögenswerten gehören.
           </p>
         </li>
         <li>
           <p>
-            <strong>For other purposes</strong>: We may use Your information for
-            other purposes, such as data analysis, identifying usage trends,
-            determining the effectiveness of our promotional campaigns and to
-            evaluate and improve our Service, products, services, marketing and
-            your experience.
+            <strong>Für andere Zwecke:</strong>Wir können Ihre Informationen für
+            andere Zwecke verwenden, z. B. zur Datenanalyse, zur Ermittlung von
+            Nutzungstrends, zur Bestimmung der Wirksamkeit unserer
+            Werbekampagnen und zur Bewertung und Verbesserung unseres Dienstes,
+            unserer Produkte, Dienstleistungen, unseres Marketings und Ihrer
+            Erfahrung.
           </p>
         </li>
       </ul>
-      <p>We may share Your personal information in the following situations:</p>
+      <p>
+        Wir können Ihre personenbezogenen Daten in den folgenden Situationen
+        weitergeben:
+      </p>
       <ul>
         <li>
-          <strong>With Service Providers:</strong> We may share Your personal
-          information with Service Providers to monitor and analyze the use of
-          our Service, to contact You.
+          <strong>Mit Service Anbietern:</strong> Wir können Ihre
+          personenbezogenen Daten an Dienstleister weitergeben, um die Nutzung
+          unseres Dienstes zu überwachen und zu analysieren, um Sie zu
+          kontaktieren.
         </li>
         <li>
-          <strong>For business transfers:</strong> We may share or transfer Your
-          personal information in connection with, or during negotiations of,
-          any merger, sale of Company assets, financing, or acquisition of all
-          or a portion of Our business to another company.
+          <strong>Für Geschäftszwecke:</strong> Wir können Ihre
+          personenbezogenen Daten im Zusammenhang mit oder während Verhandlungen
+          über eine Fusion, den Verkauf von Unternehmensvermögen, die
+          Finanzierung oder den Erwerb unseres gesamten oder eines Teils unseres
+          Geschäfts an ein anderes Unternehmen weitergeben oder übertragen.
         </li>
         <li>
-          <strong>With Affiliates:</strong> We may share Your information with
-          Our affiliates, in which case we will require those affiliates to
-          honor this Privacy Policy. Affiliates include Our parent company and
-          any other subsidiaries, joint venture partners or other companies that
-          We control or that are under common control with Us.
+          <strong>Mit Affiliates:</strong> Wir können Ihre Daten an unsere
+          verbundenen Unternehmen weitergeben, in diesem Fall werden wir von
+          diesen verbundenen Unternehmen verlangen, diese Datenschutzrichtlinie
+          einzuhalten. Verbundene Unternehmen umfassen unsere Muttergesellschaft
+          und alle anderen Tochtergesellschaften, Joint-Venture-Partner oder
+          andere Unternehmen, die wir kontrollieren oder die unter gemeinsamer
+          Kontrolle mit uns stehen.
         </li>
         <li>
-          <strong>With business partners:</strong> We may share Your information
-          with Our business partners to offer You certain products, services or
-          promotions.
+          <strong>Mit Business Partnern:</strong> Wir können Ihre Informationen
+          an unsere Geschäftspartner weitergeben, um Ihnen bestimmte Produkte,
+          Dienstleistungen oder Werbeaktionen anzubieten.
         </li>
         <li>
-          <strong>With other users:</strong> when You share personal information
-          or otherwise interact in the public areas with other users, such
-          information may be viewed by all users and may be publicly distributed
-          outside.
+          <strong>Mit anderen Nutzern:</strong> Wenn Sie persönliche
+          Informationen teilen oder anderweitig in den öffentlichen Bereichen
+          mit anderen Benutzern interagieren, können diese Informationen von
+          allen Benutzern eingesehen und öffentlich nach außen verbreitet
+          werden.
         </li>
         <li>
-          <strong>With Your consent</strong>: We may disclose Your personal
-          information for any other purpose with Your consent.
+          <strong>Mit Ihrer Zustimmung:</strong>Wir können Ihre
+          personenbezogenen Daten mit Ihrer Zustimmung für andere Zwecke
+          offenlegen.
         </li>
       </ul>
-      <h2>Retention of Your Personal Data</h2>
+      <h2>Aufbewahrung Ihrer personenbezogenen Daten</h2>
       <p>
-        The Company will retain Your Personal Data only for as long as is
-        necessary for the purposes set out in this Privacy Policy. We will
-        retain and use Your Personal Data to the extent necessary to comply with
-        our legal obligations (for example, if we are required to retain your
-        data to comply with applicable laws), resolve disputes, and enforce our
-        legal agreements and policies.
+        Das Unternehmen speichert Ihre ersonenbezogenen Daten nur so lange, wie
+        dies für die in dieser Datenschutzrichtlinie dargelegten Zwecke
+        erforderlich ist. Wir speichern und verwenden Ihre personenbezogenen
+        Daten in dem Umfang, der erforderlich ist, um unseren gesetzlichen
+        Verpflichtungen nachzukommen (z. B. wenn wir verpflichtet sind, Ihre
+        Daten zur Einhaltung geltender Gesetze aufzubewahren), Streitigkeiten
+        beizulegen und unsere gesetzlichen Vereinbarungen und Richtlinien
+        durchzusetzen.
       </p>
       <p>
-        The Company will also retain Usage Data for internal analysis purposes.
-        Usage Data is generally retained for a shorter period of time, except
-        when this data is used to strengthen the security or to improve the
-        functionality of Our Service, or We are legally obligated to retain this
-        data for longer time periods.
+        Das Unternehmen speichert Nutzungsdaten auch für interne
+        Analysezwecke.Nutzungsdaten werden im Allgemeinen für einen kürzeren
+        Zeitraum aufbewahrt, es sei denn, diese Daten werden zur Erhöhung der
+        Sicherheit oder zur Verbesserung der Funktionalität unseres Dienstes
+        verwendet oder wir sind gesetzlich zur Aufbewahrung verpflichtet diese
+        Daten für längere Zeiträume.
       </p>
-      <h2>Transfer of Your Personal Data</h2>
+      <h2>Übermittlung Ihrer personenbezogenen Daten:</h2>
       <p>
-        Your information, including Personal Data, is processed at the Company's
-        operating offices and in any other places where the parties involved in
-        the processing are located. It means that this information may be
-        transferred to — and maintained on — computers located outside of Your
-        state, province, country or other governmental jurisdiction where the
-        data protection laws may differ than those from Your jurisdiction.
-      </p>
-      <p>
-        Your consent to this Privacy Policy followed by Your submission of such
-        information represents Your agreement to that transfer.
-      </p>
-      <p>
-        The Company will take all steps reasonably necessary to ensure that Your
-        data is treated securely and in accordance with this Privacy Policy and
-        no transfer of Your Personal Data will take place to an organization or
-        a country unless there are adequate controls in place including the
-        security of Your data and other personal information.
-      </p>
-      <h2>Delete Your Personal Data</h2>
-      <p>
-        You have the right to delete or request that We assist in deleting the
-        Personal Data that We have collected about You.
+        Ihre Informationen, einschließlich personenbezogener Daten, werden in
+        den Betriebsbüros des Unternehmens und an allen anderen Orten
+        verarbeitet, an denen sich die an der Verarbeitung beteiligten Parteien
+        befinden. Dies bedeutet, dass diese Informationen an Computer außerhalb
+        Ihres Staates, Ihrer Provinz, Ihres Landes oder einer anderen
+        staatlichen Gerichtsbarkeit übertragen und dort gespeichert werden
+        können, wo die Datenschutzgesetze von denen Ihrer Gerichtsbarkeit
+        abweichen können.
       </p>
       <p>
-        Our Service may give You the ability to delete certain information about
-        You from within the Service.
+        Ihre Zustimmung zu dieser Datenschutzrichtlinie, gefolgt von Ihrer
+        Übermittlung dieser Informationen, stellt Ihre Zustimmung zu dieser
+        Übertragung dar.
       </p>
       <p>
-        You may update, amend, or delete Your information at any time by signing
-        in to Your Account, if you have one, and visiting the account settings
-        section that allows you to manage Your personal information. You may
-        also contact Us to request access to, correct, or delete any personal
-        information that You have provided to Us.
+        Das Unternehmen wird alle vernünftigerweise notwendigen Schritte
+        unternehmen, um sicherzustellen, dass Ihre Daten sicher und in
+        Übereinstimmung mit dieser Datenschutzrichtlinie behandelt werden, und
+        es findet keine Übertragung Ihrer Personenbezogenen Daten an eine
+        Organisation oder ein Land statt, es sei denn, es gibt angemessene
+        Kontrollen, einschließlich der Sicherheit Ihrer Daten und andere
+        persönliche Informationen.
+      </p>
+      <h2>Löschen Sie Ihre persönlichen Daten</h2>
+      <p>
+        Sie haben das Recht, die personenbezogenen Daten, die wir über Sie
+        erfasst haben, zu löschen oder zu verlangen, dass wir Sie beim Löschen
+        unterstützen.
       </p>
       <p>
-        Please note, however, that We may need to retain certain information
-        when we have a legal obligation or lawful basis to do so.
+        Unser Service kann Ihnen die Möglichkeit geben, bestimmte Informationen
+        über Sie aus dem Service zu löschen.
       </p>
-      <h2>Disclosure of Your Personal Data</h2>
-      <h3>Business Transactions</h3>
       <p>
-        If the Company is involved in a merger, acquisition or asset sale, Your
-        Personal Data may be transferred. We will provide notice before Your
-        Personal Data is transferred and becomes subject to a different Privacy
-        Policy.
+        Sie können Ihre Informationen jederzeit aktualisieren, ändern oder
+        löschen, indem Sie sich bei Ihrem Konto anmelden, falls Sie eines
+        haben,und den Abschnitt mit den Kontoeinstellungen besuchen, in dem Sie
+        Ihre persönlichen Informationen verwalten können. Sie können uns auch
+        kontaktieren, um Zugang zu personenbezogenen Daten, die Sie uns zur
+        Verfügung gestellt haben, anzufordern, zu korrigieren oder zu löschen.
+      </p>
+      <p>
+        Bitte beachten Sie jedoch, dass wir möglicherweise bestimmte
+        Informationen aufbewahren müssen, wenn wir dazu gesetzlich verpflichtet
+        sind oder eine gesetzliche Grundlage dafür haben.
+      </p>
+      <h2>Offenlegung Ihrer personenbezogenen Daten</h2>
+      <h3>Geschäftliche Transaktionen</h3>
+      <p>
+        Wenn das Unternehmen an einer Fusion, Übernahme oder einem Verkauf von
+        Vermögenswerten beteiligt ist, können Ihre personenbezogenen Daten
+        übertragen werden. Wir werden Sie benachrichtigen, bevor Ihre
+        personenbezogenen Daten übertragen werden und einer anderen
+        Datenschutzrichtlinie unterliegen.
       </p>
       <h3>Law enforcement</h3>
       <p>
-        Under certain circumstances, the Company may be required to disclose
-        Your Personal Data if required to do so by law or in response to valid
-        requests by public authorities (e.g. a court or a government agency).
+        Unter bestimmten Umständen kann das Unternehmen verpflichtet sein, Ihre
+        personenbezogenen Daten offenzulegen, wenn dies gesetzlich
+        vorgeschrieben ist oder als Reaktion auf gültige Anfragen von Behörden
+        (z. B. einem Gericht oder einer Regierungsbehörde).
       </p>
-      <h3>Other legal requirements</h3>
+      <h3>Andere gesetzliche Anforderungen</h3>
       <p>
-        The Company may disclose Your Personal Data in the good faith belief
-        that such action is necessary to:
+        Das Unternehmen kann Ihre personenbezogenen Daten in gutem Glauben
+        offenlegen, dass eine solche Maßnahme erforderlich ist:
       </p>
       <ul>
-        <li>Comply with a legal obligation</li>
-        <li>Protect and defend the rights or property of the Company</li>
+        <li>Einer gesetzlichen Verpflichtung nachkommen</li>
         <li>
-          Prevent or investigate possible wrongdoing in connection with the
-          Service
+          Schutz und Verteidigung der Rechte oder des Eigentums des Unternehmens
         </li>
         <li>
-          Protect the personal safety of Users of the Service or the public
+          Verhindern oder untersuchen Sie mögliches Fehlverhalten im
+          Zusammenhang mit dem Dienst
         </li>
-        <li>Protect against legal liability</li>
+        <li>
+          Schützen Sie die persönliche Sicherheit der Benutzer des Dienstes oder
+          der Öffentlichkeit
+        </li>
+        <li>Schützen Sie sich vor gesetzlicher Haftung</li>
       </ul>
-      <h2>Security of Your Personal Data</h2>
+      <h2>Sicherheit Ihrer persönlichen Daten</h2>
       <p>
-        The security of Your Personal Data is important to Us, but remember that
-        no method of transmission over the Internet, or method of electronic
-        storage is 100% secure. While We strive to use commercially acceptable
-        means to protect Your Personal Data, We cannot guarantee its absolute
-        security.
+        Die Sicherheit Ihrer personenbezogenen Daten ist uns wichtig, aber
+        denken Sie daran, dass keine Übertragungsmethode über das Internet oder
+        elektronische Speichermethode 100 % sicher ist. Obwohl wir uns bemühen,
+        kommerziell akzeptable Mittel zum Schutz Ihrer personenbezogenen Daten
+        zu verwenden, können wir deren absolute Sicherheit nicht garantieren.
       </p>
-      <h1>Children's Privacy</h1>
+      <h1>Datenschutz von Kindern</h1>
       <p>
-        Our Service does not address anyone under the age of 13. We do not
-        knowingly collect personally identifiable information from anyone under
-        the age of 13. If You are a parent or guardian and You are aware that
-        Your child has provided Us with Personal Data, please contact Us. If We
-        become aware that We have collected Personal Data from anyone under the
-        age of 13 without verification of parental consent, We take steps to
-        remove that information from Our servers.
-      </p>
-      <p>
-        If We need to rely on consent as a legal basis for processing Your
-        information and Your country requires consent from a parent, We may
-        require Your parent's consent before We collect and use that
-        information.
-      </p>
-      <h1>Links to Other Websites</h1>
-      <p>
-        Our Service may contain links to other websites that are not operated by
-        Us. If You click on a third party link, You will be directed to that
-        third party's site. We strongly advise You to review the Privacy Policy
-        of every site You visit.
+        Unser Service richtet sich nicht an Personen unter 13 Jahren. Wir
+        erfassen wissentlich keine personenbezogenen Daten von Personen unter 13
+        Jahren. Wenn Sie ein Elternteil oder Erziehungsberechtigter sind und
+        wissen, dass Ihr Kind uns personenbezogene Daten zur Verfügung gestellt
+        hat, bitte kontaktiere uns. Wenn uns bekannt wird, dass wir
+        personenbezogene Daten von Personen unter 13 Jahren ohne Überprüfung der
+        elterlichen Zustimmung gesammelt haben, ergreifen wir Maßnahmen, um
+        diese Informationen von unseren Servern zu entfernen.
       </p>
       <p>
-        We have no control over and assume no responsibility for the content,
-        privacy policies or practices of any third party sites or services.
+        Wenn wir uns auf die Zustimmung als Rechtsgrundlage für die Verarbeitung
+        Ihrer Daten verlassen müssen und Ihr Land die Zustimmung eines
+        Elternteils erfordert, können wir die Zustimmung Ihrer Eltern verlangen,
+        bevor wir diese Daten erfassen und verwenden.
       </p>
-      <h1>Changes to this Privacy Policy</h1>
+      <h1>Links zu anderen Websites</h1>
       <p>
-        We may update Our Privacy Policy from time to time. We will notify You
-        of any changes by posting the new Privacy Policy on this page.
+        Unser Service kann Links zu anderen Websites enthalten, die nicht von
+        uns betrieben werden. Wenn Sie auf einen Link eines Drittanbieters
+        klicken, werden Sie auf die Website dieses Drittanbieters
+        weitergeleitet. Wir empfehlen Ihnen dringend, die Datenschutzrichtlinie
+        jeder von Ihnen besuchten Website zu lesen.
       </p>
       <p>
-        We will let You know via email and/or a prominent notice on Our Service,
-        prior to the change becoming effective and update the &quot;Last
-        updated&quot; date at the top of this Privacy Policy.
+        Wir haben keine Kontrolle über und übernehmen keine Verantwortung für
+        die Inhalte, Datenschutzrichtlinien oder Praktiken von Websites oder
+        Diensten Dritter.
+      </p>
+      <h1>Änderungen an dieser Datenschutzrichtlinie</h1>
+      <p>
+        Wir können unsere Datenschutzrichtlinie von Zeit zu Zeit aktualisieren.
+        Wir werden Sie über alle Änderungen informieren, indem wir die neue
+        Datenschutzrichtlinie auf dieser Seite veröffentlichen.
       </p>
       <p>
-        You are advised to review this Privacy Policy periodically for any
-        changes. Changes to this Privacy Policy are effective when they are
-        posted on this page.
+        Bevor die Änderung in Kraft tritt, werden wir Sie per E-Mail und/oder
+        durch einen deutlichen Hinweis auf unserem Dienst informieren und das
+        Datum der &quote;letzten Aktualisierung&quote; oben in dieser
+        Datenschutzrichtlinie aktualisieren.
       </p>
-      <h1>Contact Us</h1>
       <p>
-        If you have any questions about this Privacy Policy, You can contact us:
+        Es wird empfohlen, diese Datenschutzrichtlinie regelmäßig auf Änderungen
+        zu überprüfen. Änderungen an dieser Datenschutzrichtlinie treten in
+        Kraft, wenn sie auf dieser Seite veröffentlicht werden.
+      </p>
+      <h1>Kontakt</h1>
+      <p>
+        Wenn Sie Fragen zu dieser Datenschutzrichtlinie haben, können Sie uns
+        kontaktieren:
       </p>
       <ul>
         <li>
-          <p>By email: e.felsinger@icloud.com</p>
+          <p>E-Mail: e.felsinger@icloud.com</p>
         </li>
         <li>
           <p>
-            By visiting this page on our website:{" "}
+            Auf unserer Website:{" "}
             <a
               href="https://jure.vercel.com"
               rel="external nofollow noopener"

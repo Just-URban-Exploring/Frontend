@@ -13,6 +13,8 @@ import { Login } from "./pages/Login.jsx";
 import { Main } from "./pages/Main-Page.jsx";
 import { NextDestination } from "./components/NextDestination.jsx";
 import { LandingPage } from "./pages/LandingPage.jsx";
+import Datenschutz from "./pages/Datenschutz.jsx";
+import AGB from "./pages/AGB.jsx";
 
 export function App() {
   return (
@@ -56,6 +58,8 @@ export function App() {
           {" "}
         </Route>
         <Route path="/map" element={<Map />}></Route>
+        <Route path="/agb" element={<AGB />}></Route>
+        <Route path="/datenschutz" element={<Datenschutz />}></Route>
       </Routes>
     </BrowserRouter>
   );
