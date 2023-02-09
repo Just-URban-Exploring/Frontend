@@ -7,7 +7,6 @@ export function Main() {
     <>
       <Navbar />
       {<Map />}
-      {/*    <Icons /> */}
     </>
   );
 }

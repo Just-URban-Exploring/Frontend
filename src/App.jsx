@@ -12,17 +12,22 @@ import Map from "./components/Map.jsx";
 import { Login } from "./pages/Login.jsx";
 import { Main } from "./pages/Main-Page.jsx";
 import { NextDestination } from "./components/NextDestination.jsx";
+import { LandingPage } from "./pages/LandingPage.jsx";
 
 export function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/home" element={<LandingPage />}>
+          {" "}
+        </Route>
         <Route path="*" element={<Navbar to="/" />}>
           {" "}
         </Route>
         <Route path="/main" element={<Main />}>
           {" "}
         </Route>
+        {/* iconsoptions = dieser Route existiert nur, um die Icons zu stylen und sehen  */}
         <Route path="/iconsoptions" element={<NextDestination />}>
           {" "}
         </Route>
