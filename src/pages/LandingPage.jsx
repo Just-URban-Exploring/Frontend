@@ -1,6 +1,6 @@
 import styles from "../css/LandingPage.module.css";
 import { useState } from "react";
-import Carousel from "react-elastic-carousel";
+// import Carousel from "react-elastic-carousel";
 
 export function LandingPage() {
   return (
