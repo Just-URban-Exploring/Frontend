@@ -121,7 +121,7 @@ export function Registration() {
             htmlFor="email"
             type="email"
             id="email"
-            label="Email"
+            label="E-mail"
             fullWidth
             className="form-input"
             value={user.email}
