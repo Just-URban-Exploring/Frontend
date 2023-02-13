@@ -4,6 +4,30 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 
 export function Login() {
+  const INITIAL = {
+    email: "",
+    passwort: "",
+  };
+
+  const [user, setUser] = useState(INITIAL);
+
+  const handleChange = (e) => {
+    setUser({ ...user, [e.target.id]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    fetch("http://localhost:5555/login", {
+      method: "POST",
+      body: JSON.stringify(user),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    }).then((response) => response.json());
+    setUser(user);
+    console.log(user);
+    setUser(INITIAL);
+  };
   return (
     <div>
       <h1>Login</h1>
@@ -25,6 +49,8 @@ export function Login() {
             label="E-Mail"
             fullWidth
             className={styles.forminput}
+            value={user.email}
+            onChange={handleChange}
           ></TextField>
           <TextField
             htmlFor="passwort"
@@ -34,9 +60,15 @@ export function Login() {
             autoComplete="current-password"
             fullWidth
             className={styles.forminput}
+            value={user.passwort}
+            onChange={handleChange}
           ></TextField>
         </div>
-        <button type="submit" className={styles.btnprimary}>
+        <button
+          type="submit"
+          className={styles.btnprimary}
+          onClick={handleSubmit}
+        >
           Anmelden
         </button>
         <div className="forgot-pw">
