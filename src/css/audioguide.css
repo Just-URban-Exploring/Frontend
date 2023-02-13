@@ -1,3 +1,15 @@
+.audioGuideBtn {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.headsetBtn {
+  border-radius: 10px;
+  width: 37.5vw;
+  padding: .5rem;
+}
+
 .inactive {
   background-color: rgb(230, 85, 85);
 }

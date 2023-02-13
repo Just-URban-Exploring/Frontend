@@ -48,6 +48,7 @@ const [user, setUser] = useState(INITIAL);
       setUser(user);
       console.log(user);
       setUser(INITIAL);
+      setMatchPwd("");
   };
 
   return (
@@ -123,7 +124,7 @@ const [user, setUser] = useState(INITIAL);
             htmlFor="email"
             type="email"
             id="email"
-            label="Email"
+            label="E-mail"
             fullWidth
             className="form-input"
             value={user.email}
@@ -260,9 +261,6 @@ const [user, setUser] = useState(INITIAL);
 
           {/* A U D I O G U I D E */}
           <div className="audio-guide-choice">
-            <span>
-              Möchtest du den Audioguide einschalten? Voreingestellt ist dieser auf "Aus"!
-            </span>
             <Audioguide />
           </div>
 
