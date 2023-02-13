@@ -10,12 +10,27 @@ import { IconsInfoPage } from "./pages/IconsInfosPage.jsx";
 import { Icons } from "./components/Icons.jsx";
 import Map from "./components/Map.jsx";
 import { Login } from "./pages/Login.jsx";
+import { Main } from "./pages/Main-Page.jsx";
+import { NextDestination } from "./components/NextDestination.jsx";
+import { LandingPage } from "./pages/LandingPage.jsx";
+import Datenschutz from "./pages/Datenschutz.jsx";
+import AGB from "./pages/AGB.jsx";
 
 export function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/home" element={<LandingPage />}>
+          {" "}
+        </Route>
         <Route path="*" element={<Navbar to="/" />}>
+          {" "}
+        </Route>
+        <Route path="/main" element={<Main />}>
+          {" "}
+        </Route>
+        {/* iconsoptions = dieser Route existiert nur, um die Icons zu stylen und sehen  */}
+        <Route path="/iconsoptions" element={<NextDestination />}>
           {" "}
         </Route>
         <Route path="/profile" element={<Profile />}>
@@ -43,6 +58,8 @@ export function App() {
           {" "}
         </Route>
         <Route path="/map" element={<Map />}></Route>
+        <Route path="/agb" element={<AGB />}></Route>
+        <Route path="/datenschutz" element={<Datenschutz />}></Route>
       </Routes>
     </BrowserRouter>
   );

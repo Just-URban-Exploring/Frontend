@@ -1,3 +1,12 @@
+import { Navbar } from "../components/Navbar/Navbar.jsx";
+import Map from "../components/Map.jsx";
+import { Icons } from "../components/Icons.jsx";
+
 export function Main() {
-  return <h1>Main</h1>;
+  return (
+    <>
+      <Navbar />
+      {<Map />}
+    </>
+  );
 }

@@ -1,7 +1,7 @@
-import React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Audioguide from "../components/Audioguide.jsx";
-import '../css/registration.css';
+import "../css/registration.css";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 
@@ -13,13 +13,10 @@ import TextField from "@mui/material/TextField";
 // import avatar6 from "../img/avatar-yellow-pink.png";
 
 export function Registration() {
-
-
   const [matchPwd, setMatchPwd] = useState("");
 
   // POST user -----
-  const INITIAL = 
-  {
+  const INITIAL = {
     profilname: "",
     stadt: "",
     email: "",
@@ -30,7 +27,7 @@ export function Registration() {
     isAdmin: false,
   };
 
-const [user, setUser] = useState(INITIAL);
+  const [user, setUser] = useState(INITIAL);
 
   const handleChange = (e) => {
     setUser({ ...user, [e.target.id]: e.target.value });
@@ -45,10 +42,16 @@ const [user, setUser] = useState(INITIAL);
         "Content-type": "application/json; charset=UTF-8",
       },
     }).then((response) => response.json());
+<<<<<<< HEAD
       setUser(user);
       console.log(user);
       setUser(INITIAL);
       setMatchPwd("");
+=======
+    setUser(user);
+    console.log(user);
+    setUser(INITIAL);
+>>>>>>> 62f0c9de9dfb97c06acf5ba4607ff8cf190f4cdb
   };
 
   return (
@@ -65,8 +68,8 @@ const [user, setUser] = useState(INITIAL);
         onSubmit={handleSubmit}
       >
         {/* <form action="" className="mt-4" > */}
-          {/* Profilname */}
-          <div className="mb-3">
+        {/* Profilname */}
+        <div className="mb-3">
           <TextField
             htmlFor="profilname"
             type="text"
@@ -78,7 +81,7 @@ const [user, setUser] = useState(INITIAL);
             onChange={handleChange}
           ></TextField>
 
-            {/* <label htmlFor="profilname" className="form-label">
+          {/* <label htmlFor="profilname" className="form-label">
               Profilname
             </label>
             <input
@@ -91,10 +94,10 @@ const [user, setUser] = useState(INITIAL);
               placeholder="profilname"
               onChange={handleChange}
             /> */}
-          </div>
+        </div>
 
-          {/* Stadt */}
-          <div className="mb-3">
+        {/* Stadt */}
+        <div className="mb-3">
           <TextField
             htmlFor="stadt"
             type="text"
@@ -105,7 +108,7 @@ const [user, setUser] = useState(INITIAL);
             value={user.stadt}
             onChange={handleChange}
           ></TextField>
-            {/* <label htmlFor="stadt" className="form-label">
+          {/* <label htmlFor="stadt" className="form-label">
               Stadt
             </label>
             <input
@@ -117,9 +120,9 @@ const [user, setUser] = useState(INITIAL);
               placeholder="stadt"
               onChange={handleChange}
             /> */}
-            </div>
-          {/* E-Mail */}
-          <div className="mb-3">
+        </div>
+        {/* E-Mail */}
+        <div className="mb-3">
           <TextField
             htmlFor="email"
             type="email"
@@ -130,7 +133,7 @@ const [user, setUser] = useState(INITIAL);
             value={user.email}
             onChange={handleChange}
           ></TextField>
-            {/* <label htmlFor="email" className="form-label">
+          {/* <label htmlFor="email" className="form-label">
               E-Mail-Adresse
             </label>
             <input
@@ -142,11 +145,11 @@ const [user, setUser] = useState(INITIAL);
               placeholder="email"
               onChange={handleChange}
             /> */}
-          </div>
+        </div>
 
-    {/*-----Passwort Start----------------------------------------------------------------*/}
-            <div>
-            <TextField
+        {/*-----Passwort Start----------------------------------------------------------------*/}
+        <div>
+          <TextField
             htmlFor="passwort"
             type="text"
             id="passwort"
@@ -156,7 +159,7 @@ const [user, setUser] = useState(INITIAL);
             value={user.passwort}
             onChange={handleChange}
           ></TextField>
-              {/* <label htmlFor="passwort">
+          {/* <label htmlFor="passwort">
                 Passwort:
               
               </label>
@@ -168,9 +171,9 @@ const [user, setUser] = useState(INITIAL);
                 aria-describedby="pwdnote"
                 placeholder="Passwort"
               /> */}
-            </div>
-            <div>
-            <TextField
+        </div>
+        <div>
+          <TextField
             htmlFor="passwortwiederholen"
             type="text"
             id="passwortwiederholen"
@@ -178,10 +181,9 @@ const [user, setUser] = useState(INITIAL);
             fullWidth
             className="form-input"
             value={matchPwd}
-            onChange= {(e) => setMatchPwd(e.target.value)}
-            
+            onChange={(e) => setMatchPwd(e.target.value)}
           ></TextField>
-              {/* <label htmlFor="confirm_pwd">
+          {/* <label htmlFor="confirm_pwd">
                 Passwort wiederholen:
               
               </label>
@@ -193,12 +195,12 @@ const [user, setUser] = useState(INITIAL);
                 aria-describedby="confirmnote"
                 placeholder="Passwortwiederholung"
               /> */}
-            </div>
-            
-    {/*-----Passwort Ende----------------------------------------------------------------*/}
+        </div>
 
-          {/* A V A T A R */}
-          {/* <div>
+        {/*-----Passwort Ende----------------------------------------------------------------*/}
+
+        {/* A V A T A R */}
+        {/* <div>
             <h4>Wähle dein Profilbild aus:</h4>
             <img
               src={avatar1}
@@ -259,6 +261,7 @@ const [user, setUser] = useState(INITIAL);
             </div>
           </div> */}
 
+<<<<<<< HEAD
           {/* A U D I O G U I D E */}
           <div className="audio-guide-choice">
             <Audioguide />
@@ -286,22 +289,58 @@ const [user, setUser] = useState(INITIAL);
           </div>
 
           {/* "R E G I S T R I E R E N" - B U T T O N  */}
+=======
+        {/* A U D I O G U I D E */}
+        <div className="audio-guide-choice">
+>>>>>>> 62f0c9de9dfb97c06acf5ba4607ff8cf190f4cdb
           <span>
-            Mit dem Klick auf den “Jetzt registrieren!” Button erlaube ich dieser
-            App den Zugriff auf meinen Standort. Ich stimme den{" "}
-            <a href="#">AGB</a> und <a href="#">Datenschutzlinien</a> zu.
+            Möchtest du den Audioguide einschalten? Voreingestellt ist dieser
+            auf "Aus"!
           </span>
-          <button 
-            className="btn-primary regButton" 
-            type="submit"
-            disabled={
-              user.passwort !== matchPwd
-                ? true
-                : false
-            }
-            >
-            Jetzt Registrieren!
-          </button>
+          <Audioguide />
+        </div>
+
+        {/* A B O N N E M E N T  A U S W Ä H L E N */}
+        <div className="abo-cards-main">
+          <div className="abo-card">
+            <h3>3 €</h3>
+            <h5>1 Tag</h5>
+          </div>
+          <div className="abo-card">
+            <h3>5 €</h3>
+            <h5>1 Monat</h5>
+          </div>
+          <div className="abo-card">
+            <h3>20 €</h3>
+            <h5>1 Jahr</h5>
+          </div>
+        </div>
+
+        {/* P A Y P A L */}
+        <div className="paypal">
+          <button>Paypal</button>
+        </div>
+
+        {/* "R E G I S T R I E R E N" - B U T T O N  */}
+        <span>
+          Mit dem Klick auf den “Jetzt registrieren!” Button erlaube ich dieser
+          App den Zugriff auf meinen Standort. Ich stimme den{" "}
+          <Link to="/agb" target="_blank">
+            AGB
+          </Link>{" "}
+          und{" "}
+          <Link to="/datenschutz" target="_blank">
+            Datenschutzrichtlinien
+          </Link>{" "}
+          zu.
+        </span>
+        <button
+          className="btn-primary regButton"
+          type="submit"
+          disabled={user.passwort !== matchPwd ? true : false}
+        >
+          Jetzt Registrieren!
+        </button>
         {/* </form> */}
       </Box>
     </div>
