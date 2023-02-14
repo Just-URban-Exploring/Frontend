@@ -4,6 +4,12 @@ import styles from "../css/Profile.module.css";
 import { FaTrashAlt, FaPencilAlt } from "react-icons/fa";
 import Audioguide from "../components/Audioguide.jsx";
 import { NavbarProfile } from "../components/Navbar/NavbarPages.jsx";
+// import avatar1 from "../img/avatar-blue-green.png";
+// import avatar2 from "../img/avatar-blue-pink.png";
+// import avatar3 from "../img/avatar-green-yellow.png";
+// import avatar4 from "../img/avatar-pink-blue.png";
+// import avatar5 from "../img/avatar-red-yellow.png";
+// import avatar6 from "../img/avatar-yellow-pink.png";
 
 export function Profile() {
   // F E T C H  D A T A
