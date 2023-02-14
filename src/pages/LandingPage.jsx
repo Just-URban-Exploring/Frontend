@@ -5,6 +5,7 @@ import Icons from "../assets/Icons.svg";
 import Map from "../assets/Map.svg";
 import SecretIcon from "../assets/SecretIcon.svg";
 import AudioGuide from "../assets/AudioGuide.svg";
+
 export function LandingPage() {
   return (
     <div className={styles.container}>

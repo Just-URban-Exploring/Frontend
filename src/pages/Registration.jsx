@@ -45,6 +45,7 @@ export function Registration() {
     setUser(user);
     console.log(user);
     setUser(INITIAL);
+    setMatchPwd("");
   };
 
   return (
@@ -120,7 +121,7 @@ export function Registration() {
             htmlFor="email"
             type="email"
             id="email"
-            label="Email"
+            label="E-mail"
             fullWidth
             className="form-input"
             value={user.email}
@@ -255,13 +256,13 @@ export function Registration() {
           </div> */}
 
         {/* A U D I O G U I D E */}
-        <div className="audio-guide-choice">
+        {/* <div className="audio-guide-choice">
           <span>
             Möchtest du den Audioguide einschalten? Voreingestellt ist dieser
             auf "Aus"!
           </span>
           <Audioguide />
-        </div>
+        </div> */}
 
         {/* A B O N N E M E N T  A U S W Ä H L E N */}
         <div className="abo-cards-main">

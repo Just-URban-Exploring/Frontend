@@ -13,15 +13,15 @@ const Audioguide = () => {
   }
 
   return (
-    <div>
+    <div className="audioGuideBtn">
       <div>
-        <button className={audioState === 0 ? 'active' : 'inactive'} onClick={() => {toggleActive(0)}}>
-          <MdHeadset />
+        <button className={` headsetBtn ${audioState === 0 ? 'active' : 'inactive'}`} onClick={() => {toggleActive(0)}}>
+          <MdHeadset /> Audioguide AN
         </button>
       </div>
       <div>
-        <button className={audioState === 1 ? 'active' : 'inactive'} onClick={() => {toggleActive(1)}} >
-          <MdHeadsetOff />
+        <button className={` headsetBtn ${audioState === 1 ? 'active' : 'inactive'}`} onClick={() => {toggleActive(1)}} >
+          <MdHeadsetOff /> Audioguide AUS
         </button>
       </div>
     </div>
