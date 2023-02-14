@@ -1,0 +1,59 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  background-color: var(--blue-700);
+  width: 43%;
+  margin: auto;
+  color: var(--white);
+}
+
+.containerItemsPosition {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.containerWillkommen,
+.containercallBackAction,
+.containerTakeATour,
+.containerIcons,
+.containerMap,
+.containerAudioGuide {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  border-bottom: solid var(--white) 1px;
+}
+.containerWillkommen,
+.containercallBackAction {
+  justify-content: center;
+  align-items: center;
+}
+img {
+  width: 100%;
+}
+
+.containerTakeATourH2,
+.containerMapH2 {
+  margin: -1.6rem auto;
+  font-size: 2.5rem;
+}
+
+.containerTakeATourParagraf,
+.IconParagrafPosition,
+.containerMapParagraf {
+  margin-top: 6rem;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.IconParagrafPosition {
+  display: flex;
+  margin-right: 1.5rem;
+}
+
+.IconParagrafPosition img {
+  width: 9rem;
+}
