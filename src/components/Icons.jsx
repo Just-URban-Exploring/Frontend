@@ -3,7 +3,7 @@ import styles from "../css/Icons.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { GiParkBench } from "react-icons/gi";
 import { IconContext } from "react-icons";
-import { GrPauseFill } from "react-icons/gi";
+import { GrPauseFill } from "react-icons/gr";
 
 import {
   faBagShopping,
