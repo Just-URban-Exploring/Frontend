@@ -3,6 +3,8 @@ import styles from "../css/Icons.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { GiParkBench } from "react-icons/gi";
 import { IconContext } from "react-icons";
+import { GrPauseFill } from "react-icons/gr";
+
 import {
   faBagShopping,
   faBuildingColumns,
@@ -117,10 +119,16 @@ export function Icons() {
             <div className={styles.card}>
               <div className={styles.circle8}>
                 <div className={styles.iconPosition}>
-                  <FontAwesomeIcon icon={faBus} size="3x" inverse />
-                  <p className={styles.iconsTitle}>
-                    Öffentlicher Personen-nahverkehr
-                  </p>
+                  <IconContext.Provider
+                    className={styles.provider}
+                    value={{
+                      color: "white",
+                      size: "3.6em",
+                    }}
+                  >
+                    <GrPauseFill />
+                  </IconContext.Provider>
+                  <p className={styles.iconsTitle}>Play/Pause</p>
                 </div>
               </div>
             </div>
