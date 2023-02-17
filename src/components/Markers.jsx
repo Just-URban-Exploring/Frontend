@@ -1,12 +1,13 @@
 import React from "react";
 import { Marker, Popup } from "react-leaflet";
 import { useState, useRef } from "react";
+import "../css/Map.css";
 import L from "leaflet";
 
 const markers = [
   {
     name: "Brandenburger Tor",
-    location: { latitude: 52.516275, longitude: 13.377704 },
+    location: [52.516275, 13.377704],
     info: "Berlin verdankt das Brandenburger Tor König Friedrich Wilhelm II.",
     extendedInfo:
       "Berlin verdankt das Brandenburger Tor König Friedrich Wilhelm II., der hatte das große Sandsteintor in Auftrag gegeben um einen würdevollen Abschluss des Pracht- Boulevards Unter den Linden zu haben. Es entstand in den Jahren 1788 bis 1791 nach Entwürfen von Carl Gotthard Langhans d.Ä., der sich stark an den Propyläen der Athener Akropolis orientierte. Zwei Jahre nach Fertigstellung des Brandenburger Tors wurde die Quadriga, ein Wagen der von vier Pferden gezogen wird, auf das Dach des Tores gesetzt.",
@@ -16,7 +17,7 @@ const markers = [
   },
   {
     name: "Quadriga auf dem Brandenburger Tor",
-    location: [52.51629872917535, 13.37805398629472],
+    location: { latitude: 52.51629872917535, longitude: 13.37805398629472 },
     info: "Symbol der Einheit",
     extendedInfo:
       "Die Quadriga auf dem Brandenburger Tor ist eines der bekanntesten Wahrzeichen Berlins und Deutschlands. Die viergespannte Pferdekutsche mit der Siegesgöttin ist ein Symbol für den Sieg und die Einheit des Landes.",
@@ -24,7 +25,7 @@ const markers = [
   },
   {
     name: "Reichstag",
-    location: [52.519171, 13.377722],
+    location: { latitude: 52.519171, longitude: 13.377722 },
     info: "Sitz des Deutschen Bundestages",
     extendedInfo:
       "Der Reichstag ist ein historisches Gebäude in Berlin und seit 1999 Sitz des Deutschen Bundestages. Es war früher das Parlamentsgebäude des Deutschen Kaiserreichs und des Deutschen Reiches und ist heute ein wichtiger Touristenort.",
@@ -152,7 +153,7 @@ const markers = [
   },
 ];
 
-const Markers = () => {
+const Markers = ({ markers, nearestMarkers, onMarkerClick }) => {
   const [showInfo, setShowInfo] = useState(false);
   const [liked, setLiked] = useState({});
   const [isPlaying, setIsPlaying] = useState(false);

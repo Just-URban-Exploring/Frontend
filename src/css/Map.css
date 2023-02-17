@@ -1,0 +1,117 @@
+/* Style the buttons at the top */
+button {
+  background-color: #1e36ea;
+  border: none;
+  color: #fff;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #5b42fc;
+  transform: translateY(-2px);
+}
+
+.like-button.liked {
+  background-color: red;
+  border-color: red;
+}
+
+/* Style the map container */
+.map-container {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  margin: 50px 0;
+}
+
+/* Style the map */
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+}
+
+/* Style the marker popup */
+.marker-popup {
+  position: absolute;
+  text-align: center;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #333;
+  padding: 0px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  border-radius: 15px;
+  font-size: 16px;
+  max-height: 20vh;
+  overflow-y: auto;
+}
+
+.marker-popup h3 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #333333;
+  margin-bottom: 20px;
+  
+}
+
+.marker-popup ul {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content:space-evenly;
+  list-style: none;
+  padding: 10px;
+  background-color: #333;
+}
+
+.marker-popup li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 15px;
+  min-width: 10px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  background-color: #1f28d2;
+  box-sizing: border-box;
+}
+
+.marker-popup li div {
+  display: flex;
+  align-items: center;
+}
+
+.marker-popup li img {
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
+}
+
+.marker-popup li h4,
+.marker-popup li p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.marker-popup li h4 {
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.marker-popup li p {
+  font-size: 14px;
+  color
