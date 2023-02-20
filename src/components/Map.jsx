@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import * as geolib from "geolib";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import Markers from "./Markers.jsx";
@@ -6,22 +6,26 @@ import { markers } from "./Markers";
 import "leaflet/dist/leaflet.css";
 import "../css/Map.css";
 
+const VIBRATION_DURATION = 500; // in milliseconds
+
 const Map = () => {
   const [userLocation, setUserLocation] = useState(null);
   const [currentLatLng, setCurrentLatLng] = useState([
-    52.51629872917535, 13.37805398629472,
+    52.51629872917535,
+    13.37805398629472,
   ]);
   const [nearestMarkers, setNearestMarkers] = useState([]);
   const [markerIcons, setMarkerIcons] = useState([]);
   const [selectedMarker, setSelectedMarker] = useState(null);
+  const prevNearestMarker = useRef(null);
 
-  const handleGetLocation = () => {
+  const handleGetLocation = () => { // get location
     if (!navigator.geolocation) {
       alert("Geolocation is not supported by your browser");
     } else {
       navigator.geolocation.getCurrentPosition(
         (position) =>
-          setUserLocation({
+          setUserLocation({ //stellt user position
             latitude: position.coords.latitude,
             longitude: position.coords.longitude,
           }),
@@ -35,10 +39,10 @@ const Map = () => {
     }
   };
 
-  const handleGoToBerlin = () => {
+  const handleGoToBerlin = () => { //custom marker für de-bugging
     setUserLocation({
-      latitude: 52.520008,
-      longitude: 13.404954,
+      latitude: 52.516275,
+      longitude: 13.377704
     });
     setNearestMarkers([]);
   };
@@ -47,26 +51,44 @@ const Map = () => {
     setSelectedMarker(marker);
   };
 
-  useEffect(() => {
+  useEffect(() => { 
     if (userLocation) {
       const nearestMarkers = markers
         .map((marker) => ({
           ...marker,
-          distance: Math.min(geolib.getDistance(userLocation, marker.location)),
+          distance: Math.min( // ab hier rechnung für distanz
+            geolib.getDistance(userLocation, marker.location)
+          ),
         }))
         .sort((a, b) => a.distance - b.distance)
         .slice(0, 5);
       setNearestMarkers(nearestMarkers);
 
-      const icons = nearestMarkers.map((marker) => marker.icon);
+      const icons = nearestMarkers.map((marker) => marker.icon); //setzt icons
       setMarkerIcons(icons);
+
+      const nearestMarker = nearestMarkers[0]; //funktion für Vibration
+      if (
+        nearestMarker.distance <= 10 &&
+        nearestMarker !== prevNearestMarker.current
+      ) {
+        if (navigator.vibrate) {
+          navigator.vibrate(VIBRATION_DURATION);
+  
+          
+          setTimeout(() => { // Code to test the vibration
+            navigator.vibrate(0); // stop the vibration
+            alert("DEIN GERÄT VIBRIERT JUNGE!!!!"); // show an alert (sollte akkurat sein für die funktion)
+          }, VIBRATION_DURATION);
+        }
+        prevNearestMarker.current = nearestMarker;
+      }
     }
   }, [markers, userLocation]);
-
   return (
     <div>
-      <button onClick={handleGetLocation}>Get My Location</button>
-      <button onClick={handleGoToBerlin}>Go to Berlin</button>
+      <button onClick={handleGetLocation}>Zu deiner Position</button>
+      <button onClick={handleGoToBerlin}>Besuche Berlin!</button>
       <MapContainer
         center={currentLatLng}
         zoom={19}
@@ -88,7 +110,6 @@ const Map = () => {
       </MapContainer>
       {nearestMarkers.length > 0 ? (
         <div className="marker-popup">
-          {/* <h3>5 nearest markers:</h3> */}
           <ul>
             {nearestMarkers.map((marker) => (
               <li key={marker.name}>
@@ -106,7 +127,7 @@ const Map = () => {
         </div>
       ) : (
         <div className="marker-popup">
-          <p>No markers are nearby</p>
+          <p>Keine Marker in deiner Nähe</p>
         </div>
       )}
     </div>
