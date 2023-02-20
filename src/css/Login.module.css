@@ -42,3 +42,18 @@ a:visited {
   border: none;
   box-shadow: 2px 2px #acacac;
 }
+
+.loginSuccess {
+  transform: rotate(-12deg);
+  color: #002733;
+  font-size: 2rem;
+  font-weight: bold;
+  border: .25rem solid black;
+  border-radius: 1rem;
+  text-align: center;
+  mix-blend-mode: multiply;
+};
+
+.loginMessageOutput {
+  color: #acacac;
+}
