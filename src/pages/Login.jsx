@@ -11,23 +11,46 @@ export function Login() {
 
   const [user, setUser] = useState(INITIAL);
 
+  // Login-Messages___________________________________________________________________________
+  const [loginMessage, setLoginMessage] = useState("");
+
+
+ 
+
+  // Login-Messages___________________________________________________________________________
+
   const handleChange = (e) => {
     setUser({ ...user, [e.target.id]: e.target.value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("http://localhost:5555/login", {
+
+    fetch("http://localhost:5555/user/login", {
       method: "POST",
       body: JSON.stringify(user),
       headers: {
         "Content-type": "application/json; charset=UTF-8",
       },
     }).then((response) => response.json());
+    
+    
+    console.log('user vor setUser: ',user);
     setUser(user);
+    if(user) {
+      setLoginMessage("LOGIN SUCCESSFUL!")
+    } else {
+      setLoginMessage("LOGIN Failed!")
+    }
+    console.log('user nach setUser: ',user);
+
     console.log(user);
     setUser(INITIAL);
   };
+
+
+  {/* {isSubmitted ? <div className={styles.loginSuccess}> LOGIN SUCCESSFUL</div> : <div>LOGIN FAILED</div>} */}
+
   return (
     <div>
       <h1>Login</h1>
@@ -51,7 +74,8 @@ export function Login() {
             className={styles.forminput}
             value={user.email}
             onChange={handleChange}
-          ></TextField>
+          > 
+          </TextField>
           <TextField
             htmlFor="passwort"
             id="passwort"
@@ -71,6 +95,7 @@ export function Login() {
         >
           Anmelden
         </button>
+        {loginMessage}
         <div className="forgot-pw">
           <a href="/forgot-pw">Passwort vergessen?</a>
         </div>
