@@ -9,8 +9,7 @@ import "../css/Map.css";
 const Map = () => {
   const [userLocation, setUserLocation] = useState(null);
   const [currentLatLng, setCurrentLatLng] = useState([
-    52.51629872917535,
-    13.37805398629472,
+    52.51629872917535, 13.37805398629472,
   ]);
   const [nearestMarkers, setNearestMarkers] = useState([]);
   const [markerIcons, setMarkerIcons] = useState([]);
@@ -53,9 +52,7 @@ const Map = () => {
       const nearestMarkers = markers
         .map((marker) => ({
           ...marker,
-          distance: Math.min(
-            geolib.getDistance(userLocation, marker.location)
-          ),
+          distance: Math.min(geolib.getDistance(userLocation, marker.location)),
         }))
         .sort((a, b) => a.distance - b.distance)
         .slice(0, 5);
@@ -72,48 +69,48 @@ const Map = () => {
       <button onClick={handleGoToBerlin}>Go to Berlin</button>
       <MapContainer
         center={currentLatLng}
-        zoom={13}
+        zoom={19}
         style={{ width: "100vw", height: "80vh" }}
       >
         <TileLayer
           url="https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=5sU25nOT7O8fAUXuiaYf"
           attribution='<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
         />
-           <Markers markers={markers} onMarkerClick={handleMarkerClick} />
-    {userLocation ? (
-      <Marker
-        position={[userLocation.latitude, userLocation.longitude]}
-        key="user"
-      >
-        <Popup>Deine aktuelle Position</Popup>
-      </Marker>
-    ) : null}
-  </MapContainer>
-  {nearestMarkers.length > 0 ? (
-    <div className="marker-popup">
-      {/* <h3>5 nearest markers:</h3> */}
-      <ul>
-        {nearestMarkers.map((marker) => (
-          <li key={marker.name}>
-            <div>
-              <img
-                src={marker.icon}
-                alt={`Marker icon for ${marker.name}`}
-              />
-              <span>{marker.name}</span>
-            </div>
-            <span>({marker.distance} meter weg)</span>
-          </li>
-        ))}
-      </ul>
+        <Markers markers={markers} onMarkerClick={handleMarkerClick} />
+        {userLocation ? (
+          <Marker
+            position={[userLocation.latitude, userLocation.longitude]}
+            key="user"
+          >
+            <Popup>Deine aktuelle Position</Popup>
+          </Marker>
+        ) : null}
+      </MapContainer>
+      {nearestMarkers.length > 0 ? (
+        <div className="marker-popup">
+          {/* <h3>5 nearest markers:</h3> */}
+          <ul>
+            {nearestMarkers.map((marker) => (
+              <li key={marker.name}>
+                <div>
+                  <img
+                    src={marker.icon}
+                    alt={`Marker icon for ${marker.name}`}
+                  />
+                  <span>{marker.name}</span>
+                </div>
+                <span>({marker.distance} meter weg)</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : (
+        <div className="marker-popup">
+          <p>No markers are nearby</p>
+        </div>
+      )}
     </div>
-  ) : (
-    <div className="marker-popup">
-      <p>No markers are nearby</p>
-    </div>
-  )}
-</div>
-);
+  );
 };
 
 export default Map;
