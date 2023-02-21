@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import * as geolib from "geolib";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import Markers from "./Markers.jsx";
 import L from "leaflet";
 import { markers } from "./Markers";
@@ -59,17 +59,15 @@ const Map = () => {
       const nearestMarkers = markers
         .map((marker) => ({
           ...marker,
-          distance: Math.min(
-            geolib.getDistance(userLocation, marker.location)
-          ),
+          distance: Math.min(geolib.getDistance(userLocation, marker.location)),
         }))
         .sort((a, b) => a.distance - b.distance)
         .slice(0, 5);
       setNearestMarkers(nearestMarkers);
-  
+
       const icons = nearestMarkers.map((marker) => marker.icon);
       setMarkerIcons(icons);
-  
+
       const nearestMarker = nearestMarkers[0];
       if (
         nearestMarker.distance <= 10 &&
@@ -77,7 +75,7 @@ const Map = () => {
       ) {
         if (navigator.vibrate) {
           navigator.vibrate(VIBRATION_DURATION);
-  
+
           setTimeout(() => {
             navigator.vibrate(0);
             alert("DEIN GERÄT VIBRIERT JUNGE!!!!");
@@ -85,7 +83,8 @@ const Map = () => {
         }
         prevNearestMarker.current = nearestMarker;
       }
-    } else if (nearestMarkers.length === 0) { // recalculate nearest markers for new location
+    } else if (nearestMarkers.length === 0) {
+      // recalculate nearest markers for new location
       const nearestMarkers = markers
         .map((marker) => ({
           ...marker,
@@ -96,7 +95,7 @@ const Map = () => {
         .sort((a, b) => a.distance - b.distance)
         .slice(0, 5);
       setNearestMarkers(nearestMarkers);
-  
+
       const icons = nearestMarkers.map((marker) => marker.icon);
       setMarkerIcons(icons);
     }
@@ -113,7 +112,7 @@ const Map = () => {
         style={{ width: "100vw", height: "80vh" }}
       >
         <TileLayer
-          url="https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=5sU25nOT7O8fAUXuiaYf"
+          url="https://api.maptiler.com/maps/streets-v2/256/{z}/{x}/{y}.png?key=5sU25nOT7O8fAUXuiaYf"
           attribution='<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
         />
         <Markers markers={markers} onMarkerClick={handleMarkerClick} />
