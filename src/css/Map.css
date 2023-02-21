@@ -136,5 +136,5 @@ button:hover {
       line-height: 150% !important;
       hyphens: auto !important;
       hyphenate-limit-chars: auto 7 !important;
-   hyphenate-limit-lines: 2 !important;
+      hyphenate-limit-lines: 2 !important;
     }
