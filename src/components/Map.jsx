@@ -50,6 +50,7 @@ const Map = () => {
     map.flyTo([52.516275, 13.377704], 18);
   };
 
+  
   const handleMarkerClick = (marker) => {
     setSelectedMarker(marker);
   };
