@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import Audioguide from "../components/Audioguide.jsx";
+// import Audioguide from "../components/Audioguide.jsx";
 import "../css/registration.css";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
+import axios from "axios";
 
 // import avatar1 from "../img/avatar-blue-green.png";
 // import avatar2 from "../img/avatar-blue-pink.png";
@@ -13,44 +14,82 @@ import TextField from "@mui/material/TextField";
 // import avatar6 from "../img/avatar-yellow-pink.png";
 
 export function Registration() {
+  // // POST user -----
+  // const INITIAL = {
+  //   profilname: "",
+  //   stadt: "",
+  //   email: "",
+  //   passwort: "",
+  //   avatar: "",
+  //   audio: false,
+  //   abo: "",
+  //   isAdmin: false,
+  // };
+
+  // const [user, setUser] = useState(INITIAL);
+
+  // const handleChange = (e) => {
+  //   setUser({ ...user, [e.target.id]: e.target.value });
+  // };
+
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   fetch("http://localhost:5555/registration", {
+  //     method: "POST",
+  //     body: JSON.stringify(user),
+  //     headers: {
+  //       "Content-type": "application/json; charset=UTF-8",
+  //     },
+  //   }).then((response) => response.json());
+  //   setUser(user);
+  //   console.log(user);
+  //   setUser(INITIAL);
+  //   setMatchPwd("");
+  // };
+
+  const [profilname, setProfilname] = useState("");
+  const [stadt, setStadt] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [matchPwd, setMatchPwd] = useState("");
-
-  // POST user -----
-  const INITIAL = {
-    profilname: "",
-    stadt: "",
-    email: "",
-    passwort: "",
-    avatar: "",
-    audio: false,
-    abo: "",
-    isAdmin: false,
-  };
-
-  const [user, setUser] = useState(INITIAL);
-
-  const handleChange = (e) => {
-    setUser({ ...user, [e.target.id]: e.target.value });
+  const [register, setRegister] = useState(false);
+  const configuration = {
+    method: "post",
+    url: "http://localhost:5555/user/registration",
+    data: {
+      profilname,
+      stadt,
+      email,
+      password,
+    },
   };
 
   const handleSubmit = (e) => {
+    // prevent the form from refreshing the whole page
     e.preventDefault();
-    fetch("http://localhost:5555/registration", {
-      method: "POST",
-      body: JSON.stringify(user),
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-      },
-    }).then((response) => response.json());
-    setUser(user);
-    console.log(user);
-    setUser(INITIAL);
-    setMatchPwd("");
+    axios(configuration)
+      .then((result) => {
+        console.log(result);
+        setRegister(true);
+      })
+      .catch((error) => {
+        error = new Error();
+      });
+    // make a popup alert showing the "submitted" text
+    // alert("Submited");
   };
-
   return (
     <div>
       <h1 className="register">Registrierung</h1>
+      <div>
+        {" "}
+        {/* display success message */}
+        {register ? (
+          <p className="text-success">You Are Registered Successfully</p>
+        ) : (
+          <p className="text-danger">You Are Not Registered</p>
+        )}
+      </div>
       <Box
         className="card"
         component="form"
@@ -59,20 +98,21 @@ export function Registration() {
         }}
         noValidate
         autoComplete="off"
-        onSubmit={handleSubmit}
+        onSubmit={(e) => handleSubmit(e)}
       >
         {/* <form action="" className="mt-4" > */}
         {/* Profilname */}
         <div className="mb-3">
           <TextField
             htmlFor="profilname"
+            name="profilname"
             type="text"
             id="profilname"
             label="Profilname"
             fullWidth
             className="form-input"
-            value={user.profilname}
-            onChange={handleChange}
+            value={profilname}
+            onChange={(e) => setProfilname(e.target.value)}
           ></TextField>
 
           {/* <label htmlFor="profilname" className="form-label">
@@ -94,13 +134,14 @@ export function Registration() {
         <div className="mb-3">
           <TextField
             htmlFor="stadt"
+            name="stadt"
             type="text"
             id="stadt"
             label="Stadt"
             fullWidth
             className="form-input"
-            value={user.stadt}
-            onChange={handleChange}
+            value={stadt}
+            onChange={(e) => setStadt(e.target.value)}
           ></TextField>
           {/* <label htmlFor="stadt" className="form-label">
               Stadt
@@ -119,13 +160,14 @@ export function Registration() {
         <div className="mb-3">
           <TextField
             htmlFor="email"
+            name="email"
             type="email"
             id="email"
             label="E-mail"
             fullWidth
             className="form-input"
-            value={user.email}
-            onChange={handleChange}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           ></TextField>
           {/* <label htmlFor="email" className="form-label">
               E-Mail-Adresse
@@ -144,14 +186,15 @@ export function Registration() {
         {/*-----Passwort Start----------------------------------------------------------------*/}
         <div>
           <TextField
-            htmlFor="passwort"
+            htmlFor="password"
+            name="password"
             type="text"
-            id="passwort"
-            label="Passwort"
+            id="password"
+            label="Password"
             fullWidth
             className="form-input"
-            value={user.passwort}
-            onChange={handleChange}
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           ></TextField>
           {/* <label htmlFor="passwort">
                 Passwort:
@@ -301,7 +344,8 @@ export function Registration() {
         <button
           className="btn-primary regButton"
           type="submit"
-          disabled={user.passwort !== matchPwd ? true : false}
+          disabled={password !== matchPwd ? true : false}
+          onClick={(e) => handleSubmit(e)}
         >
           Jetzt Registrieren!
         </button>

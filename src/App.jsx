@@ -45,7 +45,7 @@ export function App() {
         <Route path="/einstellung" element={<Einstellung />}>
           {" "}
         </Route>
-        <Route path="/registrierung" element={<Registration />}>
+        <Route path="/register" element={<Registration />}>
           {" "}
         </Route>
         <Route path="/login" element={<Login />}>
