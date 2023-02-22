@@ -20,11 +20,6 @@ button:hover {
   transform: translateY(-2px);
 }
 
-.like-button.liked {
-  background-color: red;
-  border-color: red;
-}
-
 /* Style the map container */
 .map-container {
   position: relative;
@@ -63,13 +58,12 @@ button:hover {
   text-transform: uppercase;
   color: #333333;
   margin-bottom: 20px;
-  
 }
 
 .marker-popup ul {
   display: flex;
   flex-wrap: nowrap;
-  justify-content:space-evenly;
+  justify-content: space-evenly;
   list-style: none;
   padding: 10px;
   background-color: #333;
@@ -115,26 +109,25 @@ button:hover {
 /* .marker-popup li p {
   font-size: 14px;
   color */
-  
-  .leaflet-popup-content p:first-of-type {
-    font-weight: 900 !important;
-  }
-  .leaflet-popup-content-wrapper {
-    padding: 8px !important;
-    text-align: justify !important;
-    font-weight: 400 !important;
-    letter-spacing: 1px !important;
-    
-    background-color: rgba(255, 255, 255, 0.9) !important;
 
-    }
-    .leaflet-popup-tip {
-      background-color: rgba(255, 255, 255, 0.9) !important;
-    }
+.leaflet-popup-content p:first-of-type {
+  font-weight: 900 !important;
+}
+.leaflet-popup-content-wrapper {
+  padding: 8px !important;
+  text-align: justify !important;
+  font-weight: 400 !important;
+  letter-spacing: 1px !important;
 
-    .leaflet-popup-content-wrapper p {
-      line-height: 150% !important;
-      hyphens: auto !important;
-      hyphenate-limit-chars: auto 7 !important;
-      hyphenate-limit-lines: 2 !important;
-    }
+  background-color: rgba(255, 255, 255, 0.9) !important;
+}
+.leaflet-popup-tip {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.leaflet-popup-content-wrapper p {
+  line-height: 150% !important;
+  hyphens: auto !important;
+  hyphenate-limit-chars: auto 7 !important;
+  hyphenate-limit-lines: 2 !important;
+}
