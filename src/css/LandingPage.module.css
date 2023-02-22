@@ -1,59 +1,280 @@
+body {
+  margin: 0;
+}
+
 .container {
   display: flex;
   flex-direction: column;
-  align-content: center;
+  align-items: center;
   background-color: var(--blue-700);
-  width: 43%;
-  margin: auto;
+  width: 100%;
   color: var(--white);
 }
 
-.containerItemsPosition {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.containerMap img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: 500px;
 }
 
 .containerWillkommen,
-.containercallBackAction,
+.containerCallBackAction,
 .containerTakeATour,
 .containerIcons,
 .containerMap,
 .containerAudioGuide {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
+  text-align: left;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 2rem;
+  min-height: 100vh;
   border-bottom: solid var(--white) 1px;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
+
 .containerWillkommen,
-.containercallBackAction {
+.containerCallBackAction {
   justify-content: center;
   align-items: center;
+  text-align: center;
+  grid-template-columns: 1fr;
 }
+
 img {
   width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.jure {
+  text-align: center;
 }
 
 .containerTakeATourH2,
 .containerMapH2 {
-  margin: -1.6rem auto;
+  margin: 0;
   font-size: 2.5rem;
 }
 
 .containerTakeATourParagraf,
 .IconParagrafPosition,
-.containerMapParagraf {
-  margin-top: 6rem;
+.containerMapParagraf,
+.audioGuideText {
+  margin-top: 0;
   font-size: 1.3rem;
-  text-align: center;
+  text-align: left;
+}
+
+.audioGuideText {
+  margin-top: 2rem;
+  font-size: 1.3rem;
+  text-align: left;
 }
 
 .IconParagrafPosition {
   display: flex;
-  margin-right: 1.5rem;
+  flex-direction: column;
+  align-items: center;
 }
 
 .IconParagrafPosition img {
-  width: 9rem;
+  width: 100%;
+  max-width: 10rem;
+  margin-bottom: 1rem;
+}
+
+.callbackActionButton {
+  background-color: var(--green);
+  color: var(--white);
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  
+}
+
+.buttonContainer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  background-color: var(--blue-700);
+}
+
+.stickyButton {
+  background-color: var(--green);
+  color: var(--white);
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+}
+
+.topBar {
+  width: 100%;
+  background-color: var(--blue-700);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.topBarButton {
+  background-color: var(--green);
+  color: var(--white);
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .containerWillkommen,
+  .containerCallBackAction,
+  .containerTakeATour,
+  .containerIcons,
+  .containerMap,
+  .containerAudioGuide {
+    text-align: left;
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .IconParagrafPosition {
+    margin-top: 1rem;
+  }
+
+  .buttonContainer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    background-color: var(--blue-700);
+  }
+  
+  .stickyButton {
+    background-color: var(--green);
+    color: var(--white);
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+  }
+  
+  .topBar {
+    width: 100%;
+    background-color: var(--blue-700);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+  }
+  
+  .topBarButton {
+    background-color: var(--green);
+    color: var(--white);
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 375px) {
+    .containerWillkommen {
+      padding: 2rem;
+    }
+    
+    .jure {
+      text-align: center;
+      margin-top: 1rem;
+    }
+    
+    .jureParagraf {
+      font-size: 1.5rem;
+      margin: 0.5rem 0 0;
+    }
+    
+    .containerTakeATour {
+      padding: 2rem;
+    }
+    
+    .containerTakeATourH2 {
+      font-size: 2rem;
+      margin-top: 1rem;
+    }
+    
+    .containerTakeATourParagraf {
+      font-size: 1rem;
+      margin-top: 1rem;
+    }
+    
+    .containerIcons {
+      padding: 2rem;
+    }
+    
+    .IconParagrafPosition {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .IconParagrafPosition img {
+      max-width: 50%;
+    }
+    
+    .containerMap {
+      padding: 2rem;
+    }
+    
+    .containerMapH2 {
+      font-size: 2rem;
+      margin-top: 1rem;
+    }
+    
+    .containerMapParagraf {
+      font-size: 1rem;
+      margin-top: 1rem;
+    }
+    
+    .containerAudioGuide {
+      padding: 2rem;
+    }
+    
+    .audioGuideText {
+      font-size: 1rem;
+      margin-top: 1rem;
+    }
+    
+    .containerCallBackAction {
+      padding: 2rem;
+    }
+    
+    .buttonContainer {
+      padding: 2rem;
+    }
+  }
 }
