@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import * as geolib from "geolib";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import Markers from "./Markers.jsx";
@@ -21,6 +21,7 @@ const Map = () => {
   const prevNearestMarker = useRef(null);
   const mapRef = useRef(null);
   const map = mapRef.current;
+  const [shouldVibrate, setShouldVibrate] = useState(false);
 
   const handleGetLocation = () => {
     if (!navigator.geolocation) {
@@ -45,15 +46,43 @@ const Map = () => {
   };
 
   const handleGoToBerlin = () => {
-    setCurrentLatLng([52.516275, 13.377704]);
+    const berlinLocation = [52.516275, 13.377704];
+    setUserLocation({
+      latitude: parseFloat(berlinLocation[0]),
+      longitude: parseFloat(berlinLocation[1])
+    });
     setNearestMarkers([]);
-    map.flyTo([52.516275, 13.377704], 18);
+    setSelectedMarker(null);
+    map.flyTo(berlinLocation, 18);
   };
 
   
   const handleMarkerClick = (marker) => {
     setSelectedMarker(marker);
   };
+
+  const triggerVibration = useCallback((nearestMarker) => {
+    if (nearestMarker && nearestMarker !== prevNearestMarker.current) {
+      if (nearestMarker.distance <= 10) {
+        if (navigator.vibrate) {
+          navigator.vibrate(VIBRATION_DURATION);
+          setShouldVibrate(true);
+          prevNearestMarker.current = nearestMarker;
+        }
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    if (shouldVibrate) {
+      const timeoutId = setTimeout(() => {
+        navigator.vibrate(0);
+        setShouldVibrate(false);
+        alert("DEIN GERÄT VIBRIERT JUNGE!!!!");
+      }, VIBRATION_DURATION);
+      return () => clearTimeout(timeoutId);
+    }
+  }, [shouldVibrate]);
 
   useEffect(() => {
     if (userLocation) {
@@ -64,28 +93,19 @@ const Map = () => {
         }))
         .sort((a, b) => a.distance - b.distance)
         .slice(0, 5);
+
+      if (selectedMarker) {
+        nearestMarkers.unshift(selectedMarker);
+      }
+
       setNearestMarkers(nearestMarkers);
 
       const icons = nearestMarkers.map((marker) => marker.icon);
       setMarkerIcons(icons);
 
       const nearestMarker = nearestMarkers[0];
-      if (
-        nearestMarker.distance <= 10 &&
-        nearestMarker !== prevNearestMarker.current
-      ) {
-        if (navigator.vibrate) {
-          navigator.vibrate(VIBRATION_DURATION);
-
-          setTimeout(() => {
-            navigator.vibrate(0);
-            alert("DEIN GERÄT VIBRIERT JUNGE!!!!");
-          }, VIBRATION_DURATION);
-        }
-        prevNearestMarker.current = nearestMarker;
-      }
+      triggerVibration(nearestMarker);
     } else if (nearestMarkers.length === 0) {
-      // recalculate nearest markers for new location
       const nearestMarkers = markers
         .map((marker) => ({
           ...marker,
@@ -96,60 +116,68 @@ const Map = () => {
         .sort((a, b) => a.distance - b.distance)
         .slice(0, 5);
       setNearestMarkers(nearestMarkers);
-
       const icons = nearestMarkers.map((marker) => marker.icon);
       setMarkerIcons(icons);
     }
-  }, [markers, userLocation, currentLatLng, nearestMarkers]);
-
-  return (
-    <div>
-      <button onClick={handleGetLocation}>Zu deiner Position</button>
-      <button onClick={handleGoToBerlin}>Besuche Berlin!</button>
-      <MapContainer
-        ref={mapRef}
-        center={currentLatLng}
-        zoom={19}
-        style={{ width: "100vw", height: "80vh" }}
-      >
-        <TileLayer
-          url="https://api.maptiler.com/maps/streets-v2/256/{z}/{x}/{y}.png?key=5sU25nOT7O8fAUXuiaYf"
-          attribution='<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
-        />
-        <Markers markers={markers} onMarkerClick={handleMarkerClick} />
-        {userLocation ? (
-          <Marker
-            position={[userLocation.latitude, userLocation.longitude]}
-            key="user"
-          >
-            <Popup>Deine aktuelle Position</Popup>
-          </Marker>
-        ) : null}
-      </MapContainer>
-      {nearestMarkers.length > 0 ? (
-        <div className="marker-popup">
-          <ul>
-            {nearestMarkers.map((marker) => (
-              <li key={marker.name}>
-                <div>
-                  <img
-                    src={marker.icon}
-                    alt={`Marker icon for ${marker.name}`}
-                  />
-                  <span>{marker.name}</span>
-                </div>
-                <span>({marker.distance} meter weg)</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      ) : (
-        <div className="marker-popup">
-          <p>Keine Marker in deiner Nähe</p>
-        </div>
-      )}
-    </div>
-  );
-};
-
-export default Map;
+  }, [markers, userLocation, currentLatLng, selectedMarker, triggerVibration]);
+  
+    return (
+      <div>
+        <button onClick={handleGetLocation}>Zu deiner Position</button>
+        <button onClick={handleGoToBerlin}>Besuche Berlin!</button>
+        <MapContainer
+          ref={mapRef}
+          center={currentLatLng}
+          zoom={19}
+          zoomAnimation={true}
+          zoomAnimationThreshold={500} // milliseconds
+          zoomAnimationDuration={500} // milliseconds
+          style={{ width: "100vw", height: "80vh" }}
+        >
+          <TileLayer
+            url="https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=5sU25nOT7O8fAUXuiaYf"
+            attribution='<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
+          />
+          <Markers markers={markers} onMarkerClick={handleMarkerClick} selectedMarker={selectedMarker} />
+          {userLocation ? (
+            <Marker
+              position={[userLocation.latitude, userLocation.longitude]}
+              key="user"
+            >
+              <Popup>Deine aktuelle Position</Popup>
+            </Marker>
+          ) : null}
+          {currentLatLng && selectedMarker && (
+            <Marker position={currentLatLng} key="current">
+              <Popup>{selectedMarker.name}</Popup>
+            </Marker>
+          )}
+        </MapContainer>
+        {nearestMarkers.length > 0 ? (
+          <div className="marker-popup">
+            <ul>
+              {nearestMarkers.map((marker) => (
+                <li key={marker.name}>
+                  <div>
+                    <img
+                      src={marker.icon}
+                      alt={`Marker icon for ${marker.name}`}
+                    />
+                    <span>{marker.name}</span>
+                  </div>
+                  <span>({marker.distance} meter weg)</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : (
+          <div className="marker-popup">
+            <p>Keine Marker in deiner Nähe</p>
+          </div>
+        )}
+      </div>
+    );
+  };
+  
+  export default Map;
+  
