@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom';
 import styles from "../css/Icons.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { GiParkBench } from "react-icons/gi";
@@ -24,6 +25,9 @@ import { setConfiguration, Container, Row, Col } from "react-grid-system";
 setConfiguration({ maxScreenClass: "xl" });
 
 export function Icons() {
+
+  const navigate = useNavigate();
+
   return (
     <div>
       <Container fluid className="iconsInfo">
@@ -193,6 +197,7 @@ export function Icons() {
           <div className={styles.btgbutton}>Ok</div>
         </Col>
       </Container>
+      <button onClick={() => navigate('/')}>Home</button>
     </div>
   );
 }

@@ -1,3 +1,5 @@
+import React from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 import styles from "../css/LandingPage.module.css";
 import Jure from "../assets/JURE-Logo.svg";
 import Berlin from "../assets/brandenBurgerTor.svg";
@@ -5,7 +7,11 @@ import Icons from "../assets/Icons.svg";
 import Map from "../assets/Map.svg";
 import SecretIcon from "../assets/SecretIcon.svg";
 import AudioGuide from "../assets/AudioGuide.svg";
+
 export function LandingPage() {
+
+  const navigate = useNavigate();
+
   return (
     <div className={styles.container}>
       <div className={styles.containerWillkommen}>
@@ -81,7 +87,13 @@ export function LandingPage() {
             <p>Alles, aber simpel</p>
           </div>
         </div>
-        <button className={styles.callbackActionButton}>Anmelden</button>
+        <button className={styles.callbackActionButton} onClick={() => navigate("/login")}>Anmelden</button>
+        <button className={styles.callbackActionButton} onClick={() => navigate("/registrierung")}>Registrieren</button>
+      </div>
+      <div className={styles.footer}>
+        <Link to="/agb">AGB</Link>
+        <Link to="/datenschutz">Datenschutz</Link>
+        <Link to="/impressum">Impressum</Link>
       </div>
     </div>
   );

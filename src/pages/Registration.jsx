@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Audioguide from "../components/Audioguide.jsx";
 import "../css/registration.css";
 import Box from "@mui/material/Box";
@@ -46,7 +46,10 @@ export function Registration() {
     console.log(user);
     setUser(INITIAL);
     setMatchPwd("");
+    navigate('/icons');
   };
+
+  const navigate = useNavigate();
 
   return (
     <div>
@@ -305,6 +308,7 @@ export function Registration() {
         >
           Jetzt Registrieren!
         </button>
+        <button onClick={() => navigate('/')}>Home</button>
         {/* </form> */}
       </Box>
     </div>

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import styles from "../css/Login.module.css";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
@@ -31,7 +32,11 @@ export function Login() {
       });
     // make a popup alert showing the "submitted" text
     // alert("Submited");
+    navigate('/standort');
   };
+
+  const navigate = useNavigate();
+
 
   return (
     <div>
@@ -91,6 +96,7 @@ export function Login() {
         <button type="submit" className="btn-google">
           Mit Google anmelden
         </button> */}
+        <button onClick={() => navigate('/')}>Home</button>
       </Box>
     </div>
   );
