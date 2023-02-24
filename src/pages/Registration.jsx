@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 // import Audioguide from "../components/Audioguide.jsx";
 import "../css/registration.css";
 import Box from "@mui/material/Box";
@@ -75,9 +75,14 @@ export function Registration() {
       .catch((error) => {
         error = new Error();
       });
+      navigate('/icons');
+
     // make a popup alert showing the "submitted" text
     // alert("Submited");
   };
+
+  const navigate = useNavigate();
+
   return (
     <div>
       <h1 className="register">Registrierung</h1>
@@ -349,6 +354,7 @@ export function Registration() {
         >
           Jetzt Registrieren!
         </button>
+        <button onClick={() => navigate('/')}>Home</button>
         {/* </form> */}
       </Box>
     </div>

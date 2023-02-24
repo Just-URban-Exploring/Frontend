@@ -1,9 +1,14 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom';
 
 const Datenschutz = () => {
+
+  const navigate = useNavigate();
+
   return (
     <div>
       <h1>Datenschutzerklärung</h1>
+      <button onClick={() => navigate('/')}>Home</button>
       <p>
         Letzte Aktualisierung: 07.02.2023 Diese Datenschutzrichtlinie beschreibt
         unsere Richtlinien und Verfahren für die Sammlung, Verwendung und

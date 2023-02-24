@@ -1,3 +1,5 @@
+import React from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 import styles from "../css/LandingPage.module.css";
 import Jure from "../assets/JURE-Logo.svg";
 import Berlin from "../assets/brandenBurgerTor.svg";
@@ -7,6 +9,9 @@ import SecretIcon from "../assets/SecretIcon.svg";
 import AudioGuide from "../assets/AudioGuide.svg";
 
 export function LandingPage() {
+
+  const navigate = useNavigate();
+
   return (
     <div className={styles.container}>
       <div className={styles.topBar}>
@@ -82,11 +87,20 @@ export function LandingPage() {
           Registriere dich jetzt und entdecke die Welt auf deine eigene Art und
           Weise.
         </p>
-
+        <img src={Jure} alt="Logo" />
+        <div className={styles.callBackActionParagraf}>
+          <p className={styles.callBackActionJure}>
+            <b>JU</b>st <b>UR</b>ban <b>E</b>xploring
+          </p>
+          <div>
+            <p>Alles, aber simpel</p>
+          </div>
+        </div>
       </div>
 
       <div className={styles.buttonContainer}>
-        <button className={styles.stickyButton}>Jetzt registrieren</button>
+      <button className={styles.callbackActionButton} onClick={() => navigate("/login")}>Anmelden</button>
+        <button className={styles.callbackActionButton} onClick={() => navigate("/registrierung")}>Registrieren</button>
       </div>
     </div>
   );

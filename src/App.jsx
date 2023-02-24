@@ -1,10 +1,10 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import "./css/Global.css";
 import { Navbar } from "./components/Navbar/Navbar.jsx";
 import { Profile } from "./pages/Profile.jsx";
 import { FavoritePlaces } from "./pages/FavoritePlaces.jsx";
 import { Einstellung } from "./pages/Einstellung.jsx";
-import { Standort } from "./pages/Standartort.jsx";
+import { Standort } from "./pages/Standort.jsx";
 import { Registration } from "./pages/Registration.jsx";
 import { IconsInfoPage } from "./pages/IconsInfosPage.jsx";
 import { Icons } from "./components/Icons.jsx";
@@ -15,12 +15,15 @@ import { NextDestination } from "./components/NextDestination.jsx";
 import { LandingPage } from "./pages/LandingPage.jsx";
 import Datenschutz from "./pages/Datenschutz.jsx";
 import AGB from "./pages/AGB.jsx";
+import Impressum from "./pages/Impressum.jsx";
+
+
 
 export function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/home" element={<LandingPage />}>
+        <Route path="/" element={<LandingPage />}>
           {" "}
         </Route>
         <Route path="*" element={<Navbar to="/" />}>
@@ -49,7 +52,7 @@ export function App() {
           {" "}
         </Route>
         <Route path="/login" element={<Login />}>
-          {" "}
+          {/* {" "} */}
         </Route>
         <Route path="/iconsinfosPage" element={<IconsInfoPage />}>
           {" "}
@@ -60,6 +63,7 @@ export function App() {
         <Route path="/map" element={<Map />}></Route>
         <Route path="/agb" element={<AGB />}></Route>
         <Route path="/datenschutz" element={<Datenschutz />}></Route>
+        <Route path="/impressum" element={<Impressum />}></Route>
       </Routes>
     </BrowserRouter>
   );
