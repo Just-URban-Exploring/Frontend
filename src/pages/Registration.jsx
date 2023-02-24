@@ -75,7 +75,8 @@ export function Registration() {
       .catch((error) => {
         error = new Error();
       });
-      navigate('/icons');
+    setMatchPwd("");
+    navigate("/icons");
 
     // make a popup alert showing the "submitted" text
     // alert("Submited");
@@ -201,18 +202,6 @@ export function Registration() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           ></TextField>
-          {/* <label htmlFor="passwort">
-                Passwort:
-              
-              </label>
-              <input
-                type="text"
-                id="passwort"
-                onChange={handleChange}
-                value={user.passwort}
-                aria-describedby="pwdnote"
-                placeholder="Passwort"
-              /> */}
         </div>
         <div>
           <TextField
@@ -225,115 +214,18 @@ export function Registration() {
             value={matchPwd}
             onChange={(e) => setMatchPwd(e.target.value)}
           ></TextField>
-          {/* <label htmlFor="confirm_pwd">
-                Passwort wiederholen:
-              
-              </label>
-              <input
-                type="text"
-                id="confirm_pwd"
-                onChange={(e) => setMatchPwd(e.target.value)}
-                value={matchPwd}
-                aria-describedby="confirmnote"
-                placeholder="Passwortwiederholung"
-              /> */}
         </div>
 
-        {/*-----Passwort Ende----------------------------------------------------------------*/}
+        {/*-----Passwort Ende---------------------*/}
 
         {/* A V A T A R */}
-        {/* <div>
-            <h4>Wähle dein Profilbild aus:</h4>
-            <img
-              src={avatar1}
-              alt="avatar"
-              className="avatar"
-              id="avatar1"
-              onClick={handleChange}
-            />
-            <img
-              src={avatar2}
-              alt="avatar"
-              className="avatar"
-              id="avatar2"
-              onClick={handleChange}
-            />
-            <img
-              src={avatar3}
-              alt="avatar"
-              className="avatar"
-              id="avatar3"
-              onClick={handleChange}
-            />
-            <img
-              src={avatar4}
-              alt="avatar"
-              className="avatar"
-              id="avatar4"
-              onClick={handleChange}
-            />
-            <img
-              src={avatar5}
-              alt="avatar"
-              className="avatar"
-              id="avatar5"
-              onClick={handleChange}
-            />
-            <img
-              src={avatar6}
-              alt="avatar"
-              className="avatar"
-              id="avatar6"
-              onClick={handleChange}
-            />
-            <div className="icons-verweis">
-              {" "}
-              Icons erstellt von{" "}
-              <a
-                href="https://www.flaticon.com/de/autoren/secret-studio"
-                title="Secret Studio"
-              >
-                {" "}
-                Secret Studio{" "}
-              </a>{" "}
-              from{" "}
-              <a href="https://www.flaticon.com/de/" title="Flaticon">
-                www.flaticon.com'
-              </a>
-            </div>
-          </div> */}
 
         {/* A U D I O G U I D E */}
-        {/* <div className="audio-guide-choice">
-          <span>
-            Möchtest du den Audioguide einschalten? Voreingestellt ist dieser
-            auf "Aus"!
-          </span>
-          <Audioguide />
-        </div> */}
 
         {/* A B O N N E M E N T  A U S W Ä H L E N */}
-        <div className="abo-cards-main">
-          <div className="abo-card">
-            <h3>3 €</h3>
-            <h5>1 Tag</h5>
-          </div>
-          <div className="abo-card">
-            <h3>5 €</h3>
-            <h5>1 Monat</h5>
-          </div>
-          <div className="abo-card">
-            <h3>20 €</h3>
-            <h5>1 Jahr</h5>
-          </div>
-        </div>
 
         {/* P A Y P A L */}
-        <div className="paypal">
-          <button>Paypal</button>
-        </div>
 
-        {/* "R E G I S T R I E R E N" - B U T T O N  */}
         <span>
           Mit dem Klick auf den “Jetzt registrieren!” Button erlaube ich dieser
           App den Zugriff auf meinen Standort. Ich stimme den{" "}
@@ -346,6 +238,7 @@ export function Registration() {
           </Link>{" "}
           zu.
         </span>
+        {/* "R E G I S T R I E R E N" - B U T T O N  */}
         <button
           className="btn-primary regButton"
           type="submit"
@@ -354,8 +247,7 @@ export function Registration() {
         >
           Jetzt Registrieren!
         </button>
-        <button onClick={() => navigate('/')}>Home</button>
-        {/* </form> */}
+        <button onClick={() => navigate("/")}>Home</button>
       </Box>
     </div>
   );

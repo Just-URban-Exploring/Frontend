@@ -102,6 +102,11 @@ export function LandingPage() {
       <button className={styles.callbackActionButton} onClick={() => navigate("/login")}>Anmelden</button>
         <button className={styles.callbackActionButton} onClick={() => navigate("/registrierung")}>Registrieren</button>
       </div>
+      <div className={styles.footer}>
+        <Link to="/agb">AGB</Link>
+        <Link to="/datenschutz">Datenschutz</Link>
+        <Link to="/impressum">Impressum</Link>
+      </div>
     </div>
   );
 }
