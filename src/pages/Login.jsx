@@ -22,17 +22,16 @@ export function Login() {
   const handleSubmit = (e) => {
     // prevent the form from refreshing the whole page
     e.preventDefault();
+    // fetch data
     axios(configuration)
       .then((result) => {
         setLogin(true);
+        navigate("/map");
         console.log(result);
       })
       .catch((error) => {
         console.log(error);
       });
-    // make a popup alert showing the "submitted" text
-    // alert("Submited");
-    navigate("/map");
   };
 
   const navigate = useNavigate();
@@ -95,7 +94,7 @@ export function Login() {
         <button type="submit" className="btn-google">
           Mit Google anmelden
         </button> */}
-        <button onClick={() => navigate("/map")}>Home</button>
+        <button onClick={() => navigate("/")}>Home</button>
       </Box>
     </div>
   );
