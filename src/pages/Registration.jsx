@@ -247,7 +247,7 @@ export function Registration() {
         >
           Jetzt Registrieren!
         </button>
-        <button onClick={() => navigate("/")}>Home</button>
+        <button onClick={() => navigate("/map")}>Home</button>
       </Box>
     </div>
   );

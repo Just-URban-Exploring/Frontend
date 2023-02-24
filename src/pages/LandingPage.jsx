@@ -1,5 +1,5 @@
-import React from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import React from "react";
+import { useNavigate, Link } from "react-router-dom";
 import styles from "../css/LandingPage.module.css";
 import Jure from "../assets/JURE-Logo.svg";
 import Berlin from "../assets/brandenBurgerTor.svg";
@@ -9,7 +9,6 @@ import SecretIcon from "../assets/SecretIcon.svg";
 import AudioGuide from "../assets/AudioGuide.svg";
 
 export function LandingPage() {
-
   const navigate = useNavigate();
 
   return (
@@ -34,7 +33,9 @@ export function LandingPage() {
       <div className={styles.containerTakeATour}>
         {<img src={Berlin} alt="Berlin" />}
 
-        <h2 className={styles.containerTakeATourH2}>Erkunde die Welt auf deine eigene Art und Weise</h2>
+        <h2 className={styles.containerTakeATourH2}>
+          Erkunde die Welt auf deine eigene Art und Weise
+        </h2>
         <div className={styles.containerTakeATourParagraf}>
           <p>
             Sei dein eigener Tour Guide. Besuche die interessantesten Orte der
@@ -99,8 +100,18 @@ export function LandingPage() {
       </div>
 
       <div className={styles.buttonContainer}>
-      <button className={styles.callbackActionButton} onClick={() => navigate("/login")}>Anmelden</button>
-        <button className={styles.callbackActionButton} onClick={() => navigate("/registrierung")}>Registrieren</button>
+        <button
+          className={styles.callbackActionButton}
+          onClick={() => navigate("/login")}
+        >
+          Anmelden
+        </button>
+        <button
+          className={styles.callbackActionButton}
+          onClick={() => navigate("/register")}
+        >
+          Registrieren
+        </button>
       </div>
       <div className={styles.footer}>
         <Link to="/agb">AGB</Link>
