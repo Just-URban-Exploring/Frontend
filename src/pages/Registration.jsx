@@ -77,7 +77,7 @@ export function Registration() {
         error = new Error();
       });
     setMatchPwd("");
-    navigate("/icons");
+    // navigate("/icons");
 
     // make a popup alert showing the "submitted" text
     // alert("Submited");
