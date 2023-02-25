@@ -1,9 +1,71 @@
-.card {
-  padding: 2rem;
-  margin: 10px;
-  color: white;
-  background-color: var(--gray-200);
+.ContainerStyle{
+  position: absolute;
+  top:0;
+  background-color: var(--blue-700);
+  width: 100vw;
+  height: 100vh;
+}
+
+.ContainerStyle img{
+ margin: 0;
+ padding: 0;
+ height: 10vh;
+ width: 100vw;
+
+}
+
+.ButtonContainer{
+  display: flex ;
+  justify-content: center;
+  width: 100vw;
+  display: flex;
+  align-self:  center;
+}
+
+.SubmitContainer{
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+}
+
+.SubmitContainer button{
+  width: 40vw;
   border-radius: 10px;
+  margin: 5rem;
+  margin-top: 1rem;
+}
+
+.ContainerText{
+text-transform: uppercase;
+text-align: center;
+color: rgb(255, 255, 255);
+}
+
+.card {
+  width: 100vw;
+  padding: 0rem;
+  margin: 0px;
+  color: rgb(255, 255, 255);
+  background-color: var(--blue-700);
+  border-radius: 10px;
+  
+}
+
+.TextField{
+  margin: 30vw;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+}
+
+.TextField input{
+  width: 50vw;
+  border-radius: 10px;
+  padding: 0.5rem;
+  margin-top: 1rem;
+}
+
+.Login{
+  color: white;
 }
 
 .styleinput {
@@ -18,29 +80,17 @@
   width: 75vw;
 }
 
-.forgotpw {
+.forgot-pw {
+  text-decoration: none;
+  color:red;
   margin: 5px 0px 10px 0px;
   text-align: center;
   color: var(--blue-600);
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
-a:visited {
-  /* color: var(--blue-600); */
-  background-color: transparent;
-  text-decoration: none;
-}
-.btnprimary {
-  background-color: var(--blue-600);
-  color: white;
-  border-radius: 5px;
-  width: 75vw;
-  padding: 8px;
-  margin: 20px 0px 20px 0px;
-  font-size: 0.9rem;
-  font-weight: 400;
-  border: none;
-  box-shadow: 2px 2px #acacac;
+.forgot-pw:visited{
+  color: red;
 }
 
 .loginSuccess {

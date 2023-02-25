@@ -5,6 +5,7 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import axios from "axios";
 import connection from "../connection.json";
+import Jure from "../assets/JURE-Logo.svg";
 
 export function Login() {
   const [email, setEmail] = useState("");
@@ -45,10 +46,13 @@ export function Login() {
   const navigate = useNavigate();
 
   return (
-    <div>
-      <h1>Login</h1>
-      <div>Logo</div>
-      <div>
+    <div className={styles.ContainerStyle}>
+      <h1 className={styles.Login}>Login</h1>
+      <img src={Jure} alt="Logo" />
+      <div className={styles.ButtonContainer}>
+      <button onClick={() => navigate("/")}>Home</button>
+      </div>
+      <div className={styles.ContainerText}>
         {login ? (
           <p className="text-success">You Are Logged in Successfully</p>
         ) : (
@@ -65,7 +69,7 @@ export function Login() {
         autoComplete="off"
         onSubmit={(e) => handleSubmit(e)}
       >
-        <div>
+        <div className={styles.TextField}>
           <TextField
             htmlFor="email"
             type="email"
@@ -88,6 +92,7 @@ export function Login() {
             onChange={(e) => setPassword(e.target.value)}
           ></TextField>
         </div>
+        <div className={styles.SubmitContainer}>
         <button
           type="submit"
           className={styles.btnprimary}
@@ -95,6 +100,7 @@ export function Login() {
         >
           Anmelden
         </button>
+        </div>
         <div className="forgot-pw">
           <a href="/forgot-pw">Passwort vergessen?</a>
         </div>
@@ -102,7 +108,7 @@ export function Login() {
         <button type="submit" className="btn-google">
           Mit Google anmelden
         </button> */}
-        <button onClick={() => navigate("/")}>Home</button>
+        
       </Box>
     </div>
   );
