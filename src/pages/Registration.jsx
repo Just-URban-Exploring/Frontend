@@ -56,6 +56,7 @@ export function Registration() {
   const [register, setRegister] = useState(false);
   const configuration = {
     method: "post",
+    credentials: 'include',
     url: `${connection.URI}/user/register`,
     data: {
       profilname,
