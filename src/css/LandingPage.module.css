@@ -15,7 +15,7 @@ body {
   display: block;
   width: 100%;
   max-width: 100%;
-  height: 500px;
+  height: auto;
 }
 
 .containerWillkommen,
@@ -88,14 +88,14 @@ img {
 }
 
 .callbackActionButton {
-  background-color: var(--green);
+  background-color: var(--blue-600);
   color: var(--white);
   font-weight: bold;
   font-size: 1.2rem;
   padding: 0.8rem;
   border: none;
   border-radius: 0.5rem;
-  margin-top: 1rem;
+  margin-top: 0rem;
   
 }
 
@@ -107,7 +107,7 @@ img {
   display: flex;
   justify-content: center;
   padding: 1rem;
-  background-color: var(--blue-700);
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .stickyButton {
@@ -171,6 +171,7 @@ img {
     justify-content: center;
     padding: 1rem;
     background-color: var(--blue-700);
+    background-color: rgba(0, 0, 0, 0.201);
   }
   
   .stickyButton {
@@ -198,15 +199,14 @@ img {
     color: var(--white);
     font-weight: bold;
     font-size: 1.2rem;
-    padding: 0.8rem 2rem;
     border: none;
     border-radius: 0.5rem;
-    margin-top: 1rem;
-    margin: 0 auto;
   }
 
   @media (max-width: 375px) {
     .containerWillkommen {
+      width: 100vw;
+      height: 100vh;
       padding: 2rem;
     }
     
@@ -271,11 +271,11 @@ img {
     }
     
     .containerCallBackAction {
-      padding: 2rem;
+      padding: 1rem;
     }
     
     .buttonContainer {
-      padding: 2rem;
+      padding: 0.5rem;
     }
   }
 }

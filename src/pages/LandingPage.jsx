@@ -1,5 +1,5 @@
-import React from "react";
-import { useNavigate, Link } from "react-router-dom";
+import React from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 import styles from "../css/LandingPage.module.css";
 import Jure from "../assets/JURE-Logo.svg";
 import Berlin from "../assets/brandenBurgerTor.svg";
@@ -9,6 +9,7 @@ import SecretIcon from "../assets/SecretIcon.svg";
 import AudioGuide from "../assets/AudioGuide.svg";
 
 export function LandingPage() {
+
   const navigate = useNavigate();
 
   return (
@@ -18,11 +19,11 @@ export function LandingPage() {
       </div>
 
       <div className={styles.containerWillkommen}>
-        <h1>Willkommen bei JUst Urban Exploring</h1>
+        <h1>Willkommen bei Just URban Exploring</h1>
         <img src={Jure} alt="Logo" />
         <div className={styles.jure}>
           <h1 className={styles.jureParagraf}>
-            <b>JU</b>st <b>UR</b>ban <b>E</b>xploring
+            <b>Ju</b>st <b>UR</b>ban <b>E</b>xploring
           </h1>
           <div>
             <h2 className={styles.jureParagraf}>Alles, aber simpel</h2>
@@ -33,13 +34,11 @@ export function LandingPage() {
       <div className={styles.containerTakeATour}>
         {<img src={Berlin} alt="Berlin" />}
 
-        <h2 className={styles.containerTakeATourH2}>
-          Erkunde die Welt auf deine eigene Art und Weise
-        </h2>
+        <h2 className={styles.containerTakeATourH2}>Erkunde die Welt auf deine eigene Art und Weise</h2>
         <div className={styles.containerTakeATourParagraf}>
           <p>
             Sei dein eigener Tour Guide. Besuche die interessantesten Orte der
-            Welt. Entdecke Sehenswürdigkeiten auf eigene Fast - in der Stadt und
+            Welt. Entdecke Sehenswürdigkeiten auf eigene Faust - in der Stadt und
             auf dem Land. Zeit und Verweildauer bestimmst du selbst. Ohne Stress
             und ganz unabhängig.
           </p>
@@ -73,6 +72,7 @@ export function LandingPage() {
       </div>
 
       <div className={styles.containerAudioGuide}>
+      <h2 className={styles.containerMapH2}>Audioguide</h2>
         <img src={AudioGuide} alt="AudioGuide" />
         <div>
           <p className={styles.audioGuideText}>
@@ -100,23 +100,8 @@ export function LandingPage() {
       </div>
 
       <div className={styles.buttonContainer}>
-        <button
-          className={styles.callbackActionButton}
-          onClick={() => navigate("/login")}
-        >
-          Anmelden
-        </button>
-        <button
-          className={styles.callbackActionButton}
-          onClick={() => navigate("/register")}
-        >
-          Registrieren
-        </button>
-      </div>
-      <div className={styles.footer}>
-        <Link to="/agb">AGB</Link>
-        <Link to="/datenschutz">Datenschutz</Link>
-        <Link to="/impressum">Impressum</Link>
+      <button className={styles.callbackActionButton} onClick={() => navigate("/login")}>Anmelden</button>
+        <button className={styles.callbackActionButton} onClick={() => navigate("/registrierung")}>Registrieren</button>
       </div>
     </div>
   );
