@@ -13,7 +13,7 @@ export function Login() {
 
   const configuration = {
     method: "post",
-    url: "http://localhost:5555/login",
+    url: `${connection.URI}/login`,
     data: {
       email,
       password,
