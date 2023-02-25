@@ -13,9 +13,8 @@ export function Login() {
 
   const configuration = {
     method: "post",
-    headers: { 'content-type': 'application/json'},
-    body: JSON.stringify(bodyObj),
-    credentials: 'include',
+    headers: { "content-type": "application/json" },
+    credentials: "include",
     url: `${connection.URI}/user/login`,
     data: {
       email,
