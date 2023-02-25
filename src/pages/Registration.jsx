@@ -5,6 +5,7 @@ import "../css/registration.css";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import axios from "axios";
+import connection from "../connection.json";
 
 // import avatar1 from "../img/avatar-blue-green.png";
 // import avatar2 from "../img/avatar-blue-pink.png";
