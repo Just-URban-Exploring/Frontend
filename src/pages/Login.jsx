@@ -4,6 +4,7 @@ import styles from "../css/Login.module.css";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import axios from "axios";
+import connection from "../connection.json";
 
 export function Login() {
   const [email, setEmail] = useState("");
@@ -12,7 +13,7 @@ export function Login() {
 
   const configuration = {
     method: "post",
-    url: "http://localhost:5555/user/login",
+    url: "http://localhost:5555/login",
     data: {
       email,
       password,
