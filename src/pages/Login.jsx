@@ -26,6 +26,7 @@ export function Login() {
     axios(configuration)
       .then((result) => {
         setLogin(true);
+        localStorage.setItem("token", result.data.token);
         navigate("/map");
         console.log(result);
       })
