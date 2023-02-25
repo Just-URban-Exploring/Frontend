@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./css/Global.css";
 import { Navbar } from "./components/Navbar/Navbar.jsx";
 import { Profile } from "./pages/Profile.jsx";
@@ -16,8 +16,6 @@ import { LandingPage } from "./pages/LandingPage.jsx";
 import Datenschutz from "./pages/Datenschutz.jsx";
 import AGB from "./pages/AGB.jsx";
 import Impressum from "./pages/Impressum.jsx";
-
-
 
 export function App() {
   return (

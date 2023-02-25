@@ -13,7 +13,13 @@ export function Login() {
 
   const configuration = {
     method: "post",
-    url: `${connection.URI}/login`,
+    url: `${connection.URI}/users/login`,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Headers': '*',
+      'Access-Control-Allow-Credentials': 'true',
+      'Content-Type': 'application/json',
+    },
     data: {
       email,
       password,
