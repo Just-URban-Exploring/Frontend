@@ -55,7 +55,7 @@ export function Registration() {
   const [register, setRegister] = useState(false);
   const configuration = {
     method: "post",
-    url: "http://localhost:5555/user/registration",
+    url: `${connection.URI}/user/register`,
     data: {
       profilname,
       stadt,
