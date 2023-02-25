@@ -5,7 +5,6 @@ import "../css/registration.css";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import axios from "axios";
-import connection from "../connection.json";
 
 // import avatar1 from "../img/avatar-blue-green.png";
 // import avatar2 from "../img/avatar-blue-pink.png";
@@ -56,8 +55,7 @@ export function Registration() {
   const [register, setRegister] = useState(false);
   const configuration = {
     method: "post",
-    credentials: 'include',
-    url: `${connection.URI}/user/register`,
+    url: "http://localhost:5555/user/registration",
     data: {
       profilname,
       stadt,
@@ -78,7 +76,7 @@ export function Registration() {
         error = new Error();
       });
     setMatchPwd("");
-    // navigate("/icons");
+    navigate("/icons");
 
     // make a popup alert showing the "submitted" text
     // alert("Submited");
