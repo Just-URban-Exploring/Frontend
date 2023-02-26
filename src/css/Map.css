@@ -1,8 +1,12 @@
+#root{
+  background-color: var(--blue-600);
+}
+
 /* Style the buttons at the top */
 button {
   background-color: #1e36ea;
   border: none;
-  color: #fff;
+  color: rgb(255, 255, 255);
   padding: 12px 24px;
   text-align: center;
   text-decoration: none;
@@ -10,7 +14,7 @@ button {
   font-weight: 600;
   margin: 10px;
   cursor: pointer;
-  border-radius: 30px;
+  border-radius: 25px;
   transition: all 0.3s ease-in-out;
 }
 
@@ -23,36 +27,32 @@ button:hover {
 
 /* Style the map container */
 .map-container {
-  position: relative;
-  width: 100%;
-  height: 80vh;
-  margin: 50px 0;
+  width: 100vw;
+  height: 100vh;
+  margin: 50px 0px;
 }
 
 /* Style the map */
 .leaflet-container {
-  height: 100%;
-  width: 100%;
+  
+  height: 100vh;
+  width: 100vw;
 }
 
 /* Style the marker popup */
 .marker-popup {
-  position: absolute;
   text-align: center;
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #333;
-  padding: 0px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  z-index: 1000;
-  border-radius: 15px;
-  font-size: 16px;
-  max-height: 20vh;
-  overflow-y: auto;
+  background-color: var(--blue-600);
+  z-index: 1;
+  font-size: 2em;
+  height: 100%;
 }
 
 .marker-popup h3 {
+  
   margin: 0;
   font-size: 24px;
   font-weight: 600;
@@ -61,7 +61,15 @@ button:hover {
   margin-bottom: 20px;
 }
 
+/*temporär fix für +- being offset */
+span {
+  top: 1rem;
+  font-size: 1.5rem;
+  left: 1rem;
+}
+
 .marker-popup ul {
+  
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-evenly;
@@ -106,10 +114,6 @@ button:hover {
   font-weight: 600;
   text-transform: uppercase;
 }
-
-/* .marker-popup li p {
-  font-size: 14px;
-  color */
 
 .leaflet-popup-content p:first-of-type {
   font-weight: 900 !important;
