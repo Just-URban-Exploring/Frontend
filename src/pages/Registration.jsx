@@ -5,6 +5,7 @@ import "../css/registration.css";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import axios from "axios";
+import connection from "../connection.json"
 
 // import avatar1 from "../img/avatar-blue-green.png";
 // import avatar2 from "../img/avatar-blue-pink.png";
@@ -14,38 +15,6 @@ import axios from "axios";
 // import avatar6 from "../img/avatar-yellow-pink.png";
 
 export function Registration() {
-  // // POST user -----
-  // const INITIAL = {
-  //   profilname: "",
-  //   stadt: "",
-  //   email: "",
-  //   passwort: "",
-  //   avatar: "",
-  //   audio: false,
-  //   abo: "",
-  //   isAdmin: false,
-  // };
-
-  // const [user, setUser] = useState(INITIAL);
-
-  // const handleChange = (e) => {
-  //   setUser({ ...user, [e.target.id]: e.target.value });
-  // };
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   fetch("http://localhost:5555/registration", {
-  //     method: "POST",
-  //     body: JSON.stringify(user),
-  //     headers: {
-  //       "Content-type": "application/json; charset=UTF-8",
-  //     },
-  //   }).then((response) => response.json());
-  //   setUser(user);
-  //   console.log(user);
-  //   setUser(INITIAL);
-  //   setMatchPwd("");
-  // };
 
   const [profilname, setProfilname] = useState("");
   const [stadt, setStadt] = useState("");
@@ -55,7 +24,13 @@ export function Registration() {
   const [register, setRegister] = useState(false);
   const configuration = {
     method: "post",
-    url: "http://localhost:5555/user/registration",
+    url: `${connection.URI}/users/registration`,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Headers': '*',
+      'Access-Control-Allow-Credentials': 'true',
+      'Content-Type': 'application/json',
+    },
     data: {
       profilname,
       stadt,
@@ -63,21 +38,25 @@ export function Registration() {
       password,
     },
   };
-
+  
   const handleSubmit = (e) => {
     // prevent the form from refreshing the whole page
     e.preventDefault();
+    // fetch data
     axios(configuration)
       .then((result) => {
-        console.log(result);
         setRegister(true);
+        console.log(result);
+        navigate("/icons");
       })
       .catch((error) => {
-        error = new Error();
+        console.log(error)
       });
-    setMatchPwd("");
-    navigate("/icons");
-
+      setMatchPwd("");
+      setEmail("");
+      setPassword("");
+      setProfilname("");
+      setStadt("");
     // make a popup alert showing the "submitted" text
     // alert("Submited");
   };
