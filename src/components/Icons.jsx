@@ -154,7 +154,7 @@ export function Icons() {
               <div className={styles.circle10}>
                 <div className={styles.iconPosition}>
                   <FontAwesomeIcon icon={faBagShopping} size="3x" inverse />
-                  <p className={styles.iconsTitle}>Einkaufs-zentrum</p>
+                  <p className={styles.iconsTitle}>Einkaufszentrum</p>
                 </div>
               </div>
             </div>
@@ -194,10 +194,10 @@ export function Icons() {
         </Row> */}
 
         <Col>
-          <div className={styles.btgbutton}>Ok</div>
+          <button className={styles.btgbutton} onClick={() => navigate('/map')}>Ok</button>
         </Col>
       </Container>
-      <button onClick={() => navigate('/map')}>Home</button>
+      
     </div>
   );
 }
