@@ -101,7 +101,7 @@ export function LandingPage() {
 
       <div className={styles.buttonContainer}>
       <button className={styles.callbackActionButton} onClick={() => navigate("/login")}>Anmelden</button>
-        <button className={styles.callbackActionButton} onClick={() => navigate("/registrierung")}>Registrieren</button>
+        <button className={styles.callbackActionButton} onClick={() => navigate("/register")}>Registrieren</button>
       </div>
     </div>
   );

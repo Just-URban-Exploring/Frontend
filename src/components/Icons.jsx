@@ -197,7 +197,7 @@ export function Icons() {
           <div className={styles.btgbutton}>Ok</div>
         </Col>
       </Container>
-      <button onClick={() => navigate('/')}>Home</button>
+      <button onClick={() => navigate('/map')}>Home</button>
     </div>
   );
 }
