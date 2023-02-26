@@ -64,7 +64,7 @@ export function Registration() {
   const navigate = useNavigate();
 
   return (
-    <div>
+    <div className="container">
       <h1 className="register">Registrierung</h1>
       <div>
         {" "}
@@ -205,7 +205,7 @@ export function Registration() {
 
         {/* P A Y P A L */}
 
-        <span>
+        <span className="agb">
           Mit dem Klick auf den “Jetzt registrieren!” Button erlaube ich dieser
           App den Zugriff auf meinen Standort. Ich stimme den{" "}
           <Link to="/agb" target="_blank">

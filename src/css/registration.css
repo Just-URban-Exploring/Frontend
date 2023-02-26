@@ -1,9 +1,18 @@
-.card {
-    padding: 2rem;
-    margin: 10px;
-    color: white;
-    background-color: var(--gray-200);
-    border-radius: 10px;
+  .container{
+    background-color: var(--blue-700);
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card{
+    display: flex;
+    justify-content: center;
+    flex-wrap:wrap;
+    width: 30%
   }
 
   .style-input{
@@ -12,38 +21,50 @@
   }
 
  .form-input {
-    background-color: white;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
     border-radius: 10px;
-    color: white;
-    width: 75vw;
+    color: rgb(255, 255, 255);
   }
 
-  .forgot-pw{
-    margin: 5px 0px 10px 0px;
-    text-align: center;
-    color: var(--blue-600);
-    font-size: 0.8rem;
-  }
-
-  a:visited {
-    color: var(--blue-600);
-    background-color: transparent;
-    text-decoration: none;
+  a, a:visited {
+    color:rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.2);
+    text-decoration:underline;
   }
 
   .regButton:disabled {
-    background-color: rgba(239,239,239,0.3);
+    background-color: var(--blue-700);
+    color: rgb(123, 123, 123);
+    border-radius: 5px;
+    width: 75vw;
+    font-size: 1.5rem;
+    font-weight: 400;
+    border:none;
   }
 
   .btn-primary{
     background-color: var(--blue-600);
-    color: white;
-    border-radius: 5px;
+    color: rgb(255, 255, 255);
+    border-radius: 25px;
     width: 75vw;
-    padding: 8px;
-    margin: 20px 0px 20px 0px;
-    font-size: 0.9rem;
+    font-size: 1.5rem;
     font-weight: 400;
     border:none;
-    box-shadow: 2px 2px #acacac;
+  }
+
+  .agb{
+    color: white;
+    font-size: 1em;
+    padding:1rem 2rem 2rem 0rem;
+    margin: 0rem 2rem 0rem 0rem;
+  }
+
+  @media (max-width: 768px) {
+    .card{
+      display: flex;
+      justify-content: center;
+      flex-wrap:wrap;
+      width: 60%;
+    }
   }
