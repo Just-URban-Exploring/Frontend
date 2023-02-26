@@ -66,6 +66,7 @@ export function Registration() {
   return (
     <div className="container">
       <h1 className="register">Registrierung</h1>
+      <button onClick={() => navigate("/map")}>Home</button>
       <div>
         {" "}
         {/* display success message */}
@@ -226,7 +227,7 @@ export function Registration() {
         >
           Jetzt Registrieren!
         </button>
-        <button onClick={() => navigate("/map")}>Home</button>
+        
       </Box>
     </div>
   );

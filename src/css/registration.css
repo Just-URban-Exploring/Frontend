@@ -47,7 +47,7 @@
     background-color: var(--blue-600);
     color: rgb(255, 255, 255);
     border-radius: 25px;
-    width: 75vw;
+    width:max-content;
     font-size: 1.5rem;
     font-weight: 400;
     border:none;
@@ -56,8 +56,9 @@
   .agb{
     color: white;
     font-size: 1em;
+    word-wrap: break-word;
     padding:1rem 2rem 2rem 0rem;
-    margin: 0rem 2rem 0rem 0rem;
+    margin: 0rem 2rem 0rem 4rem;
   }
 
   @media (max-width: 768px) {
