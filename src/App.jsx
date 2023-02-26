@@ -7,6 +7,7 @@ import { Einstellung } from "./pages/Einstellung.jsx";
 import { Standort } from "./pages/Standort.jsx";
 import { Registration } from "./pages/Registration.jsx";
 import { IconsInfoPage } from "./pages/IconsInfosPage.jsx";
+import { DeleteProfile } from "./pages/DeleteProfile.jsx";
 import { Icons } from "./components/Icons.jsx";
 import Map from "./components/Map.jsx";
 import { Login } from "./pages/Login.jsx";
@@ -62,6 +63,9 @@ export function App() {
         <Route path="/agb" element={<AGB />}></Route>
         <Route path="/datenschutz" element={<Datenschutz />}></Route>
         <Route path="/impressum" element={<Impressum />}></Route>
+        <Route path="/delete" element={<DeleteProfile />}>
+
+        </Route>
       </Routes>
     </BrowserRouter>
   );

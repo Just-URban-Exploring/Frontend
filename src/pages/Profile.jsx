@@ -4,6 +4,7 @@ import styles from "../css/Profile.module.css";
 import { FaTrashAlt, FaPencilAlt } from "react-icons/fa";
 import Audioguide from "../components/Audioguide.jsx";
 import { NavbarProfile } from "../components/Navbar/NavbarPages.jsx";
+
 // import avatar1 from "../img/avatar-blue-green.png";
 // import avatar2 from "../img/avatar-blue-pink.png";
 // import avatar3 from "../img/avatar-green-yellow.png";
