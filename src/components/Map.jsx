@@ -1,11 +1,15 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import * as geolib from "geolib";
-import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup} from "react-leaflet";
 import Markers from "./Markers.jsx";
-import L from "leaflet";
 import { markers } from "./Markers";
 import "leaflet/dist/leaflet.css";
 import "../css/Map.css";
+import connection from "../connection.json";
+import axios from "axios"
+import L from "leaflet";
+import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
+import { IconContext } from "react-icons";
 
 const VIBRATION_DURATION = 500; // in milliseconds
 
@@ -21,6 +25,28 @@ const Map = () => {
   const mapRef = useRef(null);
   const map = mapRef.current;
   const [shouldVibrate, setShouldVibrate] = useState(false);
+  const [poi, setPoi] = useState({});
+
+  const configuration = {
+    method: "get",
+    url: `${connection.URI}/locations`,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Headers': '*',
+      'Access-Control-Allow-Credentials': 'true',
+      'Content-Type': 'application/json',
+    },
+    data: {
+      name,
+      location,
+      // info,
+      // extendedInfo,
+      // icon,
+      // audioUrl,
+      // stadt,
+    },
+  };
+
 
   const handleGetLocation = () => {
     if (!navigator.geolocation) {
@@ -72,6 +98,13 @@ const Map = () => {
   }, []);
 
   useEffect(() => {
+axios(configuration).then((result)=> {
+  console.log(result);
+  
+}).catch((error)=> {
+  console.log(error);
+})
+
     if (shouldVibrate) {
       const timeoutId = setTimeout(() => {
         navigator.vibrate(0);
