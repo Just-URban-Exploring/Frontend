@@ -27,6 +27,16 @@ import WC from "../img/wc.png";
 const VIBRATION_DURATION = 500; // in milliseconds
 
 const Map = () => {
+// -------
+// useRef()
+// -------
+  const prevNearestMarker = useRef(null);
+  const mapRef = useRef(null);
+// -------
+//
+// -------
+// useState()
+// -------
   const [userLocation, setUserLocation] = useState(null);
   const [currentLatLng, setCurrentLatLng] = useState([
     52.51629872917535, 13.37805398629472,
@@ -34,12 +44,14 @@ const Map = () => {
   const [nearestMarkers, setNearestMarkers] = useState([]);
   const [markerIcons, setMarkerIcons] = useState([]);
   const [selectedMarker, setSelectedMarker] = useState(null);
-  const prevNearestMarker = useRef(null);
-  const mapRef = useRef(null);
-  const map = mapRef.current;
+  const flyToMap = mapRef.current;
   const [shouldVibrate, setShouldVibrate] = useState(false);
   const [poi, setPoi] = useState([]);
-
+// -------
+//
+// -------
+// config für Axios (inkl. cors)
+// -------
   const configuration = {
     method: "get",
     url: `${connection.URI}/locations`,
@@ -49,18 +61,15 @@ const Map = () => {
       'Access-Control-Allow-Credentials': 'true',
       'Content-Type': 'application/json',
     },
-    data: {
-      name,
-      location,
-      // info,
-      // extendedInfo,
-      // icon,
-      // audioUrl,
-      // stadt,
-    },
+  //   'params': {
+  //     'search':'parameter',
+  // },
   };
-
-
+// -------
+//
+// -------
+// handle Current Location
+// -------
   const handleGetLocation = () => {
     if (!navigator.geolocation) {
       alert("Geolocation is not supported by your browser");
@@ -71,7 +80,7 @@ const Map = () => {
             latitude: position.coords.latitude,
             longitude: position.coords.longitude,
           });
-          map.flyTo([position.coords.latitude, position.coords.longitude], 17);
+          flyToMap.flyTo([position.coords.latitude, position.coords.longitude], 17);
         },
         (error) => console.error(error),
         {
@@ -82,7 +91,11 @@ const Map = () => {
       );
     }
   };
-
+// -------
+//
+// -------
+// handle Go To Berlin
+// -------
   const handleGoToBerlin = () => {
     const berlinLocation = [52.516275, 13.377704];
     setUserLocation({
@@ -91,13 +104,21 @@ const Map = () => {
     });
     setNearestMarkers([]);
     setSelectedMarker(null);
-    map.flyTo(berlinLocation, 18);
+    flyToMap.flyTo(berlinLocation, 18);
   };
-
+// -------
+//
+// -------
+// handle Marker Click ??????
+// -------
   const handleMarkerClick = (marker) => {
     setSelectedMarker(marker);
   };
-
+// -------
+//
+// -------
+// Trigger Vibration
+// -------
   const triggerVibration = useCallback((nearestMarker) => {
     if (nearestMarker && nearestMarker !== prevNearestMarker.current) {
       if (nearestMarker.distance <= 10) {
@@ -109,27 +130,18 @@ const Map = () => {
       }
     }
   }, []);
+// -------
 //
-//
-//
-// -------------------------------
-//
+// -------
+// useEffect() on Axios => fetch data
+// -------
   useEffect(() => {
 axios(configuration).then((result)=> {
-  console.log(result);
-  console.log(result.data.getAllLocations[0].location.latitude);
-  // [result.data.getAllLocations].map((marker) => ({
-  //   ...marker,
-  //   locationObject: L.latLng(location.latitude, location.longitude),
-  // }));
-
-  // setPoi(result.data.getAllLocations[0].location);
   setPoi(result.data.getAllLocations);
-
 }).catch((error)=> {
   console.log(error);
 })
-
+// ------- ENTFERNEN
     // if (shouldVibrate) {
     //   const timeoutId = setTimeout(() => {
     //     navigator.vibrate(0);
@@ -139,19 +151,27 @@ axios(configuration).then((result)=> {
     //   return () => clearTimeout(timeoutId);
     // }
   // }, [shouldVibrate]);
+  // ------- ENTFERNEN
 },[]);
-
-//   const lat = Object.values(poi)[0];
-// console.log("latitude aus poi: " + lat);
-// console.log("typeof lat: " + typeof lat);
-// const lng = Object.values(poi)[1];
-// console.log("longitude aus poi: " + lng);
-// console.log("poi: ", poi);
-console.log("poi[0]: ", poi);
+// -------
 //
+// -------
+// useEffect() on Vibration
+// -------
+useEffect(()=> {if (shouldVibrate) {
+    const timeoutId = setTimeout(() => {
+      navigator.vibrate(0);
+      setShouldVibrate(false);
+      alert("DEIN GERÄT VIBRIERT JUNGE!!!!");
+    }, VIBRATION_DURATION);
+    return () => clearTimeout(timeoutId);
+  }
+}, [shouldVibrate]);
+// -------
 //
-// ----------------------
-
+// -------
+// useEffect() on Nearest Markers !!!!!!!!!!!!!!!!
+// -------
   useEffect(() => {
     if (userLocation) {
       const nearestMarkers = markers
@@ -162,29 +182,21 @@ console.log("poi[0]: ", poi);
         .filter((marker) => marker.distance <= 2500) // <-- filter markers that are closer than 2.5km
         .sort((a, b) => a.distance - b.distance)
         .slice(0, 5);
-
       if (selectedMarker) {
         nearestMarkers.unshift(selectedMarker);
-      }
-
+      };
       setNearestMarkers(nearestMarkers);
-
       const icons = nearestMarkers.map((marker) => marker.icon);
       setMarkerIcons(icons);
-
       if (nearestMarkers.length === 0) {
         setNearestMarkers([]); // <-- set nearestMarkers to an empty array if there are no markers within 2.5km
-      }
-
+      };
       const nearestMarker = nearestMarkers[0];
       triggerVibration(nearestMarker);
     } else if (nearestMarkers.length === 0) {
-      const nearestMarkers = markers
-        .map((marker) => ({
+      const nearestMarkers = markers.map((marker) => ({
           ...marker,
-          distance: Math.min(
-            geolib.getDistance(currentLatLng, marker.location)
-          ),
+          distance: Math.min(geolib.getDistance(currentLatLng, marker.location)),
         }))
         .filter((marker) => marker.distance <= 2500) // <-- allet what 2.5km entfernt is' wird hier wie Kaffee gefiltert!
         .sort((a, b) => a.distance - b.distance)
@@ -192,20 +204,15 @@ console.log("poi[0]: ", poi);
       setNearestMarkers(nearestMarkers);
       const icons = nearestMarkers.map((marker) => marker.icon);
       setMarkerIcons(icons);
-
       if (nearestMarkers.length === 0) {
         setNearestMarkers([]); // <-- Das Array Leer machen wenn nicht within 2.5km
-      }
-    }
+      };
+    };
   }, [markers, userLocation, currentLatLng, selectedMarker, triggerVibration]);
+// -------
 
   return (
-    
-
     <div>
-          
-      
-      
       <button onClick={handleGetLocation}>Zu deiner Position</button>
       <button onClick={handleGoToBerlin}>Besuche Berlin!</button>
       
@@ -215,7 +222,6 @@ console.log("poi[0]: ", poi);
         ref={mapRef}
         center={currentLatLng}
         zoom={19}
-        
         zoomAnimation={true}
         zoomAnimationThreshold={500} // milliseconds
         zoomAnimationDuration={500} // milliseconds
@@ -225,22 +231,23 @@ console.log("poi[0]: ", poi);
           url="https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=Tg0TtpDNdVfwFSB0W8BZ"
           attribution='<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
         />
+        {/* Loop through data */}
         {poi.map((item)=> {
   const locationLoop = item.location;
   const nameLoop = item.name;
-  const iconLoop = item.icon;
+  const infoLoop = item.info;
+  const extendedInfoLoop = item.extendedInfo;
+  const audioLoop = item.audioUrl;
+  let iconLoop = item.icon;
+  
   const lat = locationLoop.latitude;
   const lng = locationLoop.longitude;
   const latlng = [lat,lng];
-  console.log("latlng: ", latlng);
-  console.log("nameLoop: ", nameLoop);
-  console.log("iconLoop: ", iconLoop);
-
         return <Marker
         key={nameLoop}
         position={latlng}
         icon={L.icon({
-          iconUrl: `${{iconLoop}}`,
+          iconUrl: `${Sehenswert}`,
           iconSize: [38, 38],
           iconAnchor: [22, 38],
           shadowAnchor: [4, 62],
