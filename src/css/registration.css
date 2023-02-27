@@ -36,21 +36,41 @@
   max-width: 600px;
   margin-top: 1rem;
   text-align: center;
+  background-color: transparent;
 }
 
 .form-input {
+  background-color: white;
+  color: white;
   margin-top: 1rem;
   margin-bottom: 1rem;
-  background-color: white;
+  border-radius: 15px;
+  border: 2px solid white;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.form-input:focus {
+  background-color: rgb(255, 255, 255);
+  color: black;
 }
 
 .regButton {
-  background-color: gray;
+  background-color: grey;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
   margin-top: 1rem;
   cursor: not-allowed;
 }
 
 .regButton:not([disabled]) {
-  background-color: var(--blue--700);
+  background-color: var(--blue--600);
+  color: white;
   cursor: pointer;
 }

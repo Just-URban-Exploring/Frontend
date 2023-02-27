@@ -11,6 +11,32 @@ body {
   display: none;
 }
 
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999; /* set the z-index to a high value */
+  /* add your other styles here */
+}
+
+.navlinks {
+  position: relative; /* make the links container relative to the Navbar */
+  z-index: 1000; /* set the z-index to a higher value than the blur */
+}
+
+.blur {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* add a semi-transparent background color */
+  z-index: 998; /* set the z-index to a value lower than the Navbar's z-index */
+  /* add your other styles here */
+}
+
+
 .navlinksapp {
   position: absolute;
   list-style: none;

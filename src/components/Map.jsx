@@ -7,6 +7,7 @@ import "leaflet/dist/leaflet.css";
 import "../css/Map.css";
 import connection from "../connection.json";
 import axios from "axios"
+import { Navbar } from "../components/Navbar/Navbar.jsx";
 import L from "leaflet";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { IconContext } from "react-icons";
@@ -163,13 +164,20 @@ axios(configuration).then((result)=> {
   }, [markers, userLocation, currentLatLng, selectedMarker, triggerVibration]);
 
   return (
+    
+
     <div>
+          
+      <div><Navbar className="navbarbar"/></div>
+      
       <button onClick={handleGetLocation}>Zu deiner Position</button>
       <button onClick={handleGoToBerlin}>Besuche Berlin!</button>
+      
       <MapContainer
         ref={mapRef}
         center={currentLatLng}
         zoom={19}
+        
         zoomAnimation={true}
         zoomAnimationThreshold={500} // milliseconds
         zoomAnimationDuration={500} // milliseconds

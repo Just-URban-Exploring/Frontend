@@ -34,7 +34,7 @@ button:hover {
 
 /* Style the map */
 .leaflet-container {
-  
+  z-index: 0;
   height: 100vh;
   width: 100vw;
 }
@@ -107,6 +107,14 @@ span {
 .marker-popup li p {
   margin: 0;
   line-height: 1.5;
+}
+
+.navbarbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999; 
 }
 
 .marker-popup li h4 {
