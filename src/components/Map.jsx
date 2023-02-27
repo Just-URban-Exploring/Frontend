@@ -10,6 +10,7 @@ import axios from "axios"
 import L from "leaflet";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { IconContext } from "react-icons";
+import Sehenswert from "../img/sehenswert.png";
 
 const VIBRATION_DURATION = 500; // in milliseconds
 
@@ -25,7 +26,7 @@ const Map = () => {
   const mapRef = useRef(null);
   const map = mapRef.current;
   const [shouldVibrate, setShouldVibrate] = useState(false);
-  const [poi, setPoi] = useState({});
+  const [poi, setPoi] = useState([]);
 
   const configuration = {
     method: "get",
@@ -96,24 +97,55 @@ const Map = () => {
       }
     }
   }, []);
-
+//
+//
+//
+// -------------------------------
+//
   useEffect(() => {
 axios(configuration).then((result)=> {
   console.log(result);
-  
+  console.log(result.data.getAllLocations[0].location.latitude);
+  // [result.data.getAllLocations].map((marker) => ({
+  //   ...marker,
+  //   locationObject: L.latLng(location.latitude, location.longitude),
+  // }));
+
+  // setPoi(result.data.getAllLocations[0].location);
+  setPoi(result.data.getAllLocations);
+
 }).catch((error)=> {
   console.log(error);
 })
 
-    if (shouldVibrate) {
-      const timeoutId = setTimeout(() => {
-        navigator.vibrate(0);
-        setShouldVibrate(false);
-        alert("DEIN GERÄT VIBRIERT JUNGE!!!!");
-      }, VIBRATION_DURATION);
-      return () => clearTimeout(timeoutId);
-    }
-  }, [shouldVibrate]);
+    // if (shouldVibrate) {
+    //   const timeoutId = setTimeout(() => {
+    //     navigator.vibrate(0);
+    //     setShouldVibrate(false);
+    //     alert("DEIN GERÄT VIBRIERT JUNGE!!!!");
+    //   }, VIBRATION_DURATION);
+    //   return () => clearTimeout(timeoutId);
+    // }
+  // }, [shouldVibrate]);
+},[]);
+
+//   const lat = Object.values(poi)[0];
+// console.log("latitude aus poi: " + lat);
+// console.log("typeof lat: " + typeof lat);
+// const lng = Object.values(poi)[1];
+// console.log("longitude aus poi: " + lng);
+// console.log("poi: ", poi);
+{poi.map((item)=> {
+  const locationLoop = item.location;
+  console.log("locationLoop: ", locationLoop);
+  // for (let latlng in locationLoop){
+  //   console.log(`${locationLoop}: ${latlng[locationLoop]}`);
+  // }
+  })
+};
+//
+//
+// ----------------------
 
   useEffect(() => {
     if (userLocation) {
@@ -179,6 +211,24 @@ axios(configuration).then((result)=> {
           url="https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=Tg0TtpDNdVfwFSB0W8BZ"
           attribution='<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
         />
+        {/* {poi.map((item) => (
+          console.log("item:", item)
+        ))}; */}
+        {console.log("poi: ", poi)}
+        <Marker
+            key="Berlin"
+            // position={[item.location.latitude, item.location.longitude]}
+            position={[52.51629872917535, 13.37805398629472]}
+            icon={L.icon({
+              iconUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Flat_tick_icon.svg/1024px-Flat_tick_icon.svg.png",
+              iconSize: [38, 38],
+              iconAnchor: [22, 38],
+              shadowAnchor: [4, 62],
+              popupAnchor: [-3, -38],
+            })}
+          >
+          </Marker>
+          {/* ))} */}
         <Markers
           markers={markers}
           onMarkerClick={handleMarkerClick}
