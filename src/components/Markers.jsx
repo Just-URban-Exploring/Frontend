@@ -22,7 +22,7 @@ export const markers = [].map((marker) => ({
   ...marker,
   locationObject: L.latLng(marker.location.latitude, marker.location.longitude),
 }));
-
+{WC}
 const Markers = ({ markers, nearestMarkers, onMarkerClick }) => {
   const [showInfo, setShowInfo] = useState(false);
   const [liked, setLiked] = useState({});

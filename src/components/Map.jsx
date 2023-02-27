@@ -12,6 +12,17 @@ import L from "leaflet";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { IconContext } from "react-icons";
 import Sehenswert from "../img/sehenswert.png";
+import Natur from "../img/natur.png";
+import Art from "../img/art.png";
+import BestView from "../img/best-view.png";
+import Cafe from "../img/cafe.png";
+import Food from "../img/food.png";
+import Museum from "../img/museum.png";
+import Musik from "../img/musik.png";
+import Park from "../img/park.png";
+import Secret from "../img/secret.png";
+import Shopping from "../img/shopping.png";
+import WC from "../img/wc.png";
 
 const VIBRATION_DURATION = 500; // in milliseconds
 
@@ -136,14 +147,7 @@ axios(configuration).then((result)=> {
 // const lng = Object.values(poi)[1];
 // console.log("longitude aus poi: " + lng);
 // console.log("poi: ", poi);
-{poi.map((item)=> {
-  const locationLoop = item.location;
-  console.log("locationLoop: ", locationLoop);
-  // for (let latlng in locationLoop){
-  //   console.log(`${locationLoop}: ${latlng[locationLoop]}`);
-  // }
-  })
-};
+console.log("poi[0]: ", poi);
 //
 //
 // ----------------------
@@ -221,24 +225,32 @@ axios(configuration).then((result)=> {
           url="https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=Tg0TtpDNdVfwFSB0W8BZ"
           attribution='<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
         />
-        {/* {poi.map((item) => (
-          console.log("item:", item)
-        ))}; */}
-        {console.log("poi: ", poi)}
-        <Marker
-            key="Berlin"
-            // position={[item.location.latitude, item.location.longitude]}
-            position={[52.51629872917535, 13.37805398629472]}
-            icon={L.icon({
-              iconUrl: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Flat_tick_icon.svg/1024px-Flat_tick_icon.svg.png",
-              iconSize: [38, 38],
-              iconAnchor: [22, 38],
-              shadowAnchor: [4, 62],
-              popupAnchor: [-3, -38],
-            })}
-          >
+        {poi.map((item)=> {
+  const locationLoop = item.location;
+  const nameLoop = item.name;
+  const iconLoop = item.icon;
+  const lat = locationLoop.latitude;
+  const lng = locationLoop.longitude;
+  const latlng = [lat,lng];
+  console.log("latlng: ", latlng);
+  console.log("nameLoop: ", nameLoop);
+  console.log("iconLoop: ", iconLoop);
+
+        return <Marker
+        key={nameLoop}
+        position={latlng}
+        icon={L.icon({
+          iconUrl: `${{iconLoop}}`,
+          iconSize: [38, 38],
+          iconAnchor: [22, 38],
+          shadowAnchor: [4, 62],
+          popupAnchor: [-3, -38],
+        })}
+        >
           </Marker>
-          {/* ))} */}
+          })
+        };
+  
         <Markers
           markers={markers}
           onMarkerClick={handleMarkerClick}
