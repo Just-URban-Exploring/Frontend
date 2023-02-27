@@ -161,3 +161,9 @@ export function Registration() {
 >
   Jetzt Registrieren!
 </button>
+
+        
+</Box>
+    </div>
+  );
+}
