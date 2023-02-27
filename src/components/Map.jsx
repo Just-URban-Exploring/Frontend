@@ -168,10 +168,12 @@ axios(configuration).then((result)=> {
 
     <div>
           
-      <div><Navbar className="navbarbar"/></div>
+      
       
       <button onClick={handleGetLocation}>Zu deiner Position</button>
       <button onClick={handleGoToBerlin}>Besuche Berlin!</button>
+      
+      <Navbar className="navbarbar"/>
       
       <MapContainer
         ref={mapRef}

@@ -2,11 +2,7 @@ body {
   background: var(--gray-600);
 }
 
-.navbar {
-  border-bottom: 1px solid var(--gray-900);
-  padding: 1.25rem 5rem;
-  height: 75px;
-}
+
 .navlinks {
   display: none;
 }
@@ -14,8 +10,8 @@ body {
 .navbar {
   position: fixed;
   top: 0;
-  left: 0;
-  width: 100%;
+  right: 0;
+  width: 100vw;
   z-index: 999; /* set the z-index to a high value */
   /* add your other styles here */
 }
