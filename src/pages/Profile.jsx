@@ -4,13 +4,9 @@ import styles from "../css/Profile.module.css";
 import { FaTrashAlt, FaPencilAlt } from "react-icons/fa";
 import Audioguide from "../components/Audioguide.jsx";
 import { NavbarProfile } from "../components/Navbar/NavbarPages.jsx";
+import connection from '../connection.json';
+import axios from 'axios'
 
-// import avatar1 from "../img/avatar-blue-green.png";
-// import avatar2 from "../img/avatar-blue-pink.png";
-// import avatar3 from "../img/avatar-green-yellow.png";
-// import avatar4 from "../img/avatar-pink-blue.png";
-// import avatar5 from "../img/avatar-red-yellow.png";
-// import avatar6 from "../img/avatar-yellow-pink.png";
 
 export function Profile() {
   // F E T C H  D A T A
@@ -18,12 +14,30 @@ export function Profile() {
   useEffect(() => {
     getData();
   }, []);
-
-  const getData = async () => {
-    const api = await fetch("http://localhost:4011/user/");
-    const data = await api.json();
-    setDataUser(data);
+  const configuration = {
+    method: "post",
+    url: `${connection.URI}/users`,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Headers': '*',
+      'Access-Control-Allow-Credentials': 'true',
+      'Content-Type': 'application/json',
+    },
+  //   'params': {
+  //     'search':'parameter',
+  // },
   };
+// -------
+//
+// -------
+// useEffect() on Axios => fetch data
+// -------
+useEffect(() => {
+  axios(configuration).then((result)=> {
+    setDataUser(result.data);
+  }).catch((error)=> {
+    console.log(error);
+  })},[]);
 
   // P A T C H  U S E R
   const [user, setUser] = useState({
@@ -40,19 +54,32 @@ export function Profile() {
   const handleChange = (e) => {
     setUser({ ...user, [e.target.id]: e.target.value });
   };
+  // const configurationPatch = {
+  //   method: "patch",
+  //   url: `${connection.URI}/users/${userid}`,
+  //   headers: {
+  //     'Access-Control-Allow-Origin': '*',
+  //     'Access-Control-Allow-Headers': '*',
+  //     'Access-Control-Allow-Credentials': 'true',
+  //     'Content-Type': 'application/json',
+  //   },
+  // //   'params': {
+  // //     'search':'parameter',
+  // // },
+  // };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    fetch("http://localhost:4009/user", {
-      method: "PATCH",
-      body: JSON.stringify(user),
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-      },
-    }).then((response) => response.json());
-    setUser(user);
-    console.log(user);
-  };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   fetch("http://localhost:4009/user", {
+  //     method: "PATCH",
+  //     body: JSON.stringify(user),
+  //     headers: {
+  //       "Content-type": "application/json; charset=UTF-8",
+  //     },
+  //   }).then((response) => response.json());
+  //   setUser(user);
+  //   console.log(user);
+  // };
 
   // const handleSelectAvatar = (id) => {
   //   setSelectedAvatar(id);
@@ -67,16 +94,6 @@ export function Profile() {
       {/* P R O F I L K A R T E */}
       {dataUser.map((x) => {
         // const [selectedAvatar, setSelectedAvatar] = useState(undefined);
-
-        // const avatars = [
-        //   { id: "avatar1", src: { avatar1 } },
-        //   { id: "avatar2", src: { avatar2 } },
-        //   { id: "avatar3", src: { avatar3 } },
-        //   { id: "avatar4", src: { avatar4 } },
-        //   { id: "avatar5", src: { avatar5 } },
-        //   { id: "avatar6", src: { avatar6 } },
-        // ];
-        // find / find index
         return (
           <div className="Card" key={x._id}>
             {/* <div>
@@ -110,30 +127,6 @@ export function Profile() {
       {dataUser.map((x) => {
         return (
           <div className="Card" key={x._id}>
-            {/* <div>
-              <h4>Wähle ein anderes Profilbild aus:</h4>
-              <img
-                src=""
-                // onClick={() => handleSelectAvatar(avatar.id)}
-                alt="avatar"
-              />
-              ;
-              <div className="icons-verweis">
-                {" "}
-                Icons erstellt von{" "}
-                <a
-                  href="https://www.flaticon.com/de/autoren/secret-studio"
-                  title="Secret Studio"
-                >
-                  {" "}
-                  Secret Studio{" "}
-                </a>{" "}
-                from{" "}
-                <a href="https://www.flaticon.com/de/" title="Flaticon">
-                  www.flaticon.com'
-                </a>
-              </div>
-            </div> */}
             <form action="" className="mt-4" onSubmit={handleSubmit}>
               {/* Profilname */}
               <div className="mb-3">

@@ -5,14 +5,8 @@ import "../css/registration.css";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import axios from "axios";
-import connection from "../connection.json"
+// import connection from "../connection.json"
 
-// import avatar1 from "../img/avatar-blue-green.png";
-// import avatar2 from "../img/avatar-blue-pink.png";
-// import avatar3 from "../img/avatar-green-yellow.png";
-// import avatar4 from "../img/avatar-pink-blue.png";
-// import avatar5 from "../img/avatar-red-yellow.png";
-// import avatar6 from "../img/avatar-yellow-pink.png";
 
 export function Registration() {
 
@@ -24,7 +18,7 @@ export function Registration() {
   const [register, setRegister] = useState(false);
   const configuration = {
     method: "post",
-    url: `${connection.URI}/users/registration`,
+    url: "https://backend-rho-nine.vercel.app/users/registration",
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Headers': '*',
