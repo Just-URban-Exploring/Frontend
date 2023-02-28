@@ -1,0 +1,25 @@
+.containerDatenschutz {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem;
+}
+
+.buttonDatenschutz {
+  width: 10%;
+  position: fixed;
+  right: 1rem;
+}
+
+.titleDatenschutz {
+  color: var(--gray-900);
+  font-size: 1.9rem;
+  text-align: center;
+}
+
+.ulDatenschutz li {
+  margin-top: 1rem;
+}
+
+.subtitleDatenschutz {
+  margin-top: 1rem;
+}

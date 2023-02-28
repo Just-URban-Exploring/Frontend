@@ -1,14 +1,18 @@
 import React from "react";
-import { useNavigate } from 'react-router-dom';
-
+import { useNavigate } from "react-router-dom";
+import styles from "../css/Datenschutz.module.css";
 const Datenschutz = () => {
-
   const navigate = useNavigate();
 
   return (
-    <div>
-      <h1>Datenschutzerklärung</h1>
-      <button onClick={() => navigate('/')}>Home</button>
+    <div className={styles.containerDatenschutz}>
+      <h1 className={styles.titleDatenschutz}>Datenschutzerklärung</h1>
+      <button
+        className={styles.buttonDatenschutz}
+        onClick={() => navigate("/")}
+      >
+        Home
+      </button>
       <p>
         Letzte Aktualisierung: 07.02.2023 Diese Datenschutzrichtlinie beschreibt
         unsere Richtlinien und Verfahren für die Sammlung, Verwendung und
@@ -27,17 +31,19 @@ const Datenschutz = () => {
         </a>{" "}
         erstellt .
       </p>
-      <h1>Interpretation und Definitionen</h1>
-      <h2>Interpretation</h2>
+      <h1 className={styles.titleDatenschutz}>
+        Interpretation und Definitionen
+      </h1>
+      <h2 className={styles.subtitleDatenschutz}>Interpretation</h2>
       <p>
         Die Wörter, deren Anfangsbuchstaben groß geschrieben sind, haben die
         Bedeutung unter den folgenden Bedingungen definiert. Die folgenden
         Definitionen haben haben die gleiche Bedeutung, unabhängig davon, ob sie
         im Singular oder im Plural.
       </p>
-      <h2>Definitionen</h2>
+      <h2 className={styles.subtitleDatenschutz}>Definitionen</h2>
       <p>Im Sinne dieser Datenschutzerklärung:</p>
-      <ul>
+      <ul className={styles.ulDatenschutz}>
         <li>
           <p>
             <strong>Profil</strong> bedeutet ein einzigartiges Konto, das für
@@ -121,8 +127,12 @@ const Datenschutz = () => {
           </p>
         </li>
       </ul>
-      <h1>Erfassung und Verwendung Ihrer persönlichen Daten</h1>
-      <h2>Arten von gesammelten Daten</h2>
+      <h1 className={styles.titleDatenschutz}>
+        Erfassung und Verwendung Ihrer persönlichen Daten
+      </h1>
+      <h2 className={styles.subtitleDatenschutz}>
+        Arten von gesammelten Daten
+      </h2>
       <h3>Personenbezogene Daten</h3>
       <p>
         Während der Nutzung unseres Dienstes können wir Sie bitten, uns
@@ -130,7 +140,7 @@ const Datenschutz = () => {
         zu kontaktieren oder Sie zu identifizieren. Persönlich identifizierbare
         Informationen können unter anderem sein nicht beschränkt auf:
       </p>
-      <ul>
+      <ul className={styles.ulDatenschutz}>
         <li>
           <p>E-Mail-Adresse</p>
         </li>
@@ -170,7 +180,7 @@ const Datenschutz = () => {
         zur Verfügung zu stellen, können wir mit Ihrer vorherigen Zustimmung
         Folgendes erfassen
       </p>
-      <ul>
+      <ul className={styles.ulDatenschutz}>
         <li>
           <p>Informationen zu Ihrem Standort</p>
         </li>
@@ -197,7 +207,7 @@ const Datenschutz = () => {
         Das Unternehmen kann personenbezogene Daten für die folgenden Zwecke
         verwenden:
       </p>
-      <ul>
+      <ul className={styles.ulDatenschutz}>
         <li>
           <p>
             <strong>Zur Bereitstellung und Wartung unseres Dienstes</strong>,
@@ -275,7 +285,7 @@ const Datenschutz = () => {
         Wir können Ihre personenbezogenen Daten in den folgenden Situationen
         weitergeben:
       </p>
-      <ul>
+      <ul className={styles.ulDatenschutz}>
         <li>
           <strong>Mit Service Anbietern:</strong> Wir können Ihre
           personenbezogenen Daten an Dienstleister weitergeben, um die Nutzung
@@ -316,7 +326,9 @@ const Datenschutz = () => {
           offenlegen.
         </li>
       </ul>
-      <h2>Aufbewahrung Ihrer personenbezogenen Daten</h2>
+      <h2 className={styles.subtitleDatenschutz}>
+        Aufbewahrung Ihrer personenbezogenen Daten
+      </h2>
       <p>
         Das Unternehmen speichert Ihre ersonenbezogenen Daten nur so lange, wie
         dies für die in dieser Datenschutzrichtlinie dargelegten Zwecke
@@ -360,7 +372,9 @@ const Datenschutz = () => {
         Kontrollen, einschließlich der Sicherheit Ihrer Daten und andere
         persönliche Informationen.
       </p>
-      <h2>Löschen Sie Ihre persönlichen Daten</h2>
+      <h2 className={styles.subtitleDatenschutz}>
+        Löschen Sie Ihre persönlichen Daten
+      </h2>
       <p>
         Sie haben das Recht, die personenbezogenen Daten, die wir über Sie
         erfasst haben, zu löschen oder zu verlangen, dass wir Sie beim Löschen
@@ -404,7 +418,7 @@ const Datenschutz = () => {
         Das Unternehmen kann Ihre personenbezogenen Daten in gutem Glauben
         offenlegen, dass eine solche Maßnahme erforderlich ist:
       </p>
-      <ul>
+      <ul className={styles.ulDatenschutz}>
         <li>Einer gesetzlichen Verpflichtung nachkommen</li>
         <li>
           Schutz und Verteidigung der Rechte oder des Eigentums des Unternehmens
@@ -419,7 +433,9 @@ const Datenschutz = () => {
         </li>
         <li>Schützen Sie sich vor gesetzlicher Haftung</li>
       </ul>
-      <h2>Sicherheit Ihrer persönlichen Daten</h2>
+      <h2 className={styles.subtitleDatenschutz}>
+        Sicherheit Ihrer persönlichen Daten
+      </h2>
       <p>
         Die Sicherheit Ihrer personenbezogenen Daten ist uns wichtig, aber
         denken Sie daran, dass keine Übertragungsmethode über das Internet oder
@@ -427,7 +443,7 @@ const Datenschutz = () => {
         kommerziell akzeptable Mittel zum Schutz Ihrer personenbezogenen Daten
         zu verwenden, können wir deren absolute Sicherheit nicht garantieren.
       </p>
-      <h1>Datenschutz von Kindern</h1>
+      <h1 className={styles.titleDatenschutz}>Datenschutz von Kindern</h1>
       <p>
         Unser Service richtet sich nicht an Personen unter 13 Jahren. Wir
         erfassen wissentlich keine personenbezogenen Daten von Personen unter 13
@@ -444,7 +460,7 @@ const Datenschutz = () => {
         Elternteils erfordert, können wir die Zustimmung Ihrer Eltern verlangen,
         bevor wir diese Daten erfassen und verwenden.
       </p>
-      <h1>Links zu anderen Websites</h1>
+      <h1 className={styles.titleDatenschutz}>Links zu anderen Websites</h1>
       <p>
         Unser Service kann Links zu anderen Websites enthalten, die nicht von
         uns betrieben werden. Wenn Sie auf einen Link eines Drittanbieters
@@ -457,7 +473,9 @@ const Datenschutz = () => {
         die Inhalte, Datenschutzrichtlinien oder Praktiken von Websites oder
         Diensten Dritter.
       </p>
-      <h1>Änderungen an dieser Datenschutzrichtlinie</h1>
+      <h1 className={styles.titleDatenschutz}>
+        Änderungen an dieser Datenschutzrichtlinie
+      </h1>
       <p>
         Wir können unsere Datenschutzrichtlinie von Zeit zu Zeit aktualisieren.
         Wir werden Sie über alle Änderungen informieren, indem wir die neue
@@ -474,12 +492,12 @@ const Datenschutz = () => {
         zu überprüfen. Änderungen an dieser Datenschutzrichtlinie treten in
         Kraft, wenn sie auf dieser Seite veröffentlicht werden.
       </p>
-      <h1>Kontakt</h1>
+      <h1 className={styles.titleDatenschutz}>Kontakt</h1>
       <p>
         Wenn Sie Fragen zu dieser Datenschutzrichtlinie haben, können Sie uns
         kontaktieren:
       </p>
-      <ul>
+      <ul className={styles.ulDatenschutz}>
         <li>
           <p>E-Mail: e.felsinger@icloud.com</p>
         </li>
