@@ -1,8 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import * as geolib from "geolib";
 import { MapContainer, TileLayer, Marker, Popup} from "react-leaflet";
-import Markers from "./Markers.jsx";
-import { markers } from "./Markers";
 import "leaflet/dist/leaflet.css";
 import "../css/Map.css";
 import connection from "../connection.json";
@@ -12,17 +10,17 @@ import L from "leaflet";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { IconContext } from "react-icons";
 import Sehenswert from "../img/sehenswert.png";
-import Natur from "../img/natur.png";
-import Art from "../img/art.png";
-import BestView from "../img/best-view.png";
-import Cafe from "../img/cafe.png";
-import Food from "../img/food.png";
+// import Natur from "../img/natur.png";
+// import Art from "../img/art.png";
+// import BestView from "../img/best-view.png";
+// import Cafe from "../img/cafe.png";
+// import Food from "../img/food.png";
 import Museum from "../img/museum.png";
-import Musik from "../img/musik.png";
-import Park from "../img/park.png";
-import Secret from "../img/secret.png";
-import Shopping from "../img/shopping.png";
-import WC from "../img/wc.png";
+// import Musik from "../img/musik.png";
+// import Park from "../img/park.png";
+// import Secret from "../img/secret.png";
+// import Shopping from "../img/shopping.png";
+// import WC from "../img/wc.png";
 
 const VIBRATION_DURATION = 500; // in milliseconds
 
@@ -47,6 +45,10 @@ const Map = () => {
   const flyToMap = mapRef.current;
   const [shouldVibrate, setShouldVibrate] = useState(false);
   const [poi, setPoi] = useState([]);
+  const [showInfo, setShowInfo] = useState(false);
+  const [liked, setLiked] = useState({});
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [currentAudio, setCurrentAudio] = useState(null);
 // -------
 //
 // -------
@@ -133,6 +135,20 @@ const Map = () => {
 // -------
 //
 // -------
+// useEffect() on Vibration
+// -------
+useEffect(()=> {if (shouldVibrate) {
+  const timeoutId = setTimeout(() => {
+    navigator.vibrate(0);
+    setShouldVibrate(false);
+    // alert("DEIN GERÄT VIBRIERT JUNGE!!!!");
+  }, VIBRATION_DURATION);
+  return () => clearTimeout(timeoutId);
+}
+}, [shouldVibrate]);
+// -------
+//
+// -------
 // useEffect() on Axios => fetch data
 // -------
   useEffect(() => {
@@ -156,25 +172,11 @@ axios(configuration).then((result)=> {
 // -------
 //
 // -------
-// useEffect() on Vibration
-// -------
-useEffect(()=> {if (shouldVibrate) {
-    const timeoutId = setTimeout(() => {
-      navigator.vibrate(0);
-      setShouldVibrate(false);
-      alert("DEIN GERÄT VIBRIERT JUNGE!!!!");
-    }, VIBRATION_DURATION);
-    return () => clearTimeout(timeoutId);
-  }
-}, [shouldVibrate]);
-// -------
-//
-// -------
 // useEffect() on Nearest Markers !!!!!!!!!!!!!!!!
 // -------
   useEffect(() => {
     if (userLocation) {
-      const nearestMarkers = markers
+      const nearestMarkers = poi
         .map((marker) => ({
           ...marker,
           distance: Math.min(geolib.getDistance(userLocation, marker.location)),
@@ -186,35 +188,56 @@ useEffect(()=> {if (shouldVibrate) {
         nearestMarkers.unshift(selectedMarker);
       };
       setNearestMarkers(nearestMarkers);
-      const icons = nearestMarkers.map((marker) => marker.icon);
-      setMarkerIcons(icons);
       if (nearestMarkers.length === 0) {
         setNearestMarkers([]); // <-- set nearestMarkers to an empty array if there are no markers within 2.5km
       };
       const nearestMarker = nearestMarkers[0];
       triggerVibration(nearestMarker);
     } else if (nearestMarkers.length === 0) {
-      const nearestMarkers = markers.map((marker) => ({
+      const nearestMarkers = poi.map((marker) => ({
           ...marker,
           distance: Math.min(geolib.getDistance(currentLatLng, marker.location)),
         }))
         .filter((marker) => marker.distance <= 2500) // <-- allet what 2.5km entfernt is' wird hier wie Kaffee gefiltert!
         .sort((a, b) => a.distance - b.distance)
         .slice(0, 5);
-      setNearestMarkers(nearestMarkers);
-      const icons = nearestMarkers.map((marker) => marker.icon);
-      setMarkerIcons(icons);
+        setNearestMarkers(nearestMarkers);
+
       if (nearestMarkers.length === 0) {
         setNearestMarkers([]); // <-- Das Array Leer machen wenn nicht within 2.5km
       };
     };
-  }, [markers, userLocation, currentLatLng, selectedMarker, triggerVibration]);
+  }, [poi, userLocation, currentLatLng, selectedMarker, triggerVibration]);
+// -------
+//
+// -------
+// handle Like Favoriten
+// -------
+const handleLike = (markerName) => {
+  setLiked({ ...liked, [markerName]: !liked[markerName] });
+};
+// -------
+//
+// -------
+// handle Play Pause
+// -------
+const handlePlayPause = (audioUrl) => {
+  if (isPlaying) {
+    currentAudio.pause();
+    setIsPlaying(false);
+  } else {
+    const audio = new Audio(audioUrl);
+    audio.play();
+    setCurrentAudio(audio);
+    setIsPlaying(true);
+  }
+};
 // -------
 
   return (
     <div>
       <button onClick={handleGetLocation}>Zu deiner Position</button>
-      <button onClick={handleGoToBerlin}>Besuche Berlin!</button>
+      <button onClick={handleGoToBerlin}>Direkt nach Berlin!</button>
       
       <Navbar className="navbarbar"/>
       
@@ -225,7 +248,7 @@ useEffect(()=> {if (shouldVibrate) {
         zoomAnimation={true}
         zoomAnimationThreshold={500} // milliseconds
         zoomAnimationDuration={500} // milliseconds
-        style={{ width: "100vw", height: "80vh" }}
+        style={{ width: "100vw", height: "75vh" }}
       >
         <TileLayer
           url="https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=Tg0TtpDNdVfwFSB0W8BZ"
@@ -254,15 +277,59 @@ useEffect(()=> {if (shouldVibrate) {
           popupAnchor: [-3, -38],
         })}
         >
+          <Popup
+              className={
+                nearestMarkers && nearestMarkers.includes(item)
+                  ? "nearest-marker"
+                  : ""
+              }
+            >
+              <p>{nameLoop}</p>
+              {showInfo ? <p>{extendedInfoLoop}</p> : <p>{infoLoop}</p>}
+              <section
+                onClick={() => handleLike(nameLoop)}
+                className={`like-button ${liked[nameLoop] ? "liked" : ""}`}
+              >
+                {liked[nameLoop] ? (
+                  <IconContext.Provider
+                    className={"provider"}
+                    value={{
+                      color: "blue",
+                      size: "2.5em",
+                    }}
+                  >
+                    <AiOutlineHeart />
+                  </IconContext.Provider>
+                ) : (
+                  <IconContext.Provider
+                    className={"provider"}
+                    value={{
+                      color: "blue",
+                      size: "2.5em",
+                    }}
+                  >
+                    <AiFillHeart />
+                  </IconContext.Provider>
+                )}
+              </section>
+              <button
+                onClick={() => setShowInfo(!showInfo)}
+                className="info-button"
+              >
+                Mehr Information
+              </button>
+              <br />
+              <br />
+              <button
+                onClick={() => handlePlayPause(audioLoop)}
+                className="play-button"
+              >
+                {isPlaying ? "Pause" : "Play"}
+              </button>
+            </Popup>
           </Marker>
           })
         };
-  
-        <Markers
-          markers={markers}
-          onMarkerClick={handleMarkerClick}
-          selectedMarker={selectedMarker}
-        />
         {userLocation ? (
           <Marker
             position={[userLocation.latitude, userLocation.longitude]}
@@ -283,15 +350,14 @@ useEffect(()=> {if (shouldVibrate) {
             {nearestMarkers
               .filter((marker) => marker.distance <= 2500) // <-- Raus mit die Viechern! 2.5km
               .map((marker) => (
-                <li key={marker.name}>
-                  <div>
+                <li key={marker._id}>
+                  
                     <img
-                      src={marker.icon}
+                      src={Museum}
                       alt={`Marker icon for ${marker.name}`}
                     />
-                    <span>{marker.name}</span>
-                  </div>
-                  <span>({marker.distance} meter weg)</span>
+                    <p id="name">{marker.name}</p>
+                  <p id="distance">({marker.distance} m)</p>
                 </li>
               ))}
           </ul>

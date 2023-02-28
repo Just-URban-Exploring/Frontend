@@ -1,125 +1,96 @@
-#root{
-  background-color: var(--blue-600);
-  height:100vh
-}
 
 /* Style the buttons at the top */
 button {
-  background-color: #1e36ea;
+  background-color: var(--blue-600);
   border: none;
   color: rgb(255, 255, 255);
-  padding: 12px 24px;
+  padding: 10px 20px;
   text-align: center;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 9px;
+  letter-spacing: 0.07rem;
   font-weight: 600;
   margin: 10px;
   cursor: pointer;
-  border-radius: 25px;
+  border-radius: 10px;
   transition: all 0.3s ease-in-out;
 }
 
 button:hover {
-  background-color: #5b42fc;
+  background-color: var(--blue-700);
   transform: translateY(-2px);
 }
 
+button:active {
+  background-color: var(--blue-400);
+  transform: translateY(2px)
+}
 /* Style the map container */
-.map-container {
+/* .map-container {
   width: 100vw;
   height: 100vh;
-  margin: 50px 0px;
-}
+  margin: 0px 0px;
+} */
 
 /* Style the map */
-.leaflet-container {
+/* .leaflet-container {
   z-index: 0;
   height: 100vh;
   width: 100vw;
-}
+} */
 
 /* Style the marker popup */
 .marker-popup {
   text-align: center;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: var(--blue-600);
-  z-index: 1;
-  font-size: 2em;
-  height: 100%;
-}
-
-.marker-popup h3 {
-  
-  margin: 0;
-  font-size: 24px;
-  font-weight: 600;
-  text-transform: uppercase;
-  color: #333333;
-  margin-bottom: 20px;
+  font-size: 0.7rem;
 }
 
 /*temporär fix für +- being offset */
-span {
+/* span {
   top: 1rem;
   font-size: 1.5rem;
   left: 1rem;
-}
+} */
 
 .marker-popup ul {
-  
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-evenly;
   list-style: none;
-  padding: 10px;
-  background-color: #333;
 }
 
 .marker-popup li {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 10px 0;
-  padding: 10px;
+  flex-direction: column;
+align-items: center;
   border-radius: 15px;
-  min-width: 10px;
-  text-align: center;
+  /* text-align: center; */
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  background-color: #1f28d2;
-  box-sizing: border-box;
-}
-
-.marker-popup li div {
-  display: flex;
-  align-items: center;
+  background-color: var(--gray-200);
+  height: 80px;
+  width: 100px;
+margin: 3px 0 3px 0;
+padding: 0;
 }
 
 .marker-popup li img {
-  height: 30px;
-  width: 30px;
-  margin-right: 10px;
+  height: 25px;
+  width: 25px;
+  margin: 7px 0 7px 0;
+}
+#name {
+  font-size: 0.6rem;
 }
 
-.marker-popup li h4,
-.marker-popup li p {
-  margin: 0;
-  line-height: 1.5;
+#distance {
+  font-size: 0.5rem;
 }
-
 .navbarbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 9999; 
-}
-
-.marker-popup li h4 {
-  font-size: 18px;
-  font-weight: 600;
-  text-transform: uppercase;
 }
 
 .leaflet-popup-content p:first-of-type {
