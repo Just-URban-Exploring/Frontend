@@ -187,40 +187,53 @@ axios(configuration).then((result)=> {
 // -------
 // useEffect() on Nearest Markers !!!!!!!!!!!!!!!!
 // -------
-  useEffect(() => {
-    if (userLocation) {
-      const nearestMarkers = poi
-        .map((marker) => ({
-          ...marker,
-          distance: Math.min(geolib.getDistance(userLocation, marker.location)),
-        }))
-        .filter((marker) => marker.distance <= 5000) // <-- filter markers that are closer than 2.5km
-        .sort((a, b) => a.distance - b.distance)
-        .slice(0, 5);
-      if (selectedMarker) {
-        nearestMarkers.unshift(selectedMarker);
-      };
-      setNearestMarkers(nearestMarkers);
-      if (nearestMarkers.length === 0) {
-        setNearestMarkers([]); // <-- set nearestMarkers to an empty array if there are no markers within 2.5km
-      };
-      const nearestMarker = nearestMarkers[0];
-      triggerVibration(nearestMarker);
-    } else if (nearestMarkers.length === 0) {
-      const nearestMarkers = poi.map((marker) => ({
-          ...marker,
-          distance: Math.min(geolib.getDistance(currentLatLng, marker.location)),
-        }))
-        .filter((marker) => marker.distance <= 2500) // <-- allet what 2.5km entfernt is' wird hier wie Kaffee gefiltert!
-        .sort((a, b) => a.distance - b.distance)
-        .slice(0, 5);
-        setNearestMarkers(nearestMarkers);
-
-      if (nearestMarkers.length === 0) {
-        setNearestMarkers([]); // <-- Das Array Leer machen wenn nicht within 2.5km
-      };
+useEffect(() => {
+  if (userLocation) {
+    const nearestMarkers = poi
+      .map((marker) => ({
+        ...marker,
+        distance: Math.min(geolib.getDistance(userLocation, marker.location)),
+      }))
+      .filter((marker) => marker.distance <= 5000) // <-- filter markers that are closer than 2.5km
+      .sort((a, b) => a.distance - b.distance)
+      .slice(0, 5);
+    if (selectedMarker) {
+      nearestMarkers.unshift(selectedMarker);
     };
-  }, [poi, userLocation, currentLatLng, selectedMarker, triggerVibration]);
+    setNearestMarkers(nearestMarkers);
+    if (nearestMarkers.length === 0) {
+      setNearestMarkers([]); // <-- set nearestMarkers to an empty array if there are no markers within 2.5km
+    };
+    const nearestMarker = nearestMarkers[0];
+    triggerVibration(nearestMarker);
+    
+    const updatedMarkerIcons = nearestMarkers.map((marker) => ({
+      ...marker,
+      icon: iconMap[marker.icon],
+    }));
+    setMarkerIcons(updatedMarkerIcons);
+  } else if (nearestMarkers.length === 0) {
+    const nearestMarkers = poi.map((marker) => ({
+        ...marker,
+        distance: Math.min(geolib.getDistance(currentLatLng, marker.location)),
+      }))
+      .filter((marker) => marker.distance <= 2500) // <-- allet what 2.5km entfernt is' wird hier wie Kaffee gefiltert!
+      .sort((a, b) => a.distance - b.distance)
+      .slice(0, 5);
+      setNearestMarkers(nearestMarkers);
+
+    if (nearestMarkers.length === 0) {
+      setNearestMarkers([]); // <-- Das Array Leer machen wenn nicht within 2.5km
+    };
+    
+    const updatedMarkerIcons = nearestMarkers.map((marker) => ({
+      ...marker,
+      icon: iconMap[marker.icon],
+    }));
+    setMarkerIcons(updatedMarkerIcons);
+  };
+}, [poi, userLocation, currentLatLng, selectedMarker, triggerVibration]);
+
 // -------
 //
 // -------
@@ -358,27 +371,22 @@ const handlePlayPause = (audioUrl) => {
         )}
       </MapContainer>
       {nearestMarkers.length > 0 ? (
-        <div className="marker-popup">
-          <ul>
-            {nearestMarkers
-              .filter((marker) => marker.distance <= 5000) // <-- Raus mit die Viechern! 2.5km
-              .map((marker) => (
-                <li key={marker._id}>
-                    <img
-                      src={Museum}
-                      alt={`Marker icon for ${marker.name}`}
-                    />
-                    <p id="name">{marker.name}</p>
-                  <p id="distance">({marker.distance} m)</p>
-                </li>
-              ))}
-          </ul>
-        </div>
-      ) : (
-        <div className="marker-popup">
-          <p>Keine Marker in deiner Nähe</p>
-        </div>
-      )}
+  <div className="marker-popup">
+    <ul>
+      {markerIcons.map((marker) => (
+        <li key={marker._id}>
+          <img src={marker.icon} alt={`Marker icon for ${marker.name}`} />
+          <p id="name">{marker.name}</p>
+          <p id="distance">({marker.distance} m)</p>
+        </li>
+      ))}
+    </ul>
+  </div>
+) : (
+  <div className="marker-popup">
+    <p>Keine Marker in deiner Nähe</p>
+  </div>
+)}
     </div>
   );
 };
