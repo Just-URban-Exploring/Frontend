@@ -14,7 +14,7 @@ export function Login() {
 
   const configuration = {
     method: "post",
-    url: `${connection.URI}/users/login`,
+    url: `${connection.URI}/users`,
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Headers': '*',
