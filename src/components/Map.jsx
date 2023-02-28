@@ -181,7 +181,7 @@ axios(configuration).then((result)=> {
           ...marker,
           distance: Math.min(geolib.getDistance(userLocation, marker.location)),
         }))
-        .filter((marker) => marker.distance <= 2500) // <-- filter markers that are closer than 2.5km
+        .filter((marker) => marker.distance <= 5000) // <-- filter markers that are closer than 2.5km
         .sort((a, b) => a.distance - b.distance)
         .slice(0, 5);
       if (selectedMarker) {
@@ -348,7 +348,7 @@ const handlePlayPause = (audioUrl) => {
         <div className="marker-popup">
           <ul>
             {nearestMarkers
-              .filter((marker) => marker.distance <= 2500) // <-- Raus mit die Viechern! 2.5km
+              .filter((marker) => marker.distance <= 5000) // <-- Raus mit die Viechern! 2.5km
               .map((marker) => (
                 <li key={marker._id}>
                   
