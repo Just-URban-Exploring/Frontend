@@ -19,7 +19,7 @@ export function Login() {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Headers': '*',
       'Access-Control-Allow-Credentials': 'true',
-      'Content-Type': 'application/json',
+      'Content-Type': 'application/json'
     },
     data: {
       email,

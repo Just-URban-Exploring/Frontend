@@ -7,12 +7,6 @@ import TextField from "@mui/material/TextField";
 import axios from "axios";
 import connection from "../connection.json"
 
-// import avatar1 from "../img/avatar-blue-green.png";
-// import avatar2 from "../img/avatar-blue-pink.png";
-// import avatar3 from "../img/avatar-green-yellow.png";
-// import avatar4 from "../img/avatar-pink-blue.png";
-// import avatar5 from "../img/avatar-red-yellow.png";
-// import avatar6 from "../img/avatar-yellow-pink.png";
 
 export function Registration() {
 
