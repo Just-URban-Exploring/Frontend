@@ -46,18 +46,11 @@ export function Login() {
   const navigate = useNavigate();
 
   return (
-    <div className={styles.ContainerStyle}>
-      <h1 className={styles.Login}>Login</h1>
+    <div className={styles.containerStyle}>
+      <h1 className={styles.login}>Login</h1>
       <img src={Jure} alt="Logo" />
-      <div className={styles.ButtonContainer}>
+      <div className={styles.buttonContainer}>
       <button id="home" onClick={() => navigate("/")}>Home</button>
-      </div>
-      <div className={styles.ContainerText}>
-        {login ? (
-          <p className="text-success">You Are Logged in Successfully</p>
-        ) : (
-          <p className="text-danger">You Are Not Logged in</p>
-        )}
       </div>
       <Box
         className={styles.card}
@@ -69,7 +62,7 @@ export function Login() {
         autoComplete="off"
         onSubmit={(e) => handleSubmit(e)}
       >
-        <div className={styles.TextField}>
+        <div className={styles.divTextField}>
           <TextField
             htmlFor="email"
             type="email"
@@ -92,7 +85,7 @@ export function Login() {
             onChange={(e) => setPassword(e.target.value)}
           ></TextField>
         </div>
-        <div id="btn-pw">
+        <div className={styles.btnpw}>
           <button
             type="submit"
             className={styles.btnprimary}
@@ -100,7 +93,7 @@ export function Login() {
           >
             Anmelden
           </button>
-            <div id="pw"><a href="/forgot-pw">Passwort vergessen?</a></div>
+            <div className={styles.pw}><a href="/forgot-pw">Passwort vergessen?</a></div>
         </div>
         {/*  <button type="submit" className={styles.btngoogle}>
         <button type="submit" className="btn-google">

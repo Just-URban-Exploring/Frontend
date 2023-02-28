@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-// import Audioguide from "../components/Audioguide.jsx";
-import "../css/registration.css";
+import styles from "../css/Registration.module.css";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import axios from "axios";
+import Jure from "../assets/JURE-Logo.svg"
 // import connection from "../connection.json"
 
 
@@ -58,21 +58,15 @@ export function Registration() {
   const navigate = useNavigate();
 
   return (
-    <div className="container">
-      <h1 className="register">Registrierung</h1>
-      <button onClick={() => navigate("/map")}>Home</button>
-      <div>
-        {" "}
-        {/* display success message */}
-        {register ? (
-          <p className="text-success">You Are Registered Successfully</p>
-        ) : (
-          <p className="text-danger">You Are Not Registered</p>
-        )}
+    <div className={styles.containerStyle}>
+      <h1 className={styles.register}>Registrierung</h1>
+      <img src={Jure} alt="Logo" />
+      <div className={styles.buttonContainer}>
+      <button id={styles.home} onClick={() => navigate("/")}>Home</button>
       </div>
       <Box
-        className="card"
-        component="form"
+        className={styles.card}
+        component={styles.form}
         sx={{
           "& .MuiTextField-root": { mt: 2 },
         }}
@@ -82,7 +76,7 @@ export function Registration() {
       >
         {/* <form action="" className="mt-4" > */}
         {/* Profilname */}
-        <div className="mb-3">
+        <div className={styles.divTextField}>
           <TextField
             htmlFor="profilname"
             name="profilname"
@@ -90,28 +84,12 @@ export function Registration() {
             id="profilname"
             label="Profilname"
             fullWidth
-            className="form-input"
+            className={styles.forminput}
             value={profilname}
             onChange={(e) => setProfilname(e.target.value)}
           ></TextField>
 
-          {/* <label htmlFor="profilname" className="form-label">
-              Profilname
-            </label>
-            <input
-              value={user.profilname}
-              type="text"
-              name="profilname"
-              className="form-control"
-              id="profilname"
-              aria-describedby="profileNameHelp"
-              placeholder="profilname"
-              onChange={handleChange}
-            /> */}
-        </div>
-
         {/* Stadt */}
-        <div className="mb-3">
           <TextField
             htmlFor="stadt"
             name="stadt"
@@ -119,78 +97,44 @@ export function Registration() {
             id="stadt"
             label="Stadt"
             fullWidth
-            className="form-input"
+            className={styles.forminput}
             value={stadt}
             onChange={(e) => setStadt(e.target.value)}
           ></TextField>
-          {/* <label htmlFor="stadt" className="form-label">
-              Stadt
-            </label>
-            <input
-              value={user.stadt}
-              type="text"
-              className="form-control"
-              id="stadt"
-              aria-describedby="cityHelp"
-              placeholder="stadt"
-              onChange={handleChange}
-            /> */}
-        </div>
         {/* E-Mail */}
-        <div className="mb-3">
           <TextField
             htmlFor="email"
             name="email"
             type="email"
             id="email"
-            label="E-mail"
+            label="E-Mail"
             fullWidth
-            className="form-input"
+            className={styles.forminput}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           ></TextField>
-          {/* <label htmlFor="email" className="form-label">
-              E-Mail-Adresse
-            </label>
-            <input
-              value={user.email}
-              type="email"
-              className="form-control"
-              id="email"
-              aria-describedby="emailHelp"
-              placeholder="email"
-              onChange={handleChange}
-            /> */}
-        </div>
-
-        {/*-----Passwort Start----------------------------------------------------------------*/}
-        <div>
           <TextField
             htmlFor="password"
             name="password"
-            type="text"
+            type="password"
             id="password"
             label="Password"
             fullWidth
-            className="form-input"
+            className={styles.forminput}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           ></TextField>
-        </div>
-        <div>
           <TextField
             htmlFor="passwortwiederholen"
-            type="text"
+            type="password"
             id="passwortwiederholen"
             label="Passwort wiederholen"
             fullWidth
-            className="form-input"
+            className={styles.forminput}
             value={matchPwd}
             onChange={(e) => setMatchPwd(e.target.value)}
           ></TextField>
         </div>
-
-        {/*-----Passwort Ende---------------------*/}
 
         {/* A V A T A R */}
 
@@ -200,28 +144,19 @@ export function Registration() {
 
         {/* P A Y P A L */}
 
-        <span className="agb">
-          Mit dem Klick auf den “Jetzt registrieren!” Button erlaube ich dieser
-          App den Zugriff auf meinen Standort. Ich stimme den{" "}
-          <Link to="/agb" target="_blank">
-            AGB
-          </Link>{" "}
-          und{" "}
-          <Link to="/datenschutz" target="_blank">
-            Datenschutzrichtlinien
-          </Link>{" "}
-          zu.
-        </span>
+        <div className={styles.agb}>
+          <pre>Mit dem Klick auf den “Jetzt registrieren!” Button erlaube ich dieser
+          App den Zugriff auf meinen Standort. Ich stimme den<a href="/agb" target="_blank">AGB</a> und<a href="/datenschutz" target="_blank">Datenschutzrichtlinien</a> zu.</pre>
         {/* "R E G I S T R I E R E N" - B U T T O N  */}
-        <button
-          className="btn-primary regButton"
-          type="submit"
-          disabled={password !== matchPwd ? true : false}
-          onClick={(e) => handleSubmit(e)}
-        >
-          Jetzt Registrieren!
-        </button>
-        
+          <button
+            className={styles.btnprimary}
+            type="submit"
+            disabled={password !== matchPwd ? true : false}
+            onClick={(e) => handleSubmit(e)}
+          >
+            Jetzt Registrieren!
+          </button>
+        </div>
       </Box>
     </div>
   );
