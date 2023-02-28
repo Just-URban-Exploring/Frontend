@@ -5,7 +5,7 @@ import "../css/registration.css";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import axios from "axios";
-import connection from "../connection.json"
+// import connection from "../connection.json"
 
 
 export function Registration() {
@@ -18,7 +18,7 @@ export function Registration() {
   const [register, setRegister] = useState(false);
   const configuration = {
     method: "post",
-    url: `${connection.URI}/users/registration`,
+    url: "https://backend-rho-nine.vercel.app/users/registration",
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Headers': '*',

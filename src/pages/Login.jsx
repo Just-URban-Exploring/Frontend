@@ -4,7 +4,7 @@ import styles from "../css/Login.module.css";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import axios from "axios";
-import connection from "../connection.json";
+// import connection from "../connection.json";
 import Jure from "../assets/JURE-Logo.svg";
 
 export function Login() {
@@ -14,7 +14,7 @@ export function Login() {
 
   const configuration = {
     method: "post",
-    url: `${connection.URI}/users/login`,
+    url: "https://backend-rho-nine.vercel.app/users/login",
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Headers': '*',
