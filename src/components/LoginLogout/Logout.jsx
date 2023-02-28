@@ -24,8 +24,8 @@ export const Logout = () => {
 
 	return(
 		<div>
-			<h1>Du bist ausgeloggt. Alles Gute bis zumnächsten Mal!</h1>
-			<button onClick={() => navigate('/login')}>Zum Login</button>
+			<h1>Du bist ausgeloggt. Alles Gute bis zum nächsten Mal!</h1>
+			<button onClick={() => navigate('/')}>Home</button>
 		</div>
 	)
 }
