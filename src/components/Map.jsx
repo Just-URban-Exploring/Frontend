@@ -10,20 +10,44 @@ import L from "leaflet";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { IconContext } from "react-icons";
 import Sehenswert from "../img/sehenswert.png";
-// import Natur from "../img/natur.png";
-// import Art from "../img/art.png";
-// import BestView from "../img/best-view.png";
-// import Cafe from "../img/cafe.png";
-// import Food from "../img/food.png";
+import Natur from "../img/natur.png";
+import Art from "../img/art.png";
+import BestView from "../img/best-view.png";
+import Cafe from "../img/cafe.png";
+import Food from "../img/food.png";
 import Museum from "../img/museum.png";
-// import Musik from "../img/musik.png";
-// import Park from "../img/park.png";
-// import Secret from "../img/secret.png";
-// import Shopping from "../img/shopping.png";
-// import WC from "../img/wc.png";
+import Musik from "../img/musik.png";
+import Park from "../img/park.png";
+import Secret from "../img/secret.png";
+import Shopping from "../img/shopping.png";
+import WC from "../img/wc.png";
 
+// -------
+// Icons
+// -------
+const iconMap = {
+  Sehenswert: Sehenswert,
+  Natur: Natur,
+  Art: Art,
+  BestView: BestView,
+  Cafe: Cafe,
+  Food: Food,
+  Museum: Museum,
+  Musik: Musik,
+  Park: Park,
+  Secret: Secret,
+  Shopping: Shopping,
+  WC: WC,
+};
+// -------
+//
+// -------
+// Vibration Definition
+// -------
 const VIBRATION_DURATION = 500; // in milliseconds
-
+// -------
+//
+// -------
 const Map = () => {
 // -------
 // useRef()
@@ -259,7 +283,7 @@ const handlePlayPause = (audioUrl) => {
         key={nameLoop}
         position={latlng}
         icon={L.icon({
-          iconUrl: `${Sehenswert}`,
+          iconUrl: iconMap[iconLoop],
           iconSize: [38, 38],
           iconAnchor: [22, 38],
           shadowAnchor: [4, 62],
@@ -340,7 +364,6 @@ const handlePlayPause = (audioUrl) => {
               .filter((marker) => marker.distance <= 5000) // <-- Raus mit die Viechern! 2.5km
               .map((marker) => (
                 <li key={marker._id}>
-                  
                     <img
                       src={Museum}
                       alt={`Marker icon for ${marker.name}`}
