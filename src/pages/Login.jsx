@@ -50,7 +50,7 @@ export function Login() {
       <h1 className={styles.Login}>Login</h1>
       <img src={Jure} alt="Logo" />
       <div className={styles.ButtonContainer}>
-      <button onClick={() => navigate("/")}>Home</button>
+      <button id="home" onClick={() => navigate("/")}>Home</button>
       </div>
       <div className={styles.ContainerText}>
         {login ? (
@@ -92,17 +92,15 @@ export function Login() {
             onChange={(e) => setPassword(e.target.value)}
           ></TextField>
         </div>
-        <div className={styles.SubmitContainer}>
-        <button
-          type="submit"
-          className={styles.btnprimary}
-          onClick={(e) => handleSubmit(e)}
-        >
-          Anmelden
-        </button>
-        </div>
-        <div className="forgot-pw">
-          <a href="/forgot-pw">Passwort vergessen?</a>
+        <div id="btn-pw">
+          <button
+            type="submit"
+            className={styles.btnprimary}
+            onClick={(e) => handleSubmit(e)}
+          >
+            Anmelden
+          </button>
+            <div id="pw"><a href="/forgot-pw">Passwort vergessen?</a></div>
         </div>
         {/*  <button type="submit" className={styles.btngoogle}>
         <button type="submit" className="btn-google">

@@ -1,14 +1,20 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "../css/Global.css";
+import styles from "../css/Datenschutz-AGB.module.css";
 
 const AGB = () => {
   const navigate = useNavigate();
 
   return (
     <div>
-      <button onClick={() => navigate("/")}>Home</button>
-      <div>
+      <button
+        className={styles.buttonDatenschutz}
+        onClick={() => navigate("/")}
+      >
+        Home
+      </button>
+      <div className={styles.AGBContainer}>
         Allgemeine Geschäftsbedingungen Stand: Februar 2023 Rechtliche Hinweise
         zur Benutzung: Der Unternehmer schließt im Laufe seiner
         Geschäftstätigkeit eine Vielzahl von Verträgen ab. Um eine
@@ -67,42 +73,44 @@ const AGB = () => {
         Sie oder ein von Ihnen benannter Dritter, der nicht der Beförderer ist,
         die Waren in Besitz genommen haben bzw. hat. Um Ihr Widerrufsrecht
         auszuüben, müssen Sie uns [Namen des Unternehmers, Anschrift,
-        Telefonnummer und E-Mail Adresse eintragen] mittels einer eindeutigen
-        Erklärung (zB ein mit der Post versandter Brief oder eine E-Mail) über
-        Ihren Entschluss, diesen Vertrag zu widerrufen, informieren. Sie können
-        dafür das beigefügte Muster-Widerrufsformular verwenden, das jedoch
-        nicht vorgeschrieben ist. Sie können das Muster- Widerrufsformular oder
-        eine andere eindeutige Erklärung auch auf unserer Webseite
-        (Internet-Adresse einfügen) elektronisch ausfüllen und übermitteln.
-        Machen Sie von dieser Möglichkeit Gebrauch, so werden wir Ihnen
-        unverzüglich (zB per E-Mail) eine Bestätigung über den Eingang eines
-        solchen Widerrufs übermitteln. Zur Wahrung der Widerrufsfrist reicht es
-        aus, dass Sie die Mitteilung über die Ausübung des Widerrufsrechts vor
-        Ablauf der Widerrufsfrist absenden. Folgen des Widerrufs Wenn Sie diesen
-        Vertrag widerrufen, haben wir Ihnen alle Zahlungen, die wir von Ihnen
-        erhalten haben, einschließlich der Lieferkosten (mit Ausnahme der
-        zusätzlichen Kosten, die sich daraus ergeben, dass Sie eine andere Art
-        der Lieferung als die von uns angebotene, günstigste Standardlieferung
-        gewählt haben), unverzüglich und spätestens binnen vierzehn Tagen ab dem
-        Tag zurückzuzahlen, an dem die Mitteilung über Ihren Widerruf dieses
-        Vertrags bei uns eingegangen ist. Für diese Rückzahlung verwenden wir
-        dasselbe Zahlungsmittel, das Sie bei der ursprünglichen Transaktion
-        eingesetzt haben, es sei denn, mit Ihnen wurde ausdrücklich etwas
-        anderes vereinbart; in keinem Fall werden Ihnen wegen dieser Rückzahlung
-        Entgelte berechnet. Wir können die Rückzahlung verweigern, bis wir die
-        Waren wieder zurückerhalten haben oder bis Sie den Nachweis erbracht
-        haben, dass Sie die Waren zurückgesandt haben, je nachdem, welches der
-        frühere Zeitpunkt ist. Sie haben die Waren unverzüglich und in jedem
-        Fall spätestens binnen vierzehn Tagen ab dem Tag, an dem Sie uns über
-        den Widerruf dieses Vertrages unterrichten, an uns oder an (hier sind
-        gegebenenfalls der Name und die Anschrift der von Ihnen zur
-        Entgegennahme der Ware ermächtigten Person einzufügen) zurückzusenden
-        oder zu übergeben. Die Frist ist gewahrt, wenn Sie die Waren vor Ablauf
-        der Frist von vierzehn Tagen absenden. Sie tragen die unmittelbaren
-        Kosten der Rücksendung der Waren. Sie müssen für einen etwaigen
-        Wertverlust der Waren nur aufkommen, wenn dieser Wertverlust auf einen
-        zur Prüfung der Beschaffenheit, Eigenschaften und Funktionsweise der
-        Waren nicht notwendigen Umgang mit ihnen zurückzuführen ist. - Ende der
+        Telefonnummer und E-Maimport styles from
+        "../css/Datenschutz-AGB.module.css";il Adresse eintragen] mittels einer
+        eindeutigen Erklärung (zB ein mit der Post versandter Brief oder eine
+        E-Mail) über Ihren Entschluss, diesen Vertrag zu widerrufen,
+        informieren. Sie können dafür das beigefügte Muster-Widerrufsformular
+        verwenden, das jedoch nicht vorgeschrieben ist. Sie können das Muster-
+        Widerrufsformular oder eine andere eindeutige Erklärung auch auf unserer
+        Webseite (Internet-Adresse einfügen) elektronisch ausfüllen und
+        übermitteln. Machen Sie von dieser Möglichkeit Gebrauch, so werden wir
+        Ihnen unverzüglich (zB per E-Mail) eine Bestätigung über den Eingang
+        eines solchen Widerrufs übermitteln. Zur Wahrung der Widerrufsfrist
+        reicht es aus, dass Sie die Mitteilung über die Ausübung des
+        Widerrufsrechts vor Ablauf der Widerrufsfrist absenden. Folgen des
+        Widerrufs Wenn Sie diesen Vertrag widerrufen, haben wir Ihnen alle
+        Zahlungen, die wir von Ihnen erhalten haben, einschließlich der
+        Lieferkosten (mit Ausnahme der zusätzlichen Kosten, die sich daraus
+        ergeben, dass Sie eine andere Art der Lieferung als die von uns
+        angebotene, günstigste Standardlieferung gewählt haben), unverzüglich
+        und spätestens binnen vierzehn Tagen ab dem Tag zurückzuzahlen, an dem
+        die Mitteilung über Ihren Widerruf dieses Vertrags bei uns eingegangen
+        ist. Für diese Rückzahlung verwenden wir dasselbe Zahlungsmittel, das
+        Sie bei der ursprünglichen Transaktion eingesetzt haben, es sei denn,
+        mit Ihnen wurde ausdrücklich etwas anderes vereinbart; in keinem Fall
+        werden Ihnen wegen dieser Rückzahlung Entgelte berechnet. Wir können die
+        Rückzahlung verweigern, bis wir die Waren wieder zurückerhalten haben
+        oder bis Sie den Nachweis erbracht haben, dass Sie die Waren
+        zurückgesandt haben, je nachdem, welches der frühere Zeitpunkt ist. Sie
+        haben die Waren unverzüglich und in jedem Fall spätestens binnen
+        vierzehn Tagen ab dem Tag, an dem Sie uns über den Widerruf dieses
+        Vertrages unterrichten, an uns oder an (hier sind gegebenenfalls der
+        Name und die Anschrift der von Ihnen zur Entgegennahme der Ware
+        ermächtigten Person einzufügen) zurückzusenden oder zu übergeben. Die
+        Frist ist gewahrt, wenn Sie die Waren vor Ablauf der Frist von vierzehn
+        Tagen absenden. Sie tragen die unmittelbaren Kosten der Rücksendung der
+        Waren. Sie müssen für einen etwaigen Wertverlust der Waren nur
+        aufkommen, wenn dieser Wertverlust auf einen zur Prüfung der
+        Beschaffenheit, Eigenschaften und Funktionsweise der Waren nicht
+        notwendigen Umgang mit ihnen zurückzuführen ist. - Ende der
         Widerrufsbelehrung - 5. Preise und Versandkosten 5.1. Die auf den
         Produktseiten genannten Preise enthalten die gesetzliche Mehrwertsteuer
         und sonstige Preisbestandteile. 5.2. Zusätzlich zu den angegebenen
