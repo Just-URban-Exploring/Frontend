@@ -54,19 +54,32 @@ useEffect(() => {
   const handleChange = (e) => {
     setUser({ ...user, [e.target.id]: e.target.value });
   };
+  // const configurationPatch = {
+  //   method: "patch",
+  //   url: `${connection.URI}/users/${userid}`,
+  //   headers: {
+  //     'Access-Control-Allow-Origin': '*',
+  //     'Access-Control-Allow-Headers': '*',
+  //     'Access-Control-Allow-Credentials': 'true',
+  //     'Content-Type': 'application/json',
+  //   },
+  // //   'params': {
+  // //     'search':'parameter',
+  // // },
+  // };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    fetch("http://localhost:4009/user", {
-      method: "PATCH",
-      body: JSON.stringify(user),
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-      },
-    }).then((response) => response.json());
-    setUser(user);
-    console.log(user);
-  };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   fetch("http://localhost:4009/user", {
+  //     method: "PATCH",
+  //     body: JSON.stringify(user),
+  //     headers: {
+  //       "Content-type": "application/json; charset=UTF-8",
+  //     },
+  //   }).then((response) => response.json());
+  //   setUser(user);
+  //   console.log(user);
+  // };
 
   // const handleSelectAvatar = (id) => {
   //   setSelectedAvatar(id);
@@ -81,16 +94,6 @@ useEffect(() => {
       {/* P R O F I L K A R T E */}
       {dataUser.map((x) => {
         // const [selectedAvatar, setSelectedAvatar] = useState(undefined);
-
-        // const avatars = [
-        //   { id: "avatar1", src: { avatar1 } },
-        //   { id: "avatar2", src: { avatar2 } },
-        //   { id: "avatar3", src: { avatar3 } },
-        //   { id: "avatar4", src: { avatar4 } },
-        //   { id: "avatar5", src: { avatar5 } },
-        //   { id: "avatar6", src: { avatar6 } },
-        // ];
-        // find / find index
         return (
           <div className="Card" key={x._id}>
             {/* <div>
