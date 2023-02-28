@@ -137,7 +137,8 @@ const Map = () => {
 // -------
 // useEffect() on Vibration
 // -------
-useEffect(()=> {if (shouldVibrate) {
+useEffect(()=> {
+  if (shouldVibrate) {
   const timeoutId = setTimeout(() => {
     navigator.vibrate(0);
     setShouldVibrate(false);
@@ -156,19 +157,7 @@ axios(configuration).then((result)=> {
   setPoi(result.data.getAllLocations);
 }).catch((error)=> {
   console.log(error);
-})
-// ------- ENTFERNEN
-    // if (shouldVibrate) {
-    //   const timeoutId = setTimeout(() => {
-    //     navigator.vibrate(0);
-    //     setShouldVibrate(false);
-    //     alert("DEIN GERÄT VIBRIERT JUNGE!!!!");
-    //   }, VIBRATION_DURATION);
-    //   return () => clearTimeout(timeoutId);
-    // }
-  // }, [shouldVibrate]);
-  // ------- ENTFERNEN
-},[]);
+})},[]);
 // -------
 //
 // -------

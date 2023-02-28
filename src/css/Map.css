@@ -1,4 +1,3 @@
-
 /* Style the buttons at the top */
 button {
   background-color: var(--blue-600);
@@ -25,19 +24,6 @@ button:active {
   background-color: var(--blue-400);
   transform: translateY(2px)
 }
-/* Style the map container */
-/* .map-container {
-  width: 100vw;
-  height: 100vh;
-  margin: 0px 0px;
-} */
-
-/* Style the map */
-/* .leaflet-container {
-  z-index: 0;
-  height: 100vh;
-  width: 100vw;
-} */
 
 /* Style the marker popup */
 .marker-popup {
@@ -45,12 +31,6 @@ button:active {
   font-size: 0.7rem;
 }
 
-/*temporär fix für +- being offset */
-/* span {
-  top: 1rem;
-  font-size: 1.5rem;
-  left: 1rem;
-} */
 
 .marker-popup ul {
   display: flex;
