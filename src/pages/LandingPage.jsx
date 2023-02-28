@@ -91,7 +91,7 @@ export function LandingPage() {
         <img src={Jure} alt="Logo" />
         <div className={styles.callBackActionParagraf}>
           <p className={styles.callBackActionJure}>
-            <b>JU</b>st <b>UR</b>ban <b>E</b>xploring
+            <b>J</b>ust <b>UR</b>ban <b>E</b>xploring
           </p>
           <div>
             <p>Alles, aber simpel</p>
@@ -102,6 +102,11 @@ export function LandingPage() {
       <div className={styles.buttonContainer}>
       <button className={styles.callbackActionButton} onClick={() => navigate("/login")}>Anmelden</button>
         <button className={styles.callbackActionButton} onClick={() => navigate("/register")}>Registrieren</button>
+      </div>
+      <div className={styles.footer}>
+        <Link to="/agb">AGB</Link>
+        <Link to="/datenschutz">Datenschutz</Link>
+        <Link to="/impressum">Impressum</Link>
       </div>
     </div>
   );
