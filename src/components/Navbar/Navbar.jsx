@@ -2,12 +2,19 @@ import styles from "../../css/Navbar.module.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { FaBars, FaTimes, FaRegUser } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 import { BsHeart } from "react-icons/bs";
 import { MdOutlinePlace, MdOutlineSettings, MdLogout } from "react-icons/md";
 
 export function Navbar() {
   const [isAppActive, setIsAppActive] = useState(false);
+  const [isLoggedin, setIsLoggedin] = useState(false);
+  
+  const logout = () => {
+    localStorage.removeItem('token');
+    setIsLoggedin(false);
+  };
 
   return (
     <>
@@ -56,12 +63,12 @@ export function Navbar() {
             </li>
           </Link>
           <div className={styles.ausloggenposition}>
-            <Link to="*" className={styles.ausloggen}>
+            <Link to="/logout" className={styles.ausloggen}>
               <li className={styles.iconsmenu}>
                 <div>
                   <MdLogout size={40} className={styles.ausloggen} />
                 </div>
-                <div className={styles.navbarAusloggen}>Ausloggen</div>
+                <div className={styles.navbarAusloggen} onClick={logout}>Ausloggen</div>
               </li>
             </Link>
           </div>
