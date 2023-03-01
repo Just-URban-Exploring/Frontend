@@ -27,25 +27,15 @@
   align-items: center;
 }
 
-.card button{
+.btnprimary{
   width: 40vw;
 }
 .divTextField{
   width: 40vw;
 }
 
-.divTextField input{
-  padding: 0.5rem;
-  margin-top: 1rem;
-}
-
 .login{
   color: white;
-}
-
-.styleinput {
-  margin: 0.5rem;
-  padding: 0.5rem;
 }
 
 .forminput {
@@ -53,19 +43,11 @@
   border-radius: 10px;  
 }
 
-.btnpw {
-  width: 40vw;
-  height:fit-content;
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-a:active{
+.alink:active{
   color: red;
 }
 
-a{
+.alink{
   color: var(--blue-600);
   margin-left: 12px;
   font-size: 0.7rem;
