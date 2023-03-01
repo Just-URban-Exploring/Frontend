@@ -72,7 +72,7 @@ ul li {
   display: block;
   position: absolute;
   font-size: 30px;
-  color: var(--white);
+  color: var(--blue-700);
   outline: none;
   top: 15px;
   right: 25px;
