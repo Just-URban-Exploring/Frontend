@@ -1,6 +1,5 @@
 import React, {useState} from "react";
 import { MdHeadset, MdHeadsetOff } from "react-icons/md";
-import '../css/audioguide.css';
 
 
 
