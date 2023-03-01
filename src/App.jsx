@@ -24,7 +24,7 @@ export function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Routes-with Protection-------------------- */}
+{/* Routes-with Protection--------------------------- */}
                 
         <Route path="/main" element={
           <RouteProtection>
@@ -67,6 +67,7 @@ export function App() {
             <Logout />
           </RouteProtection>}>    
         </Route>
+
 {/* Routes-without Protection------------------------- */}
         
         <Route path="/" element={<LandingPage />}>
