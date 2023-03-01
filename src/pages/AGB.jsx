@@ -145,16 +145,16 @@ const AGB = () => {
           Mehrwertsteuer und sonstige Preisbestandteile.</li>
           <li className={styles.liStyle2}>5.2. Zusätzlich zu den
           angegebenen Preisen berechnen wir für die Lieferung innerhalb
-          Deutschlands pauschal ____ Euro pro Bestellung. Die Versandkosten
+          Deutschlands pauschal 9,90 € Euro pro Bestellung. Die Versandkosten
           werden Ihnen auf den Produktseiten, im Warenkorbsystem und auf der
           Bestellseite nochmals deutlich mitgeteilt.</li>
           <li className={styles.liStyle2}>5.3. Bei Zahlung per
-          Nachnahme wird zusätzlich eine Gebühr in Höhe von ____ Euro fällig,
+          Nachnahme wird zusätzlich eine Gebühr in Höhe von 4,50 € Euro fällig,
           die der Zusteller vor Ort erhebt. Weitere Steuern oder Kosten fallen
           nicht an.</li>
           <li className={styles.liStyle}>6. Lieferung</li>
           <li className={styles.liStyle2}>6.1. Die Lieferung erfolgt nur innerhalb
-          Deutschlands mit ____.</li>
+          Deutschlands mit 6,99 €.</li>
           <li className={styles.liStyle2}>6.2. Die Lieferzeit beträgt bis zu 3 Tage. Auf
           eventuell abweichende Lieferzeiten weisen wir auf der jeweiligen
           Produktseite hin.</li>
