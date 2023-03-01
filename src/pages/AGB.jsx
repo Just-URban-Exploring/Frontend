@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 // import "../css/Global.css";
-import styles from "../css/DatenschutzTemplate.module.css";
+import styles from "../css/Datenschutz-AGB.module.css";
 
 const AGB = () => {
   const navigate = useNavigate();

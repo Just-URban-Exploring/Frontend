@@ -1,0 +1,19 @@
+/* Extra small devices (phones) */
+@media only screen and (max-width: 599px) {
+    /* styles for phones */
+  }
+  
+  /* Small devices (tablets) */
+  @media only screen and (min-width: 600px) and (max-width: 959px) {
+    /* styles for tablets */
+  }
+  
+  /* Medium devices (desktops, laptops) */
+  @media only screen and (min-width: 960px) and (max-width: 1279px) {
+    /* styles for desktops and laptops */
+  }
+  
+  /* Large devices (large desktops, high-resolution screens) */
+  @media only screen and (min-width: 1280px) {
+    /* styles for large desktops and high-resolution screens */
+  }

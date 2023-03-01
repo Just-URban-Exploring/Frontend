@@ -6,15 +6,15 @@ const Datenschutz = () => {
 
   return (
     <div className={styles.containerDatenschutz}>
-      <h1 className={styles.titleDatenschutz}>Datenschutzerklärung</h1>
       <button
         className={styles.buttonDatenschutz}
         onClick={() => navigate("/")}
       >
         Home
       </button>
-      <p>
-        Letzte Aktualisierung: 07.02.2023 Diese Datenschutzrichtlinie beschreibt
+      <h2 className={styles.h2Big}>Datenschutzerklärung</h2>
+      
+        <h4 className={styles.h4Bold}>Letzte Aktualisierung: 07.02.2023</h4><p className={styles.pText}>Diese Datenschutzrichtlinie beschreibt
         unsere Richtlinien und Verfahren für die Sammlung, Verwendung und
         Offenlegung Ihrer Informationen, wenn Sie den Service nutzen, und
         informiert Sie über Ihre Datenschutzrechte und wie das Gesetz Sie
@@ -31,27 +31,25 @@ const Datenschutz = () => {
         </a>{" "}
         erstellt .
       </p>
-      <h1 className={styles.titleDatenschutz}>
+      <h3 className={styles.h3Bold}>
         Interpretation und Definitionen
-      </h1>
-      <h2 className={styles.subtitleDatenschutz}>Interpretation</h2>
-      <p>
+      </h3>
+      <p className={styles.pBold2}>Interpretation</p>
+      <p className={styles.pText}>
         Die Wörter, deren Anfangsbuchstaben groß geschrieben sind, haben die
         Bedeutung unter den folgenden Bedingungen definiert. Die folgenden
         Definitionen haben haben die gleiche Bedeutung, unabhängig davon, ob sie
         im Singular oder im Plural.
       </p>
-      <h2 className={styles.subtitleDatenschutz}>Definitionen</h2>
-      <p>Im Sinne dieser Datenschutzerklärung:</p>
+      <p className={styles.pBold2}>Definitionen</p>
+      <p className={styles.pText}>Im Sinne dieser Datenschutzerklärung:</p>
       <ul className={styles.ulDatenschutz}>
-        <li>
-          <p>
+        <li className={styles.liStyle2}>
             <strong>Profil</strong> bedeutet ein einzigartiges Konto, das für
             Sie erstellt wurde, um Zugang zu unserem Dienst oder zu Teilen
             unseres Dienstes.
-          </p>
         </li>
-        <li>
+        <li className={styles.liStyle}>
           <p>
             <strong>Affiliate</strong> bedeutet ein Unternehmen, das eine Partei
             kontrolliert, von ihr kontrolliert wird oder mit ihr unter
