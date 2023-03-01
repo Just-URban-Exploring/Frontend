@@ -9,6 +9,7 @@ import { Registration } from "./pages/Registration.jsx";
 import { IconsInfoPage } from "./pages/IconsInfosPage.jsx";
 import { DeleteProfile } from "./pages/DeleteProfile.jsx";
 import { Logout } from "./components/LoginLogout/Logout.jsx";
+import { Dashboard } from './pages/Dashboard.jsx';
 import { Icons } from "./components/Icons.jsx";
 import Map from "./components/Map.jsx";
 import { Login } from "./pages/Login.jsx";
@@ -67,6 +68,8 @@ export function App() {
         <Route path="/delete" element={<DeleteProfile />}>
         </Route>
         <Route path="/logout" element={<Logout />}>
+        </Route>
+        <Route path="/dashboard" element={<Dashboard />}>
         </Route>
       </Routes>
     </BrowserRouter>
