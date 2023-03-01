@@ -11,10 +11,11 @@ export function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [login, setLogin] = useState(false);
+  const [authenticated, setAuthenticated] = useState(localStorage.getItem(localStorage.getItem("authenticated")|| false));
 
   const configuration = {
     method: "post",
-    url: "https://backend-rho-nine.vercel.app/users/login",
+    url: "http://localhost:5555/users/login",
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Headers': '*',
@@ -37,6 +38,8 @@ export function Login() {
         localStorage.setItem("token", result.data.token);
         navigate("/map");
         console.log(result);
+        setAuthenticated(true)
+        localStorage.setItem('authenticated', true);
       })
       .catch((error) => {
         console.log(error);

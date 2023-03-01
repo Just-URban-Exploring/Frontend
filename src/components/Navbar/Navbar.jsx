@@ -13,6 +13,7 @@ export function Navbar({ currentPage }) {
   
   const logout = () => {
     localStorage.removeItem('token');
+    localStorage.removeItem('authenticated');
     setIsLoggedin(false);
   };
 
