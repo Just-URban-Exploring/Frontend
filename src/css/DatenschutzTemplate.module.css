@@ -3,6 +3,91 @@
 /* Extra small devices (phones) */
 @media only screen and (max-width: 599px) {
     /* styles for phones */
+    .containerDatenschutz {
+      display: flex;
+      flex-direction: column;
+      margin: 2rem;
+      hyphens: auto;
+    }
+    
+    .buttonDatenschutz {
+      position: fixed;
+      right: 1rem;
+      top: 0rem;
+font-size: 0.7rem !important;
+padding: 0.7rem !important;
+    }
+    
+    .titleDatenschutz {
+      color: var(--gray-900);
+      font-size: 1.9rem;
+      text-align: center;
+    }
+    
+    .subtitleDatenschutz {
+      margin-top: 1rem;
+    }
+    
+    /* AGBStyling */
+    
+    .AGBContainer {
+margin-top: 2rem;
+      padding: 0.5rem 0.5rem 0.5rem 0.2rem;
+      display: flex;
+      flex-direction: column;
+      text-align: justify;
+      line-height: 1.1rem;
+      hyphens: auto;
+    }
+.h2Big {
+font-size: 1.5rem;
+line-height: 1.8rem;
+}
+.h4Bold {
+margin-bottom: 1rem;
+margin-top: 0.8rem;
+}
+.pBold {
+  font-weight: 500;
+  text-align: center;
+}
+.pText {
+  margin-bottom: 1rem;
+}
+.h2Big2 {
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.5rem;
+}
+.liStyle {
+  list-style-type: none;
+  font-weight: 500;
+  line-height: 1.5rem;
+}
+.liStyle2 {
+  list-style-type: none;
+  line-height: 1.3rem;
+  margin-bottom: 1rem;
+
+}
+.pTitle {
+  font-weight: 500;
+  margin: 2.5rem 0rem 0rem 0rem;
+}
+.spanKursiv {
+  text-decoration: underline;
+  font-style: italic;
+}
+.lastDiv {
+  border: 2px solid black;
+  height: fit-content;
+  width: fit-content;
+  padding: 0.5rem;
+  text-align: justify;
+}
+.pTextDiv1 {
+  margin-bottom:1.3rem;
+}
   }
   
   /* Small devices (tablets) */
@@ -17,10 +102,10 @@
     }
     
     .buttonDatenschutz {
-      width: 10%;
       position: fixed;
       right: 1rem;
-      top: 1rem;
+      top: 0.7rem;
+font-size: 0.7rem;
     }
     
     .titleDatenschutz {
@@ -118,7 +203,6 @@ margin-top: 0.8rem;
     }
     
     .buttonDatenschutz {
-      width: 10%;
       position: fixed;
       right: 1rem;
       top: 1rem;
@@ -213,7 +297,6 @@ margin-left: 1.3rem;
     }
     
     .buttonDatenschutz {
-      width: 10%;
       position: fixed;
       right: 1rem;
       top: 0;
