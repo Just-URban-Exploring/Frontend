@@ -19,11 +19,13 @@ export function LandingPage() {
       </div>
 
       <div className={styles.containerWillkommen}>
-        <h1>Willkommen bei Just URban Exploring</h1>
+      <h1 className={styles.jureParagraf}><pre>Willkommen bei </pre> 
+            <p><span className={styles.jurestyle}>J</span>ust <span className={styles.jurestyle}>UR</span>ban <span className={styles.jurestyle}>E</span>xploring</p>
+          </h1>
         <img src={Jure} alt="Logo" />
         <div className={styles.jure}>
           <h1 className={styles.jureParagraf}>
-            <b>Ju</b>st <b>UR</b>ban <b>E</b>xploring
+            <p><span className={styles.jurestyle}>J</span>ust <span className={styles.jurestyle}>UR</span>ban <span className={styles.jurestyle}>E</span>xploring</p>
           </h1>
           <div>
             <h2 className={styles.jureParagraf}>Alles, aber simpel</h2>
@@ -91,7 +93,7 @@ export function LandingPage() {
         <img src={Jure} alt="Logo" />
         <div className={styles.callBackActionParagraf}>
           <p className={styles.callBackActionJure}>
-            <b>J</b>ust <b>UR</b>ban <b>E</b>xploring
+            <span className={styles.jurestyle}>J</span>ust <span className={styles.jurestyle}>UR</span>ban <span className={styles.jurestyle}>E</span>xploring
           </p>
           <div>
             <p>Alles, aber simpel</p>
