@@ -37,23 +37,16 @@
   background-color: var(--blue--700);
   cursor: pointer;
 } */
+.btnprimary{
+  width: 40vw;
+}
 
 .divTextField{
   width: 40vw;
 }
 
-.divTextField input{
-  padding: 0.5rem;
-  margin-top: 1rem;
-}
-
 .register{
   color: white;
-}
-
-.styleinput {
-  margin: 0.5rem;
-  padding: 0.5rem;
 }
 
 .forminput {
@@ -71,7 +64,7 @@
   font-size:0.7rem;
 }
 
-a{
+.alink{
   color: var(--blue-600);
   margin-left: 12px;
   font-size: 0.7rem;

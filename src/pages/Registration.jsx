@@ -146,7 +146,7 @@ export function Registration() {
 
         <div className={styles.agb}>
           <pre>Mit dem Klick auf den “Jetzt registrieren!” Button erlaube ich dieser
-          App den Zugriff auf meinen Standort. Ich stimme den<a href="/agb" target="_blank">AGB</a> und<a href="/datenschutz" target="_blank">Datenschutzrichtlinien</a> zu.</pre>
+          App den Zugriff auf meinen Standort. Ich stimme den<a className={styles.alink} href="/agb" target="_blank">AGB</a> und<a className={styles.alink} href="/datenschutz" target="_blank">Datenschutzrichtlinien</a> zu.</pre>
         {/* "R E G I S T R I E R E N" - B U T T O N  */}
           <button
             className={styles.btnprimary}
