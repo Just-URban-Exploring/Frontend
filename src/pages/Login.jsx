@@ -36,7 +36,6 @@ export function Login() {
         setLogin(true);
         localStorage.setItem("token", result.data.token);
         navigate("/map");
-        console.log(result);
       })
       .catch((error) => {
         console.log(error);
@@ -93,7 +92,7 @@ export function Login() {
           >
             Anmelden
           </button>
-            <div className={styles.pw}><a href="/forgot-pw">Passwort vergessen?</a></div>
+            <div className={styles.pw}><a className={styles.alink}href="/forgot-pw">Passwort vergessen?</a></div>
         </div>
         {/*  <button type="submit" className={styles.btngoogle}>
         <button type="submit" className="btn-google">
