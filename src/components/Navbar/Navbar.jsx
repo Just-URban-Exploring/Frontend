@@ -7,10 +7,12 @@ import { useNavigate } from "react-router-dom";
 import { BsHeart } from "react-icons/bs";
 import { MdOutlinePlace, MdOutlineSettings, MdLogout } from "react-icons/md";
 
-export function Navbar({ currentPage }) {
+export function Navbar({ currentPage, bgColor }) {
   const [isAppActive, setIsAppActive] = useState(false);
   const [isLoggedin, setIsLoggedin] = useState(false);
   
+  console.log('bgColor: ',bgColor);
+
   const logout = () => {
     localStorage.removeItem('token');
     localStorage.removeItem('authenticated');
@@ -33,6 +35,13 @@ export function Navbar({ currentPage }) {
   };
 
   const page = getPageTitle();
+
+  // const colorChange = () => {
+  //   if(color === 'blau') {
+  //     return styles.menuiconappWhite;
+  //   }
+  //   return styles.menuiconappBlue  ;
+  // }
 
   return (
     <>
@@ -92,7 +101,7 @@ export function Navbar({ currentPage }) {
           </div>
         </ul>
         <div
-          className={styles.menuiconapp}
+          className={bgColor === 'blue' ? styles.menuiconappWhite : styles.menuiconappBlue}
           onClick={() => setIsAppActive(!isAppActive)}
         >
           {isAppActive ? (

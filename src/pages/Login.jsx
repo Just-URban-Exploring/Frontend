@@ -6,12 +6,14 @@ import TextField from "@mui/material/TextField";
 import axios from "axios";
 // import connection from "../connection.json";
 import Jure from "../assets/JURE-Logo.svg";
+import { Navbar } from '../components/Navbar/Navbar.jsx';
 
 export function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [login, setLogin] = useState(false);
   const [authenticated, setAuthenticated] = useState(localStorage.getItem(localStorage.getItem("authenticated")|| false));
+  const [bgColor, setBgColor] = useState('blue');
 
   const configuration = {
     method: "post",
@@ -51,6 +53,7 @@ export function Login() {
   return (
     <div className={styles.containerStyle}>
       <h1 className={styles.login}>Login</h1>
+      <Navbar bgColor={bgColor}/>
       <img src={Jure} alt="Logo" />
       <div className={styles.buttonContainer}>
       <button id="home" onClick={() => navigate("/")}>Home</button>
