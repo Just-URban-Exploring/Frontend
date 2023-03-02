@@ -9,44 +9,38 @@ import SecretIcon from "../assets/SecretIcon.svg";
 import AudioGuide from "../assets/AudioGuide.svg";
 
 export function LandingPage() {
-
   const navigate = useNavigate();
 
   return (
     <div className={styles.container}>
-      <div className={styles.topBar}>
-        {/* <button className={styles.topBarButton}>Jetzt registrieren</button> */}
+      {/* Buttons */}
+      <div className={styles.buttonContainer}>
+      <button className={styles.btnPrimary} onClick={() => navigate("/login")}>Anmelden</button>
+        <button className={styles.btnPrimary} onClick={() => navigate("/register")}>Registrieren</button>
       </div>
 
-      <div className={styles.containerWillkommen}>
-      <h1 className={styles.jureParagraf}><pre>Willkommen bei </pre> 
-            <p><span className={styles.jurestyle}>J</span>ust <span className={styles.jurestyle}>UR</span>ban <span className={styles.jurestyle}>E</span>xploring</p>
-          </h1>
-        <img src={Jure} alt="Logo" />
-        <div className={styles.jure}>
+      <div className={styles.firstCallToAction}>
           <h1 className={styles.jureParagraf}>
             <p><span className={styles.jurestyle}>J</span>ust <span className={styles.jurestyle}>UR</span>ban <span className={styles.jurestyle}>E</span>xploring</p>
           </h1>
           <div>
             <h2 className={styles.jureParagraf}>Alles, aber simpel</h2>
           </div>
+          <img src={Jure} className={styles.imgJure}alt="Logo" />
+          <p className={styles.pCTA}>In deiner Umgebung gibt es mehr zu entdecken als zu denkst. </p><p className={styles.pCTA}>Probiere es aus und überzeuge dich selbst!</p>
+      </div>
+      <div className={styles.containerCallToAction}>
+        <img src={Berlin} className={styles.imgTakeATour} alt="Berlin" />
+        <div className={styles.containerRight}>
+          <h2 className={styles.h2Text}>Erkunde die Welt auf deine eigene Art und Weise</h2>
+          <p className={styles.text}>
+              Sei dein eigener Tour Guide. Besuche die interessantesten Orte der
+              Welt. Entdecke Sehenswürdigkeiten auf eigene Faust - in der Stadt und
+              auf dem Land. Zeit und Verweildauer bestimmst du selbst. Ohne Stress
+              und ganz unabhängig.
+            </p>
         </div>
       </div>
-
-      <div className={styles.containerTakeATour}>
-        {<img src={Berlin} alt="Berlin" />}
-
-        <h2 className={styles.containerTakeATourH2}>Erkunde die Welt auf deine eigene Art und Weise</h2>
-        <div className={styles.containerTakeATourParagraf}>
-          <p>
-            Sei dein eigener Tour Guide. Besuche die interessantesten Orte der
-            Welt. Entdecke Sehenswürdigkeiten auf eigene Faust - in der Stadt und
-            auf dem Land. Zeit und Verweildauer bestimmst du selbst. Ohne Stress
-            und ganz unabhängig.
-          </p>
-        </div>
-      </div>
-
       <div className={styles.containerIcons}>
         {<img src={Icons} alt="Icons" />}
         <div className={styles.IconParagrafPosition}>
@@ -84,7 +78,7 @@ export function LandingPage() {
         </div>
       </div>
 
-      <div className={styles.containerCallBackAction}>
+      <div className={styles.containerCallToAction}>
         <h2>Jetzt loslegen</h2>
         <p>
           Registriere dich jetzt und entdecke die Welt auf deine eigene Art und
@@ -99,11 +93,6 @@ export function LandingPage() {
             <p>Alles, aber simpel</p>
           </div>
         </div>
-      </div>
-
-      <div className={styles.buttonContainer}>
-      <button className={styles.callbackActionButton} onClick={() => navigate("/login")}>Anmelden</button>
-        <button className={styles.callbackActionButton} onClick={() => navigate("/register")}>Registrieren</button>
       </div>
       <div className={styles.footer}>
         <Link to="/agb">AGB</Link>
