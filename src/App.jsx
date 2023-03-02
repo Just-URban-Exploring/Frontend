@@ -8,6 +8,7 @@ import { Registration } from "./pages/Registration.jsx";
 import { IconsInfoPage } from "./pages/IconsInfosPage.jsx";
 import { DeleteProfile } from "./pages/DeleteProfile.jsx";
 import { Logout } from "./components/LoginLogout/Logout.jsx";
+import { RouteProtection } from './helpers/RouteProtection.jsx';
 import { Icons } from "./components/Icons.jsx";
 import Map from "./components/Map.jsx";
 import { Login } from "./pages/Login.jsx";
@@ -24,41 +25,66 @@ export function App() {
         <Route path="/" element={<LandingPage />}>
           {" "}
         </Route>
+
+        <Route path="/profile" element={
+          <RouteProtection>
+            <Profile />
+          </RouteProtection>}>
+        </Route>
+        
+        <Route path="/favoriteplaces" element={ 
+          <RouteProtection>
+            <FavoritePlaces />
+          </RouteProtection>}>    
+        </Route>
+                
+        <Route path="/einstellung" element={
+          <RouteProtection>
+            <Einstellung />
+          </RouteProtection>}>
+        </Route>
+        
+        <Route path="/map" element={
+          <RouteProtection>
+            <Map />
+          </RouteProtection>}>
+        </Route>
+
+        <Route Route path="/delete" element={
+          <RouteProtection>
+            <DeleteProfile />
+          </RouteProtection>}>
+        </Route>
+
+        <Route path="/logout" element={
+          <RouteProtection>
+            <Logout />
+          </RouteProtection>}>    
+        </Route>
+
+{/* Routes-without Protection------------------------- */}
+        
+        <Route path="/" element={<LandingPage />}>
+        </Route>
         <Route path="*" element={<Navbar to="/" />}>
-          {" "}
-        </Route>
-        <Route path="/iconsoptions" element={<NextDestination />}>
-          {" "}
-        </Route>
-        <Route path="/profile" element={<Profile />}>
-          {" "}
-        </Route>
-        <Route path="/favoriteplaces" element={<FavoritePlaces />}>
-          {" "}
-        </Route>
-        <Route path="/einstellung" element={<Einstellung />}>
-          {" "}
-        </Route>
-        <Route path="/register" element={<Registration />}>
-          {" "}
         </Route>
         <Route path="/login" element={<Login />}>
-          {/* {" "} */}
+        </Route>
+        <Route path="/register" element={<Registration />}></Route>
+        {/* iconsoptions = dieser Route existiert nur, um die Icons zu stylen und sehen  */}
+        <Route path="/iconsoptions" element={<NextDestination />}>
+        </Route>
+        <Route path="/icons" element={<Icons />}>
         </Route>
         <Route path="/iconsinfosPage" element={<IconsInfoPage />}>
-          {" "}
         </Route>
         <Route path="/icons" element={<Icons />}>
           {" "}
         </Route>
-        <Route path="/map" element={<Map />}></Route>
         <Route path="/agb" element={<AGB />}></Route>
         <Route path="/datenschutz" element={<Datenschutz />}></Route>
         <Route path="/impressum" element={<Impressum />}></Route>
-        <Route path="/delete" element={<DeleteProfile />}>
-        </Route>
-        <Route path="/logout" element={<Logout />}>
-        </Route>
+        
       </Routes>
     </BrowserRouter>
   );

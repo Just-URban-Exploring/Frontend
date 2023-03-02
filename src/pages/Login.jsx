@@ -6,15 +6,20 @@ import TextField from "@mui/material/TextField";
 import axios from "axios";
 // import connection from "../connection.json";
 import Jure from "../assets/JURE-Logo.svg";
+import { Navbar } from '../components/Navbar/Navbar.jsx';
 
 export function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [login, setLogin] = useState(false);
+  const [authenticated, setAuthenticated] = useState(localStorage.getItem(localStorage.getItem("authenticated")|| false));
+
+  // Um eine Navbar mit Farbwechsel in dieser Datei zu platzieren brauchen wir einen useState, der die Farbe dieser Seite speichert. Dieser Props wird dann mit dem Aufruf der Nacbar-Komponente and die Navbar.jsx übergeben
+  // const [bgColor, setBgColor] = useState('blue');
 
   const configuration = {
     method: "post",
-    url: "https://backend-rho-nine.vercel.app/users/login",
+    url: "http://localhost:5555/users/login",
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Headers': '*',
@@ -36,6 +41,9 @@ export function Login() {
         setLogin(true);
         localStorage.setItem("token", result.data.token);
         navigate("/map");
+        console.log(result);
+        setAuthenticated(true)
+        localStorage.setItem('authenticated', true);
       })
       .catch((error) => {
         console.log(error);
@@ -47,6 +55,8 @@ export function Login() {
   return (
     <div className={styles.containerStyle}>
       <h1 className={styles.login}>Login</h1>
+      {/* Hier wird der bgColor State an die Navbar übergeben
+      <Navbar bgColor={bgColor}/> */}
       <img src={Jure} alt="Logo" />
       <div className={styles.buttonContainer}>
       <button id="home" onClick={() => navigate("/")}>Home</button>
