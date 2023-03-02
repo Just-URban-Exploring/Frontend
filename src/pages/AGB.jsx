@@ -49,10 +49,10 @@ const AGB = () => {
         <li> 1. Geltungsbereich </li>
         <li> 2.Vertragspartner </li>
         <li> 3. Vertragsschluss</li>
-        <li>4. Widerrufsrecht </li>
+        <li> 4. Widerrufsrecht </li>
         <li> 5. Preise und Versandkosten </li>
         <li> 6.Lieferung </li>
-        <li>7. Zahlung </li>
+        <li> 7. Zahlung </li>
         <li> 8. Eigentumsvorbehalt </li>
         <li> 9. Streitbeilegung Allgemeine Geschäftsbedingungen </li>
         {/*         1. Geltungsbereich Für alle Lieferungen von DemoShop e.K. (nachfolgend
