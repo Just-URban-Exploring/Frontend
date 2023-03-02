@@ -4,7 +4,6 @@ import { Navbar } from "./components/Navbar/Navbar.jsx";
 import { Profile } from "./pages/Profile.jsx";
 import { FavoritePlaces } from "./pages/FavoritePlaces.jsx";
 import { Einstellung } from "./pages/Einstellung.jsx";
-import { Standort } from "./pages/Standort.jsx";
 import { Registration } from "./pages/Registration.jsx";
 import { IconsInfoPage } from "./pages/IconsInfosPage.jsx";
 import { DeleteProfile } from "./pages/DeleteProfile.jsx";
@@ -12,7 +11,6 @@ import { Logout } from "./components/LoginLogout/Logout.jsx";
 import { Icons } from "./components/Icons.jsx";
 import Map from "./components/Map.jsx";
 import { Login } from "./pages/Login.jsx";
-import { Main } from "./pages/Main-Page.jsx";
 import { NextDestination } from "./components/NextDestination.jsx";
 import { LandingPage } from "./pages/LandingPage.jsx";
 import Datenschutz from "./pages/Datenschutz.jsx";
@@ -29,10 +27,6 @@ export function App() {
         <Route path="*" element={<Navbar to="/" />}>
           {" "}
         </Route>
-        <Route path="/main" element={<Main />}>
-          {" "}
-        </Route>
-        {/* iconsoptions = dieser Route existiert nur, um die Icons zu stylen und sehen  */}
         <Route path="/iconsoptions" element={<NextDestination />}>
           {" "}
         </Route>
@@ -40,9 +34,6 @@ export function App() {
           {" "}
         </Route>
         <Route path="/favoriteplaces" element={<FavoritePlaces />}>
-          {" "}
-        </Route>
-        <Route path="/standort" element={<Standort />}>
           {" "}
         </Route>
         <Route path="/einstellung" element={<Einstellung />}>
