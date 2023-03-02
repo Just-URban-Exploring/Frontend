@@ -1,4 +1,4 @@
-import React, { children, useState } from 'react';
+import React, { useState } from 'react';
 import { Navigate } from 'react-router-dom';
 
 export const RouteProtection = ({children}) => {

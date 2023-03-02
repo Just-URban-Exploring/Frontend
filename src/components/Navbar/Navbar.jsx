@@ -36,12 +36,6 @@ export function Navbar({ currentPage, bgColor }) {
 
   const page = getPageTitle();
 
-  // const colorChange = () => {
-  //   if(color === 'blau') {
-  //     return styles.menuiconappWhite;
-  //   }
-  //   return styles.menuiconappBlue  ;
-  // }
 
   return (
     <>
@@ -101,6 +95,7 @@ export function Navbar({ currentPage, bgColor }) {
           </div>
         </ul>
         <div
+        // Hier wird anhand des Props von der kommenden Seite die entsprechende Klasse ausgewählt
           className={bgColor === 'blue' ? styles.menuiconappWhite : styles.menuiconappBlue}
           onClick={() => setIsAppActive(!isAppActive)}
         >

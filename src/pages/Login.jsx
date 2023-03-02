@@ -13,7 +13,9 @@ export function Login() {
   const [password, setPassword] = useState("");
   const [login, setLogin] = useState(false);
   const [authenticated, setAuthenticated] = useState(localStorage.getItem(localStorage.getItem("authenticated")|| false));
-  const [bgColor, setBgColor] = useState('blue');
+
+  // Um eine Navbar mit Farbwechsel in dieser Datei zu platzieren brauchen wir einen useState, der die Farbe dieser Seite speichert. Dieser Props wird dann mit dem Aufruf der Nacbar-Komponente and die Navbar.jsx übergeben
+  // const [bgColor, setBgColor] = useState('blue');
 
   const configuration = {
     method: "post",
@@ -53,7 +55,8 @@ export function Login() {
   return (
     <div className={styles.containerStyle}>
       <h1 className={styles.login}>Login</h1>
-      <Navbar bgColor={bgColor}/>
+      {/* Hier wird der bgColor State an die Navbar übergeben
+      <Navbar bgColor={bgColor}/> */}
       <img src={Jure} alt="Logo" />
       <div className={styles.buttonContainer}>
       <button id="home" onClick={() => navigate("/")}>Home</button>

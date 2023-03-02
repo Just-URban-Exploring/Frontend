@@ -68,6 +68,7 @@ ul li {
   color: var(--red-500);
 }
 
+/* Zwei verschiedene Klassen vom menuicon, welches dann entsprechend des übergebenen Props ausgewählt wird */
 .menuiconappWhite {
   display: block;
   position: absolute;
