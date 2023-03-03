@@ -19,19 +19,19 @@ export function LandingPage() {
         <button className={styles.btnPrimary} onClick={() => navigate("/register")}>Registrieren</button>
       </div>
 
-      <div className={styles.firstCallToAction}>
-          <h1 className={styles.jureParagraf}>
+      <div className={styles.CallToAction}>
+          <h1 className={styles.h1JURE}>
             <p><span className={styles.jurestyle}>J</span>ust <span className={styles.jurestyle}>UR</span>ban <span className={styles.jurestyle}>E</span>xploring</p>
           </h1>
-          <div>
-            <h2 className={styles.jureParagraf}>Alles, aber simpel</h2>
-          </div>
-          <img src={Jure} className={styles.imgJure}alt="Logo" />
-          <p className={styles.pCTA}>In deiner Umgebung gibt es mehr zu entdecken als zu denkst. </p><p className={styles.pCTA}>Probiere es aus und überzeuge dich selbst!</p>
+            <h2>Alles, aber simpel</h2>
+          <img src={Jure} className={styles.imgJure} alt="Logo" />
+          <p className={styles.pCTA}>In deiner Umgebung gibt es mehr zu entdecken als zu denkst.</p>
+          <p className={styles.pCTA}>Probiere es jetzt aus!</p>
       </div>
-      <div className={styles.containerCallToAction}>
+
+      <div className={styles.containerInfo}>
         <img src={Berlin} className={styles.imgTakeATour} alt="Berlin" />
-        <div className={styles.containerRight}>
+        <div className={styles.containerText}>
           <h2 className={styles.h2Text}>Erkunde die Welt auf deine eigene Art und Weise</h2>
           <p className={styles.text}>
               Sei dein eigener Tour Guide. Besuche die interessantesten Orte der
@@ -41,63 +41,59 @@ export function LandingPage() {
             </p>
         </div>
       </div>
-      <div className={styles.containerIcons}>
-        {<img src={Icons} alt="Icons" />}
-        <div className={styles.IconParagrafPosition}>
-          <div>
-            <img src={SecretIcon} alt="Secret Icon" />
-          </div>
-          <p>
+      <div className={styles.containerInfo}>
+      <div className={styles.containerText}> 
+        <h2 className={styles.h2Text}>Einfache Bedienung</h2> 
+          <p className={styles.text}>
             Dank der Icons kannst du auf einen Blick sehen, was sehenswert ist.
             Klicke auf ein Icon und lasse dir Informationen zu dem ausgewählten
             Ort anzeigen. Jeder Ort hat seine eigene Geschichte.
           </p>
+          <img src={SecretIcon} className={styles.secretIcon} alt="Secret Icon" />
+          <p className={styles.text2}>Psst ... Geheimtipp gefällig? Wir kennen da was.</p>
         </div>
+        <img src={Icons} className={styles.icons} alt="Icons" />
+        
       </div>
 
-      <div className={styles.containerMap}>
-        {<img src={Map} alt="Map" />}
-        <h2 className={styles.containerMapH2}>Karte</h2>
-        <div className={styles.containerMapParagraf}>
-          <p>
-            Museen, schöne Aussichten, Parks, Cafés und sogar das nächstgelegene
-            WC werden dir auf der Karte angezeigt. Auf deinem Weg durch die Orte
-            der Welt entscheidest du, wo es lang geht.
-          </p>
+      <div className={styles.containerInfo}>
+        <img src={Map} className={styles.imgMap} alt="Map" />
+        <div className={styles.containerText}>
+          <h2 className={styles.h2Text}>Karte</h2>
+            <p className={styles.text}>
+              Museen, schöne Aussichten, Parks, Cafés und sogar das nächstgelegene
+              WC werden dir auf der Karte angezeigt. Auf deinem Weg durch die Orte
+              der Welt entscheidest du, wo es lang geht.
+            </p>
         </div>
       </div>
-
-      <div className={styles.containerAudioGuide}>
-      <h2 className={styles.containerMapH2}>Audioguide</h2>
-        <img src={AudioGuide} alt="AudioGuide" />
-        <div>
-          <p className={styles.audioGuideText}>
-            Bist du eher der auditive Entdecker? Lass dir die Tour vorlesen mit
-            einem Klick kannst du in eine andere Zeit oder neue Welt eintauchen.
-          </p>
-        </div>
+      <div className={styles.containerInfo}>
+      <div className={styles.containerText}>
+        <h2 className={styles.h2Text}>Audioguide</h2>
+        <p className={styles.text}>
+              Bist du eher der auditive Entdecker? Lass dir die Tour vorlesen mit
+              einem Klick kannst du in eine andere Zeit oder neue Welt eintauchen.
+            </p>
+      </div>
+        <img src={AudioGuide} className={styles.imgAudio} alt="AudioGuide" />
       </div>
 
-      <div className={styles.containerCallToAction}>
-        <h2>Jetzt loslegen</h2>
-        <p>
+      <div className={styles.CallToAction}>
+        <h2 className={styles.h2Text}>Jetzt loslegen</h2>
+        <p className={styles.pCTA}>
           Registriere dich jetzt und entdecke die Welt auf deine eigene Art und
           Weise.
         </p>
-        <img src={Jure} alt="Logo" />
-        <div className={styles.callBackActionParagraf}>
-          <p className={styles.callBackActionJure}>
+        <img src={Jure} className={styles.imgJure} alt="Logo" />
+          <h1 className={styles.h1JURE}>
             <span className={styles.jurestyle}>J</span>ust <span className={styles.jurestyle}>UR</span>ban <span className={styles.jurestyle}>E</span>xploring
-          </p>
-          <div>
-            <p>Alles, aber simpel</p>
-          </div>
-        </div>
+          </h1>
+            <h2>Alles, aber simpel</h2>
       </div>
       <div className={styles.footer}>
-        <Link to="/agb">AGB</Link>
-        <Link to="/datenschutz">Datenschutz</Link>
-        <Link to="/impressum">Impressum</Link>
+        <Link className={styles.linkTo} to="/agb">AGB</Link>
+        <Link className={styles.linkTo} to="/datenschutz">Datenschutz</Link>
+        <Link className={styles.linkTo} to="/impressum">Impressum</Link>
       </div>
     </div>
   );

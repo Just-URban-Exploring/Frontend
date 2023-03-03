@@ -312,32 +312,40 @@
     background-color: rgba(0, 0, 0, 0.2);
   }
 
-  .firstCallToAction,
-  .containerCallToAction,
-  .containerIcons,
-  .containerMap,
-  .containerAudioGuide {
+  .btnPrimary {
+    margin-left: 4rem;
+    margin-right: 4rem;
+  }
+  .CallToAction {
     width: 60vw;
-    height: 70vh;
+    display: flex;
+    border-bottom: solid var(--white) 1px;
+    padding: 2rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+  }
+  
+.h1JURE {
+  font-size: 4rem;
+}
+
+  .containerInfo{
+    width: 60vw;
     text-align: left;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    min-height: fit-content;
+    display: flex;
     border-bottom: solid var(--white) 1px;
     padding: 4rem;
     margin-top: 2rem;
 margin-bottom: 2rem;
   }
 
-  .firstCallToAction {
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    grid-template-columns: 1fr;
-    margin-top: 2rem;
+  .containerText {
+    margin-left: 2rem;
+    margin-right: 2rem;
   }
-
   .h2Text {
     font-size: 2.5rem;
     margin-bottom: 3rem;;
@@ -348,49 +356,24 @@ margin-bottom: 2rem;
     text-align: justify;
     hyphens: auto;
   }
-  .containerMap img {
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-  } 
   
   .imgJure {
-    width: 40rem;
+    width: 30rem;
     margin: 4rem;
   }
   
+  .icons {
+    width: 30rem;
+  }
+  .secretIcon {
+    width: 6rem;
+    margin-top: 10rem;
+  }
+
 .pCTA {
   font-size: 1.8rem;
 }  
-  
-  .containerTakeATourParagraf,
-  .IconParagrafPosition,
-  .containerMapParagraf,
-  .audioGuideText {
-    margin-top: 0;
-    font-size: 1.3rem;
-    text-align: left;
-  }
-  
-  .audioGuideText {
-    margin-top: 2rem;
-    font-size: 1.3rem;
-    text-align: left;
-  }
-  
-  .IconParagrafPosition {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .IconParagrafPosition img {
-    width: 100%;
-    max-width: 10rem;
-    margin-bottom: 1rem;
-  }
-  
+
   .footer {
     width: 100%;
     height: 5rem;
@@ -403,5 +386,10 @@ margin-bottom: 2rem;
   
   .jurestyle {
     color: #cf6b26;
+  }
+
+  .linkTo {
+    color: var(--white);
+    font-size: 1.1rem;
   }
 }
