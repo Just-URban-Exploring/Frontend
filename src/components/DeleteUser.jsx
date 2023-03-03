@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import connection from "../connection.json";
+
+const envURI = import.meta.env.VITE_URI
 
 const deleteOneUser = () => {
   const [userId, setUserId] = useState('');
@@ -8,7 +9,7 @@ const deleteOneUser = () => {
 
   const configuration = {
     method: "delete",
-    url: `${connection.URI}/users/${userId}`,
+    url: `${envURI}/users/${userId}`,
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Headers': '*',

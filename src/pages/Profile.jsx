@@ -4,9 +4,9 @@ import styles from "../css/Profile.module.css";
 import { FaTrashAlt, FaPencilAlt } from "react-icons/fa";
 import Audioguide from "../components/Audioguide.jsx";
 import { NavbarProfile } from "../components/Navbar/NavbarPages.jsx";
-import connection from '../connection.json';
 import axios from 'axios'
 
+const envURI = import.meta.env.VITE_URI
 
 export function Profile() {
   // F E T C H  D A T A
@@ -16,7 +16,7 @@ export function Profile() {
   }, []);
   const configuration = {
     method: "post",
-    url: `${connection.URI}/users`,
+    url: `${envURI}/users`,
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Headers': '*',

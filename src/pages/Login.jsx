@@ -4,7 +4,6 @@ import styles from "../css/Login.module.css";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import axios from "axios";
-import connection from "../connection.json";
 import Jure from "../assets/JURE-Logo.svg";
 
 const envURI = import.meta.env.VITE_URI
