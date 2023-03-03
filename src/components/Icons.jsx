@@ -179,19 +179,6 @@ export function Icons() {
             </div>
           </Col>
         </Row>
-        {/*         <Row>
-          <Col debug>
-            <div className={styles.card}>
-              <div className={styles.circle13}></div>
-            </div>
-          </Col>
-          <Col debug>
-            <div className={styles.card}>
-              <div className={styles.circle14}></div>
-            </div>
-          </Col>
-        </Row> */}
-
         <Col>
           <button className={styles.btgbutton} onClick={() => navigate('/map')}>Ok</button>
         </Col>
