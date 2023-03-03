@@ -7,11 +7,9 @@ import { useNavigate } from "react-router-dom";
 import { BsHeart } from "react-icons/bs";
 import { MdOutlinePlace, MdOutlineSettings, MdLogout } from "react-icons/md";
 
-export function Navbar({ currentPage, bgColor }) {
+export function Navbar({ currentPage }) {
   const [isAppActive, setIsAppActive] = useState(false);
   const [isLoggedin, setIsLoggedin] = useState(false);
-  
-  console.log('bgColor: ',bgColor);
 
   const logout = () => {
     localStorage.removeItem('token');
