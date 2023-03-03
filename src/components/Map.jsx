@@ -80,7 +80,7 @@ const Map = () => {
 // -------
   const configuration = {
     method: "get",
-    url: "https://backend-rho-nine.vercel.app/locations",
+    url: `${connection.URI}/locations`,
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Headers': '*',
