@@ -17,14 +17,14 @@
   height: 150px;
   width: 150px;
   border-radius: 50%;
-  background-color: #ffffff;
+  background-color: var(--circle-color);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   transition: transform 0.2s ease-in-out;
   cursor: pointer;
   position: relative;
 }
 
-.card:after {
+.card:before {
   content: "";
   position: absolute;
   top: 0;
@@ -33,58 +33,59 @@
   height: 100%;
   border-radius: 50%;
   z-index: -1;
+  background-color: inherit;
 }
 
 .card:hover {
   transform: scale(1.05);
 }
 
-.circle1:before {
-  background-color: #0053b3;
+.circle1 {
+  --circle-color: #0053b3;
 }
 
-.circle2:before {
-  background-color: #f6b93b;
+.circle2 {
+  --circle-color: #f6b93b;
 }
 
-.circle3:before {
-  background-color: #78e08f;
+.circle3 {
+  --circle-color: #78e08f;
 }
 
-.circle4:before {
-  background-color: #eb4d4b;
+.circle4 {
+  --circle-color: #eb4d4b;
 }
 
-.circle5:before {
-  background-color: #6ab04c;
+.circle5 {
+  --circle-color: #6ab04c;
 }
 
-.circle6:before {
-  background-color: #e056fd;
+.circle6 {
+  --circle-color: #e056fd;
 }
 
-.circle7:before {
-  background-color: #badc58;
+.circle7 {
+  --circle-color: #badc58;
 }
 
-.circle8:before {
-  background-color: #ff9ff3;
+.circle8 {
+  --circle-color: #ff9ff3;
 }
 
-.circle9:before {
-  background-color: #f0932b;
+.circle9 {
+  --circle-color: #f0932b;
 }
 
-.circle10:before {
-  background-color: #00cec9;
+.circle10 {
+  --circle-color: #00cec9;
 }
 
-.circle11:before {
-  background-color: #00b894;
+.circle11 {
+  --circle-color: #00b894;
 }
 
-.circle12:before {
-  background-color: #6c5ce7;
+.circle12 {
+  --circle-color: #6c5ce7;
 }
 
 .iconPosition {
