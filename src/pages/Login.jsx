@@ -19,7 +19,7 @@ export function Login() {
 
   const configuration = {
     method: "post",
-    url: `${envURI}`,
+    url: `${envURI}/users/login`,
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Headers': '*',
