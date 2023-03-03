@@ -22,7 +22,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { setConfiguration, Container, Row, Col } from "react-grid-system";
 
-setConfiguration({ maxScreenClass: "xl" });
+// setConfiguration({ maxScreenClass: "xl" });
 
 export function Icons() {
 
@@ -126,7 +126,6 @@ export function Icons() {
                   <IconContext.Provider
                     className={styles.provider}
                     value={{
-                      color: "white",
                       size: "3.6em",
                     }}
                   >
