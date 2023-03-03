@@ -2,12 +2,11 @@ import styles from "../../css/Navbar.module.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { FaBars, FaTimes, FaRegUser } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
 
 import { BsHeart } from "react-icons/bs";
 import { MdOutlinePlace, MdOutlineSettings, MdLogout } from "react-icons/md";
 
-export function Navbar({ currentPage }) {
+export function Navbar({ currentPage}) {
   const [isAppActive, setIsAppActive] = useState(false);
   const [isLoggedin, setIsLoggedin] = useState(false);
 
@@ -94,7 +93,8 @@ export function Navbar({ currentPage }) {
         </ul>
         <div
         // Hier wird anhand des Props von der kommenden Seite die entsprechende Klasse ausgewählt
-          className={bgColor === 'blue' ? styles.menuiconappWhite : styles.menuiconappBlue}
+          // className={bgColor === 'blue' ? styles.menuiconappWhite : styles.menuiconappBlue}
+          className={styles.menuiconappBlue}
           onClick={() => setIsAppActive(!isAppActive)}
         >
           {isAppActive ? (
