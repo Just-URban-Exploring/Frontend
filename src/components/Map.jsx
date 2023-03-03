@@ -3,7 +3,6 @@ import * as geolib from "geolib";
 import { MapContainer, TileLayer, Marker, Popup} from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import "../css/Map.css";
-import connection from "../connection.json";
 import axios from "axios"
 import { Navbar } from "../components/Navbar/Navbar.jsx";
 import L from "leaflet";
@@ -22,6 +21,7 @@ import Secret from "../img/secret.png";
 import Shopping from "../img/shopping.png";
 import WC from "../img/wc.png";
 
+const envURI = import.meta.env.VITE_URI
 // -------
 // Icons
 // -------
@@ -80,7 +80,7 @@ const Map = () => {
 // -------
   const configuration = {
     method: "get",
-    url: `${connection.URI}/locations`,
+    url: `${envURI}/locations`,
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Headers': '*',

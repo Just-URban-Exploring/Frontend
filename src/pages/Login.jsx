@@ -6,7 +6,8 @@ import TextField from "@mui/material/TextField";
 import axios from "axios";
 import connection from "../connection.json";
 import Jure from "../assets/JURE-Logo.svg";
-import { Navbar } from '../components/Navbar/Navbar.jsx';
+
+const envURI = import.meta.env.VITE_URI
 
 export function Login() {
   const [email, setEmail] = useState("");
@@ -19,7 +20,7 @@ export function Login() {
 
   const configuration = {
     method: "post",
-    url: `${connection.URI}`,
+    url: `${envURI}`,
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Headers': '*',

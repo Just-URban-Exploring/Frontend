@@ -5,7 +5,8 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import axios from "axios";
 import Jure from "../assets/JURE-Logo.svg"
-import connection from "../connection.json"
+
+const envURI = import.meta.env.VITE_URI
 
 
 export function Registration() {
@@ -18,7 +19,7 @@ export function Registration() {
   const [register, setRegister] = useState(false);
   const configuration = {
     method: "post",
-    url: `${connection.URI}/users/registration`,
+    url: `${envURI}/users/registration`,
     headers: {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Headers': '*',
