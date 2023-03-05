@@ -454,7 +454,7 @@ const Datenschutz = () => {
         kontaktieren:
       </p>
         <li className={styles.liStyle2}>
-          E-Mail: e.felsinger@icloud.com
+          E-Mail: mustermann@musterfirma.de
         </li>
         <li className={styles.liStyle2}>
             Auf unserer Website:{" "}

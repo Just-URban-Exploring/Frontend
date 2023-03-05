@@ -91,9 +91,9 @@ export function LandingPage() {
             <h2>Alles, aber simpel</h2>
       </div>
       <div className={styles.footer}>
-        <Link className={styles.linkTo} to="/agb">AGB</Link>
-        <Link className={styles.linkTo} to="/datenschutz">Datenschutz</Link>
-        <Link className={styles.linkTo} to="/impressum">Impressum</Link>
+        <a href='/agb' className={styles.linkTo}>AGB</a>
+        <a href='/datenschutz' className={styles.linkTo}>Datenschutz</a>
+        <a href='/impressum' className={styles.linkTo}>Impressum</a>
       </div>
     </div>
   );
