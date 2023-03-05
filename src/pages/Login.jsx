@@ -54,13 +54,14 @@ export function Login() {
 
   return (
     <div className={styles.containerStyle}>
+      <div className={styles.buttonContainer}>
+      <button className={styles.btnprimary} onClick={() => navigate("/register")}>Registrierung</button>
+      <button className={styles.btnprimary} id="home" onClick={() => navigate("/")}>Home</button>
+      </div>
       <h1 className={styles.login}>Login</h1>
       {/* Hier wird der bgColor State an die Navbar übergeben
       <Navbar bgColor={bgColor}/> */}
       <img src={Jure} alt="Logo" />
-      <div className={styles.buttonContainer}>
-      <button id="home" onClick={() => navigate("/")}>Home</button>
-      </div>
       <Box
         className={styles.card}
         component={styles.form}
