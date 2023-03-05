@@ -3,139 +3,228 @@
 @media only screen and (max-width: 599px) {
   /* styles for phones */
 
-    .containerWillkommen {
-      width: 100vw;
-      height: 100vh;
-    }
-    
-    .jure {
-      text-align: center;
-      margin-top: 1rem;
-    }
-    
-    .jureParagraf {
-      font-size: 1.5rem;
-      margin: 0.5rem 0 0;
-    }
-    
-    .containerTakeATour {
-      padding: 2rem;
-    }
-    
-    .containerTakeATourH2 {
-      font-size: 2rem;
-      margin-top: 1rem;
-    }
-    
-    .containerTakeATourParagraf {
-      font-size: 1rem;
-      margin-top: 1rem;
-    }
-    
-    .containerIcons {
-      padding: 2rem;
-    }
-    
-    .IconParagrafPosition {
-      flex-direction: column;
-      text-align: center;
-    }
-    
-    .IconParagrafPosition img {
-      max-width: 50%;
-    }
-    
-    .containerMap {
-      padding: 2rem;
-    }
-    
-    .containerMapH2 {
-      font-size: 2rem;
-      margin-top: 1rem;
-    }
-    
-    .containerMapParagraf {
-      font-size: 1rem;
-      margin-top: 1rem;
-    }
-    
-    .containerAudioGuide {
-      padding: 2rem;
-    }
-    
-    .audioGuideText {
-      font-size: 1rem;
-      margin-top: 1rem;
-    }
-    
-    .containerCallBackAction {
-      padding: 1rem;
-    }
-    
-    .buttonContainer {
-      padding: 0.5rem;
-    }
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--blue-700);
+    width: 100vw;
+    color: var(--white);
+  }
+  
+  .buttonContainer {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
+  .CallToAction {
+    width: 100vw;
+    display: flex;
+    border-bottom: solid var(--white) 1px;
+    padding: 0.5rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    margin-top: 5.5rem;
+  }
+  
+.h1JURE {
+  font-size: 2rem;
+}
+
+.containerInfo1, .containerInfo3 {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: solid var(--white) 1px;
+  padding: 0.5rem;
+  margin-top: 2rem;
+margin-bottom: 2rem;
+}
+
+.containerInfo2, .containerInfo4 {
+  width: 100vw;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  border-bottom: solid var(--white) 1px;
+  padding: 0.5rem;
+  margin-top: 2rem;
+margin-bottom: 2rem;
+}
+
+  .h2Text {
+    font-size: 1.7rem;
+    margin: 1rem;
+    text-align: center;
+  }
+
+  .text {
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+    text-align: justify;
+    hyphens: auto;
+  }
+  
+  .imgJure, .imgTakeATour, .imgMap, .imgAudio {
+    width: 90vw;
+    margin: 4rem;
+  }
+  
+  .icons {
+    width: 90vw;
+  }
+  .secretIcon {
+    width: 5rem;
+    margin-top: 10rem;
+  }
+
+.pCTA {
+  font-size: 1.4rem;
+}  
+
+  .footer {
+    width: 100%;
+    height: 5rem;
+    font-size: 1rem;
+    background-color: rgba(0, 0, 0, .5);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+  }
+  
+  .jurestyle {
+    color: #cf6b26;
+  }
+
+  .linkTo {
+    color: var(--white);
+    font-size: 1.1rem;
+    text-decoration: none;
+  }
 }
 
 /* Small devices (tablets) */
 @media only screen and (min-width: 600px) and (max-width: 959px) {
   /* styles for tablets */
 
-    .container {
-      padding: 1rem;
-    }
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--blue-700);
+    width: 100%;
+    color: var(--white);
+  }
   
-    .containerWillkommen,
-    .containerCallBackAction,
-    .containerTakeATour,
-    .containerIcons,
-    .containerMap,
-    .containerAudioGuide {
-      text-align: left;
-      grid-template-columns: 1fr;
-      padding: 1rem;
-      gap: 1rem;
-    }
+  .buttonContainer {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
+  .btnPrimary {
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
+  .CallToAction {
+    width: 90vw;
+    display: flex;
+    border-bottom: solid var(--white) 1px;
+    padding: 1rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
+  }
   
-    .IconParagrafPosition {
-      margin-top: 1rem;
-    }
+.h1JURE {
+  font-size: 2.7rem;
+}
+
+.containerInfo1, .containerInfo3 {
+  width: 90vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: solid var(--white) 1px;
+  padding: 2rem;
+  margin-top: 2rem;
+margin-bottom: 2rem;
+}
+
+.containerInfo2, .containerInfo4 {
+  width: 90vw;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  border-bottom: solid var(--white) 1px;
+  padding: 2rem;
+  margin-top: 2rem;
+margin-bottom: 2rem;
+}
+
+  .h2Text {
+    font-size: 2rem;
+    margin: 3rem;
+    text-align: center;
+  }
+
+  .text {
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+    text-align: justify;
+    hyphens: auto;
+  }
   
-    .buttonContainer {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      background-color: var(--blue-700);
-      background-color: rgba(0, 0, 0, 0.201);
-    }
-    
-    .stickyButton {
-      background-color: var(--green);
-      color: var(--white);
-      font-weight: bold;
-      font-size: 1.2rem;
-      border: none;
-      border-radius: 0.5rem;
-    }
-    
-    .topBar {
-      width: 100%;
-      background-color: var(--blue-700);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    
-    .topBarButton {
-      background-color: var(--green);
-      color: var(--white);
-      font-weight: bold;
-      font-size: 1.2rem;
-      border: none;
-      border-radius: 0.5rem;
-    }
+  .imgJure {
+    width: 30rem;
+    margin: 4rem;
+  }
+  
+  .icons {
+    width: 30rem;
+  }
+  .secretIcon {
+    width: 4rem;
+    margin-top: 10rem;
+  }
+
+.pCTA {
+  font-size: 1.4rem;
+}  
+
+  .footer {
+    width: 100%;
+    height: 5rem;
+    font-size: 1rem;
+    background-color: rgba(0, 0, 0, .5);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+  }
+  
+  .jurestyle {
+    color: #cf6b26;
+  }
+
+  .linkTo {
+    color: var(--white);
+    font-size: 1.1rem;
+    text-decoration: none;
+  }
 }
 
 /* Medium devices (desktops, laptops) */
@@ -151,130 +240,93 @@
     color: var(--white);
   }
   
-  .containerMap img {
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-  }
-  
-  .containerWillkommen,
-  .containerCallBackAction,
-  .containerTakeATour,
-  .containerIcons,
-  .containerMap,
-  .containerAudioGuide {
-    text-align: left;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
-    gap: 2rem;
-    min-height: 100vh;
-    border-bottom: solid var(--white) 1px;
-    padding: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .containerWillkommen,
-  .containerCallBackAction {
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    grid-template-columns: 1fr;
-  }
-  
-  img {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-  }
-  
-  .jure {
-    text-align: center;
-  }
-  
-  .containerTakeATourH2,
-  .containerMapH2 {
-    margin: 0;
-    font-size: 2.5rem;
-  }
-  
-  .containerTakeATourParagraf,
-  .IconParagrafPosition,
-  .containerMapParagraf,
-  .audioGuideText {
-    margin-top: 0;
-    font-size: 1.3rem;
-    text-align: left;
-  }
-  
-  .audioGuideText {
-    margin-top: 2rem;
-    font-size: 1.3rem;
-    text-align: left;
-  }
-  
-  .IconParagrafPosition {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .IconParagrafPosition img {
-    width: 100%;
-    max-width: 10rem;
-    margin-bottom: 1rem;
-  }
-  
-  .callbackActionButton {
-    background-color: var(--blue-600);
-    color: var(--white);
-    font-weight: bold;
-    font-size: 1.3rem;
-    border: none;
-    border-radius: 0.5rem;
-    
-  }
-  
   .buttonContainer {
     position: fixed;
     top: 0;
     width: 100%;
-    height: 10%;
+    height: 4.5rem;
     display: flex;
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.2);
   }
-  
-  .stickyButton {
-    background-color: var(--green);
-    color: var(--white);
-    font-weight: bold;
-    font-size: 1.2rem;
-    border: none;
-    border-radius: 0.5rem;
+
+  .btnPrimary {
+    margin-left: 4rem;
+    margin-right: 4rem;
   }
-  
-  .topBar {
-    width: 100%;
-    background-color: var(--blue-700);
+  .CallToAction {
+    width: 90vw;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    border-bottom: solid var(--white) 1px;
     padding: 1rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 3rem;
+    margin-top: 3rem;
   }
   
-  .topBarButton {
-    background-color: var(--green);
-    color: var(--white);
-    font-weight: bold;
-    font-size: 1.2rem;
-    border: none;
-    border-radius: 0.5rem;
+.h1JURE {
+  font-size: 3rem;
+}
+
+.containerInfo1, .containerInfo3 {
+  width: 90vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: solid var(--white) 1px;
+  padding: 2rem;
+  margin-top: 2rem;
+margin-bottom: 2rem;
+}
+
+.containerInfo2, .containerInfo4 {
+  width: 90vw;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  border-bottom: solid var(--white) 1px;
+  padding: 2rem;
+  margin-top: 2rem;
+margin-bottom: 2rem;
+}
+
+  .containerText {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
+  .h2Text {
+    font-size: 2rem;
+    margin: 3rem;
+    text-align: center;
+  }
+
+  .text {
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+    text-align: justify;
+    hyphens: auto;
   }
   
+  .imgJure {
+    width: 30rem;
+    margin: 4rem;
+  }
   
+  .icons {
+    width: 30rem;
+  }
+  .secretIcon {
+    width: 4rem;
+    margin-top: 10rem;
+  }
+
+.pCTA {
+  font-size: 1.5rem;
+}  
+
   .footer {
     width: 100%;
     height: 5rem;
@@ -288,10 +340,16 @@
   .jurestyle {
     color: #cf6b26;
   }
+
+  .linkTo {
+    color: var(--white);
+    font-size: 1.1rem;
+    text-decoration: none;
+  }
 }
 
 /* Large devices (large desktops, high-resolution screens) */
-@media only screen and (min-width: 1280px) {
+@media only screen and (min-width: 1280px) and (max-width: 1649px) {
   /* styles for large desktops and high-resolution screens */
   .container {
     display: flex;
@@ -325,6 +383,125 @@
     align-items: center;
     text-align: center;
     margin-bottom: 3rem;
+    margin-top: 3.5rem;
+  }
+  
+.h1JURE {
+  font-size: 3.5rem;
+}
+
+  .containerInfo1, .containerInfo3 {
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: solid var(--white) 1px;
+    padding: 4rem;
+    margin-top: 2rem;
+margin-bottom: 2rem;
+  }
+
+  .containerInfo2, .containerInfo4 {
+    width: 60vw;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    border-bottom: solid var(--white) 1px;
+    padding: 4rem;
+    margin-top: 2rem;
+margin-bottom: 2rem;
+  }
+
+  .containerText {
+    margin-left: 2rem;
+    margin: 3rem;
+    text-align: center;
+  }
+  .h2Text {
+    font-size: 2.5rem;
+    margin: 3rem;
+    text-align: center;
+  }
+
+  .text {
+    font-size: 1.5rem;
+    text-align: justify;
+    hyphens: auto;
+  }
+  
+  .imgJure {
+    width: 30rem;
+    margin: 4rem;
+  }
+  
+  .icons {
+    width: 30rem;
+  }
+  .secretIcon {
+    width: 6rem;
+    margin-top: 10rem;
+  }
+
+.pCTA {
+  font-size: 1.5rem;
+}  
+
+  .footer {
+    width: 100%;
+    height: 5rem;
+    font-size: 1rem;
+    background-color: rgba(0, 0, 0, .5);
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+  }
+  
+  .jurestyle {
+    color: #cf6b26;
+  }
+
+  .linkTo {
+    color: var(--white);
+    font-size: 1.1rem;
+    text-decoration: none;
+  }
+}
+
+/* Styling for HUGE devices */
+@media only screen and (min-width: 1650px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--blue-700);
+    width: 100%;
+    color: var(--white);
+  }
+  
+  .buttonContainer {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 4.5rem;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
+  .btnPrimary {
+    margin-left: 4rem;
+    margin-right: 4rem;
+  }
+
+  .CallToAction {
+    width: 60vw;
+    display: flex;
+    border-bottom: solid var(--white) 1px;
+    padding: 2rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 3rem;
     margin-top: 3rem;
   }
   
@@ -332,7 +509,8 @@
   font-size: 4rem;
 }
 
-  .containerInfo{
+.containerInfo1, .containerInfo2, .containerInfo3, 
+.containerInfo4 {
     width: 60vw;
     text-align: left;
     display: flex;
@@ -346,6 +524,7 @@ margin-bottom: 2rem;
     margin-left: 2rem;
     margin-right: 2rem;
   }
+
   .h2Text {
     font-size: 2.5rem;
     margin-bottom: 3rem;;
@@ -365,6 +544,7 @@ margin-bottom: 2rem;
   .icons {
     width: 30rem;
   }
+
   .secretIcon {
     width: 6rem;
     margin-top: 10rem;
