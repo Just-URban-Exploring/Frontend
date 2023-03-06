@@ -71,20 +71,11 @@ export function App() {
         <Route path="/login" element={<Login />}>
         </Route>
         <Route path="/register" element={<Registration />}></Route>
-        {/* iconsoptions = dieser Route existiert nur, um die Icons zu stylen und sehen  */}
-        <Route path="/iconsoptions" element={<NextDestination />}>
-        </Route>
         <Route path="/icons" element={<Icons />}>
-        </Route>
-        <Route path="/iconsinfosPage" element={<IconsInfoPage />}>
-        </Route>
-        <Route path="/icons" element={<Icons />}>
-          {" "}
         </Route>
         <Route path="/agb" element={<AGB />}></Route>
         <Route path="/datenschutz" element={<Datenschutz />}></Route>
         <Route path="/impressum" element={<Impressum />}></Route>
-        
       </Routes>
     </BrowserRouter>
   );
