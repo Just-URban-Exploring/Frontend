@@ -21,7 +21,7 @@ export function LandingPage() {
 
       <div className={styles.CallToAction}>
           <h1 className={styles.h1JURE}>
-            <p><span className={styles.jurestyle}>J</span>ust <span className={styles.jurestyle}>UR</span>ban <span className={styles.jurestyle}>E</span>xploring</p>
+            <p className={styles.pLogoText}><span className={styles.jurestyle}>J</span>ust <span className={styles.jurestyle}>UR</span>ban <span className={styles.jurestyle}>E</span>xploring</p>
           </h1>
             <h2>Alles, aber simpel</h2>
           <img src={Jure} className={styles.imgJure} alt="Logo" />
@@ -29,7 +29,7 @@ export function LandingPage() {
           <p className={styles.pCTA}>Probiere es jetzt aus!</p>
       </div>
 
-      <div className={styles.containerInfo}>
+      <div className={styles.containerInfo1}>
         <img src={Berlin} className={styles.imgTakeATour} alt="Berlin" />
         <div className={styles.containerText}>
           <h2 className={styles.h2Text}>Erkunde die Welt auf deine eigene Art und Weise</h2>
@@ -41,7 +41,7 @@ export function LandingPage() {
             </p>
         </div>
       </div>
-      <div className={styles.containerInfo}>
+      <div className={styles.containerInfo2}>
       <div className={styles.containerText}> 
         <h2 className={styles.h2Text}>Einfache Bedienung</h2> 
           <p className={styles.text}>
@@ -56,7 +56,7 @@ export function LandingPage() {
         
       </div>
 
-      <div className={styles.containerInfo}>
+      <div className={styles.containerInfo3}>
         <img src={Map} className={styles.imgMap} alt="Map" />
         <div className={styles.containerText}>
           <h2 className={styles.h2Text}>Karte</h2>
@@ -67,7 +67,7 @@ export function LandingPage() {
             </p>
         </div>
       </div>
-      <div className={styles.containerInfo}>
+      <div className={styles.containerInfo4}>
       <div className={styles.containerText}>
         <h2 className={styles.h2Text}>Audioguide</h2>
         <p className={styles.text}>
@@ -86,14 +86,14 @@ export function LandingPage() {
         </p>
         <img src={Jure} className={styles.imgJure} alt="Logo" />
           <h1 className={styles.h1JURE}>
-            <span className={styles.jurestyle}>J</span>ust <span className={styles.jurestyle}>UR</span>ban <span className={styles.jurestyle}>E</span>xploring
+            <p className={styles.pLogoText}><span className={styles.jurestyle}>J</span>ust <span className={styles.jurestyle}>UR</span>ban <span className={styles.jurestyle}>E</span>xploring</p>
           </h1>
             <h2>Alles, aber simpel</h2>
       </div>
       <div className={styles.footer}>
-        <Link className={styles.linkTo} to="/agb">AGB</Link>
-        <Link className={styles.linkTo} to="/datenschutz">Datenschutz</Link>
-        <Link className={styles.linkTo} to="/impressum">Impressum</Link>
+        <a href='/agb' className={styles.linkTo}>AGB</a>
+        <a href='/datenschutz' className={styles.linkTo}>Datenschutz</a>
+        <a href='/impressum' className={styles.linkTo}>Impressum</a>
       </div>
     </div>
   );
