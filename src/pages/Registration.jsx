@@ -60,11 +60,12 @@ export function Registration() {
 
   return (
     <div className={styles.containerStyle}>
-      <h1 className={styles.register}>Registrierung</h1>
-      <img src={Jure} alt="Logo" />
       <div className={styles.buttonContainer}>
-      <button id={styles.home} onClick={() => navigate("/")}>Home</button>
+      <button className={styles.btnprimary} onClick={() => navigate("/login")}>Login</button>
+      <button className={styles.btnprimary} id="home" onClick={() => navigate("/")}>Home</button>
       </div>
+      <h1 className={styles.register}>Registrierung</h1>
+      <img src={Jure} className={styles.imgLogo} alt="Logo" />
       <Box
         className={styles.card}
         component={styles.form}
@@ -150,7 +151,7 @@ export function Registration() {
           App den Zugriff auf meinen Standort. Ich stimme den<a className={styles.alink} href="/agb" target="_blank">AGB</a> und<a className={styles.alink} href="/datenschutz" target="_blank">Datenschutzrichtlinien</a> zu.</pre>
         {/* "R E G I S T R I E R E N" - B U T T O N  */}
           <button
-            className={styles.btnprimary}
+            className={styles.btnprimary2}
             type="submit"
             disabled={password !== matchPwd ? true : false}
             onClick={(e) => handleSubmit(e)}
