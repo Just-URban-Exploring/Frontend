@@ -146,17 +146,19 @@ export function Registration() {
 
         {/* P A Y P A L */}
 
-        <div className={styles.agb}>
-          <pre>Mit dem Klick auf den “Jetzt registrieren!” Button erlaube ich dieser
-          App den Zugriff auf meinen Standort. Ich stimme den<a className={styles.alink} href="/agb" target="_blank">AGB</a> und<a className={styles.alink} href="/datenschutz" target="_blank">Datenschutzrichtlinien</a> zu.</pre>
+        <div className={styles.btnRegisterContainer}>
+          <p className={styles.pEinwilligung}>
+            Mit dem Klick auf den “Jetzt registrieren!” Button erlaube ich dieser
+            App den Zugriff auf meinen Standort. Ich stimme den<a className={styles.alink} href="/agb" target="_blank">AGB</a> und<a className={styles.alink} href="/datenschutz" target="_blank">Datenschutzrichtlinien</a> zu.
+          </p>
         {/* "R E G I S T R I E R E N" - B U T T O N  */}
           <button
-            className={styles.btnprimary2}
+            className={styles.btnprimary3}
             type="submit"
             disabled={password !== matchPwd ? true : false}
             onClick={(e) => handleSubmit(e)}
           >
-            Jetzt Registrieren!
+            Jetzt registrieren!
           </button>
         </div>
       </Box>
