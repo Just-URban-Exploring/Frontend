@@ -2,20 +2,21 @@
   position: absolute;
   top:0;
   height: 100vh;
+  width: 100vw;
   background-color: var(--blue-700);
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.containerStyle img{
- margin: 0;
- padding: 0;
- height: 15vh;
- width: 100vw;
-}
-
-.card {
+  }
+  
+  .imgLogo{
+  margin: 3rem;
+  padding: 0;
+  height: 15vh;
+  width: 100vw;
+  }
+  
+  .card {
   width: 45vw;
   height:fit-content;
   color: rgb(255, 255, 255);
@@ -25,35 +26,44 @@
   flex-direction: column;
   flex-wrap: nowrap;
   align-items: center;
-}
-
-.btnprimary{
+  }
+  
+  .buttonContainer {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 4.5rem;
+  display: flex;
+  justify-content: end;
+  gap: 4rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  }
+  
+  .divTextField{
   width: 40vw;
-}
-.divTextField{
-  width: 40vw;
-}
-
-.login{
+  }
+  
+  .login{
   color: white;
-}
-
-.forminput {
+  margin-top: 5rem;
+  }
+  
+  .forminput {
   background-color: white;
-  border-radius: 10px;  
-}
-
-.alink:active{
+  border-radius: 10px; 
+  }
+  
+  .alink:active{
   color: red;
-}
-
-.alink{
+  }
+  
+  .alink{
   color: var(--blue-600);
   margin-left: 12px;
-  font-size: 0.7rem;
-}
-
-.loginSuccess {
+  font-size: 1rem;
+  }
+  
+  .loginSuccess {
   transform: rotate(-12deg);
   color: #002733;
   font-size: 2rem;
@@ -62,8 +72,12 @@
   border-radius: 1rem;
   text-align: center;
   mix-blend-mode: multiply;
-};
-
-.loginMessageOutput {
+  };
+  
+  .loginMessageOutput {
   color: #acacac;
-}
+  }
+  
+  .pw {
+  align-self: flex-start;
+  }

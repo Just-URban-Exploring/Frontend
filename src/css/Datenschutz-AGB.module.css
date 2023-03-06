@@ -3,6 +3,8 @@
 /* Extra small devices (phones) */
 @media only screen and (max-width: 599px) {
   /* styles for phones */
+
+  /* Datenschutz Container */
   .containerDatenschutz {
     margin-top: 3rem !important;
     padding: 0.5rem 0.5rem 0.5rem 0.2rem;
@@ -10,17 +12,8 @@
     line-height: 1.1rem;
     hyphens: auto;
   }
-  
-  .buttonDatenschutz {
-    position: fixed;
-    right: 1rem;
-    top: 0rem;
-font-size: 0.7rem !important;
-padding: 0.7rem !important;
-  }
 
   /* AGBStyling */
-  
   .AGBContainer {
 margin-top: 2rem;
     padding: 0.5rem 0.5rem 0.5rem 0.2rem;
@@ -30,10 +23,46 @@ margin-top: 2rem;
     line-height: 1.1rem;
     hyphens: auto;
   }
+
+    /* AGB last div */
+.lastDiv {
+  border: 2px solid black;
+  height: fit-content;
+  width: fit-content;
+  padding: 0.5rem;
+  text-align: justify;
+  }
+  .pTextDiv1 {
+  margin-bottom:1.3rem;
+  }
+
+  /* Impressum Container */
+  .impressumContainer {
+    margin: 2rem;
+    padding:0.5rem 0.5rem 0.5rem 0.2rem;
+  }
+
+  /* Button Styling */
+    
+  .buttonDatenschutz {
+    position: fixed;
+    right: 1rem;
+    top: 0rem;
+font-size: 0.7rem !important;
+padding: 0.7rem !important;
+  }
+
+  /* Überschriften */
 .h2Big {
 font-size: 1.5rem;
 line-height: 1.8rem;
 }
+.h2Big2 {
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.5rem;
+  }
+
 .h3Bold2 {
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -42,80 +71,71 @@ line-height: 1.8rem;
 margin-bottom: 1rem;
 margin-top: 0.8rem;
 }
+
+/* Text Styling */
 .pBold {
 font-weight: 500;
 text-align: center;
 }
+
 .pBold2 {
   font-weight: 500;
 margin-bottom: 1rem;
 margin-left: 1.3rem;
 }
+
+.pBold3 {
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
 .pText {
 margin-bottom: 1rem;
 }
-.h2Big2 {
-margin-top: 1rem;
-margin-bottom: 1.5rem;
-line-height: 1.5rem;
-}
+
+.pTitle {
+  font-weight: 500;
+  margin: 2.5rem 0rem 0rem 0rem;
+  }
+  .spanKursiv {
+  text-decoration: underline;
+  font-style: italic;
+  }
+
+/* List Styling */
 .liStyle {
 list-style-type: none;
 font-weight: 500;
 line-height: 1.5rem;
 }
+
 .liStyle2 {
 list-style-type: none;
 line-height: 1.3rem;
 margin-bottom: 1rem;
 }
+
 .liStyle3{
   line-height: 1.3rem;
   margin-left: 1.5rem;
   margin-top: 0rem;
   margin-bottom: 0rem;
   }
-  
-.pTitle {
-font-weight: 500;
-margin: 2.5rem 0rem 0rem 0rem;
-}
-.spanKursiv {
-text-decoration: underline;
-font-style: italic;
-}
-.lastDiv {
-border: 2px solid black;
-height: fit-content;
-width: fit-content;
-padding: 0.5rem;
-text-align: justify;
-}
-.pTextDiv1 {
-margin-bottom:1.3rem;
-}
 }
 
 /* Small devices (tablets) */
 @media only screen and (min-width: 600px) and (max-width: 959px) {
   /* styles for tablets */
 
+  /* Datenschutz Container */
   .containerDatenschutz {
     display: flex;
     flex-direction: column;
     margin: 2rem;
     hyphens: auto;
   }
-  
-  .buttonDatenschutz {
-    position: fixed;
-    right: 1rem;
-    top: 0.7rem;
-font-size: 0.7rem;
-  }
-  
-  /* AGBStyling */
-  
+
+  /* AGB Container */
   .AGBContainer {
     margin: 2rem;
     padding: 2rem 2rem 2rem 1rem;
@@ -125,106 +145,145 @@ font-size: 0.7rem;
     line-height: 1.3rem;
     hyphens: auto;
   }
+
+  /* AGB last div */
+.lastDiv {
+  border: 2px solid black;
+  height: fit-content;
+  width: fit-content;
+  margin-left: 1rem;
+  padding: 0.5rem;
+  text-align: justify;
+  }
+  .pTextDiv1 {
+  margin-bottom:1.3rem;
+  margin-left: 0.5rem;
+  }
+  .pTextDiv2{
+  margin-left: 0.5rem;
+  }
+
+  /* Impressum Container */
+  .impressumContainer {
+    margin: 2rem;
+    padding: 2rem 4rem 2rem 4rem;
+  }
+
+  /* Button Styling */
+  .buttonDatenschutz {
+    position: fixed;
+    right: 1rem;
+    top: 0.7rem;
+font-size: 0.7rem;
+  }
+
+/* Überschriften Bold */
 .h2Big {
 margin-left: 1.3rem;
 font-size: 1.5rem;
 }
+
+.h2Big2 {
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  margin-left: 1.3rem;
+  line-height: 1.5rem;
+  }
+  
+  .h2Big3 {
+    margin-top: 1rem;
+    margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  margin-left: 1.3rem;
+  }
+
 .h3Bold {
   margin-bottom: 1rem;
 margin-left: 1.3rem;
 }
+
 .h3Bold2 {
   margin-left: 1.3rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
+
 .h4Bold {
 margin-bottom: 1rem;
 margin-left: 1.3rem;
 margin-top: 0.8rem;
 }
+
+/* Text Styling */
 .pBold {
 font-weight: 500;
 margin-bottom: 1rem;
 text-align: center;
 }
+
 .pBold2 {
   font-weight: 500;
 margin-bottom: 1rem;
 margin-left: 1.3rem;
 }
+
+.pBold3 {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  margin-left: 1.3rem;
+}
+
 .pText {
 margin-bottom: 1rem;
 margin-left:1.3rem;
 }
-.h2Big2 {
-margin-top: 1rem;
-margin-bottom: 1.5rem;
-margin-left: 1.3rem;
-line-height: 1.5rem;
-}
+
+.pTitle {
+  font-weight: 500;
+  margin: 2.5rem 0rem 0rem 1.3rem;
+  }
+
+  .spanKursiv {
+  text-decoration: underline;
+  font-style: italic;
+  margin-left:1.3rem;
+  }
+
+/* List Styling */
 .liStyle {
 list-style-type: none;
 font-weight: 500;
 line-height: 1.5rem;
 margin-left: 1.3rem;
 }
+
 .liStyle2 {
 list-style-type: none;
 line-height: 1.3rem;
 margin-bottom: 1rem;
 margin-left: 1.3rem;
 }
+
 .liStyle3{
   line-height: 1.3rem;
   margin-left: 3rem;
   margin-top: 0rem;
   margin-bottom: 0rem;
   }
-.pTitle {
-font-weight: 500;
-margin: 2.5rem 0rem 0rem 1.3rem;
-}
-.spanKursiv {
-text-decoration: underline;
-font-style: italic;
-margin-left:1.3rem;
-}
-.lastDiv {
-border: 2px solid black;
-height: fit-content;
-width: fit-content;
-margin-left: 1rem;
-padding: 0.5rem;
-text-align: justify;
-}
-.pTextDiv1 {
-margin-bottom:1.3rem;
-margin-left: 0.5rem;
-}
-.pTextDiv2{
-margin-left: 0.5rem;
-}
 }
 
 /* Medium devices (desktops, laptops) */
 @media only screen and (min-width: 960px) and (max-width: 1279px) {
   /* styles for desktops and laptops */
 
+  /* Datenschutz Container */
   .containerDatenschutz {
     display: flex;
     flex-direction: column;
     margin: 2rem;
   }
   
-  .buttonDatenschutz {
-    position: fixed;
-    right: 1rem;
-    top: 1rem;
-  }
-  
-  /* AGBStyling */
-  
+  /* AGB Container */
   .AGBContainer {
     margin: 2rem;
     padding: 2rem 4rem 2rem 4rem;
@@ -232,105 +291,143 @@ margin-left: 0.5rem;
     flex-direction: column;
     text-align: justify;
   }
+
+  /* AGB last div */
+.lastDiv {
+  border: 2px solid black;
+  height: fit-content;
+  width: fit-content;
+  margin-left: 1rem;
+  padding: 0.5rem;
+  text-align: justify;
+  }
+
+  .pTextDiv1 {
+  margin-bottom:1.3rem;
+  margin-left: 0.5rem;
+  }
+
+  .pTextDiv2{
+  margin-left: 0.5rem;
+  }
+
+  /* Impressum Container */
+  .impressumContainer {
+    margin: 2rem;
+    padding: 2rem 4rem 2rem 4rem;
+  }
+
+  /*  Button Styling */
+  .buttonDatenschutz {
+    position: fixed;
+    right: 1rem;
+    top: 1rem;
+  }
+
+  /* Überschriften Bold */
 .h2Big {
 text-align: center;
 }
-.h4Bold {
-margin-bottom: 1rem;
-margin-left: 1.3rem;
-}
+
+.h2Big2 {
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  margin-left: 1.3rem;
+  }
+  
+  .h2Big3 {
+    margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  margin-left: 1.3rem;
+  }
+
 .h3Bold {
   margin-bottom: 1rem;
 margin-left: 1.3rem;
 }
+
 .h3Bold2 {
   margin-left: 1.3rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
+
+.h4Bold {
+margin-bottom: 1rem;
+margin-left: 1.3rem;
+}
+
+/* Text Styling */
 .pBold {
 font-weight: 500;
 margin-bottom: 1rem;
 text-align: center;
-}
+} 
+
 .pBold2 {
   font-weight: 500;
 margin-bottom: 1rem;
 margin-left: 1.3rem;
 }
+
+.pBold3 {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  margin-left: 1.3rem;
+}
+
 .pText {
 margin-bottom: 1rem;
 margin-left:1.3rem;
 }
-.h2Big2 {
-text-align: center;
-margin-top: 1rem;
-margin-bottom: 1.5rem;
-margin-left: 1.3rem;
-}
+
+.pTitle {
+  font-weight: 500;
+  margin: 2.5rem 0rem 0rem 1.3rem;
+  }
+  
+  .spanKursiv {
+  text-decoration: underline;
+  font-style: italic;
+  margin-left:1.3rem;
+  }
+
+/* List Styling */
 .liStyle {
 list-style-type: none;
 font-weight: 500;
 line-height: 1.5rem;
 margin-left: 1.3rem;
 }
+
 .liStyle2 {
 list-style-type: none;
 line-height: 1.3rem;
 margin-bottom: 1rem;
 margin-left: 1.3rem;
 }
+
 .liStyle3{
   line-height: 1.3rem;
   margin-left: 3rem;
   margin-top: 0rem;
   margin-bottom: 0rem;
   }
-.pTitle {
-font-weight: 500;
-margin: 2.5rem 0rem 0rem 1.3rem;
-}
-.spanKursiv {
-text-decoration: underline;
-font-style: italic;
-margin-left:1.3rem;
-}
-.lastDiv {
-border: 2px solid black;
-height: fit-content;
-width: fit-content;
-margin-left: 1rem;
-padding: 0.5rem;
-text-align: justify;
-}
-.pTextDiv1 {
-margin-bottom:1.3rem;
-margin-left: 0.5rem;
-}
-.pTextDiv2{
-margin-left: 0.5rem;
-}
 }
 
 /* Large devices (large desktops, high-resolution screens) */
 @media only screen and (min-width: 1280px) {
   /* styles for large desktops and high-resolution screens */
   
-  /* Datenschutz Styling */
+  /* Datenschutz Container */
   .containerDatenschutz {
     display: flex;
     flex-direction: column;
     margin: 2rem;
   }
   
-  .buttonDatenschutz {
-    position: fixed;
-    right: 1rem;
-    top: 0;
-  }
-  
-  /* AGB Styling */
-  
+  /* AGB Container */  
   .AGBContainer {
     margin: 2rem;
     padding: 2rem 4rem 2rem 4rem;
@@ -338,42 +435,105 @@ margin-left: 0.5rem;
     flex-direction: column;
     text-align: justify;
   }
+  /* AGB last divs */
+  .lastDiv {
+    border: 2px solid black;
+    height: fit-content;
+    width: fit-content;
+    margin-left: 1rem;
+    padding: 0.5rem;
+    text-align: justify;
+    }
+    .pTextDiv1 {
+    margin-bottom:1.3rem;
+    margin-left: 0.5rem;
+    }
+    .pTextDiv2{
+    margin-left: 0.5rem;
+    }
+
+/* Impressum Container */
+  .impressumContainer {
+    margin: 2rem;
+    padding: 2rem 4rem 2rem 4rem;
+  }
+
+  /* Button Styling */
+  .buttonDatenschutz {
+    position: fixed;
+    right: 1rem;
+    top: 0;
+  }
+
+  /* Überschriften Bold */
 .h2Big {
 text-align: center;
 }
-.h4Bold {
+
+.h2Big2 {
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  margin-left: 1.3rem;
+  }
+
+  .h2Big3 {
+    margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  margin-left: 1.3rem;
+  }
+
+  .h3Bold {
+    margin-bottom: 1rem;
+  margin-left: 1.3rem;
+  }
+  
+  .h3Bold2 {
+    margin-left: 1.3rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .h4Bold {
 margin-bottom: 1rem;
 margin-left: 1.3rem;
 }
-.h3Bold {
-  margin-bottom: 1rem;
-margin-left: 1.3rem;
-}
-.h3Bold2 {
-  margin-left: 1.3rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
+
+/* Text Styling */
 .pBold {
 font-weight: 500;
 margin-bottom: 1rem;
 text-align: center;
 }
+
 .pBold2 {
   font-weight: 500;
 margin-bottom: 1rem;
 margin-left: 1.3rem;
 }
+
+.pBold3 {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  margin-left: 1.3rem;
+}
+
 .pText {
 margin-bottom: 1rem;
 margin-left:1.3rem;
 }
-.h2Big2 {
-text-align: center;
-margin-top: 1rem;
-margin-bottom: 1.5rem;
-margin-left: 1.3rem;
-}
+
+.pTitle {
+  font-weight: 500;
+  margin: 2.5rem 0rem 0rem 1.3rem;
+  }
+
+  .spanKursiv {
+  text-decoration: underline;
+  font-style: italic;
+  margin-left:1.3rem;
+  }
+/* List Styling */
 .liStyle {
 list-style-type: none;
 font-weight: 500;
@@ -393,30 +553,5 @@ line-height: 1.3rem;
 margin-left: 3rem;
 margin-top: 0rem;
 margin-bottom: 0rem;
-}
-
-.pTitle {
-font-weight: 500;
-margin: 2.5rem 0rem 0rem 1.3rem;
-}
-.spanKursiv {
-text-decoration: underline;
-font-style: italic;
-margin-left:1.3rem;
-}
-.lastDiv {
-border: 2px solid black;
-height: fit-content;
-width: fit-content;
-margin-left: 1rem;
-padding: 0.5rem;
-text-align: justify;
-}
-.pTextDiv1 {
-margin-bottom:1.3rem;
-margin-left: 0.5rem;
-}
-.pTextDiv2{
-margin-left: 0.5rem;
 }
 }

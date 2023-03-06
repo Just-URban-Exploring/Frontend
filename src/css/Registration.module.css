@@ -1,73 +1,392 @@
-.containerStyle {
-  top: 0;
-  height: 100vh;
-  background-color: var(--blue-700);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/* Extra small devices (phones) */
+@media only screen and (max-width: 599px) {
+  /* styles for phones */
+
+  .containerStyle{
+    position: absolute;
+width: 100vw;
+    height: 100vh;
+    background-color: var(--blue-700);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .imgLogo {
+    width: 40vw;
+    margin-bottom: 1rem;
+  }
+  
+  .buttonContainer {
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 3.5rem;
+    display: flex;
+    justify-content: end;
+  gap: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  .card {
+    width: 90vw;
+    height: fit-content;
+    color: rgb(255, 255, 255);
+    background-color: var(--gray-200);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+  
+  /* .card button{
+    width: 40vw;
+    background-color: var(--gray-600);
+    margin-top: 1rem;
+    cursor: not-allowed;
+  }
+  
+  .card button:not([disabled]) {
+    background-color: var(--blue--700);
+    cursor: pointer;
+  } */
+  
+  .divTextField {
+    width: 85vw;
+  }
+  
+  .register {
+    color: white;
+    margin-top: 4.5rem;
+    font-size: 1.5rem;
+  }
+  
+  .forminput {
+    background-color: white;
+    border-radius: 10px;
+  }
+  
+  .btnRegisterContainer {
+    width: 85vw;
+    height:fit-content; 
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.8rem;
+    margin-bottom: 1.5rem;
+    hyphens: auto;
+  }
+  
+  .pEinwilligung {
+    text-align: justify;
+    margin: 1rem 0rem;
+  }
+  .alink {
+    color: var(--blue-600);
+    margin-left: 12px;
+    font-size: 0.8rem;
+    line-height: 1.3rem;
+  }
+
+  .btnprimary3 {
+    font-size: 0.9rem;
+  }
+
+  .btnprimary {
+    font-size: 0.8rem !important;
+  }
 }
 
-.containerStyle img {
-  margin: 0;
-  padding: 0;
-  height: 15vh;
-  width: 100vw;
+/* Small devices (tablets) */
+@media only screen and (min-width: 600px) and (max-width: 959px) {
+  /* styles for tablets */
+
+  .containerStyle{
+    position: absolute;
+    top:0;
+    height: 100vh;
+    background-color: var(--blue-700);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .imgLogo {
+    margin: 0;
+    padding: 0;
+    height: 15vh;
+    width: 100vw;
+  }
+  
+  .buttonContainer {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 4.5rem;
+    display: flex;
+    justify-content: end;
+  gap: 4rem;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  .card {
+    width: 45vw;
+    height: fit-content;
+    color: rgb(255, 255, 255);
+    background-color: var(--gray-200);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+  
+  /* .card button{
+    width: 40vw;
+    background-color: var(--gray-600);
+    margin-top: 1rem;
+    cursor: not-allowed;
+  }
+  
+  .card button:not([disabled]) {
+    background-color: var(--blue--700);
+    cursor: pointer;
+  } */
+  
+  .divTextField {
+    width: 40vw;
+  }
+  
+  .register {
+    color: white;
+    margin-top: 5rem;
+  }
+  
+  .forminput {
+    background-color: white;
+    border-radius: 10px;
+  }
+  
+  .btnRegisterContainer {
+    width: 40vw;
+    height:fit-content; 
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    hyphens: auto;
+  }
+  
+  /* .btnprimary3 {
+    width: 20vw !important;
+  } */
+  
+  .pEinwilligung {
+    text-align: justify;
+    margin: 1rem 0rem;
+  }
+  .alink {
+    color: var(--blue-600);
+    margin-left: 12px;
+    font-size: 1rem;
+    line-height: 1.3rem;
+  }
 }
 
-.card {
-  width: 45vw;
-  height: fit-content;
-  color: rgb(255, 255, 255);
-  background-color: var(--gray-200);
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  align-items: center;
+/* Medium devices (desktops, laptops) */
+@media only screen and (min-width: 960px) and (max-width: 1279px) {
+  /* styles for desktops and laptops */
+
+  .containerStyle{
+    position: absolute;
+    top:0;
+    height: 100vh;
+    background-color: var(--blue-700);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .imgLogo {
+    margin: 0;
+    padding: 0;
+    height: 15vh;
+    width: 100vw;
+  }
+  
+  .buttonContainer {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 4.5rem;
+    display: flex;
+    justify-content: end;
+  gap: 4rem;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  .card {
+    width: 45vw;
+    height: fit-content;
+    color: rgb(255, 255, 255);
+    background-color: var(--gray-200);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+  
+  /* .card button{
+    width: 40vw;
+    background-color: var(--gray-600);
+    margin-top: 1rem;
+    cursor: not-allowed;
+  }
+  
+  .card button:not([disabled]) {
+    background-color: var(--blue--700);
+    cursor: pointer;
+  } */
+  
+  .divTextField {
+    width: 40vw;
+  }
+  
+  .register {
+    color: white;
+    margin-top: 5rem;
+  }
+  
+  .forminput {
+    background-color: white;
+    border-radius: 10px;
+  }
+  
+  .btnRegisterContainer {
+    width: 40vw;
+    height:fit-content; 
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .btnprimary3 {
+    width: 20vw !important;
+  }
+  
+  .pEinwilligung {
+    text-align: justify;
+    margin: 1rem 0rem;
+    hyphenate-limit-chars: 4;
+  }
+  .alink {
+    color: var(--blue-600);
+    margin-left: 12px;
+    font-size: 1rem;
+    line-height: 1.3rem;
+  }
+  
 }
 
-/* .card button{
-  width: 40vw;
-  background-color: var(--gray-600);
-  margin-top: 1rem;
-  cursor: not-allowed;
-}
+/* Large devices (large desktops, high-resolution screens) */
+@media only screen and (min-width: 1280px) {
+  /* styles for large desktops and high-resolution screens */
 
-.card button:not([disabled]) {
-  background-color: var(--blue--700);
-  cursor: pointer;
-} */
-.btnprimary {
-  width: 40vw;
-}
-
-.divTextField {
-  width: 40vw;
-}
-
-.register {
-  color: white;
-}
-
-.forminput {
-  background-color: white;
-  border-radius: 10px;
-}
-
-.agb {
-  /*   width: 40vw;
-  /*  height:fit-content; 
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-items: center;*/
-  font-size: 0.7rem;
-  display: block;
-  width: 40px;
-}
-
-.alink {
-  color: var(--blue-600);
-  margin-left: 12px;
-  font-size: 0.7rem;
+  .containerStyle{
+    position: absolute;
+    top:0;
+    height: 100vh;
+    background-color: var(--blue-700);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .imgLogo {
+    margin: 0;
+    padding: 0;
+    height: 15vh;
+    width: 100vw;
+  }
+  
+  .buttonContainer {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 4.5rem;
+    display: flex;
+    justify-content: end;
+  gap: 4rem;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  .card {
+    width: 45vw;
+    height: fit-content;
+    color: rgb(255, 255, 255);
+    background-color: var(--gray-200);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+  
+  /* .card button{
+    width: 40vw;
+    background-color: var(--gray-600);
+    margin-top: 1rem;
+    cursor: not-allowed;
+  }
+  
+  .card button:not([disabled]) {
+    background-color: var(--blue--700);
+    cursor: pointer;
+  } */
+  
+  .divTextField {
+    width: 40vw;
+  }
+  
+  .register {
+    color: white;
+    margin-top: 5rem;
+  }
+  
+  .forminput {
+    background-color: white;
+    border-radius: 10px;
+  }
+  
+  .btnRegisterContainer {
+    width: 40vw;
+    height:fit-content; 
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .btnprimary3 {
+    width: 20vw !important;
+  }
+  
+  .pEinwilligung {
+    text-align: justify;
+    margin: 1rem 0rem;
+    hyphenate-limit-chars: 4;
+  }
+  .alink {
+    color: var(--blue-600);
+    margin-left: 12px;
+    font-size: 1rem;
+    line-height: 1.3rem;
+  }
+  
 }
