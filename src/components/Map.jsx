@@ -173,7 +173,7 @@ useEffect(() => {
     const timeoutId = setTimeout(() => {
       navigator.vibrate(0);
       setShouldVibrate(false);
-      alert("DEIN GERÄT VIBRIERT JUNGE!!!!");
+      // alert("DEIN GERÄT VIBRIERT JUNGE!!!!");
     }, VIBRATION_DURATION);
     return () => clearTimeout(timeoutId);
   }
@@ -272,10 +272,7 @@ const handlePlayPause = (audioUrl) => {
 
   return (
     <div>
-      <button onClick={handleGetLocation}>Zu deiner Position</button>
-      <button onClick={handleGoToBerlin}>Direkt nach Berlin!</button>
       
-      <Navbar className="navbarbar"/>
       
       <MapContainer
         ref={mapRef}
@@ -290,6 +287,13 @@ const handlePlayPause = (audioUrl) => {
           url="https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=Tg0TtpDNdVfwFSB0W8BZ"
           attribution='<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
         />
+        <div className="buttonContainer2">
+        <button onClick={handleGetLocation}>Zu deiner Position</button>
+        <button onClick={handleGoToBerlin}>Direkt nach Berlin!</button>
+        <div className="containerBurgerMenu">
+          <Navbar className="navbarbar"/>
+        </div>
+      </div>
         {/* Loop through data */}
         {poi.map((item)=> {
   const locationLoop = item.location;
@@ -398,7 +402,9 @@ const handlePlayPause = (audioUrl) => {
   </div>
 )}
     </div>
+    
   );
+  
 };
 
 export default Map;

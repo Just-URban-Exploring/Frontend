@@ -1,106 +1,104 @@
-.iconsInfo {
-  background-color: #f7f7f7;
-  padding: 40px;
-  border-radius: 20px;
-}
-
-.iconsTitle {
-  font-size: 1.2rem;
-  margin-top: 0.5rem;
-}
-
 .card {
   display: flex;
-  text-align: center;
-  flex-direction: column;
   justify-content: center;
-  height: 100px;
-  width: 100px;
-  border-radius: 50%;
-  background-color: var(--circle-color);
-  transition: transform 0.2s ease-in-out;
-  cursor: pointer;
-  position: relative;
+  padding-bottom: 6rem;
+  background: var(--gray-500-opacity-90);
+  border-radius: 10px;
+  margin: 10px;
 }
 
-.card:before {
-  content: "";
+.circle1,
+.circle2,
+.circle3,
+.circle4,
+.circle5,
+.circle6,
+.circle7,
+.circle8,
+.circle9,
+.circle10,
+.circle11,
+.circle12 {
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  margin-top: 1rem;
+}
+
+.provider {
+  background: blue;
+}
+
+.iconPosition {
+  margin: 1.7rem 0.5rem auto;
+}
+.iconsTitle {
+  font-size: 1.2rem;
+  color: var(--white);
+  bottom: 2rem;
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  z-index: -1;
-  background-color: inherit;
 }
-
-.card:hover {
-  transform: scale(1.05);
-}
-
 .circle1 {
-  --circle-color: #0053b3;
+  background: var(--amber-700);
 }
 
 .circle2 {
-  --circle-color: #f6b93b;
+  background-color: var(--green-300);
 }
 
 .circle3 {
-  --circle-color: #78e08f;
+  background-color: var(--blue-600);
 }
 
 .circle4 {
-  --circle-color: #eb4d4b;
+  background-color: var(--coffee-300);
 }
 
 .circle5 {
-  --circle-color: #6ab04c;
+  background-color: var(--gelb-300);
 }
 
 .circle6 {
-  --circle-color: #e056fd;
+  background-color: var(--pink-500);
 }
-
 .circle7 {
-  --circle-color: #badc58;
+  background-color: var(--green-200);
 }
-
 .circle8 {
-  --circle-color: #ff9ff3;
+  background-color: var(--amber-600);
 }
-
 .circle9 {
-  --circle-color: #f0932b;
+  background-color: var(--fuchsia-400);
 }
-
 .circle10 {
-  --circle-color: #00cec9;
+  background-color: var(--blue-300);
 }
-
 .circle11 {
-  --circle-color: #00b894;
+  background-color: var(--blue-400);
 }
-
 .circle12 {
-  --circle-color: #6c5ce7;
+  background-color: var(--gelb-500);
 }
-
 
 .btgbutton {
-  background-color: #2d3436;
-  border: none;
-  color: rgb(255, 255, 255);
-  padding: 16px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 1.2rem;
+  background: var(--blue-600);
   border-radius: 8px;
-  cursor: pointer;
+  height: 50px;
+  font-weight: bold;
+  display: block;
+  text-decoration: none;
+  width: 20%;
+  margin: 2rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
 }
 
-.btgbutton:hover {
-  background-color: #4a4a4a;
+/* Icons NextDestination */
+
+.containerIcons {
+  display: flex;
+  position: absolute;
+  bottom: 0;
 }

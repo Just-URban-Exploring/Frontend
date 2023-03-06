@@ -85,6 +85,7 @@ export function Registration() {
             type="text"
             id="profilname"
             label="Profilname"
+            required
             fullWidth
             className={styles.forminput}
             value={profilname}
@@ -97,7 +98,7 @@ export function Registration() {
             name="stadt"
             type="text"
             id="stadt"
-            label="Stadt"
+            label="Stadt" required
             fullWidth
             className={styles.forminput}
             value={stadt}
@@ -109,7 +110,7 @@ export function Registration() {
             name="email"
             type="email"
             id="email"
-            label="E-Mail"
+            label="E-Mail" required
             fullWidth
             className={styles.forminput}
             value={email}
@@ -120,17 +121,19 @@ export function Registration() {
             name="password"
             type="password"
             id="password"
-            label="Password"
+            label="Password" required
             fullWidth
             className={styles.forminput}
             value={password}
+            minLength="6"
+            // inputProps={{ maxLength: 12 }}
             onChange={(e) => setPassword(e.target.value)}
           ></TextField>
           <TextField
             htmlFor="passwortwiederholen"
             type="password"
             id="passwortwiederholen"
-            label="Passwort wiederholen"
+            label="Passwort wiederholen" required
             fullWidth
             className={styles.forminput}
             value={matchPwd}
