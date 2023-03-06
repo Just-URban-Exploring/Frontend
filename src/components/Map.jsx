@@ -145,17 +145,17 @@ const Map = () => {
 // -------
 // Trigger Vibration
 // -------
-  const triggerVibration = useCallback((nearestMarker) => {
-    if (nearestMarker && nearestMarker !== prevNearestMarker.current) {
-      if (nearestMarker.distance <= 10) {
-        if (navigator.vibrate) {
-          navigator.vibrate(VIBRATION_DURATION);
-          setShouldVibrate(true);
-          prevNearestMarker.current = nearestMarker;
-        }
+const triggerVibration = useCallback((nearestMarker) => {
+  if (nearestMarker && nearestMarker !== prevNearestMarker.current) {
+    if (nearestMarker.distance <= 10) {
+      if (navigator.vibrate) {
+        navigator.vibrate(VIBRATION_DURATION);
+        setShouldVibrate(true);
+        prevNearestMarker.current = nearestMarker;
       }
     }
-  }, []);
+  }
+}, [prevNearestMarker.current]);
 // -------
 //
 // -------
