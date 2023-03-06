@@ -3,13 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import styles from "../css/Icons.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { GiParkBench } from "react-icons/gi";
-import { IconContext } from "react-icons";
-import { GrPauseFill } from "react-icons/gr";
+import {MdTouchApp} from 'react-icons/md';
 
 import {
   faBagShopping,
   faBuildingColumns,
-  faBus,
   faCamera,
   faLeaf,
   faMugHot,
@@ -20,25 +18,26 @@ import {
   faUserSecret,
   faUtensils,
 } from "@fortawesome/free-solid-svg-icons";
-import { setConfiguration, Container, Row, Col } from "react-grid-system";
-
-// setConfiguration({ maxScreenClass: "xl" });
+import { Container, Row, Col } from "react-grid-system";
 
 export function Icons() {
 
   const navigate = useNavigate();
 
   return (
-    <div>
-      <Container fluid className="iconsInfo">
-        <Row debug>
-          <Col debug>
-            <div className={`${styles.card} ${styles.circle1}`}>
+    <div className={styles.container}>
+      <div className={styles.buttonContainer}>
+      <button className={styles.btnprimary} id="home" onClick={() => navigate("/")}>Home</button>
+      </div>
+      <Container fluid className={styles.iconsInfo}>
+        <Row debug style={{background:'none'}}>
+          <Col debug style={{outline: 'none', background:'none'}}>
+            <div className={styles.card}>
               <div className={styles.circle1}>
                 <div className={styles.iconPosition}>
                   <FontAwesomeIcon
                     icon={faBuildingColumns}
-                    size="3x"
+                  
                     inverse
                     className="svg-inline--fa"
                   />
@@ -47,140 +46,125 @@ export function Icons() {
               <p className={styles.iconsTitle}>Museum</p>
             </div>
           </Col>
-          <Col debug>
-            <div className={`${styles.card} ${styles.circle2}`}>
+          <Col debug style={{outline: 'none', background:'none'}}>
+            <div className={styles.card}>
               <div className={styles.circle2}>
                 <div className={styles.iconPosition}>
-                  <FontAwesomeIcon icon={faStar} size="3x" inverse />
-                  <p className={styles.iconsTitle}>Sehenswert</p>
+                  <FontAwesomeIcon icon={faStar} inverse />
                 </div>
               </div>
+                  <p className={styles.iconsTitle}>Sehenswert</p>
             </div>
           </Col>
-          <Col debug>
-            <div className={`${styles.card} ${styles.circle3}`}>
+          <Col debug style={{outline: 'none', background:'none'}}>
+            <div className={styles.card}>
               <div className={styles.circle3}>
                 <div className={styles.iconPosition}>
-                  <FontAwesomeIcon icon={faCamera} size="3x" inverse />
-                  <p className={styles.iconsTitle}>Best View</p>
+                  <FontAwesomeIcon icon={faCamera} inverse />
                 </div>
               </div>
+                  <p className={styles.iconsTitle}>Best View</p>
             </div>
           </Col>
         </Row>
-        <Row>
-          <Col debug>
-            <div className={`${styles.card} ${styles.circle4}`}>
+        <Row debug style={{background:'none'}}>
+          <Col debug style={{outline: 'none', background:'none'}}>
+            <div className={styles.card}>
               <div className={styles.circle4}>
                 <div className={styles.iconPosition}>
-                  <FontAwesomeIcon icon={faMugHot} size="3x" inverse />
-                  <p className={styles.iconsTitle}>Café</p>
+                  <FontAwesomeIcon icon={faMugHot} inverse />
                 </div>
               </div>
+                  <p className={styles.iconsTitle}>Café</p>
             </div>
           </Col>
-          <Col debug>
-            <div className={`${styles.card} ${styles.circle5}`}>
+          <Col debug style={{outline: 'none', background:'none'}}>
+            <div className={styles.card}>
               <div className={styles.circle5}>
                 <div className={styles.iconPosition}>
-                  <FontAwesomeIcon icon={faUtensils} size="3x" inverse />
-                  <p className={styles.iconsTitle}>Essen</p>
+                  <FontAwesomeIcon icon={faUtensils} inverse />
                 </div>
               </div>
+                  <p className={styles.iconsTitle}>Essen</p>
             </div>
           </Col>
-          <Col debug>
-            <div className={`${styles.card} ${styles.circle6}`}>
+          <Col debug style={{outline: 'none', background:'none'}}>
+            <div className={styles.card}>
               <div className={styles.circle6}>
                 <div className={styles.iconPosition}>
-                  <FontAwesomeIcon icon={faToilet} size="3x" inverse />
-                  <p className={styles.iconsTitle}>WC</p>
+                  <FontAwesomeIcon icon={faToilet} inverse />
                 </div>
               </div>
+                  <p className={styles.iconsTitle}>WC</p>
             </div>
           </Col>
         </Row>
-        <Row>
-          <Col debug>
-            <div className={`${styles.card} ${styles.circle7}`}>
+        <Row debug style={{background:'none'}}>
+          <Col debug style={{outline: 'none', background:'none'}}>
+            <div className={styles.card}>
               <div className={styles.circle7}>
                 <div className={styles.iconPosition}>
-                  <IconContext.Provider
-                    className={styles.provider}
-                    value={{
-                      color: "white",
-                      size: "3.6em",
-                    }}
-                  >
                     <GiParkBench />
-                  </IconContext.Provider>
-                  <p className={styles.iconsTitle}>Park</p>
                 </div>
               </div>
+                  <p className={styles.iconsTitle}>Park</p>
             </div>
           </Col>
-          <Col debug>
-            <div className={`${styles.card} ${styles.circle8}`}>
+          <Col debug style={{outline: 'none', background:'none'}}>
+            <div className={styles.card}>
               <div className={styles.circle8}>
                 <div className={styles.iconPosition}>
-                  <IconContext.Provider
-                    className={styles.provider}
-                    value={{
-                      size: "3.6em",
-                    }}
-                  >
-                    <GrPauseFill />
-                  </IconContext.Provider>
-                  <p className={styles.iconsTitle}>Play/Pause</p>
+                    <MdTouchApp />
                 </div>
               </div>
+                    <p className={styles.iconsTitle}>Interaktion</p>
             </div>
           </Col>
-          <Col debug>
-            <div className={`${styles.card} ${styles.circle9}`}>
+          <Col debug style={{outline: 'none', background:'none'}}>
+            <div className={styles.card}>
               <div className={styles.circle9}>
                 <div className={styles.iconPosition}>
-                  <FontAwesomeIcon icon={faMusic} size="3x" inverse />
-                  <p className={styles.iconsTitle}>Kunst</p>
+                  <FontAwesomeIcon icon={faMusic} inverse />
                 </div>
               </div>
+                  <p className={styles.iconsTitle}>Kunst</p>
             </div>
           </Col>
         </Row>
-        <Row>
-          <Col debug>
-            <div className={`${styles.card} ${styles.circle10}`}>
+        <Row debug style={{background:'none'}}>
+          <Col debug style={{outline: 'none', background:'none'}}>
+            <div className={styles.card}>
               <div className={styles.circle10}>
                 <div className={styles.iconPosition}>
-                  <FontAwesomeIcon icon={faBagShopping} size="3x" inverse />
-                  <p className={styles.iconsTitle}>Einkaufszentrum</p>
+                  <FontAwesomeIcon icon={faBagShopping} inverse />
                 </div>
               </div>
+                  <p className={styles.iconsTitle}>Einkaufszentrum</p>
             </div>
           </Col>
-          <Col debug>
-            <div className={`${styles.card} ${styles.circle11}`}>
+          <Col debug style={{outline: 'none', background:'none'}}>
+            <div className={styles.card}>
               <div className={styles.circle11}>
                 <div className={styles.iconPosition}>
-                  <FontAwesomeIcon icon={faLeaf} size="3x" inverse />
-                  <p className={styles.iconsTitle}>Natur</p>
+                  <FontAwesomeIcon icon={faLeaf} inverse />
                 </div>
               </div>
+                  <p className={styles.iconsTitle}>Natur</p>
             </div>
           </Col>
-          <Col debug>
-            <div className={`${styles.card} ${styles.circle12}`}>
+          <Col debug style={{outline: 'none', background:'none'}}>
+            <div className={styles.card}>
               <div className={styles.circle12}>
                 <div className={styles.iconPosition}>
-                  <FontAwesomeIcon icon={faUserSecret} size="3x" />
-                  <p className={styles.iconsTitle}>Geheimtipp</p>
+                  <FontAwesomeIcon icon={faUserSecret} />
                 </div>
               </div>
+                  <p className={styles.iconsTitle}>Geheimtipp</p>
             </div>
           </Col>
         </Row>
         <Col>
-          <button className={styles.btgbutton} onClick={() => navigate('/map')}>Ok</button>
+          <button className={styles.okBtn} onClick={() => navigate('/map')}>Ok</button>
         </Col>
       </Container>
       
