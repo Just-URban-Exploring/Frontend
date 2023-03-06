@@ -142,6 +142,7 @@ const Map = () => {
   };
 // -------
 //
+
 // -------
 // Trigger Vibration
 // -------
@@ -153,24 +154,30 @@ const triggerVibration = useCallback((nearestMarker) => {
         setShouldVibrate(true);
         prevNearestMarker.current = nearestMarker;
       }
+    } else {
+      navigator.vibrate(0);
+      setShouldVibrate(false);
+      prevNearestMarker.current = null;
     }
   }
-}, [prevNearestMarker.current]);
+}, []);
+
 // -------
 //
+
 // -------
 // useEffect() on Vibration
 // -------
-useEffect(()=> {
+useEffect(() => {
   if (shouldVibrate) {
-  const timeoutId = setTimeout(() => {
-    navigator.vibrate(0);
-    setShouldVibrate(false);
-    // alert("DEIN GERÄT VIBRIERT JUNGE!!!!");
-  }, VIBRATION_DURATION);
-  return () => clearTimeout(timeoutId);
-}
-}, [shouldVibrate]);
+    const timeoutId = setTimeout(() => {
+      navigator.vibrate(0);
+      setShouldVibrate(false);
+      alert("DEIN GERÄT VIBRIERT JUNGE!!!!");
+    }, VIBRATION_DURATION);
+    return () => clearTimeout(timeoutId);
+  }
+}, [shouldVibrate, triggerVibration]);
 // -------
 //
 // -------
@@ -205,8 +212,10 @@ useEffect(() => {
       setNearestMarkers([]); // <-- set nearestMarkers to an empty array if there are no markers within 2.5km
     };
     const nearestMarker = nearestMarkers[0];
-    triggerVibration(nearestMarker);
-    
+    if (nearestMarker && nearestMarker !== prevNearestMarker.current) {
+      triggerVibration(nearestMarker);
+      prevNearestMarker.current = nearestMarker;
+    }
     const updatedMarkerIcons = nearestMarkers.map((marker) => ({
       ...marker,
       icon: iconMap[marker.icon],
@@ -233,6 +242,7 @@ useEffect(() => {
     setMarkerIcons(updatedMarkerIcons);
   };
 }, [poi, userLocation, currentLatLng, selectedMarker, triggerVibration]);
+
 
 // -------
 //
