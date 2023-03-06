@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "../css/Registration.module.css";
 import Box from "@mui/material/Box";
@@ -11,12 +11,16 @@ const envURI = import.meta.env.VITE_URI
 
 export function Registration() {
 
-  const [profilname, setProfilname] = useState("");
-  const [stadt, setStadt] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [matchPwd, setMatchPwd] = useState("");
-  const [register, setRegister] = useState(false);
+const [profilname, setProfilname] = useState("");
+const [stadt, setStadt] = useState("");
+const [email, setEmail] = useState("");
+const [password, setPassword] = useState("");
+const [matchPwd, setMatchPwd] = useState("");
+const [register, setRegister] = useState(false);
+const [errorMessage, setErrorMessage] = useState("");
+
+const MIN_LENGTH = 6;
+
   const configuration = {
     method: "post",
     url: `${envURI}/users/registration`,
@@ -56,6 +60,18 @@ export function Registration() {
     // alert("Submited");
   };
 
+  useEffect(()=> {
+    if (password.length < MIN_LENGTH){
+      setErrorMessage("Das Passwort muss aus mind. 6 Zeichen bestehen.");
+    }
+  }, [password]);
+  
+  useEffect(()=> {
+    if (password.length >= MIN_LENGTH){
+      setErrorMessage("");
+    }
+  }, [password, errorMessage]);
+
   const navigate = useNavigate();
 
   return (
@@ -86,6 +102,7 @@ export function Registration() {
             id="profilname"
             label="Profilname"
             required
+            title=""
             fullWidth
             className={styles.forminput}
             value={profilname}
@@ -98,7 +115,9 @@ export function Registration() {
             name="stadt"
             type="text"
             id="stadt"
-            label="Stadt" required
+            label="Stadt" 
+            required
+            title=""
             fullWidth
             className={styles.forminput}
             value={stadt}
@@ -110,30 +129,36 @@ export function Registration() {
             name="email"
             type="email"
             id="email"
-            label="E-Mail" required
+            label="E-Mail" 
+            required
+            title=""
             fullWidth
             className={styles.forminput}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           ></TextField>
-          <TextField
-            htmlFor="password"
-            name="password"
-            type="password"
-            id="password"
-            label="Password" required
-            fullWidth
-            className={styles.forminput}
-            value={password}
-            minLength="6"
-            // inputProps={{ maxLength: 12 }}
-            onChange={(e) => setPassword(e.target.value)}
-          ></TextField>
+            <TextField
+              htmlFor="password"
+              name="password"
+              type="password"
+              id="password"
+              label="Passwort" 
+              required
+              // title="Das Passwort muss aus mind. 6 Zeichen bestehen."
+              fullWidth
+              className={styles.forminput}
+              value={password}
+              
+              helperText={!password.length < MIN_LENGTH ? errorMessage : ""}
+              onChange={(e) => setPassword(e.target.value)}
+            ></TextField>
           <TextField
             htmlFor="passwortwiederholen"
             type="password"
             id="passwortwiederholen"
-            label="Passwort wiederholen" required
+            label="Passwort wiederholen" 
+            required
+            title=""
             fullWidth
             className={styles.forminput}
             value={matchPwd}
@@ -158,7 +183,7 @@ export function Registration() {
           <button
             className={styles.btnprimary3}
             type="submit"
-            disabled={password !== matchPwd ? true : false}
+            // disabled={password !== matchPwd ? true : false}
             onClick={(e) => handleSubmit(e)}
           >
             Jetzt registrieren!

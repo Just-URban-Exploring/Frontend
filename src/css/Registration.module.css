@@ -81,7 +81,9 @@ width: 100vw;
   .pEinwilligung {
     text-align: justify;
     margin: 1rem 0rem;
+    color: var(--gray-600);
   }
+  
   .alink {
     color: var(--blue-600);
     margin-left: 12px;
@@ -179,13 +181,10 @@ width: 100vw;
     hyphens: auto;
   }
   
-  /* .btnprimary3 {
-    width: 20vw !important;
-  } */
-  
   .pEinwilligung {
     text-align: justify;
     margin: 1rem 0rem;
+    color: var(--gray-600);
   }
   .alink {
     color: var(--blue-600);
@@ -283,6 +282,7 @@ width: 100vw;
     text-align: justify;
     margin: 1rem 0rem;
     hyphenate-limit-chars: 4;
+    color: var(--gray-600);
   }
   .alink {
     color: var(--blue-600);
@@ -381,6 +381,7 @@ width: 100vw;
     text-align: justify;
     margin: 1rem 0rem;
     hyphenate-limit-chars: 4;
+    color: var(--gray-600);
   }
   .alink {
     color: var(--blue-600);
