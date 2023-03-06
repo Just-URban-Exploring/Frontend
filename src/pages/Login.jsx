@@ -61,7 +61,7 @@ export function Login() {
       <h1 className={styles.login}>Login</h1>
       {/* Hier wird der bgColor State an die Navbar übergeben
       <Navbar bgColor={bgColor}/> */}
-      <img src={Jure} alt="Logo" />
+      <img src={Jure} className={styles.imgLogo} alt="Logo" />
       <Box
         className={styles.card}
         component={styles.form}
@@ -103,8 +103,8 @@ export function Login() {
           >
             Anmelden
           </button>
-            <div className={styles.pw}><a className={styles.alink}href="/forgot-pw">Passwort vergessen?</a></div>
         </div>
+            <div className={styles.pw}><a className={styles.alink}href="/forgot-pw">Passwort vergessen?</a></div>
         {/*  <button type="submit" className={styles.btngoogle}>
         <button type="submit" className="btn-google">
           Mit Google anmelden
