@@ -38,6 +38,7 @@ const MIN_LENGTH = 6;
     },
   };
   
+  const [successMessage, setSuccessMessage] = useState("")
   const handleSubmit = (e) => {
     // prevent the form from refreshing the whole page
     e.preventDefault();
@@ -45,8 +46,10 @@ const MIN_LENGTH = 6;
     axios(configuration)
       .then((result) => {
         setRegister(true);
-        console.log(result);
-        navigate("/icons");
+  setSuccessMessage("Erfolgreich registriert.");
+  setTimeout(()=> {
+    navigate("/icons");
+  }, 2000)
       })
       .catch((error) => {
         console.log(error)
@@ -188,6 +191,7 @@ const MIN_LENGTH = 6;
           >
             Jetzt registrieren!
           </button>
+          {/* {successMessage && <p>{successMessage}</p>} */}
         </div>
       </Box>
     </div>
