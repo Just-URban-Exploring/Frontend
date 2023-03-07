@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "../css/Registration.module.css";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
@@ -11,12 +11,16 @@ const envURI = import.meta.env.VITE_URI
 
 export function Registration() {
 
-  const [profilname, setProfilname] = useState("");
-  const [stadt, setStadt] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [matchPwd, setMatchPwd] = useState("");
-  const [register, setRegister] = useState(false);
+const [profilname, setProfilname] = useState("");
+const [stadt, setStadt] = useState("");
+const [email, setEmail] = useState("");
+const [password, setPassword] = useState("");
+const [matchPwd, setMatchPwd] = useState("");
+const [register, setRegister] = useState(false);
+const [errorMessage, setErrorMessage] = useState("");
+
+const MIN_LENGTH = 6;
+
   const configuration = {
     method: "post",
     url: `${envURI}/users/registration`,
@@ -34,6 +38,7 @@ export function Registration() {
     },
   };
   
+  const [successMessage, setSuccessMessage] = useState("")
   const handleSubmit = (e) => {
     // prevent the form from refreshing the whole page
     e.preventDefault();
@@ -41,8 +46,10 @@ export function Registration() {
     axios(configuration)
       .then((result) => {
         setRegister(true);
-        console.log(result);
-        navigate("/icons");
+  setSuccessMessage("Erfolgreich registriert.");
+  setTimeout(()=> {
+    navigate("/icons");
+  }, 2000)
       })
       .catch((error) => {
         console.log(error)
@@ -55,6 +62,18 @@ export function Registration() {
     // make a popup alert showing the "submitted" text
     // alert("Submited");
   };
+
+  useEffect(()=> {
+    if (password.length < MIN_LENGTH){
+      setErrorMessage("Das Passwort muss aus mind. 6 Zeichen bestehen.");
+    }
+  }, [password]);
+  
+  useEffect(()=> {
+    if (password.length >= MIN_LENGTH){
+      setErrorMessage("");
+    }
+  }, [password, errorMessage]);
 
   const navigate = useNavigate();
 
@@ -85,6 +104,8 @@ export function Registration() {
             type="text"
             id="profilname"
             label="Profilname"
+            required
+            title=""
             fullWidth
             className={styles.forminput}
             value={profilname}
@@ -97,7 +118,9 @@ export function Registration() {
             name="stadt"
             type="text"
             id="stadt"
-            label="Stadt"
+            label="Stadt" 
+            required
+            title=""
             fullWidth
             className={styles.forminput}
             value={stadt}
@@ -109,28 +132,36 @@ export function Registration() {
             name="email"
             type="email"
             id="email"
-            label="E-Mail"
+            label="E-Mail" 
+            required
+            title=""
             fullWidth
             className={styles.forminput}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           ></TextField>
-          <TextField
-            htmlFor="password"
-            name="password"
-            type="password"
-            id="password"
-            label="Password"
-            fullWidth
-            className={styles.forminput}
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          ></TextField>
+            <TextField
+              htmlFor="password"
+              name="password"
+              type="password"
+              id="password"
+              label="Passwort" 
+              required
+              // title="Das Passwort muss aus mind. 6 Zeichen bestehen."
+              fullWidth
+              className={styles.forminput}
+              value={password}
+              
+              helperText={!password.length < MIN_LENGTH ? errorMessage : ""}
+              onChange={(e) => setPassword(e.target.value)}
+            ></TextField>
           <TextField
             htmlFor="passwortwiederholen"
             type="password"
             id="passwortwiederholen"
-            label="Passwort wiederholen"
+            label="Passwort wiederholen" 
+            required
+            title=""
             fullWidth
             className={styles.forminput}
             value={matchPwd}
@@ -146,18 +177,21 @@ export function Registration() {
 
         {/* P A Y P A L */}
 
-        <div className={styles.agb}>
-          <pre>Mit dem Klick auf den “Jetzt registrieren!” Button erlaube ich dieser
-          App den Zugriff auf meinen Standort. Ich stimme den<a className={styles.alink} href="/agb" target="_blank">AGB</a> und<a className={styles.alink} href="/datenschutz" target="_blank">Datenschutzrichtlinien</a> zu.</pre>
+        <div className={styles.btnRegisterContainer}>
+          <p className={styles.pEinwilligung}>
+            Mit dem Klick auf den “Jetzt registrieren!” Button erlaube ich dieser
+            App den Zugriff auf meinen Standort. Ich stimme den<a className={styles.alink} href="/agb" target="_blank">AGB</a> und<a className={styles.alink} href="/datenschutz" target="_blank">Datenschutzrichtlinien</a> zu.
+          </p>
         {/* "R E G I S T R I E R E N" - B U T T O N  */}
           <button
-            className={styles.btnprimary2}
+            className={styles.btnprimary3}
             type="submit"
-            disabled={password !== matchPwd ? true : false}
+            // disabled={password !== matchPwd ? true : false}
             onClick={(e) => handleSubmit(e)}
           >
-            Jetzt Registrieren!
+            Jetzt registrieren!
           </button>
+          {/* {successMessage && <p>{successMessage}</p>} */}
         </div>
       </Box>
     </div>
