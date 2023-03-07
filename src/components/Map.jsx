@@ -338,7 +338,7 @@ const handleAusloggen = () => {
             >
               <p>{nameLoop}</p>
               {showInfo ? <p>{extendedInfoLoop}</p> : <p>{infoLoop}</p>}
-              <section
+              {/* <section
                 onClick={() => handleLike(nameLoop)}
                 className={`like-button ${liked[nameLoop] ? "liked" : ""}`}
               >
@@ -363,7 +363,7 @@ const handleAusloggen = () => {
                     <AiFillHeart />
                   </IconContext.Provider>
                 )}
-              </section>
+              </section> */}
               <button
                 onClick={() => setShowInfo(!showInfo)}
                 className="info-button"
