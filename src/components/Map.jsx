@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 import * as geolib from "geolib";
 import { MapContainer, TileLayer, Marker, Popup} from "react-leaflet";
 import "leaflet/dist/leaflet.css";
@@ -269,6 +270,18 @@ const handlePlayPause = (audioUrl) => {
   }
 };
 // -------
+// -------
+// handle Ausloggen
+// -------
+const [isLoggedin, setIsLoggedin] = useState(false);
+const navigate = useNavigate();
+const handleAusloggen = () => {
+  localStorage.removeItem('token');
+  localStorage.removeItem('authenticated');
+  setIsLoggedin(false);
+  navigate('/logout')
+};
+// -------
 
   return (
     <div>
@@ -290,9 +303,10 @@ const handlePlayPause = (audioUrl) => {
         <div className="buttonContainer2">
         <button onClick={handleGetLocation}>Zu deiner Position</button>
         <button onClick={handleGoToBerlin}>Direkt nach Berlin!</button>
-        <div className="containerBurgerMenu">
+        <button onClick={handleAusloggen}>Hier Ausloggen</button>
+        {/* <div className="containerBurgerMenu">
           <Navbar className="navbarbar"/>
-        </div>
+        </div> */}
       </div>
         {/* Loop through data */}
         {poi.map((item)=> {
