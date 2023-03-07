@@ -1,5 +1,32 @@
-/* Style the buttons at the top */
-button {
+/* Extra small devices (phones) */
+@media only screen and (max-width: 599px) {
+  /* styles for phones */
+}
+
+/* Small devices (tablets) */
+@media only screen and (min-width: 600px) and (max-width: 959px) {
+  /* styles for tablets */
+}
+/* Medium devices (desktops, laptops) */
+@media only screen and (min-width: 960px) and (max-width: 1279px) {
+  /* styles for desktops and laptops */
+}
+
+/* Large devices (large desktops, high-resolution screens) */
+@media only screen and (min-width: 1280px) {
+  /* styles for large desktops and high-resolution screens */
+  /* Style the buttons at the top */
+body {
+  background-color: var(--blue-700);
+  height: max-content;
+}
+
+.leaflet-container {
+  height: 88vh !important;
+  margin: 0 !important;
+}
+
+  button {
   background-color: var(--blue-600);
   border: none;
   color: rgb(255, 255, 255);
@@ -40,9 +67,9 @@ button:active {
 /* Style the marker popup */
 .marker-popup {
   text-align: center;
-  font-size: 0.7rem;
+  font-size: 1rem;
+  color: var(--white);
 }
-
 
 .marker-popup ul {
   display: flex;
@@ -58,30 +85,26 @@ align-items: center;
   border-radius: 15px;
   /* text-align: center; */
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  background-color: var(--gray-200);
-  height: 80px;
-  width: 100px;
-margin: 3px 0 3px 0;
+  border: 1px solid var(--white);
+  height: 8rem;
+  width: 10rem;
+margin: 1rem 0 1rem 0;
 padding: 0;
 }
 
 .marker-popup li img {
-  height: 25px;
-  width: 25px;
+  height: 3rem;
+  width: 3rem;
   margin: 7px 0 7px 0;
 }
 #name {
-  font-size: 0.6rem;
+  font-size: 0.9rem;
 }
 
 #distance {
-  font-size: 0.5rem;
+  font-size: 0.8rem;
 }
 .navbarbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
   z-index: 9999; 
 }
 
@@ -105,4 +128,4 @@ padding: 0;
   hyphens: auto !important;
   hyphenate-limit-chars: auto 7 !important;
   hyphenate-limit-lines: 2 !important;
-}
+}}

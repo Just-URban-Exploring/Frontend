@@ -285,8 +285,13 @@ const handleAusloggen = () => {
 
   return (
     <div>
-      
-      
+      <div className="buttonContainer2">
+        <button onClick={handleGetLocation}>Zu deiner Position</button>
+        <button onClick={handleGoToBerlin}>Direkt nach Berlin!</button>
+        <div className="containerBurgerMenu">
+          <Navbar className="navbarbar"/>
+        </div>
+      </div>
       <MapContainer
         ref={mapRef}
         center={currentLatLng}
