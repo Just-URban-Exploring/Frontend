@@ -1,96 +1,115 @@
+/* Extra small devices (phones) */
+@media only screen and (max-width: 599px) {
+  /* styles for phones */
+}
+
+/* Small devices (tablets) */
+@media only screen and (min-width: 600px) and (max-width: 959px) {
+  /* styles for tablets */
+}
+/* Medium devices (desktops, laptops) */
+@media only screen and (min-width: 960px) and (max-width: 1279px) {
+  /* styles for desktops and laptops */
+}
+
+/* Large devices (large desktops, high-resolution screens) */
+@media only screen and (min-width: 1280px) {
+  /* styles for large desktops and high-resolution screens */
+  button {
+    background-color: var(--blue-600);
+    border: none;
+    color: rgb(255, 255, 255);
+    padding: 0.625rem 1.25rem;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1rem;
+    letter-spacing: 0.07rem;
+    font-weight: 600;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  button:hover {
+    background-color: var(--blue-700);
+    transform: translateY(-2px);
+  }
+  
+  button:active {
+    background-color: var(--blue-400);
+    transform: translateY(2px)
+  }
+  
+  /* Style the marker popup */
+  .marker-popup {
+    text-align: center;
+    font-size: 0.7rem;
+  }
+  
+  
+  .marker-popup ul {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    list-style: none;
+  }
+  
+  .marker-popup li {
+    display: flex;
+    flex-direction: column;
+  align-items: center;
+    border-radius: 15px;
+    /* text-align: center; */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    background-color: var(--gray-200);
+    height: 80px;
+    width: 100px;
+  margin: 3px 0 3px 0;
+  padding: 0;
+  }
+  
+  .marker-popup li img {
+    height: 25px;
+    width: 25px;
+    margin: 7px 0 7px 0;
+  }
+  #name {
+    font-size: 0.6rem;
+  }
+  
+  #distance {
+    font-size: 0.5rem;
+  }
+  .navbarbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999; 
+  }
+  
+  .leaflet-popup-content p:first-of-type {
+    font-weight: 900 !important;
+  }
+  .leaflet-popup-content-wrapper {
+    padding: 8px !important;
+    text-align: justify !important;
+    font-weight: 400 !important;
+    letter-spacing: 1px !important;
+  
+    background-color: rgba(255, 255, 255, 0.9) !important;
+  }
+  .leaflet-popup-tip {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+  }
+  
+  .leaflet-popup-content-wrapper p {
+    line-height: 150% !important;
+    hyphens: auto !important;
+    hyphenate-limit-chars: auto 7 !important;
+    hyphenate-limit-lines: 2 !important;
+  }
+}
+
 /* Style the buttons at the top */
-button {
-  background-color: var(--blue-600);
-  border: none;
-  color: rgb(255, 255, 255);
-  padding: 0.625rem 1.25rem;
-  text-align: center;
-  text-decoration: none;
-  font-size: 1rem;
-  letter-spacing: 0.07rem;
-  font-weight: 600;
-  margin: 10px;
-  cursor: pointer;
-  border-radius: 10px;
-  transition: all 0.3s ease-in-out;
-}
-
-button:hover {
-  background-color: var(--blue-700);
-  transform: translateY(-2px);
-}
-
-button:active {
-  background-color: var(--blue-400);
-  transform: translateY(2px)
-}
-
-/* Style the marker popup */
-.marker-popup {
-  text-align: center;
-  font-size: 0.7rem;
-}
-
-
-.marker-popup ul {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-evenly;
-  list-style: none;
-}
-
-.marker-popup li {
-  display: flex;
-  flex-direction: column;
-align-items: center;
-  border-radius: 15px;
-  /* text-align: center; */
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  background-color: var(--gray-200);
-  height: 80px;
-  width: 100px;
-margin: 3px 0 3px 0;
-padding: 0;
-}
-
-.marker-popup li img {
-  height: 25px;
-  width: 25px;
-  margin: 7px 0 7px 0;
-}
-#name {
-  font-size: 0.6rem;
-}
-
-#distance {
-  font-size: 0.5rem;
-}
-.navbarbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 9999; 
-}
-
-.leaflet-popup-content p:first-of-type {
-  font-weight: 900 !important;
-}
-.leaflet-popup-content-wrapper {
-  padding: 8px !important;
-  text-align: justify !important;
-  font-weight: 400 !important;
-  letter-spacing: 1px !important;
-
-  background-color: rgba(255, 255, 255, 0.9) !important;
-}
-.leaflet-popup-tip {
-  background-color: rgba(255, 255, 255, 0.9) !important;
-}
-
-.leaflet-popup-content-wrapper p {
-  line-height: 150% !important;
-  hyphens: auto !important;
-  hyphenate-limit-chars: auto 7 !important;
-  hyphenate-limit-lines: 2 !important;
-}
