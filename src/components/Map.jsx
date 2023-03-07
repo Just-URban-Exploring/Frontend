@@ -292,7 +292,7 @@ const handleAusloggen = () => {
         zoomAnimation={true}
         zoomAnimationThreshold={500} // milliseconds
         zoomAnimationDuration={500} // milliseconds
-        style={{ width: "100vw", height: "75vh" }}
+        style={{ width: "100vw", height: "100vh", mt: "" }}
       >
         <TileLayer
           url="https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=Tg0TtpDNdVfwFSB0W8BZ"
