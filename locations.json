@@ -188,5 +188,13 @@
     "extendedInfo": "The Neptunbrunnen is a famous fountain located in Berlin, Germany. It was built in the late 19th century and features a large statue of Neptune, the Roman god of the sea. The fountain is located in Alexanderplatz, a busy public square in the heart of Berlin, and is a popular tourist attraction.",
     "icon": "${Sehenswert}",
     "audioUrl": "#"
+  },
+  {
+    "name": "Allee Center",
+    "location": {"latitude":52.53581287306498, "longitude":13.496251269315515 },
+    "info": "Allee Center an der Landsberger Allee",
+    "extendedInfo": "Das Allee-Center Berlin befindet sich seit 1994 direkt an der Landsberger Allee im Hohenschönhausen und bietet Ihnen alles, was sie zum täglichen Leben brauchen. Kaufen Sie in 50 Shops und Geschäften ein, essen Sie in unseren Bistros, Cafés und Restaurants und parken Sie in unserem kostenfreien Parkhaus. Zudem kümmern sich neben einer Apotheke auch 8 Arztpraxen um Ihre gesundheitlichen Belange.",
+    "icon":"${Shopping}",
+    "audioUrl": "https://nkprod-coredatastack-pa7jx42xiwhf-tasksbucket-13qb6gn1l5ooi.s3.amazonaws.com/9d101a7a-fabc-4e09-ac6c-c569136f87c3/result.m4a?AWSAccessKeyId=AKIAUENQVYXORYD4N3EU&Expires=1678281908&Signature=vktdYX8mJsAMWCB3T76c4y3LD%2BM%3D&X-Amzn-Trace-Id=Root%3D1-64073b31-2533cf2b44795fb670cda29a%3BParent%3D30a3946656dd0cbe%3BSampled%3D0&response-content-disposition=attachment%3B%20filename%3D%22Das%2520Allee%2520Center%2520Berlin%2520befindet%2520sich%2520se.m4a%22"
   }
 ]
